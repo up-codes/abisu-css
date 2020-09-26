@@ -1,0 +1,31 @@
+/*===================================
+  共通ボックス　box-cmp
+===================================*/
+/* 共通ボックス１ */
+.box-cmp01
+  position relative
+  .img
+    position absolute
+    right 0
+    top 0
+    height 100%
+  .block-txt
+    min-height 300px
+  @media only screen and (max-width 599px)
+    .img
+      position relative
+      height 200px
+
+
+/*===================================
+ 共通ブロック　block-cmp
+==================================*/
+/*共通ブロック１（電話番号）*/
+.block-cmp01
+  .tel
+    font-size 20px
+    a:before
+      margin-right 5px
+      content '\f879'
+      font-weight 600
+      font-family 'Font Awesome 5 Free'

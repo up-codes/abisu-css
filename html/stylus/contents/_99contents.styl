@@ -1,0 +1,435 @@
+/**************************************
+    共通要素
+**************************************/
+/**
+ヘッダー
+header
+*/
+[data-element-id]#header .sitettl
+  display block
+
+#header
+  .sitettl
+    display none
+  &.fixed
+    position fixed
+    top 0
+    left 0
+    z-index 100
+    width 100%
+    height auto
+    background #fff
+    box-shadow 0 2px 2px 0 rgba(0, 0, 0, 0.1)
+
+.header01
+  padding 10px 0
+  .contents
+    display flex
+    justify-content space-between
+    align-items center
+  .left
+    .logo
+      font-weight bold
+      font-size 30px
+  .right
+    display flex
+    align-items center
+    .txt
+      margin-right 10px
+      line-height 120%
+    .txtin
+      display block
+    .tel
+      a
+        font-weight bold
+        font-size 30px
+      a:before
+        margin-right 5px
+        content '\f879'
+        font-weight 600
+        font-size 24px
+        font-family 'Font Awesome 5 Free'
+  @media only screen and (max-width: 1024px)
+    padding 5px 0
+    .left
+      .txt
+        display none
+      .logo
+        font-size 24px
+    .right
+      display none
+
+/**
+グローバルナビ
+gnav
+*/
+.gnav01
+  position relative
+  z-index 100
+  padding 20px 0
+  border-bottom 1px solid #d9d9d9
+  &.fixed
+    padding 10px 0
+  .wrap
+    display flex
+    flex-wrap wrap
+  .logo
+    display none
+  .list01
+    display flex
+    flex-wrap wrap
+    justify-content space-around
+    width 100%
+  .item01
+    margin 0 20px
+    text-align center
+    font-size 16px
+    > a, .itemin
+      display block
+      cursor pointer
+    > a:before, .itemin:before
+      display block
+      margin 0 auto 10px
+      width 40px
+      height 40px
+      background url('https://placehold.jp/500x500.png') no-repeat center bottom
+      background-size contain
+      content ''
+  .item01.-parent
+    position relative
+    &:hover
+      .list02
+        visibility visible
+        opacity 1
+  .list02
+    position absolute
+    top 100%
+    left 50%
+    visibility hidden
+    padding-top 20px
+    width 200px
+    background rgba(#fff, 0.8) content-box
+    opacity 0
+    transition 0.5s
+    transform translateX(-50%)
+  .item02
+    a
+      display block
+      padding 2px
+  @media only screen and (max-width: 1024px)
+    .logo
+      display block
+      margin-bottom 20px
+      padding-right 40px
+      width 100%
+      font-weight bold
+      font-size 20px
+    .item01
+      margin 0 0 10px 0
+      min-height 40px
+      width 100%
+      text-align left
+      > a, .itemin
+        position relative
+        padding 7px 0 0 50px
+      > a:before, .itemin:before
+        position absolute
+        top 0
+        left 0
+        display inline-block
+        margin 0 5px 0 0
+    .list02
+      position relative
+      top 0
+      left 0
+      visibility visible
+      padding-left 10px
+      background none
+      opacity 1
+      transform none
+      a
+        position relative
+        padding 2px 0 2px 20px
+      a:before
+        position absolute
+        top 13px
+        left 0
+        display block
+        width 10px
+        height 1px
+        background #000
+        content ''
+
+/**
+フッター
+footer
+*/
+.footer01
+  .contents
+    padding 50px 0
+    .ttl
+      margin-bottom 50px
+      text-align center
+      font-size 26px
+    .wrap
+      display flex
+      justify-content space-between
+  .left
+    width 48%
+  .right
+    width 48%
+  .logowrap
+    margin-bottom 10px
+  .logo
+    font-weight bold
+    font-size 26px
+  .address
+    margin-bottom 5px
+    font-weight bold
+  .telephone
+    margin-bottom 5px
+    font-weight bold
+  .head
+    margin-bottom 5px
+    padding 2px
+    background #000
+    color #fff
+    text-align center
+    font-weight bold
+  .calendar
+    position relative
+    &:before
+      display block
+      padding-top 80%
+      content ''
+    iframe
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 100%
+  .copy
+    padding 5px 0
+    background #999
+    color #fff
+    text-align center
+  @media only screen and (max-width: 1024px)
+    .copy
+      padding-bottom 50px
+  @media only screen and (max-width: 599px)
+    .contents
+      .wrap
+        flex-wrap wrap
+    .left
+      margin-bottom 30px
+      width 100%
+    .right
+      width 100%
+
+.fnav01
+  padding 50px 0
+  background #eee
+  .wrap
+    display flex
+  .list01
+    width 50%
+    column-count 3
+  .item
+    margin-bottom 10px
+    padding-right 10px
+    break-inside avoid
+    a
+      position relative
+      display block
+      padding-left 12px
+      &:before
+        position absolute
+        top 10px
+        left 0
+        display block
+        width 4px
+        height 4px
+        border-radius 50%
+        background #000
+        content ''
+  .list02
+    width 50%
+  .datawrap
+    column-count 3
+  .datattl
+    position relative
+    margin-bottom 10px
+    padding-left 12px
+    &:before
+      position absolute
+      top 10px
+      left 0
+      display block
+      width 4px
+      height 4px
+      border-radius 50%
+      background #000
+      content ''
+  .data
+    margin-bottom 5px
+    padding-right 10px
+    break-inside avoid
+    a
+      position relative
+      padding-left 12px
+      &:before
+        position absolute
+        top 7px
+        left 0
+        display block
+        width 5px
+        height 1px
+        background #000
+        content ''
+  @media only screen and (max-width: 1024px)
+    .wrap
+      flex-wrap wrap
+    .list01
+      margin-bottom 10px
+      width 100%
+    .list02
+      width 100%
+  @media only screen and (max-width: 599px)
+    .list01
+      column-count 2
+    .datawrap
+      column-count 2
+
+/**
+サイドメニュー
+side
+*/
+.side
+  display flex
+  flex-wrap wrap
+  justify-content space-between
+  align-items flex-start
+  align-content flex-start
+  .section
+    margin-bottom 50px
+    width 100%
+  @media only screen and (max-width: 1024px)
+    .section
+      width 48%
+  @media only screen and (max-width: 599px)
+    .section
+      width 100%
+
+
+.list-side01
+  .datattl
+    position relative
+    margin-bottom 20px
+    padding 10px
+    border-radius 2em
+    background color1
+    color #fff
+    text-align center
+    font-size 20px
+  .data
+    margin-bottom 10px
+    padding-left 10px
+  a
+    position relative
+    display inline-block
+    padding-left 20px
+    &:before
+      position absolute
+      left 0
+      color color1
+      content '>'
+  @media only screen and (max-width: 1024px)
+    &.-archive
+      .datawrap
+        display flex
+        flex-wrap wrap
+        justify-content space-between
+        .datattl
+          width 100%
+        .data
+          width 48%
+
+@media only screen and (max-width: 1024px)
+  .side
+    .list
+      width 48%
+  .list.-archive
+    width 100%
+    .datatitle
+      width 100%
+    .data
+      width 48%
+
+@media only screen and (max-width: 599px)
+  .side
+    .list
+      width 100%
+  .list.-archive
+    .data
+      width 100%
+
+/*********************************************
+    各個別コンテンツ
+*********************************************/
+/**
+トップページ
+*/
+/*ヘッダー（トップ）*/
+.home .header
+  @media only screen and (max-width: 1024px)
+    position absolute
+    z-index 250
+    padding 10px 0px
+    width 100%
+  @media only screen and (max-width: 599px)
+    .logo img
+      height 40px
+
+/*ホームビジュアル１（トップ）*/
+.homevisual01
+  .aspect
+    max-height 700px
+
+.list-home-hf
+  .wrap
+    display flex
+    height 700px
+  .pc, .sp
+    padding 0 10px
+  .pc
+    width calc(100% - 340px)
+  .sp
+    width 340px
+    text-align right
+  iframe
+    width 100%
+    height 100%
+    border 1px solid #000
+
+.main-template
+  position relative
+  &:before
+    display block
+    height 500px
+    background #eee
+    content ''
+  &:after
+    position absolute
+    top 50%
+    width 100%
+    content 'メインコンテンツ'
+    text-align center
+    font-size 28px
+    transform translateY(-50%)
+
+/**
+下層ページ共通要素
+*/
+/**
+下層ページ各コンテンツ
+*/

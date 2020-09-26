@@ -1,0 +1,13 @@
+{
+  "insertColons": false,
+  "insertSemicolons": false,
+  "insertBraces": false,
+  "tabStopChar": "  ",
+  "preserveNewLinesBetweenPropertyValues": true,
+  "insertSpaceAfterComment": false,
+  "insertNewLineAroundImports": false,
+  "insertNewLineAroundBlocks": "root",
+  "insertNewLineAroundProperties": true,
+  "insertNewLineAroundOthers ": false,
+  "sortProperties": "grouped"
+}

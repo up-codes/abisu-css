@@ -1,0 +1,92 @@
+/*===================================
+ 共通ページネーション　pager-cmp
+==================================*/
+/*ページネーション１*/
+.pagenation01
+  display flex
+  justify-content center
+  align-items center
+  .item
+    margin 0 10px
+  .prev
+    position relative
+    margin-right 20px
+    a:before
+      content "\f053"
+      font-weight 600
+      font-family "Font Awesome 5 Free"
+  .next
+    position relative
+    margin-left 20px
+    a:before
+      content "\f054"
+      font-weight 600
+      font-family "Font Awesome 5 Free"
+  a, .now
+    font-weight bold
+  .number a, .now
+    display block
+    padding 2px 8px
+    width 30px
+    height 30px
+    border-radius 50%
+    color #000
+    text-align center
+    font-size 20px
+    line-height 28px
+  .number a:hover, .now
+    background gray
+    color #fff
+    opacity 1
+  @media only screen and (max-width: 599px)
+    .item
+      margin 0 5px
+    .prev
+      margin-right 10px
+    .next
+      margin-left 10px
+
+/*ページネーション２*/
+.pagenation02
+  display flex
+  justify-content center
+  align-items center
+  .item
+    margin 0 10px
+  .item a, .now
+    display block
+    padding 2px 8px
+    width 30px
+    height 30px
+    border-radius 50%
+    color color2
+    text-align center
+    font-size 20px
+    line-height 27px
+    background #999
+    color #fff
+    font-weight bold
+  .item a:hover, .now
+    background #000
+    opacity 1
+  .prev
+    position relative
+    a
+      background #555
+    a:before
+      content "\f053"
+      font-weight 600
+      font-family "Font Awesome 5 Free"
+  .next
+    position relative
+    a
+      background #555
+    a:before
+      content "\f054"
+      font-weight 600
+      font-family "Font Awesome 5 Free"
+  @media only screen and (max-width: 599px)
+    .item
+      margin 0 5px
+    .item a, .now
+      font-size 16px

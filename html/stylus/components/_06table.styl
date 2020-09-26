@@ -1,0 +1,115 @@
+/*===================================
+ 共通テーブル　table-cmp
+==================================*/
+/*共通テーブル１*/
+.table-cmp01
+  .head
+    font-weight bold
+    font-size 18px
+  .txt
+    margin-bottom 10px
+    text-align right
+  .wrap
+    overflow auto
+  .table
+    width 100%
+    border-collapse collapse
+  .datattl, .data
+    padding 10px
+    min-width 200px
+    border 1px solid #999
+    vertical-align top
+  .datattl
+    width 30%
+    background #000
+    color #fff
+    text-align left
+  .data
+    &:first-of-type
+      width 40%
+    &:last-of-type
+      width 30%
+      text-align right
+
+/*共通テーブル２*/
+.table-cmp02
+  .head
+    margin-bottom 10px
+    text-align center
+    font-weight bold
+    font-size 18px
+  .txt
+    margin-top 5px
+    text-align right
+  .wrap
+    overflow auto
+  .table
+    width 100%
+    border 1px solid #999
+    border-collapse collapse
+  .datattl01
+    padding 5px
+    background #eee
+  .datattl02, .data
+    padding 5px
+  .data
+    text-align center
+
+/*共通テーブル３*/
+.table-cmp03
+  .head
+    margin-bottom 10px
+    font-weight bold
+    font-size 18px
+  .txt01
+    margin-bottom 10px
+  .txt02
+    margin-top 10px
+  .wrap
+    overflow auto
+  .table
+    width 100%
+    border-collapse collapse
+    border-bottom 1px solid #999
+  .item:nth-child(2n)
+    background #eee
+  .datattl01
+    padding 5px
+    background #999
+    color #fff
+  .datattl02, .data
+    padding 5px
+    min-width 100px
+  .data
+    text-align center
+
+
+/*共通テーブル４*/
+.table-cmp04
+  .warp
+    overflow auto
+  .table
+    width 100%
+  .datattl01
+    padding 5px
+    color color1
+    border-left 1px solid #000
+    border-bottom 1px solid #000
+    font-weight bold
+    &:first-child
+      border-left none
+  .datattl02
+    border-right 1px solid #000
+  .thead .datattl02
+    border-bottom 1px solid #000
+  .datattl03
+    border-bottom 1px solid #000
+    &:nth-child(2n)
+      border-left 1px solid #000
+  .datattl02, .data
+    padding 10px
+    min-width 55px
+  .data
+    text-align center
+    &:nth-child(2n)
+      border-left 1px solid #000
