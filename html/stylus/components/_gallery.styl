@@ -1,0 +1,74 @@
+/*ギャラリー１*/
+.up-gallery-hover
+  display flex
+  .img
+    width 70%
+  .list
+    display flex
+    flex-wrap wrap
+    align-content flex-start
+    width 30%
+  .item
+    margin-bottom 10px
+    padding 0 5px
+    width 50%
+    cursor pointer
+    transition .5s
+    opacity 1
+    &:hover
+      opacity .6
+  @media only screen and (max-width: 599px)
+    flex-wrap wrap
+    .img
+      margin-bottom 10px
+      width 100%
+    .list
+      width 100%
+    .item
+      width 25%
+
+/*ギャラリー２*/
+.up-gallery-auto
+  display flex
+  .mainblock
+    width 70%
+    .img
+      position relative
+      margin-bottom 10px
+    .head
+      position absolute
+      bottom 20px
+      left 20px
+      padding 10px
+      min-width 150px
+      background rgba(#fff, 0.8)
+      text-align center
+      font-weight bold
+      font-size 18px
+  .list
+    display flex
+    flex-wrap wrap
+    align-content flex-start
+    width 30%
+  .item
+    margin-bottom 10px
+    padding 0 5px
+    width 50%
+    .head
+      display none
+    .txt
+      display none
+  @media only screen and (max-width: 599px)
+    flex-wrap wrap
+    .mainblock
+      margin-bottom 10px
+      width 100%
+      .head
+        bottom 10px
+        left 10px
+        padding 5px 10px
+        font-size 16px
+    .list
+      width 100%
+    .item
+      width 25%

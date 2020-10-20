@@ -5,12 +5,7 @@
 ヘッダー
 header
 */
-[data-element-id]#header .sitettl
-  display block
-
-#header
-  .sitettl
-    display none
+.header
   &.fixed
     position fixed
     top 0
@@ -304,23 +299,6 @@ footer
 サイドメニュー
 side
 */
-.side
-  display flex
-  flex-wrap wrap
-  justify-content space-between
-  align-items flex-start
-  align-content flex-start
-  .section
-    margin-bottom 50px
-    width 100%
-  @media only screen and (max-width: 1024px)
-    .section
-      width 48%
-  @media only screen and (max-width: 599px)
-    .section
-      width 100%
-
-
 .list-side01
   .datattl
     position relative
@@ -354,31 +332,55 @@ side
         .data
           width 48%
 
-@media only screen and (max-width: 1024px)
-  .side
-    .list
-      width 48%
-  .list.-archive
-    width 100%
-    .datatitle
-      width 100%
-    .data
-      width 48%
 
-@media only screen and (max-width: 599px)
-  .side
-    .list
-      width 100%
-  .list.-archive
-    .data
-      width 100%
 
+.home,
+.animation
+  .pagettl
+    font-size 18px
+    display block
+    font-weight bold
+    margin-bottom 30px
+  .side
+    position fixed
+    background rgba(#fff, .9)
+    z-index 100
+    left 0
+    top 0
+    width 200px
+    height 100%
+    padding 20px 20px
+    box-shadow 0px 0px 5px 0px #ccc
+    transform translateX(calc(-100% + 1px))
+    transition .5s
+    &:hover
+      transform translateX(0)
+    .btn
+      position absolute
+      top 50%
+      left 100%
+      transform translateY(-50%)
+      cursor pointer
+      background rgba(#fff, .9)
+      text-align center
+      padding 10px 5px
+      &:after
+        content '\f054'
+        font-weight 600
+        font-family 'Font Awesome 5 Free'
+    .item
+      margin-bottom 10px
 /*********************************************
     各個別コンテンツ
 *********************************************/
 /**
-トップページ
+アニメーション
 */
+.animation
+  .none-animation
+    display none
+
+
 /*ヘッダー（トップ）*/
 .home .header
   @media only screen and (max-width: 1024px)
@@ -426,10 +428,3 @@ side
     text-align center
     font-size 28px
     transform translateY(-50%)
-
-/**
-下層ページ共通要素
-*/
-/**
-下層ページ各コンテンツ
-*/

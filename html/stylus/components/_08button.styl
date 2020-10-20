@@ -1,4 +1,1717 @@
-/*!********************************************
-    共通ボタン　btn-cmp
-*********************************************/
-/*!ボタン１*/
+/* ===================================
+	ボタン
+=================================== */
+[class^="up-btn"]
+	display inline-block
+	margin-right 5px
+	margin-bottom 5px
+	a:hover
+		opacity 1
+
+.up-btn01
+	a,
+	span
+		display inline-block
+		padding 10px 20px
+		background gray
+		color #fff
+		opacity 1
+		cursor pointer
+		transition 0.4s
+	a:hover,
+	span:hover
+		opacity 0.5
+
+.up-btn02
+	a,
+	span
+		display inline-block
+		padding 10px 20px
+		background gray
+		color #fff
+		opacity 1
+		cursor pointer
+		transition 0.4s
+		border 1px solid transparent
+	a:hover,
+	span:hover
+		opacity 1
+		color gray
+		background #fff
+		border-color gray
+
+.up-btn03
+	a,
+	span
+		display inline-block
+		padding 10px 20px
+		background gray
+		color #fff
+		opacity 1
+		cursor pointer
+		transition 0.4s
+	a:hover,
+	span:hover
+		opacity 1
+		background green
+
+
+btn-cmn-setting01()
+	display inline-block
+	padding 1em
+	cursor pointer
+	background #e1e1e1
+	color #666
+
+.up-btn-grow a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transition-duration 0.3s
+	transition-property transform
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-grow a:hover,
+.up-btn-grow a:focus,
+.up-btn-grow a:active
+	transform scale(1.1)
+
+/* Shrink */
+.up-btn-shrink a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transition-duration 0.3s
+	transition-property transform
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-shrink a:hover,
+.up-btn-shrink a:focus,
+.up-btn-shrink a:active
+	transform scale(0.9)
+
+/* Pulse */
+@keyframes up-btn-pulse
+	25%
+		transform scale(1.1)
+	75%
+		transform scale(0.9)
+
+.up-btn-pulse a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-pulse a:hover,
+.up-btn-pulse a:focus,
+.up-btn-pulse a:active
+	animation-name up-btn-pulse
+	animation-duration 1s
+	animation-timing-function linear
+	animation-iteration-count infinite
+
+/* Pulse Grow */
+@keyframes up-btn-pulse-grow
+	to
+		transform scale(1.1)
+
+.up-btn-pulse-grow a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-pulse-grow a:hover,
+.up-btn-pulse-grow a:focus,
+.up-btn-pulse-grow a:active
+	animation-name up-btn-pulse-grow
+	animation-duration 0.3s
+	animation-timing-function linear
+	animation-iteration-count infinite
+	animation-direction alternate
+
+/* Pulse Shrink */
+@keyframes up-btn-pulse-shrink
+	to
+		transform scale(0.9)
+
+.up-btn-pulse-shrink a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-pulse-shrink a:hover,
+.up-btn-pulse-shrink a:focus,
+.up-btn-pulse-shrink a:active
+	animation-name up-btn-pulse-shrink
+	animation-duration 0.3s
+	animation-timing-function linear
+	animation-iteration-count infinite
+	animation-direction alternate
+
+/* Push */
+@keyframes up-btn-push
+	50%
+		transform scale(0.8)
+	100%
+		transform scale(1)
+
+.up-btn-push a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-push a:hover,
+.up-btn-push a:focus,
+.up-btn-push a:active
+	animation-name up-btn-push
+	animation-duration 0.3s
+	animation-timing-function linear
+	animation-iteration-count 1
+
+/* Pop */
+@keyframes up-btn-pop
+	50%
+		transform scale(1.2)
+
+.up-btn-pop a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-pop a:hover,
+.up-btn-pop a:focus,
+.up-btn-pop a:active
+	animation-name up-btn-pop
+	animation-duration 0.3s
+	animation-timing-function linear
+	animation-iteration-count 1
+
+/* Rotate */
+.up-btn-rotate a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transition-duration 0.3s
+	transition-property transform
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-rotate a:hover,
+.up-btn-rotate a:focus,
+.up-btn-rotate a:active
+	transform rotate(4deg)
+
+/* Float */
+.up-btn-float a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transition-timing-function ease-out
+	transition-duration 0.3s
+	transition-property transform
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-float a:hover,
+.up-btn-float a:focus,
+.up-btn-float a:active
+	transform translateY(-8px)
+
+/* Sink */
+.up-btn-sink a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transition-timing-function ease-out
+	transition-duration 0.3s
+	transition-property transform
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-sink a:hover,
+.up-btn-sink a:focus,
+.up-btn-sink a:active
+	transform translateY(8px)
+
+/* Hang */
+@keyframes up-btn-hang
+	0%
+		transform translateY(8px)
+	50%
+		transform translateY(4px)
+	100%
+		transform translateY(8px)
+
+@keyframes up-btn-hang-sink
+	100%
+		transform translateY(8px)
+
+.up-btn-hang a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-hang a:hover,
+.up-btn-hang a:focus,
+.up-btn-hang a:active
+	animation-name up-btn-hang-sink,up-btn-hang
+	animation-duration 0.3s,1.5s
+	animation-timing-function ease-out,ease-in-out
+	animation-delay 0s,0.3s
+	animation-iteration-count 1,infinite
+	animation-direction normal,alternate
+	animation-fill-mode forwards
+
+/* Skew */
+.up-btn-skew a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transition-duration 0.3s
+	transition-property transform
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-skew a:hover,
+.up-btn-skew a:focus,
+.up-btn-skew a:active
+	transform skew(-10deg)
+
+/* Skew Forward */
+.up-btn-skew-forward a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transition-duration 0.3s
+	transition-property transform
+	transform perspective(1px) translateZ(0)
+	transform-origin 0 100%
+	btn-cmn-setting01()
+
+.up-btn-skew-forward a:hover,
+.up-btn-skew-forward a:focus,
+.up-btn-skew-forward a:active
+	transform skew(-10deg)
+
+/* Wobble Vertical */
+@keyframes up-btn-wobble-vertical
+	16.65%
+		transform translateY(8px)
+	33.3%
+		transform translateY(-6px)
+	49.95%
+		transform translateY(4px)
+	66.6%
+		transform translateY(-2px)
+	83.25%
+		transform translateY(1px)
+	100%
+		transform translateY(0)
+
+.up-btn-wobble-vertical a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-wobble-vertical a:hover,
+.up-btn-wobble-vertical a:focus,
+.up-btn-wobble-vertical a:active
+	animation-name up-btn-wobble-vertical
+	animation-duration 1s
+	animation-timing-function ease-in-out
+	animation-iteration-count 1
+
+/* Wobble Horizontal */
+@keyframes up-btn-wobble-horizontal
+	16.65%
+		transform translateX(8px)
+	33.3%
+		transform translateX(-6px)
+	49.95%
+		transform translateX(4px)
+	66.6%
+		transform translateX(-2px)
+	83.25%
+		transform translateX(1px)
+	100%
+		transform translateX(0)
+
+.up-btn-wobble-horizontal a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-wobble-horizontal a:hover,
+.up-btn-wobble-horizontal a:focus,
+.up-btn-wobble-horizontal a:active
+	animation-name up-btn-wobble-horizontal
+	animation-duration 1s
+	animation-timing-function ease-in-out
+	animation-iteration-count 1
+
+/* Wobble Top */
+@keyframes up-btn-wobble-top
+	16.65%
+		transform skew(-12deg)
+	33.3%
+		transform skew(10deg)
+	49.95%
+		transform skew(-6deg)
+	66.6%
+		transform skew(4deg)
+	83.25%
+		transform skew(-2deg)
+	100%
+		transform skew(0)
+
+.up-btn-wobble-top a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transform perspective(1px) translateZ(0)
+	transform-origin 0 100%
+	btn-cmn-setting01()
+
+.up-btn-wobble-top a:hover,
+.up-btn-wobble-top a:focus,
+.up-btn-wobble-top a:active
+	animation-name up-btn-wobble-top
+	animation-duration 1s
+	animation-timing-function ease-in-out
+	animation-iteration-count 1
+
+/* Wobble Bottom */
+@keyframes up-btn-wobble-bottom
+	16.65%
+		transform skew(-12deg)
+	33.3%
+		transform skew(10deg)
+	49.95%
+		transform skew(-6deg)
+	66.6%
+		transform skew(4deg)
+	83.25%
+		transform skew(-2deg)
+	100%
+		transform skew(0)
+
+.up-btn-wobble-bottom a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transform perspective(1px) translateZ(0)
+	transform-origin 100% 0
+	btn-cmn-setting01()
+
+.up-btn-wobble-bottom a:hover,
+.up-btn-wobble-bottom a:focus,
+.up-btn-wobble-bottom a:active
+	animation-name up-btn-wobble-bottom
+	animation-duration 1s
+	animation-timing-function ease-in-out
+	animation-iteration-count 1
+
+/* BORDER TRANSITIONS */
+/* Border Fade */
+.up-btn-border-fade a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	box-shadow inset 0 0 0 4px #e1e1e1,0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transition-duration 0.3s
+	transition-property box-shadow
+	transform perspective(1px) translateZ(0)
+	/* Hack to improve aliasing on mobile/tablet devices */
+	btn-cmn-setting01()
+
+.up-btn-border-fade a:hover,
+.up-btn-border-fade a:focus,
+.up-btn-border-fade a:active
+	box-shadow inset 0 0 0 4px #2098D1,0 0 1px rgba(0,0,0,0)
+	/* Hack to improve aliasing on mobile/tablet devices */
+
+/* Hollow */
+.up-btn-hollow a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	box-shadow inset 0 0 0 4px #e1e1e1,0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transition-duration 0.3s
+	transition-property background
+	transform perspective(1px) translateZ(0)
+	/* Hack to improve aliasing on mobile/tablet devices */
+	btn-cmn-setting01()
+
+.up-btn-hollow a:hover,
+.up-btn-hollow a:focus,
+.up-btn-hollow a:active
+	background none
+
+/* Trim */
+.up-btn-trim a
+	position relative
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-trim a:before
+	position absolute
+	top 4px
+	right 4px
+	bottom 4px
+	left 4px
+	border white solid 4px
+	content ""
+	opacity 0
+	transition-duration 0.3s
+	transition-property opacity
+
+.up-btn-trim a:hover:before,
+.up-btn-trim a:focus:before,
+.up-btn-trim a:active:before
+	opacity 1
+
+/* Outline Out */
+.up-btn-outline-out a
+	position relative
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-outline-out a:before
+	position absolute
+	top 0
+	right 0
+	bottom 0
+	left 0
+	border #e1e1e1 solid 4px
+	content ""
+	transition-duration 0.3s
+	transition-property top,right,bottom,left
+
+.up-btn-outline-out a:hover:before,
+.up-btn-outline-out a:focus:before,
+.up-btn-outline-out a:active:before
+	top -8px
+	right -8px
+	bottom -8px
+	left -8px
+
+/* Outline In */
+.up-btn-outline-in a
+	position relative
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-outline-in a:before
+	position absolute
+	top -16px
+	right -16px
+	bottom -16px
+	left -16px
+	border #e1e1e1 solid 4px
+	content ""
+	opacity 0
+	transition-duration 0.3s
+	transition-property top,right,bottom,left
+	pointer-events none
+
+.up-btn-outline-in a:hover:before,
+.up-btn-outline-in a:focus:before,
+.up-btn-outline-in a:active:before
+	top -8px
+	right -8px
+	bottom -8px
+	left -8px
+	opacity 1
+
+/* Round Corners */
+.up-btn-round-corners a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transition-duration 0.3s
+	transition-property border-radius
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-round-corners a:hover,
+.up-btn-round-corners a:focus,
+.up-btn-round-corners a:active
+	border-radius 1em
+
+/* SHADOW/GLOW TRANSITIONS */
+/* Glow */
+.up-btn-glow a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transition-duration 0.3s
+	transition-property box-shadow
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-glow a:hover,
+.up-btn-glow a:focus,
+.up-btn-glow a:active
+	box-shadow 0 0 8px rgba(0,0,0,0.6)
+
+/* Shadow */
+.up-btn-shadow a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transition-duration 0.3s
+	transition-property box-shadow
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-shadow a:hover,
+.up-btn-shadow a:focus,
+.up-btn-shadow a:active
+	box-shadow 0 10px 10px -10px rgba(0,0,0,0.5)
+
+/* Grow Shadow */
+.up-btn-grow-shadow a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transition-duration 0.3s
+	transition-property box-shadow,transform
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-grow-shadow a:hover,
+.up-btn-grow-shadow a:focus,
+.up-btn-grow-shadow a:active
+	box-shadow 0 10px 10px -10px rgba(0,0,0,0.5)
+	transform scale(1.1)
+
+/* Box Shadow Outset */
+.up-btn-box-shadow-outset a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transition-duration 0.3s
+	transition-property box-shadow
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-box-shadow-outset a:hover,
+.up-btn-box-shadow-outset a:focus,
+.up-btn-box-shadow-outset a:active
+	box-shadow 2px 2px 2px rgba(0,0,0,0.6)
+
+/* Box Shadow Inset */
+.up-btn-box-shadow-inset a
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	box-shadow inset 0 0 0 rgba(0,0,0,0.6),0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transition-duration 0.3s
+	transition-property box-shadow
+	transform perspective(1px) translateZ(0)
+	/* Hack to improve aliasing on mobile/tablet devices */
+	btn-cmn-setting01()
+
+.up-btn-box-shadow-inset a:hover,
+.up-btn-box-shadow-inset a:focus,
+.up-btn-box-shadow-inset a:active
+	box-shadow inset 2px 2px 2px rgba(0,0,0,0.6),0 0 1px rgba(0,0,0,0)
+	/* Hack to improve aliasing on mobile/tablet devices */
+
+/* Float Shadow */
+.up-btn-float-shadow a
+	position relative
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transition-duration 0.3s
+	transition-property transform
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-float-shadow a: before
+	position absolute
+	top 100%
+	left 5%
+	z-index -1
+	width 90%
+	height 10px
+	background -webkit-radial-gradient(center,ellipse,rgba(0,0,0,0.35) 0%,rgba(0,0,0,0) 80%)
+	background radial-gradient(ellipse at center,rgba(0,0,0,0.35) 0%,rgba(0,0,0,0) 80%)
+	content ""
+	opacity 0
+	/* W3C */
+	transition-duration 0.3s
+	transition-property transform,opacity
+	pointer-events none
+
+.up-btn-float-shadow a:hover,
+.up-btn-float-shadow a:focus,
+.up-btn-float-shadow a:active
+	transform translateY(-5px)
+	/* move the element up by 5px */
+
+.up-btn-float-shadow a:hover:before,
+.up-btn-float-shadow a:focus:before,
+.up-btn-float-shadow a:active:before
+	opacity 1
+	transform translateY(5px)
+	/* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+
+/* Shadow Radial */
+.up-btn-shadow-radial a
+	position relative
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-shadow-radial a:before,
+.up-btn-shadow-radial a:after
+	position absolute
+	left 0
+	box-sizing border-box
+	width 100%
+	height 5px
+	background-repeat no-repeat
+	content ""
+	opacity 0
+	transition-duration 0.3s
+	transition-property opacity
+	pointer-events none
+
+.up-btn-shadow-radial a:before
+	bottom 100%
+	background -webkit-radial-gradient(50% 150%,ellipse,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 80%)
+	background radial-gradient(ellipse at 50% 150%,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 80%)
+
+.up-btn-shadow-radial a:after
+	top 100%
+	background -webkit-radial-gradient(50% -50%,ellipse,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 80%)
+	background radial-gradient(ellipse at 50% -50%,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 80%)
+
+.up-btn-shadow-radial a:hover:before,
+.up-btn-shadow-radial a:focus:before,
+.up-btn-shadow-radial a:active:before,
+.up-btn-shadow-radial a:hover:after,
+.up-btn-shadow-radial a:focus:after,
+.up-btn-shadow-radial a:active:after
+	opacity 1
+
+/* SPEECH BUBBLES */
+/* Bubble Top */
+.up-btn-bubble-top a
+	position relative
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-bubble-top a:before
+	position absolute
+	top 0
+	left calc(50% - 10px)
+	z-index -1
+	border-width 0 10px 10px 10px
+	border-style solid
+	border-color transparent transparent #e1e1e1 transparent
+	content ""
+	transition-duration 0.3s
+	transition-property transform
+	pointer-events none
+
+.up-btn-bubble-top a:hover:before,
+.up-btn-bubble-top a:focus:before,
+.up-btn-bubble-top a:active:before
+	transform translateY(-10px)
+
+/* Bubble Right */
+.up-btn-bubble-right a
+	position relative
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-bubble-right a:before
+	position absolute
+	top calc(50% - 10px)
+	right 0
+	z-index -1
+	border-width 10px 0 10px 10px
+	border-style solid
+	border-color transparent transparent transparent #e1e1e1
+	content ""
+	transition-duration 0.3s
+	transition-property transform
+	pointer-events none
+
+.up-btn-bubble-right a:hover:before,
+.up-btn-bubble-right a:focus:before,
+.up-btn-bubble-right a:active:before
+	transform translateX(10px)
+
+/* Bubble Bottom */
+.up-btn-bubble-bottom a
+	position relative
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-bubble-bottom a:before
+	position absolute
+	bottom 0
+	left calc(50% - 10px)
+	z-index -1
+	border-width 10px 10px 0 10px
+	border-style solid
+	border-color #e1e1e1 transparent transparent transparent
+	content ""
+	transition-duration 0.3s
+	transition-property transform
+	pointer-events none
+
+.up-btn-bubble-bottom a:hover:before,
+.up-btn-bubble-bottom a:focus:before,
+.up-btn-bubble-bottom a:active:before
+	transform translateY(10px)
+
+/* Bubble Left */
+.up-btn-bubble-left a
+	position relative
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-bubble-left a:before
+	position absolute
+	top calc(50% - 10px)
+	left 0
+	z-index -1
+	border-width 10px 10px 10px 0
+	border-style solid
+	border-color transparent #e1e1e1 transparent transparent
+	content ""
+	transition-duration 0.3s
+	transition-property transform
+	pointer-events none
+
+.up-btn-bubble-left a:hover:before,
+.up-btn-bubble-left a:focus:before,
+.up-btn-bubble-left a:active:before
+	transform translateX(-10px)
+
+/* Bubble Float Top */
+.up-btn-bubble-float-top a
+	position relative
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transition-duration 0.3s
+	transition-property transform
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-bubble-float-top a:before
+	position absolute
+	top 0
+	left calc(50% - 10px)
+	z-index -1
+	border-width 0 10px 10px 10px
+	border-style solid
+	border-color transparent transparent #e1e1e1 transparent
+	content ""
+	transition-duration 0.3s
+	transition-property transform
+
+.up-btn-bubble-float-top a:hover,
+.up-btn-bubble-float-top a:focus,
+.up-btn-bubble-float-top a:active
+	transform translateY(10px)
+
+.up-btn-bubble-float-top a:hover:before,
+.up-btn-bubble-float-top a:focus:before,
+.up-btn-bubble-float-top a:active:before
+	transform translateY(-10px)
+
+/* Bubble Float Right */
+.up-btn-bubble-float-right a
+	position relative
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transition-duration 0.3s
+	transition-property transform
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-bubble-float-right a:before
+	position absolute
+	top calc(50% - 10px)
+	right 0
+	z-index -1
+	border-width 10px 0 10px 10px
+	border-style solid
+	border-color transparent transparent transparent #e1e1e1
+	content ""
+	transition-duration 0.3s
+	transition-property transform
+
+.up-btn-bubble-float-right a:hover,
+.up-btn-bubble-float-right a:focus,
+.up-btn-bubble-float-right a:active
+	transform translateX(-10px)
+
+.up-btn-bubble-float-right a:hover:before,
+.up-btn-bubble-float-right a:focus:before,
+.up-btn-bubble-float-right a:active:before
+	transform translateX(10px)
+
+/* Bubble Float Bottom */
+.up-btn-bubble-float-bottom a
+	position relative
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transition-duration 0.3s
+	transition-property transform
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-bubble-float-bottom a:before
+	position absolute
+	bottom 0
+	left calc(50% - 10px)
+	z-index -1
+	border-width 10px 10px 0 10px
+	border-style solid
+	border-color #e1e1e1 transparent transparent transparent
+	content ""
+	transition-duration 0.3s
+	transition-property transform
+
+.up-btn-bubble-float-bottom a:hover,
+.up-btn-bubble-float-bottom a:focus,
+.up-btn-bubble-float-bottom a:active
+	transform translateY(-10px)
+
+.up-btn-bubble-float-bottom a:hover:before,
+.up-btn-bubble-float-bottom a:focus:before,
+.up-btn-bubble-float-bottom a:active:before
+	transform translateY(10px)
+
+/* Bubble Float Left */
+.up-btn-bubble-float-left a
+	position relative
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transition-duration 0.3s
+	transition-property transform
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-bubble-float-left a:before
+	position absolute
+	top calc(50% - 10px)
+	left 0
+	z-index -1
+	border-width 10px 10px 10px 0
+	border-style solid
+	border-color transparent #e1e1e1 transparent transparent
+	content ""
+	transition-duration 0.3s
+	transition-property transform
+
+.up-btn-bubble-float-left a:hover,
+.up-btn-bubble-float-left a:focus,
+.up-btn-bubble-float-left a:active
+	transform translateX(10px)
+
+.up-btn-bubble-float-left a:hover:before,
+.up-btn-bubble-float-left a:focus:before,
+.up-btn-bubble-float-left a:active:before
+	transform translateX(-10px)
+
+/* CURLS */
+/* Curl Top Left */
+.up-btn-curl-top-left a
+	position relative
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-curl-top-left a:before
+	position absolute
+	top 0
+	left 0
+	/* For IE7-8-9 */
+	z-index 1000
+	width 0
+	height 0
+	background white
+	/* IE9 */
+	background linear-gradient(135deg,white 45%,#aaa 50%,#ccc 56%,white 80%)
+	box-shadow 1px 1px 1px rgba(0,0,0,0.4)
+	content ""
+	transition-duration 0.3s
+	transition-property width,height
+	pointer-events none
+
+.up-btn-curl-top-left a:hover:before,
+.up-btn-curl-top-left a:focus:before,
+.up-btn-curl-top-left a:active:before
+	width 25px
+	height 25px
+
+/* Curl Top Right */
+.up-btn-curl-top-right a
+	position relative
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-curl-top-right a:before
+	position absolute
+	top 0
+	right 0
+	width 0
+	height 0
+	background white
+	/* IE9 */
+	background linear-gradient(225deg,white 45%,#aaa 50%,#ccc 56%,white 80%)
+	box-shadow -1px 1px 1px rgba(0,0,0,0.4)
+	content ""
+	transition-duration 0.3s
+	transition-property width,height
+	pointer-events none
+
+.up-btn-curl-top-right a:hover:before,
+.up-btn-curl-top-right a:focus:before,
+.up-btn-curl-top-right a:active:before
+	width 25px
+	height 25px
+
+/* Curl Bottom Right */
+.up-btn-curl-bottom-right a
+	position relative
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-curl-bottom-right a:before
+	position absolute
+	right 0
+	bottom 0
+	width 0
+	height 0
+	background white
+	/* IE9 */
+	background linear-gradient(315deg,white 45%,#aaa 50%,#ccc 56%,white 80%)
+	box-shadow -1px -1px 1px rgba(0,0,0,0.4)
+	content ""
+	transition-duration 0.3s
+	transition-property width,height
+	pointer-events none
+
+.up-btn-curl-bottom-right a:hover:before,
+.up-btn-curl-bottom-right a:focus:before,
+.up-btn-curl-bottom-right a:active:before
+	width 25px
+	height 25px
+
+/* Curl Bottom Left */
+.up-btn-curl-bottom-left a
+	position relative
+	display inline-block
+	box-shadow 0 0 1px rgba(0,0,0,0)
+	vertical-align middle
+	transform perspective(1px) translateZ(0)
+	btn-cmn-setting01()
+
+.up-btn-curl-bottom-left a:before
+	position absolute
+	bottom 0
+	left 0
+	width 0
+	height 0
+	background white
+	/* IE9 */
+	background linear-gradient(45deg,white 45%,#aaa 50%,#ccc 56%,white 80%)
+	box-shadow 1px -1px 1px rgba(0,0,0,0.4)
+	content ""
+	transition-duration 0.3s
+	transition-property width,height
+	pointer-events none
+
+.up-btn-curl-bottom-left a:hover:before,
+.up-btn-curl-bottom-left a:focus:before,
+.up-btn-curl-bottom-left a:active:before
+	width 25px
+	height 25px
+
+btn-cmn-setting02()
+	position relative
+	display block
+	overflow hidden
+	width 100%
+	max-width 250px
+	padding 20px
+	text-transform uppercase
+	border 1px solid currentColor
+	transition 0.5s ease-in-out
+	color black
+	text-align center
+
+btn-cmn-setting02ba()
+	z-index -1
+	transition 0.5s ease-in-out
+
+.up-btn-swipe a
+	color #38a55a
+	btn-cmn-setting02()
+
+.up-btn-swipe a:before
+	position absolute
+	top 0
+	right 0
+	bottom 0
+	left 0
+	background-color #0d5925
+	content ""
+	transform translateX(-100%)
+	btn-cmn-setting02ba()
+
+.up-btn-swipe a:hover
+	color #c5e5cf
+
+.up-btn-swipe a:hover:before
+	transform translateX(0)
+
+.up-btn-diagonal-swipe a
+	color #3b9242
+	btn-cmn-setting02()
+
+.up-btn-diagonal-swipe a:before
+	position absolute
+	top 0
+	right -50px
+	bottom 0
+	left 0
+	border-right 50px solid transparent
+	border-bottom 80px solid #0e4c14
+	content ""
+	transform translateX(-100%)
+	btn-cmn-setting02ba()
+
+.up-btn-diagonal-swipe a:hover
+	color #c5dfc8
+
+.up-btn-diagonal-swipe a:hover:before
+	transform translateX(0)
+
+.up-btn-double-swipe a
+	color #293959
+	btn-cmn-setting02()
+
+.up-btn-double-swipe a:before,
+.up-btn-double-swipe a:after
+	position absolute
+	top 0
+	right 0
+	bottom 0
+	left 0
+	border-bottom 80px solid #020d24
+	content ""
+	btn-cmn-setting02ba()
+
+.up-btn-double-swipe a:before
+	right -50px
+	border-right 50px solid transparent
+	transform translateX(-100%)
+
+.up-btn-double-swipe a:after
+	left -50px
+	border-left 50px solid transparent
+	transform translateX(100%)
+
+.up-btn-double-swipe a:hover
+	color #c0c5ce
+
+.up-btn-double-swipe a:hover:before
+	transform translateX(-40%)
+
+.up-btn-double-swipe a:hover:after
+	transform translateX(40%)
+
+.up-btn-diagonal-close a
+	color #2c8d4a
+	btn-cmn-setting02()
+
+.up-btn-diagonal-close a:before,
+.up-btn-diagonal-close a:after
+	position absolute
+	top 0
+	right 0
+	bottom 0
+	left 0
+	content ""
+	btn-cmn-setting02ba()
+
+.up-btn-diagonal-close a:before
+	right -50px
+	border-right 50px solid transparent
+	border-bottom 80px solid #044919
+	transform translateX(-100%)
+
+.up-btn-diagonal-close a:after
+	left -50px
+	border-top 80px solid #044919
+	border-left 50px solid transparent
+	transform translateX(100%)
+
+.up-btn-diagonal-close a:hover
+	color #c1deca
+
+.up-btn-diagonal-close a:hover:before
+	transform translateX(-49%)
+
+.up-btn-diagonal-close a:hover:after
+	transform translateX(49%)
+
+.up-btn-zoning-in a
+	btn-cmn-setting02()
+
+.up-btn-zoning-in a:before,
+.up-btn-zoning-in a:after
+	position absolute
+	top 0
+	right 0
+	bottom 0
+	left 0
+	border-top 40px solid #4c546e
+	border-bottom 40px solid #4c546e
+	content ""
+	btn-cmn-setting02ba()
+
+.up-btn-zoning-in a:before
+	border-right 40px solid transparent
+	transform translateX(-100%)
+
+.up-btn-zoning-in a:after
+	border-left 40px solid transparent
+	transform translateX(100%)
+
+.up-btn-zoning-in a:hover
+	color #dfe2ed
+
+.up-btn-zoning-in a:hover:before
+	transform translateX(-30%)
+
+.up-btn-zoning-in a:hover:after
+	transform translateX(30%)
+
+.up-btn-four-corners a
+	color #b76e93
+	btn-cmn-setting02()
+
+.up-btn-four-corners a:before,
+.up-btn-four-corners a:after,
+.up-btn-four-corners a span:before,
+.up-btn-four-corners a span:after
+	position absolute
+	top 0
+	right 0
+	bottom 0
+	left 0
+	background-color #66324d
+	content ""
+	btn-cmn-setting02ba()
+
+.up-btn-four-corners a:before
+	transform translate(-100%,-100%)
+
+.up-btn-four-corners a:after
+	transform translate(-100%,100%)
+
+.up-btn-four-corners a span:before
+	transform translate(100%,-100%)
+
+.up-btn-four-corners a span:after
+	transform translate(100%,100%)
+
+.up-btn-four-corners a:hover
+	color #ead4df
+
+.up-btn-four-corners a:hover:before
+	transform translate(-50%,-50%)
+
+.up-btn-four-corners a:hover:after
+	transform translate(-50%,50%)
+
+.up-btn-four-corners a:hover span:before
+	transform translate(50%,-50%)
+
+.up-btn-four-corners a:hover span:after
+	transform translate(50%,50%)
+
+.up-btn-slice a
+	color #972f81
+	btn-cmn-setting02()
+
+.up-btn-slice a:after
+	position absolute
+	top 0
+	right 0
+	width 0
+	height 0
+	border-width 0 0 0 0
+	border-style solid
+	border-color transparent #500640 transparent transparent
+	content ""
+
+.up-btn-slice a:before
+	position absolute
+	bottom 0
+	left 0
+	width 0
+	height 0
+	border-width 0 0 0 0
+	border-style solid
+	border-color transparent transparent transparent #500640
+	content ""
+
+.up-btn-slice a:before,
+.up-btn-slice a:after
+	position absolute
+	width 0
+	height 0
+	border 0 solid
+	content ""
+	transform rotate(360deg)
+	btn-cmn-setting02ba()
+
+.up-btn-slice a:before
+	bottom 0
+	left 0
+	border-color transparent transparent transparent #500640
+
+.up-btn-slice a:after
+	top 0
+	right 0
+	border-color transparent #500640 transparent transparent
+
+.up-btn-slice a:hover
+	color #e1c2da
+
+.up-btn-slice a:hover:before,
+.up-btn-slice a:hover:after
+	border-width 80px 262.5px
+
+.up-btn-position-aware a
+	color #542d7b
+	btn-cmn-setting02()
+
+.up-btn-position-aware a span
+	position absolute
+	z-index -1
+	display block
+	width 0
+	height 0
+	border-radius 50%
+	background-color #20053c
+	transition width 0.4s ease-in-out,height 0.4s ease-in-out
+	transform translate(-50%,-50%)
+
+.up-btn-position-aware a:hover
+	color #cdc1d8
+
+.up-btn-position-aware a:hover span
+	width 225%
+	height 562.5px
+
+.up-btn-position-aware a:active
+	background-color #360864
+
+.up-btn-alternate a
+	color #60bf42
+	btn-cmn-setting02()
+
+.up-btn-alternate a:before,
+.up-btn-alternate a:after,
+.up-btn-alternate a span:before,
+.up-btn-alternate a span:after
+	position absolute
+	top 0
+	width 25.25%
+	height 0
+	background-color #296c14
+	content ""
+	btn-cmn-setting02ba()
+
+.up-btn-alternate a:before
+	left 0
+
+.up-btn-alternate a:after
+	left 50%
+
+.up-btn-alternate a span:before,
+.up-btn-alternate a span:after
+	top auto
+	bottom 0
+
+.up-btn-alternate a span:before
+	left 25%
+
+.up-btn-alternate a span:after
+	left 75%
+
+.up-btn-alternate a:hover
+	color #d0ecc8
+
+.up-btn-alternate a:hover:before,
+.up-btn-alternate a:hover:after,
+.up-btn-alternate a:hover span:before,
+.up-btn-alternate a:hover span:after
+	height 80px
+
+.up-btn-smoosh a
+	color #9bb46a
+	btn-cmn-setting02()
+
+.up-btn-smoosh a:before,
+.up-btn-smoosh a:after
+	position absolute
+	top 0
+	right 0
+	bottom 0
+	left 0
+	background-color #526430
+	content ""
+	btn-cmn-setting02ba()
+
+.up-btn-smoosh a:before
+	transform translateY(-100%)
+
+.up-btn-smoosh a:after
+	transform translateY(100%)
+
+.up-btn-smoosh a:hover
+	color #e2e9d3
+
+.up-btn-smoosh a:hover:before
+	transform translateY(-50%)
+
+.up-btn-smoosh a:hover:after
+	transform translateY(50%)
+
+.up-btn-vertical-overlap a
+	color #7a83af
+	btn-cmn-setting02()
+
+.up-btn-vertical-overlap a:before,
+.up-btn-vertical-overlap a:after,
+.up-btn-vertical-overlap a span:before,
+.up-btn-vertical-overlap a span:after
+	position absolute
+	top 0
+	left 0
+	width 100%
+	height 0
+	background-color rgba(59,65,97,0.25)
+	content ""
+	transition 0.4s ease-in-out
+	btn-cmn-setting02ba()
+
+.up-btn-vertical-overlap a:after,
+.up-btn-vertical-overlap a span:before
+	top auto
+	bottom 0
+
+.up-btn-vertical-overlap a span:before,
+.up-btn-vertical-overlap a span:after
+	transition-delay 0.4s
+
+.up-btn-vertical-overlap a:hover
+	color #d8dbe8
+
+.up-btn-vertical-overlap a:hover:before,
+.up-btn-vertical-overlap a:hover:after,
+.up-btn-vertical-overlap a:hover span:before,
+.up-btn-vertical-overlap a:hover span:after
+	height 80px
+
+.up-btn-vertical-overlap a:active
+	background-color #626da1
+
+.up-btn-horizontal-overlap a
+	color #47593e
+	btn-cmn-setting02()
+
+.up-btn-horizontal-overlap a:before,
+.up-btn-horizontal-overlap a:after,
+.up-btn-horizontal-overlap a span:before,
+.up-btn-horizontal-overlap a span:after
+	position absolute
+	top 0
+	left 0
+	width 0
+	height 80px
+	background-color rgba(23,36,17,0.25)
+	content ""
+	transition 0.4s
+	btn-cmn-setting02ba()
+
+.up-btn-horizontal-overlap a:after,
+.up-btn-horizontal-overlap a span:before
+	right 0
+	left auto
+
+.up-btn-horizontal-overlap a span:before,
+.up-btn-horizontal-overlap a span:after
+	transition-delay 0.4s
+
+.up-btn-horizontal-overlap a:hover
+	color #c9cec6
+
+.up-btn-horizontal-overlap a:hover:before,
+.up-btn-horizontal-overlap a:hover:after,
+.up-btn-horizontal-overlap a:hover span:before,
+.up-btn-horizontal-overlap a:hover span:after
+	width 250px
+
+.up-btn-horizontal-overlap a:active
+	background-color #263c1c
+
+@keyframes criss-cross-left
+	0%
+		left -20px
+	50%
+		left 50%
+		width 20px
+		height 20px
+	100%
+		left 50%
+		width 375px
+		height 375px
+
+@keyframes criss-cross-right
+	0%
+		right -20px
+	50%
+		right 50%
+		width 20px
+		height 20px
+	100%
+		right 50%
+		width 375px
+		height 375px
+
+.up-btn-collision a
+	position relative
+	color #6361b9
+	btn-cmn-setting02()
+
+.up-btn-collision a:before,
+.up-btn-collision a:after
+	position absolute
+	top 50%
+	width 20px
+	height 20px
+	border-radius 50%
+	background-color #4845ad
+	content ""
+	btn-cmn-setting02ba()
+
+.up-btn-collision a:before
+	left -20px
+	transform translate(-50%,-50%)
+
+.up-btn-collision a:after
+	right -20px
+	transform translate(50%,-50%)
+
+.up-btn-collision a:hover
+	color #d1d1eb
+
+.up-btn-collision a:hover:before
+	animation criss-cross-left 0.8s both
+	animation-direction alternate
+
+.up-btn-collision a:hover:after
+	animation criss-cross-right 0.8s both
+	animation-direction alternate
+
+btn-cmn-setting03()
+	display block
+	width 320px
+	max-width 100%
+	margin 0 auto
+	margin-bottom 0
+	overflow hidden
+	position relative
+	transform translatez(0)
+	text-decoration none
+	box-sizing border-box
+	font-size 18px
+	text-align center
+
+.up-btn-rise a
+	padding 26px
+	border 1px solid #e5862d
+	color #1a1a1a
+	font-weight bold
+	transition all 0.5s ease-in-out 0s
+	btn-cmn-setting03()
+
+.up-btn-rise a .gradient
+	position absolute
+	top 0
+	right 0
+	bottom auto
+	z-index -1
+	display block
+	margin auto
+	width 100%
+	height 800%
+	background #6086c1
+	background -moz-linear-gradient(45deg,#6086c1 0%,#efe097 70%,#d66466 100%)
+	background -webkit-gradient(linear,left bottom,right top,color-stop(0%,#6086c1),color-stop(70%,#efe097),color-stop(100%,#d66466))
+	background -webkit-linear-gradient(45deg,#6086c1 0%,#efe097 70%,#d66466 100%)
+	background -o-linear-gradient(45deg,#6086c1 0%,#efe097 70%,#d66466 100%)
+	background -ms-linear-gradient(45deg,#6086c1 0%,#efe097 70%,#d66466 100%)
+	background linear-gradient(45deg,#6086c1 0%,#efe097 70%,#d66466 100%)
+	// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6086c1', endColorstr='#d66466',GradientType=1 );
+	transition all 0.5s ease-in-out 0s
+	transform translateY(0%)
+	-moz-transform translateY(0%)
+
+.up-btn-rise a:hover,
+.up-btn-rise a:focus
+	border 1px solid #72b4d3
+
+.up-btn-rise a:hover .gradient,
+.up-btn-rise a:focus .gradient
+	transform translateY(-85%)
+	-moz-transform translateY(-85%)
+
+.up-btn-spin a
+	padding 26px
+	border 1px solid rgba(255,255,255,0.4)
+	color #f0f0f0
+	transition all 500ms ease 0s
+	btn-cmn-setting03()
+
+.up-btn-spin a .gradient
+	position absolute
+	top 0
+	right 0
+	bottom auto
+	left -25px
+	z-index -1
+	display block
+	margin auto
+	background #e08e26
+	background -moz-linear-gradient(45deg,#e08e26 0%,#9826c1 0%,#1a1a1a 44%,#1a1a1a 56%,#5cbc5a 99%)
+	background -webkit-gradient(linear,left bottom,right top,color-stop(0%,#e08e26),color-stop(0%,#9826c1),color-stop(44%,#1a1a1a),color-stop(56%,#1a1a1a),color-stop(99%,#5cbc5a))
+	background -webkit-linear-gradient(45deg,#e08e26 0%,#9826c1 0%,#1a1a1a 44%,#1a1a1a 56%,#5cbc5a 99%)
+	background -o-linear-gradient(45deg,#e08e26 0%,#9826c1 0%,#1a1a1a 44%,#1a1a1a 56%,#5cbc5a 99%)
+	background -ms-linear-gradient(45deg,#e08e26 0%,#9826c1 0%,#1a1a1a 44%,#1a1a1a 56%,#5cbc5a 99%)
+	background linear-gradient(45deg,#e08e26 0%,#9826c1 0%,#1a1a1a 44%,#1a1a1a 56%,#5cbc5a 99%)
+	// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e08e26', endColorstr='#5cbc5a',GradientType=1 );
+	transition all 500ms ease 0s
+	transform rotate(-70deg)
+	-moz-transform rotate(-70deg)
+
+.up-btn-spin a:hover,
+.up-btn-spin a:focus
+	border 1px solid #f0f0f0
+	color #f0f0f0
+
+.up-btn-spin a:hover .gradient,
+.up-btn-spin a:focus .gradient
+	transform rotate(35deg)
+	-moz-transform rotate(35deg)
+
+.up-btn-sweep a
+	padding 26px
+	border 2px solid rgba(255,38,38,0.2)
+	border-radius 50px
+	background #000000
+	color #f0f0f0
+	transition all 0.2s ease-out 0s
+	btn-cmn-setting03()
+
+.up-btn-sweep a .gradient
+	position absolute
+	top 0
+	right 0
+	bottom auto
+	z-index -1
+	display block
+	margin auto
+	width 300%
+	height 100%
+	background black
+	background -moz-linear-gradient(90deg,black 0%,#ff2626 94%,black 100%)
+	background -webkit-gradient(linear,left bottom,right top,color-stop(0%,black),color-stop(94%,#ff2626),color-stop(100%,black))
+	background -webkit-linear-gradient(90deg,black 0%,#ff2626 94%,black 100%)
+	background -o-linear-gradient(90deg,black 0%,#ff2626 94%,black 100%)
+	background -ms-linear-gradient(90deg,black 0%,#ff2626 94%,black 100%)
+	background linear-gradient(90deg,black 0%,#ff2626 94%,black 100%)
+	// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=1 );
+	transition all 0s ease-out 0s
+	transform translateX(-35%)
+	-moz-transform translateX(-35%)
+
+.up-btn-sweep a:hover,
+.up-btn-sweep a:focus
+	border 2px solid rgba(255,38,38,0.8)
+	color #f0f0f0
+	transition all 0.3s ease-out 0.1s
+
+.up-btn-sweep a:hover .gradient,
+.up-btn-sweep a:focus .gradient
+	transition all 0.8s ease-out 0s
+	transform translateX(100%)
+	-moz-transform translateX(100%)

@@ -83,36 +83,36 @@ function Base() {
 
 
 /// animation(stylus)コンパイル //////////////////////////////////////////
-const srcAnimation = {
-  srcDir: 'html/stylus/animation.styl',
-  srcCom: [
-    'html/stylus/animation.styl'
-  ],
-  dstDir: 'html/css'
-}
+// const srcAnimation = {
+//   srcDir: 'html/stylus/animation.styl',
+//   srcCom: [
+//     'html/stylus/animation.styl'
+//   ],
+//   dstDir: 'html/css'
+// }
 
-function cacheAnimation() {
-  return src(srcAnimation.srcDir)
-    .pipe(cache('animation'))
-}
+// function cacheAnimation() {
+//   return src(srcAnimation.srcDir)
+//     .pipe(cache('animation'))
+// }
 
-function Animation() {
-  return src(srcAnimation.srcCom)
-    .pipe(sourcemaps.init())
-    .pipe(progeny())
-    .pipe(plumber({
-      errorHandler: notify.onError('Error: <%= error.message %>')
-    }))
-    .pipe(stylus({
-      compress: false
-    }))
-    .pipe(postcss([autoprefixer()]))
-    .pipe(sourcemaps.write('/'))
-    .pipe(dest(srcAnimation.dstDir))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-}
+// function Animation() {
+//   return src(srcAnimation.srcCom)
+//     .pipe(sourcemaps.init())
+//     .pipe(progeny())
+//     .pipe(plumber({
+//       errorHandler: notify.onError('Error: <%= error.message %>')
+//     }))
+//     .pipe(stylus({
+//       compress: false
+//     }))
+//     .pipe(postcss([autoprefixer()]))
+//     .pipe(sourcemaps.write('/'))
+//     .pipe(dest(srcAnimation.dstDir))
+//     .pipe(browserSync.reload({
+//       stream: true
+//     }))
+// }
 
 
 /// components(stylus)コンパイル //////////////////////////////////////////
@@ -214,7 +214,7 @@ const browserSyncFunc = () => {
 function watchFile() {
   watch(srcAbisu.srcDir, series(cacheAbisu, Abisu))
   watch(srcBase.srcDir, series(cacheBase, Base))
-  watch(srcAnimation.srcDir, series(cacheAnimation, Animation))
+  // watch(srcAnimation.srcDir, series(cacheAnimation, Animation))
   watch(srcComponents.srcDir, series(cacheComponents, Components))
   watch(srcContents.srcDir, series(cacheContents, Contents))
   watch(srcHTML.srcDir, HTML)

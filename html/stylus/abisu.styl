@@ -1,23 +1,29 @@
 /* 見たまま編集バリデーション */
-[datup-element-id] .up-none
+[data-element-id]
+  .up-relative\\\@edit
+    position relative
+  .up-absolute\\\@edit
+    position absolute
+
+[data-element-id] .up-none
   display inherit
 
-[datup-element-id] [class*="heightLine"]
+[data-element-id] [class*="heightLine"]
   height auto !important
 
-[datup-element-id] .fead-mv
+[data-element-id] .fead-mv
   opacity 1
-[datup-element-id] .fead-up
+[data-element-id] .fead-up
   opacity 1
   transform translateY(0)
-[datup-element-id] .fead-left
+[data-element-id] .fead-left
   opacity 1
   transform translate3d(0,0,0)
-[datup-element-id] .fead-right
+[data-element-id] .fead-right
   opacity 1
   transform translate3d(0,0,0)
 
-[datup-element-id] .imgalt
+[data-element-id] .imgalt
   position relative
   z-index 50
   overflow hidden
@@ -28,13 +34,13 @@
   text-align left
   font-size 14px
 
-[datup-element-id] .altcolor
+[data-element-id] .altcolor
   color red
 
-[datup-common-area]
+[data-common-area]
   position relative
 
-[datup-common-area]:hover:before
+[data-common-area]:hover:before
   position absolute !important
   bottom 100%
   left 50%
@@ -50,13 +56,13 @@
   font-size 12px
   transform translateX(-50%)
 
-a[datup-href="#"]
+a[data-href="#"]
   position relative !important
   display block
   border solid red 5px !important
   opacity 1
 
-a[datup-href="#"]:hover:before
+a[data-href="#"]:hover:before
   position absolute !important
   bottom 100%
   left 50%
@@ -71,13 +77,13 @@ a[datup-href="#"]:hover:before
   font-size 12px
   transform translateX(-50%)
 
-a[datup-href*="."]
+a[data-href*="."]
   position relative !important
   display block
   border solid red 5px !important
   opacity 1
 
-a[datup-href*="."]:hover:before
+a[data-href*="."]:hover:before
   position absolute !important
   bottom 100%
   left 50%
@@ -92,7 +98,7 @@ a[datup-href*="."]:hover:before
   font-size 12px
   transform translateX(-50%)
 
-[datup-element-id][datup-uk-slideshow]:hover:before
+[data-element-id][data-uk-slideshow]:hover:before
   position absolute
   z-index 1000
   display block
@@ -108,7 +114,7 @@ a[datup-href*="."]:hover:before
   font-size 12px
   line-height 1.8
 
-[datup-collection-list-content]:hover:before
+[data-collection-list-content]:hover:before
   position absolute
   z-index 1000
   display block
@@ -125,229 +131,289 @@ a[datup-href*="."]:hover:before
   line-height 1.8
 
 .up-flex
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     display flex
     width 100%
 
-.up-jc-start
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+.up-jc-fs
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     justify-content flex-start
 
-.up-jc-end
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+.up-jc-fe
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     justify-content flex-end
 
-.up-jc-center
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+.up-jc-c
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     justify-content center
 
-.up-jc-between
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+.up-jc-sb
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     justify-content space-between
 
-.up-jc-around
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+.up-jc-sa
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     justify-content space-around
 
-.up-jc-evenly
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+.up-jc-se
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     justify-content space-evenly
 
-.up-row
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+.up-fd-row
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     flex-direction row
 
-.up-rowr
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+.up-fd-rowr
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     flex-direction row-reverse
 
-.up-col
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+.up-fd-col
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     flex-direction column
 
-.up-colr
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+.up-fd-colr
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     flex-direction column-reverse
 
-.up-ai-start
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+.up-ai-fs
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     align-items flex-start
 
-.up-ai-center
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+.up-ai-c
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     align-items center
 
-.up-ai-end
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+.up-ai-fe
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     align-items flex-end
 
-.up-ai-baseline
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+.up-ai-b
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     align-items baseline
 
-.up-ai-stretch
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+.up-ai-s
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     align-items stretch
 
-.up-ac-start
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+.up-ac-fs
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     align-content flex-start
 
-.up-ac-center
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+.up-ac-c
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     align-content center
 
-.up-ac-end
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+.up-ac-fe
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     align-content flex-end
 
-.up-ac-between
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+.up-ac-sb
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     align-content space-between
 
-.up-ac-around
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+.up-ac-sa
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     align-content space-around
 
 .up-wrap
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     flex-wrap wrap
 
 .up-wrapr
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     flex-wrap wrap-reverse
 
 .up-nowrap
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     flex-wrap nowrap
 
 .up-col1
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     display flex
     flex-wrap wrap
     width 100%
     > *
       width 100%
 .up-col2
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     display flex
     flex-wrap wrap
     width 100%
     > *
       width 50%
 .up-col3
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     display flex
     flex-wrap wrap
     width 100%
     > *
       width 33.333%
 .up-col4
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     display flex
     flex-wrap wrap
     width 100%
     > *
       width 25%
 .up-col5
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     display flex
     flex-wrap wrap
     width 100%
     > *
       width 20%
 .up-col6
-  > div[datup-collection-list-content],
-  > div[datup-recommend-collection-list-content],
-  > div[datup-collection-filtered-content],
-  > div[datup-collection-archive-content]
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
     display flex
     flex-wrap wrap
     width 100%
@@ -356,56 +422,149 @@ a[datup-href*="."]:hover:before
 
 for gapy in range(0,100,10)
   .up-gapy{gapy}
-    > div[datup-collection-list-content],
-    > div[datup-recommend-collection-list-content],
-    > div[datup-collection-filtered-content],
-    > div[datup-collection-archive-content]
+    > div[data-collection-list-content],
+    > div[data-recommend-collection-list-content],
+    > div[data-collection-filtered-content],
+    > div[data-collection-archive-content],
+    > div[data-product-list-content],
+    > div[data-product-recommend-content]
       > *
         margin-bottom gapy px
+
+for gapx-px in range(0,30,5)
+  .up-gapx{gapx-px}
+    > div[data-collection-list-content],
+    > div[data-recommend-collection-list-content],
+    > div[data-collection-filtered-content],
+    > div[data-collection-archive-content],
+    > div[data-product-list-content],
+    > div[data-product-recommend-content]
+      margin-left -(gapx-px/2)px
+      margin-right -(gapx-px/2)px
+      > *
+        margin-left (ceil((gapx-px/2),3))px
+        margin-right (ceil((gapx-px/2),3))px
+for gapx-px in range(0,30,5)
+  .up-col1.up-gapx{gapx-px}
+    > div[data-collection-list-content],
+    > div[data-recommend-collection-list-content],
+    > div[data-collection-filtered-content],
+    > div[data-collection-archive-content],
+    > div[data-product-list-content],
+    > div[data-product-recommend-content]
+      > *
+        width 100%
+  .up-col2.up-gapx{gapx-px}
+    > div[data-collection-list-content],
+    > div[data-recommend-collection-list-content],
+    > div[data-collection-filtered-content],
+    > div[data-collection-archive-content],
+    > div[data-product-list-content],
+    > div[data-product-recommend-content]
+      > *
+        width "calc(50% - %spx)" % (gapx-px)
+  .up-col3.up-gapx{gapx-px}
+    > div[data-collection-list-content],
+    > div[data-recommend-collection-list-content],
+    > div[data-collection-filtered-content],
+    > div[data-collection-archive-content],
+    > div[data-product-list-content],
+    > div[data-product-recommend-content]
+      > *
+        width "calc(33.333% - %spx)" % (gapx-px)
+  .up-col4.up-gapx{gapx-px}
+    > div[data-collection-list-content],
+    > div[data-recommend-collection-list-content],
+    > div[data-collection-filtered-content],
+    > div[data-collection-archive-content],
+    > div[data-product-list-content],
+    > div[data-product-recommend-content]
+      > *
+        width "calc(25% - %spx)" % (gapx-px)
+  .up-col5.up-gapx{gapx-px}
+    > div[data-collection-list-content],
+    > div[data-recommend-collection-list-content],
+    > div[data-collection-filtered-content],
+    > div[data-collection-archive-content],
+    > div[data-product-list-content],
+    > div[data-product-recommend-content]
+      > *
+        width "calc(20% - %spx)" % (gapx-px)
+  .up-col6.up-gapx{gapx-px}
+    > div[data-collection-list-content],
+    > div[data-recommend-collection-list-content],
+    > div[data-collection-filtered-content],
+    > div[data-collection-archive-content],
+    > div[data-product-list-content],
+    > div[data-product-recommend-content]
+      > *
+        width "calc(16.666% - %spx)" % (gapx-px)
+
 for gapx in range(1,10,1)
   .up-gapx{gapx}p
-    > div[datup-collection-list-content],
-    > div[datup-recommend-collection-list-content],
-    > div[datup-collection-filtered-content],
-    > div[datup-collection-archive-content]
+    > div[data-collection-list-content],
+    > div[data-recommend-collection-list-content],
+    > div[data-collection-filtered-content],
+    > div[data-collection-archive-content],
+    > div[data-product-list-content],
+    > div[data-product-recommend-content]
       margin-left -(gapx/2)%
       margin-right -(gapx/2)%
       > *
         margin-left (ceil((gapx/2),3))%
         margin-right (ceil((gapx/2),3))%
 for gapx in range(1,10,1)
+  .up-col1.up-gapx{gapx}p
+    > div[data-collection-list-content],
+    > div[data-recommend-collection-list-content],
+    > div[data-collection-filtered-content],
+    > div[data-collection-archive-content],
+    > div[data-product-list-content],
+    > div[data-product-recommend-content]
+      > *
+        width 100%
   .up-col2.up-gapx{gapx}p
-    > div[datup-collection-list-content],
-    > div[datup-recommend-collection-list-content],
-    > div[datup-collection-filtered-content],
-    > div[datup-collection-archive-content]
+    > div[data-collection-list-content],
+    > div[data-recommend-collection-list-content],
+    > div[data-collection-filtered-content],
+    > div[data-collection-archive-content],
+    > div[data-product-list-content],
+    > div[data-product-recommend-content]
       > *
         width (50 - gapx)%
   .up-col3.up-gapx{gapx}p
-    > div[datup-collection-list-content],
-    > div[datup-recommend-collection-list-content],
-    > div[datup-collection-filtered-content],
-    > div[datup-collection-archive-content]
+    > div[data-collection-list-content],
+    > div[data-recommend-collection-list-content],
+    > div[data-collection-filtered-content],
+    > div[data-collection-archive-content],
+    > div[data-product-list-content],
+    > div[data-product-recommend-content]
       > *
         width (33.333 - gapx)%
   .up-col4.up-gapx{gapx}p
-    > div[datup-collection-list-content],
-    > div[datup-recommend-collection-list-content],
-    > div[datup-collection-filtered-content],
-    > div[datup-collection-archive-content]
+    > div[data-collection-list-content],
+    > div[data-recommend-collection-list-content],
+    > div[data-collection-filtered-content],
+    > div[data-collection-archive-content],
+    > div[data-product-list-content],
+    > div[data-product-recommend-content]
       > *
         width (25 - gapx)%
   .up-col5.up-gapx{gapx}p
-    > div[datup-collection-list-content],
-    > div[datup-recommend-collection-list-content],
-    > div[datup-collection-filtered-content],
-    > div[datup-collection-archive-content]
+    > div[data-collection-list-content],
+    > div[data-recommend-collection-list-content],
+    > div[data-collection-filtered-content],
+    > div[data-collection-archive-content],
+    > div[data-product-list-content],
+    > div[data-product-recommend-content]
       > *
         width (20 - gapx)%
   .up-col6.up-gapx{gapx}p
-    > div[datup-collection-list-content],
-    > div[datup-recommend-collection-list-content],
-    > div[datup-collection-filtered-content],
-    > div[datup-collection-archive-content]
+    > div[data-collection-list-content],
+    > div[data-recommend-collection-list-content],
+    > div[data-collection-filtered-content],
+    > div[data-collection-archive-content],
+    > div[data-product-list-content],
+    > div[data-product-recommend-content]
       > *
         width (16.666 - gapx)%
