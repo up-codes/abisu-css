@@ -1,0 +1,65 @@
+/*!===================================
+  フッター
+===================================*/
+/*! フッター１ */
+.footer01
+  .contents
+    padding 50px 0
+    .ttl
+      margin-bottom 50px
+      text-align center
+      font-size 26px
+    .wrap
+      display flex
+      justify-content space-between
+  .left
+    width 48%
+  .right
+    width 48%
+  .logowrap
+    margin-bottom 10px
+  .logo
+    font-weight bold
+    font-size 26px
+  .address
+    margin-bottom 5px
+    font-weight bold
+  .telephone
+    margin-bottom 5px
+    font-weight bold
+  .head
+    margin-bottom 5px
+    padding 2px
+    background #000
+    color #fff
+    text-align center
+    font-weight bold
+  .calendar
+    position relative
+    &:before
+      display block
+      padding-top 80%
+      content ''
+    iframe
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 100%
+  .copy
+    padding 5px 0
+    background #999
+    color #fff
+    text-align center
+  @media only screen and (max-width: 1024px)
+    .copy
+      padding-bottom 50px
+  @media only screen and (max-width: 599px)
+    .contents
+      .wrap
+        flex-wrap wrap
+    .left
+      margin-bottom 30px
+      width 100%
+    .right
+      width 100%

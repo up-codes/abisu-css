@@ -1,0 +1,77 @@
+/*!===================================
+  フッターナビ
+===================================*/
+/*! フッターナビ１ */
+.fnav01
+  padding 50px 0
+  background #eee
+  .wrap
+    display flex
+  .list01
+    width 50%
+    column-count 3
+  .item
+    margin-bottom 10px
+    padding-right 10px
+    break-inside avoid
+    a
+      position relative
+      display block
+      padding-left 12px
+      &:before
+        position absolute
+        top 10px
+        left 0
+        display block
+        width 4px
+        height 4px
+        border-radius 50%
+        background #000
+        content ''
+  .list02
+    width 50%
+  .datawrap
+    column-count 3
+  .datattl
+    position relative
+    margin-bottom 10px
+    padding-left 12px
+    &:before
+      position absolute
+      top 10px
+      left 0
+      display block
+      width 4px
+      height 4px
+      border-radius 50%
+      background #000
+      content ''
+  .data
+    margin-bottom 5px
+    padding-right 10px
+    break-inside avoid
+    a
+      position relative
+      padding-left 12px
+      &:before
+        position absolute
+        top 7px
+        left 0
+        display block
+        width 5px
+        height 1px
+        background #000
+        content ''
+  @media only screen and (max-width: 1024px)
+    .wrap
+      flex-wrap wrap
+    .list01
+      margin-bottom 10px
+      width 100%
+    .list02
+      width 100%
+  @media only screen and (max-width: 599px)
+    .list01
+      column-count 2
+    .datawrap
+      column-count 2

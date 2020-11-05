@@ -55,18 +55,20 @@ $(function () {
 
 //グローバルナビ固定
 $(window).on('load resize', function () {
-  var w = window.innerWidth;
-  var obj = $('.gnav').offset().top;
-  var h = $('.gnav').outerHeight();
-  $(window).on('load scroll resize', function () {
-    if ($(this).scrollTop() > obj && (w > 1024)) {
-      $(".gnav").addClass("fixed");
-      $("#wrapper").css('padding-top', h);
-    } else {
-      $(".gnav").removeClass("fixed");
-      $("#wrapper").css('padding-top', 0);
-    }
-  });
+  if ($('.gnav').length) {
+    var w = window.innerWidth;
+    var obj = $('.gnav').offset().top;
+    var h = $('.gnav').outerHeight();
+    $(window).on('load scroll resize', function () {
+      if ($(this).scrollTop() > obj && (w > 1024)) {
+        $(".gnav").addClass("fixed");
+        $("#wrapper").css('padding-top', h);
+      } else {
+        $(".gnav").removeClass("fixed");
+        $("#wrapper").css('padding-top', 0);
+      }
+    });
+  }
 });
 
 

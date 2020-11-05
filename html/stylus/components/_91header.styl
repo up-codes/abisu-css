@@ -1,0 +1,50 @@
+/*!===================================
+  ヘッダー
+===================================*/
+/*! ヘッダー１ */
+.header01
+  padding 10px 0
+  &.fixed
+    position fixed
+    top 0
+    left 0
+    z-index 100
+    width 100%
+    height auto
+    background #fff
+    box-shadow 0 2px 2px 0 rgba(0, 0, 0, 0.1)
+  .contents
+    display flex
+    justify-content space-between
+    align-items center
+  .left
+    .logo
+      font-weight bold
+      font-size 30px
+  .right
+    display flex
+    align-items center
+    .txt
+      margin-right 10px
+      line-height 120%
+    .txtin
+      display block
+    .tel
+      a
+        font-weight bold
+        font-size 30px
+      a:before
+        margin-right 5px
+        content '\f879'
+        font-weight 600
+        font-size 24px
+        font-family 'Font Awesome 5 Free'
+  @media only screen and (max-width: 1024px)
+    padding 5px 0
+    .left
+      .txt
+        display none
+      .logo
+        font-size 24px
+    .right
+      display none

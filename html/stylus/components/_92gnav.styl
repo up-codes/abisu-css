@@ -1,0 +1,100 @@
+/*!===================================
+  グローバルナビ
+===================================*/
+/*! グローバルナビ１ */
+.gnav01
+  position relative
+  z-index 100
+  padding 20px 0
+  border-bottom 1px solid #d9d9d9
+  &.fixed
+    padding 10px 0
+  .wrap
+    display flex
+    flex-wrap wrap
+  .logo
+    display none
+  .list01
+    display flex
+    flex-wrap wrap
+    justify-content space-around
+    width 100%
+  .item01
+    margin 0 20px
+    text-align center
+    font-size 16px
+    > a, .itemin
+      display block
+      cursor pointer
+    > a:before, .itemin:before
+      display block
+      margin 0 auto 10px
+      width 40px
+      height 40px
+      background url('https://placehold.jp/500x500.png') no-repeat center bottom
+      background-size contain
+      content ''
+  .item01.-parent
+    position relative
+    &:hover
+      .list02
+        visibility visible
+        opacity 1
+  .list02
+    position absolute
+    top 100%
+    left 50%
+    visibility hidden
+    padding-top 20px
+    width 200px
+    background rgba(#fff, 0.8) content-box
+    opacity 0
+    transition 0.5s
+    transform translateX(-50%)
+  .item02
+    a
+      display block
+      padding 2px
+  @media only screen and (max-width: 1024px)
+    .logo
+      display block
+      margin-bottom 20px
+      padding-right 40px
+      width 100%
+      font-weight bold
+      font-size 20px
+    .item01
+      margin 0 0 10px 0
+      min-height 40px
+      width 100%
+      text-align left
+      > a, .itemin
+        position relative
+        padding 7px 0 0 50px
+      > a:before, .itemin:before
+        position absolute
+        top 0
+        left 0
+        display inline-block
+        margin 0 5px 0 0
+    .list02
+      position relative
+      top 0
+      left 0
+      visibility visible
+      padding-left 10px
+      background none
+      opacity 1
+      transform none
+      a
+        position relative
+        padding 2px 0 2px 20px
+      a:before
+        position absolute
+        top 13px
+        left 0
+        display block
+        width 10px
+        height 1px
+        background #000
+        content ''

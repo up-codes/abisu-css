@@ -3,7 +3,7 @@
 
 html
   color #000
-  font-weight 500
+  font-weight normal
   font-size 16px
   font-family "游ゴシック",YuGothic,Hiragino Sans,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic Pro",Hiragino Kaku Gothic ProN,"メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif
   /* font-family '游明朝', 'YuMincho', 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝', 'Sawarabi Mincho', serif */
@@ -109,8 +109,8 @@ img
   border-style none
   vertical-align top
   border none
-  max-width 100% !important
-  height auto !important
+  max-width 100%
+  height auto
 img:not([src*="."])
   display none
 
@@ -282,12 +282,12 @@ button
   list-style-position outside
 
 /* font-weight */
-.up-fw400
-  font-weight 400
-.up-fw500
-  font-weight 500
-.up-fw600
-  font-weight 600
+.up-fw-light
+  font-weight lighter
+.up-fw-normal
+  font-weight normal
+.up-fw-bold
+  font-weight bold
 
 /* 画像比率固定 */
 [class*="up-of-img"]
@@ -739,32 +739,6 @@ for gapy in range(0,100,10)
   .up-gapy{gapy}
     > *
       margin-bottom gapy px
-for gapx-px in range(0,30,5)
-  .up-gapx{gapx-px}
-    margin-left -(gapx-px/2)px
-    margin-right -(gapx-px/2)px
-    > *
-      margin-left (ceil((gapx-px/2),3))px
-      margin-right (ceil((gapx-px/2),3))px
-for gapx-px in range(0,30,5)
-  .up-col1.up-gapx{gapx-px}
-    > *
-      width 100%
-  .up-col2.up-gapx{gapx-px}
-    > *
-      width "calc(50% - %spx)" % (gapx-px)
-  .up-col3.up-gapx{gapx-px}
-    > *
-      width "calc(33.333% - %spx)" % (gapx-px)
-  .up-col4.up-gapx{gapx-px}
-    > *
-      width "calc(25% - %spx)" % (gapx-px)
-  .up-col5.up-gapx{gapx-px}
-    > *
-      width "calc(20% - %spx)" % (gapx-px)
-  .up-col6.up-gapx{gapx-px}
-    > *
-      width "calc(16.666% - %spx)" % (gapx-px)
 
 for gapx in range(1,10,1)
   .up-gapx{gapx}p
@@ -776,7 +750,7 @@ for gapx in range(1,10,1)
 for gapx in range(1,10,1)
   .up-col1.up-gapx{gapx}p
     > *
-      width 100%
+      width (100 - gapx)%
   .up-col2.up-gapx{gapx}p
     > *
       width (50 - gapx)%
@@ -792,6 +766,33 @@ for gapx in range(1,10,1)
   .up-col6.up-gapx{gapx}p
     > *
       width (16.666 - gapx)%
+
+for gapx-px in range(0,30,5)
+  .up-gapx{gapx-px}
+    margin-left -(gapx-px/2)px
+    margin-right -(gapx-px/2)px
+    > *
+      margin-left (ceil((gapx-px/2),3))px
+      margin-right (ceil((gapx-px/2),3))px
+for gapx-px in range(0,30,5)
+  .up-col1.up-gapx{gapx-px}
+    > *
+      width "calc(100% - %spx)" % (gapx-px)
+  .up-col2.up-gapx{gapx-px}
+    > *
+      width "calc(50% - %spx)" % (gapx-px)
+  .up-col3.up-gapx{gapx-px}
+    > *
+      width "calc(33.333% - %spx)" % (gapx-px)
+  .up-col4.up-gapx{gapx-px}
+    > *
+      width "calc(25% - %spx)" % (gapx-px)
+  .up-col5.up-gapx{gapx-px}
+    > *
+      width "calc(20% - %spx)" % (gapx-px)
+  .up-col6.up-gapx{gapx-px}
+    > *
+      width "calc(16.666% - %spx)" % (gapx-px)
 
 /* 画像比率固定 */
 for image in range(10,170,5)
@@ -1258,58 +1259,6 @@ for image in range(10,170,5)
       > *
         margin-bottom gapy px
 
-  for gapx-px in range(0,30,5)
-    .up-gapx{gapx-px}\\\@tb
-      margin-left -(gapx-px/2)px
-      margin-right -(gapx-px/2)px
-      > *
-        margin-left (ceil((gapx-px/2),3))px
-        margin-right (ceil((gapx-px/2),3))px
-  for gapx-px in range(0,30,5)
-    .up-col1.up-gapx{gapx-px}\\\@tb,
-    .up-col1\\\@tb.up-gapx{gapx-px}
-      > *
-        width 100%
-    .up-col2.up-gapx{gapx-px}\\\@tb,
-    .up-col2\\\@tb.up-gapx{gapx-px}
-      > *
-        width "calc(50% - %spx)" % (gapx-px)
-    .up-col3.up-gapx{gapx-px}\\\@tb,
-    .up-col3\\\@tb.up-gapx{gapx-px}
-      > *
-        width "calc(33.333% - %spx)" % (gapx-px)
-    .up-col4.up-gapx{gapx-px}\\\@tb,
-    .up-col4\\\@tb.up-gapx{gapx-px}
-      > *
-        width "calc(25% - %spx)" % (gapx-px)
-    .up-col5.up-gapx{gapx-px}\\\@tb,
-    .up-col5\\\@tb.up-gapx{gapx-px}
-      > *
-        width "calc(20% - %spx)" % (gapx-px)
-    .up-col6.up-gapx{gapx-px}\\\@tb,
-    .up-col6\\\@tb.up-gapx{gapx-px}
-      > *
-        width "calc(16.666% - %spx)" % (gapx-px)
-  for gapx-px in range(0,30,5)
-    .up-col1\\\@tb.up-gapx{gapx-px}\\\@tb
-      > *
-        width 100%
-    .up-col2\\\@tb.up-gapx{gapx-px}\\\@tb
-      > *
-        width "calc(50% - %spx)" % (gapx-px)
-    .up-col3\\\@tb.up-gapx{gapx-px}\\\@tb
-      > *
-        width "calc(33.333% - %spx)" % (gapx-px)
-    .up-col4\\\@tb.up-gapx{gapx-px}\\\@tb
-      > *
-        width "calc(25% - %spx)" % (gapx-px)
-    .up-col5\\\@tb.up-gapx{gapx-px}\\\@tb
-      > *
-        width "calc(20% - %spx)" % (gapx-px)
-    .up-col6\\\@tb.up-gapx{gapx-px}\\\@tb
-      > *
-        width "calc(16.666% - %spx)" % (gapx-px)
-
   for gapx in range(1,10,1)
     .up-gapx{gapx}p\\\@tb
       margin-left -(gapx/2)%
@@ -1321,7 +1270,7 @@ for image in range(10,170,5)
     .up-col1.up-gapx{gapx}p\\\@tb,
     .up-col1\\\@tb.up-gapx{gapx}p
       > *
-        width 100%
+        width (100 - gapx)%
     .up-col2.up-gapx{gapx}p\\\@tb,
     .up-col2\\\@tb.up-gapx{gapx}p
       > *
@@ -1345,7 +1294,7 @@ for image in range(10,170,5)
   for gapx in range(1,10,1)
     .up-col1\\\@tb.up-gapx{gapx}p\\\@tb
       > *
-        width 100%
+        width (100 - gapx)%
     .up-col2\\\@tb.up-gapx{gapx}p\\\@tb
       > *
         width (50 - gapx)%
@@ -1361,6 +1310,58 @@ for image in range(10,170,5)
     .up-col6\\\@tb.up-gapx{gapx}p\\\@tb
       > *
         width (16.666 - gapx)%
+
+  for gapx-px in range(0,30,5)
+    .up-gapx{gapx-px}\\\@tb
+      margin-left -(gapx-px/2)px
+      margin-right -(gapx-px/2)px
+      > *
+        margin-left (ceil((gapx-px/2),3))px
+        margin-right (ceil((gapx-px/2),3))px
+  for gapx-px in range(0,30,5)
+    .up-col1.up-gapx{gapx-px}\\\@tb,
+    .up-col1\\\@tb.up-gapx{gapx-px}
+      > *
+        width "calc(100% - %spx)" % (gapx-px)
+    .up-col2.up-gapx{gapx-px}\\\@tb,
+    .up-col2\\\@tb.up-gapx{gapx-px}
+      > *
+        width "calc(50% - %spx)" % (gapx-px)
+    .up-col3.up-gapx{gapx-px}\\\@tb,
+    .up-col3\\\@tb.up-gapx{gapx-px}
+      > *
+        width "calc(33.333% - %spx)" % (gapx-px)
+    .up-col4.up-gapx{gapx-px}\\\@tb,
+    .up-col4\\\@tb.up-gapx{gapx-px}
+      > *
+        width "calc(25% - %spx)" % (gapx-px)
+    .up-col5.up-gapx{gapx-px}\\\@tb,
+    .up-col5\\\@tb.up-gapx{gapx-px}
+      > *
+        width "calc(20% - %spx)" % (gapx-px)
+    .up-col6.up-gapx{gapx-px}\\\@tb,
+    .up-col6\\\@tb.up-gapx{gapx-px}
+      > *
+        width "calc(16.666% - %spx)" % (gapx-px)
+  for gapx-px in range(0,30,5)
+    .up-col1\\\@tb.up-gapx{gapx-px}\\\@tb
+      > *
+        width "calc(100% - %spx)" % (gapx-px)
+    .up-col2\\\@tb.up-gapx{gapx-px}\\\@tb
+      > *
+        width "calc(50% - %spx)" % (gapx-px)
+    .up-col3\\\@tb.up-gapx{gapx-px}\\\@tb
+      > *
+        width "calc(33.333% - %spx)" % (gapx-px)
+    .up-col4\\\@tb.up-gapx{gapx-px}\\\@tb
+      > *
+        width "calc(25% - %spx)" % (gapx-px)
+    .up-col5\\\@tb.up-gapx{gapx-px}\\\@tb
+      > *
+        width "calc(20% - %spx)" % (gapx-px)
+    .up-col6\\\@tb.up-gapx{gapx-px}\\\@tb
+      > *
+        width "calc(16.666% - %spx)" % (gapx-px)
 
   /* 画像比率固定 */
   for image in range(10,170,5)
@@ -1826,83 +1827,6 @@ for image in range(10,170,5)
       > *
         margin-bottom gapy px
 
-  for gapx-px in range(0,30,5)
-    .up-gapx{gapx-px}\\\@sp
-      margin-left -(gapx-px/2)px
-      margin-right -(gapx-px/2)px
-      > *
-        margin-left (ceil((gapx-px/2),3))px
-        margin-right (ceil((gapx-px/2),3))px
-  for gapx-px in range(0,30,5)
-    .up-col1.up-gapx{gapx-px}\\\@sp,
-    .up-col1\\\@sp.up-gapx{gapx-px}
-      > *
-        width 100%
-    .up-col2.up-gapx{gapx-px}\\\@sp,
-    .up-col2\\\@sp.up-gapx{gapx-px}
-      > *
-        width "calc(50% - %spx)" % (gapx-px)
-    .up-col3.up-gapx{gapx-px}\\\@sp,
-    .up-col3\\\@sp.up-gapx{gapx-px}
-      > *
-        width "calc(33.333% - %spx)" % (gapx-px)
-    .up-col4.up-gapx{gapx-px}\\\@sp,
-    .up-col4\\\@sp.up-gapx{gapx-px}
-      > *
-        width "calc(25% - %spx)" % (gapx-px)
-    .up-col5.up-gapx{gapx-px}\\\@sp,
-    .up-col5\\\@sp.up-gapx{gapx-px}
-      > *
-        width "calc(20% - %spx)" % (gapx-px)
-    .up-col6.up-gapx{gapx-px}\\\@sp,
-    .up-col6\\\@sp.up-gapx{gapx-px}
-      > *
-        width "calc(16.666% - %spx)" % (gapx-px)
-  for gapx-px in range(0,30,5)
-    .up-col1\\\@tb.up-gapx{gapx-px}\\\@sp,
-    .up-col1\\\@sp.up-gapx{gapx-px}\\\@tb
-      > *
-        width 100%
-    .up-col2\\\@tb.up-gapx{gapx-px}\\\@sp,
-    .up-col2\\\@sp.up-gapx{gapx-px}\\\@tb
-      > *
-        width "calc(50% - %spx)" % (gapx-px)
-    .up-col3\\\@tb.up-gapx{gapx-px}\\\@sp,
-    .up-col3\\\@sp.up-gapx{gapx-px}\\\@tb
-      > *
-        width "calc(33.333% - %spx)" % (gapx-px)
-    .up-col4\\\@tb.up-gapx{gapx-px}\\\@sp,
-    .up-col4\\\@sp.up-gapx{gapx-px}\\\@tb
-      > *
-        width "calc(25% - %spx)" % (gapx-px)
-    .up-col5\\\@tb.up-gapx{gapx-px}\\\@sp,
-    .up-col5\\\@sp.up-gapx{gapx-px}\\\@tb
-      > *
-        width "calc(20% - %spx)" % (gapx-px)
-    .up-col6\\\@tb.up-gapx{gapx-px}\\\@sp,
-    .up-col6\\\@sp.up-gapx{gapx-px}\\\@tb
-      > *
-        width "calc(16.666% - %spx)" % (gapx-px)
-  for gapx-px in range(0,30,5)
-    .up-col1\\\@sp.up-gapx{gapx-px}\\\@sp
-      > *
-        width 100%
-    .up-col2\\\@sp.up-gapx{gapx-px}\\\@sp
-      > *
-        width "calc(50% - %spx)" % (gapx-px)
-    .up-col3\\\@sp.up-gapx{gapx-px}\\\@sp
-      > *
-        width "calc(33.333% - %spx)" % (gapx-px)
-    .up-col4\\\@sp.up-gapx{gapx-px}\\\@sp
-      > *
-        width "calc(25% - %spx)" % (gapx-px)
-    .up-col5\\\@sp.up-gapx{gapx-px}\\\@sp
-      > *
-        width "calc(20% - %spx)" % (gapx-px)
-    .up-col6\\\@sp.up-gapx{gapx-px}\\\@sp
-      > *
-        width "calc(16.666% - %spx)" % (gapx-px)
-
   for gapx in range(1,10,1)
     .up-gapx{gapx}p\\\@sp
       margin-left -(gapx/2)%
@@ -1914,7 +1838,7 @@ for image in range(10,170,5)
     .up-col1.up-gapx{gapx}p\\\@sp,
     .up-col1\\\@sp.up-gapx{gapx}p
       > *
-        width 100%
+        width (100 - gapx)%
     .up-col2.up-gapx{gapx}p\\\@sp,
     .up-col2\\\@sp.up-gapx{gapx}p
       > *
@@ -1939,7 +1863,7 @@ for image in range(10,170,5)
     .up-col1\\\@tb.up-gapx{gapx}p\\\@sp,
     .up-col1\\\@sp.up-gapx{gapx}p\\\@tb
       > *
-        width 100%
+        width (100 - gapx)%
     .up-col2\\\@tb.up-gapx{gapx}p\\\@sp,
     .up-col2\\\@sp.up-gapx{gapx}p\\\@tb
       > *
@@ -1963,7 +1887,7 @@ for image in range(10,170,5)
   for gapx in range(1,10,1)
     .up-col1\\\@sp.up-gapx{gapx}p\\\@sp
       > *
-        width 100%
+        width (100 - gapx)%
     .up-col2\\\@sp.up-gapx{gapx}p\\\@sp
       > *
         width (50 - gapx)%
@@ -1979,6 +1903,83 @@ for image in range(10,170,5)
     .up-col6\\\@sp.up-gapx{gapx}p\\\@sp
       > *
         width (16.666 - gapx)%
+
+  for gapx-px in range(0,30,5)
+    .up-gapx{gapx-px}\\\@sp
+      margin-left -(gapx-px/2)px
+      margin-right -(gapx-px/2)px
+      > *
+        margin-left (ceil((gapx-px/2),3))px
+        margin-right (ceil((gapx-px/2),3))px
+  for gapx-px in range(0,30,5)
+    .up-col1.up-gapx{gapx-px}\\\@sp,
+    .up-col1\\\@sp.up-gapx{gapx-px}
+      > *
+        width "calc(100% - %spx)" % (gapx-px)
+    .up-col2.up-gapx{gapx-px}\\\@sp,
+    .up-col2\\\@sp.up-gapx{gapx-px}
+      > *
+        width "calc(50% - %spx)" % (gapx-px)
+    .up-col3.up-gapx{gapx-px}\\\@sp,
+    .up-col3\\\@sp.up-gapx{gapx-px}
+      > *
+        width "calc(33.333% - %spx)" % (gapx-px)
+    .up-col4.up-gapx{gapx-px}\\\@sp,
+    .up-col4\\\@sp.up-gapx{gapx-px}
+      > *
+        width "calc(25% - %spx)" % (gapx-px)
+    .up-col5.up-gapx{gapx-px}\\\@sp,
+    .up-col5\\\@sp.up-gapx{gapx-px}
+      > *
+        width "calc(20% - %spx)" % (gapx-px)
+    .up-col6.up-gapx{gapx-px}\\\@sp,
+    .up-col6\\\@sp.up-gapx{gapx-px}
+      > *
+        width "calc(16.666% - %spx)" % (gapx-px)
+  for gapx-px in range(0,30,5)
+    .up-col1\\\@tb.up-gapx{gapx-px}\\\@sp,
+    .up-col1\\\@sp.up-gapx{gapx-px}\\\@tb
+      > *
+        width "calc(100% - %spx)" % (gapx-px)
+    .up-col2\\\@tb.up-gapx{gapx-px}\\\@sp,
+    .up-col2\\\@sp.up-gapx{gapx-px}\\\@tb
+      > *
+        width "calc(50% - %spx)" % (gapx-px)
+    .up-col3\\\@tb.up-gapx{gapx-px}\\\@sp,
+    .up-col3\\\@sp.up-gapx{gapx-px}\\\@tb
+      > *
+        width "calc(33.333% - %spx)" % (gapx-px)
+    .up-col4\\\@tb.up-gapx{gapx-px}\\\@sp,
+    .up-col4\\\@sp.up-gapx{gapx-px}\\\@tb
+      > *
+        width "calc(25% - %spx)" % (gapx-px)
+    .up-col5\\\@tb.up-gapx{gapx-px}\\\@sp,
+    .up-col5\\\@sp.up-gapx{gapx-px}\\\@tb
+      > *
+        width "calc(20% - %spx)" % (gapx-px)
+    .up-col6\\\@tb.up-gapx{gapx-px}\\\@sp,
+    .up-col6\\\@sp.up-gapx{gapx-px}\\\@tb
+      > *
+        width "calc(16.666% - %spx)" % (gapx-px)
+  for gapx-px in range(0,30,5)
+    .up-col1\\\@sp.up-gapx{gapx-px}\\\@sp
+      > *
+        width "calc(100% - %spx)" % (gapx-px)
+    .up-col2\\\@sp.up-gapx{gapx-px}\\\@sp
+      > *
+        width "calc(50% - %spx)" % (gapx-px)
+    .up-col3\\\@sp.up-gapx{gapx-px}\\\@sp
+      > *
+        width "calc(33.333% - %spx)" % (gapx-px)
+    .up-col4\\\@sp.up-gapx{gapx-px}\\\@sp
+      > *
+        width "calc(25% - %spx)" % (gapx-px)
+    .up-col5\\\@sp.up-gapx{gapx-px}\\\@sp
+      > *
+        width "calc(20% - %spx)" % (gapx-px)
+    .up-col6\\\@sp.up-gapx{gapx-px}\\\@sp
+      > *
+        width "calc(16.666% - %spx)" % (gapx-px)
 
   /* 画像比率固定 */
   for image in range(10,170,5)
