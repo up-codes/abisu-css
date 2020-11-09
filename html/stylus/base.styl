@@ -11,6 +11,7 @@ html
   /* font-family: "ヒラギノ丸ゴ Pro W4", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "HG丸ｺﾞｼｯｸM-PRO", "HGMaruGothicMPRO"; */
   line-height 1.5
   -webkit-text-size-adjust 100%
+  word-break: break-all;
 
 *,
 :after,
@@ -101,7 +102,6 @@ ol,
 ul
   list-style none
 
-
 time
   display block
 
@@ -163,7 +163,7 @@ button
 .wrapper
   overflow hidden
   min-width 320px
-[datup-element-id] .wrapper
+[data-element-id] .wrapper
   padding-top 0 !important
   opacity 1
 
@@ -328,7 +328,7 @@ button
 /* position */
 .up-fixed
   position fixed
-.up-asolute
+.up-absolute
   position absolute
 .up-relative
   position relative

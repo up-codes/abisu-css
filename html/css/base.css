@@ -10,6 +10,7 @@ html {
 /* font-family: "ヒラギノ丸ゴ Pro W4", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "HG丸ｺﾞｼｯｸM-PRO", "HGMaruGothicMPRO"; */
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
+  word-break: break-all;
 }
 *,
 :after,
@@ -174,7 +175,7 @@ button[href*="tel"] {
   overflow: hidden;
   min-width: 320px;
 }
-[datup-element-id] .wrapper {
+[data-element-id] .wrapper {
   padding-top: 0 !important;
   opacity: 1;
 }
@@ -386,7 +387,7 @@ button[href*="tel"] {
 .up-fixed {
   position: fixed;
 }
-.up-asolute {
+.up-absolute {
   position: absolute;
 }
 .up-relative {
