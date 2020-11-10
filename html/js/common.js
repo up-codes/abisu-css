@@ -112,23 +112,29 @@ $(function () {
 
 //子要素が空なら親要素消す
 $(function () {
-  $(".txtc:empty").parents('.txtp').addClass('hidden');
-  $(".txtp.hidden").remove();
-  if ($(".txtc").children("span").length) {
-    $(".txtc").children("span:empty").parents('.txtp').addClass('hidden');
-    $(".txtp.hidden").remove();
+  if (!($('[data-element-id]').length)) {
+    $(".js-contp").each(function () {
+      var contC = $('.js-contc', this);
+      var cont = contC.html();
+      var src = $("img", contC).attr("src");
+      if (cont == false) {
+        $(this).remove();
+      } else if ($('img', contC).length && !src) {
+        $(this).remove();
+      }
+    });
   }
 });
 
 
 //hoverで画像差し替え
 $(function () {
-  $('.subimg img').mouseover(function () {
+  $('.js-thumb img').mouseover(function () {
     var selectedSrc = $(this).attr('src').replace(/^(.+)_thumb(\.gif|\.jpg|\.png+)$/, "$1" + "$2");
-    $('.image01 img').stop().fadeOut(200,
+    $('.js-mainimg img').stop().fadeOut(200,
       function () {
-        $('.image01 img').attr('src', selectedSrc);
-        $('.image01 img').stop().fadeIn(200);
+        $('.js-mainimg img').attr('src', selectedSrc);
+        $('.js-mainimg img').stop().fadeIn(200);
       }
     );
   });
@@ -137,14 +143,14 @@ $(function () {
 
 //カテゴリーを分割し、クラスを付与
 $(function () {
-  $('.split-tag').html(function () {
+  $('.js-split-tag').html(function () {
     return $(this).html().replace(/\n/g, '').split(",").filter(function (x) {
       return x.match(/\S/);
     }).map(function (x) {
       return "<span>" + x + "</span>";
     }).join("");
   });
-  $('.split-tag span').each(function () {
+  $('.js-split-tag span').each(function () {
     var tagtext = $(this).text();
     $(this).addClass(tagtext);
   });
@@ -153,10 +159,66 @@ $(function () {
 
 //トグルメニュー
 $(function () {
-  $(".p-accod").on("click", function () {
+  $(".js-toggle").on("click", function () {
     $(this).next().slideToggle();
-    $(this).toggleClass("is-parent");
+    $(this).toggleClass("-parent");
     $(this).next().toggleClass("is-active");
+  });
+});
+
+//テキストトリミング
+$(window).load(function () {
+  $('.up-reader3').each(function () {
+    var $target = $(this);
+    var html = $target.html();
+    var $clone = $target.clone();
+    var fs = $target.css('font-size');
+    var lh = $target.css('line-height');
+    var lines = '3'; //表示したい行数
+    var lhp = Math.round((parseInt(lh) / parseInt(fs)) * 10) / 10;
+    var calc = parseInt(fs) * lhp * parseInt(lines);
+    $target.css('height', calc);
+    $clone
+      .css({
+        display: 'none',
+        position: 'absolute',
+        overflow: 'visible'
+      })
+      .width($target.width())
+      .height('auto');
+    $target.after($clone);
+    while ((html.length > 0) && ($clone.height() > $target.height())) {
+      html = html.substr(0, html.length - 1);
+      $clone.html(html + '…');
+    }
+    $target.html($clone.html());
+    $clone.remove();
+  });
+  $('.up-reader2').each(function () {
+    var $target = $(this);
+    var html = $target.html();
+    var $clone = $target.clone();
+    var fs = $target.css('font-size');
+    var lh = $target.css('line-height');
+    var lines = '2'; //表示したい行数
+    var lhp = Math.round((parseInt(lh) / parseInt(fs)) * 10) / 10;
+    var calc = parseInt(fs) * lhp * parseInt(lines);
+    $target.css('height', calc);
+    $clone
+      .css({
+        display: 'none',
+        position: 'absolute',
+        overflow: 'visible'
+      })
+      .width($target.width())
+      .height('auto');
+    $target.after($clone);
+    while ((html.length > 0) && ($clone.height() > $target.height())) {
+      html = html.substr(0, html.length - 1);
+      $clone.html(html + '…');
+    }
+    $target.html($clone.html());
+    $clone.remove();
   });
 });
 
