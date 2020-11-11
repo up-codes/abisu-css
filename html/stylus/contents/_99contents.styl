@@ -522,6 +522,36 @@ fnav
     -o-object-position 50% 50%
     object-position 50% 50%
 
+/*! スリックスライダー（トップ） */
+.slick01
+  padding 0 20px
+  .btn-slick
+    position absolute
+    z-index 1
+    top 50%
+    transform translateY(-50%)
+    font-size 30px
+    &.btn-back
+      left 0
+    &.btn-next
+      right 0
+  .slick-dots
+    position relative
+  .slick-dots li,
+  .slick-dots li button,
+  .slick-dots li button:before
+    width auto
+    height auto
+    margin 0
+    padding 0
+  .slick-dots li button:before
+    font-size 50px
+    position relative
+  @media only screen and (max-width 599px)
+    padding 0 10px
+    .btn-slick
+      font-size 20px
+
 
 /*!*
 下層共通

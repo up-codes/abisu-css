@@ -832,6 +832,48 @@ fnav
   object-position: 50% 50%;
 }
 /*IE対策*/
+/* スリックスライダー（トップ） */
+.slick01 {
+  padding: 0 20px;
+}
+.slick01 .btn-slick {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 30px;
+}
+.slick01 .btn-slick.btn-back {
+  left: 0;
+}
+.slick01 .btn-slick.btn-next {
+  right: 0;
+}
+.slick01 .slick-dots {
+  position: relative;
+}
+.slick01 .slick-dots li,
+.slick01 .slick-dots li button,
+.slick01 .slick-dots li button:before {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+.slick01 .slick-dots li button:before {
+  font-size: 50px;
+  position: relative;
+}
+@media only screen and (max-width: 599px) {
+  .slick01 {
+    padding: 0 10px;
+  }
+  .slick01 .btn-slick {
+    font-size: 20px;
+  }
+}
 /**
 下層共通
 */

@@ -1,20 +1,20 @@
 $(function () {
-  $(".slick01-a").slick({
-    centerMode: true,
-    centerPadding: '20%',
-    slidesToShow: 1,
-    arrows: false,
+  $(".slick01").slick({
+    slidesToShow: 5,
+    dots: true,
+    prevArrow: '<i class="btn-slick btn-back fas fa-chevron-left"></i>',
+    nextArrow: '<i class="btn-slick btn-next fas fa-chevron-right"></i>',
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          centerPadding: '40px',
+          slidesToShow: 4,
         }
       },
       {
         breakpoint: 599,
         settings: {
-          centerPadding: '40px',
+          slidesToShow: 3,
         }
       }
     ]
@@ -37,6 +37,26 @@ $(function () {
         breakpoint: 599,
         settings: {
           slidesToShow: 3,
+        }
+      }
+    ]
+  });
+  $(".slick03").slick({
+    centerMode: true,
+    centerPadding: '20%',
+    slidesToShow: 1,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          centerPadding: '40px',
+        }
+      },
+      {
+        breakpoint: 599,
+        settings: {
+          centerPadding: '40px',
         }
       }
     ]
