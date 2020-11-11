@@ -61,6 +61,15 @@
   共通タイトル　ttl-cmn
 ===================================*/
 /* 共通タイトル１ */
+.ttl-cmn01 {
+  text-align: center;
+  font-size: 28px;
+}
+@media only screen and (max-width: 599px) {
+  .ttl-cmn01 {
+    font-size: 24px;
+  }
+}
 /*===================================
   共通リスト　list-cmn
 ==================================*/
@@ -69,6 +78,33 @@
   共通ボタン btn-cmn
 ===================================*/
 /* 共通ボタン１ */
+.btn-cmn01 {
+  max-width: 180px;
+}
+.btn-cmn01 a {
+  display: block;
+  padding: 5px 20px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+.btn-cmn01 a:after {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  content: "\f054";
+  font-weight: 600;
+  font-family: 'Font Awesome 5 Free';
+}
+.btn-cmn01.btn-back a:after {
+  content: "\f053";
+  right: inherit;
+  left: 5px;
+}
 /*===================================
   他共通エレメント -cmn
 ===================================*/
@@ -944,6 +980,80 @@ fnav
 }
 .list-article .cate .cate1 {
   background: #00f;
+}
+.articledtl01 .cate span {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  padding: 0 5px;
+  margin: 0 5px 2px 0px;
+}
+.articledtl01 .cate .cate1 {
+  background: #00f;
+}
+.list-gallery01 a {
+  display: block;
+  position: relative;
+}
+.list-gallery01 .img {
+  opacity: 1;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.list-gallery01 .block-txt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding: 10px;
+  overflow: hidden;
+  visibility: hidden;
+}
+.list-gallery01 .cate {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.list-gallery01 .head {
+  font-size: 18px;
+}
+.list-gallery01 a:hover {
+  opacity: 1;
+}
+.list-gallery01 a:hover .img {
+  opacity: 0.5;
+}
+.list-gallery01 a:hover .block-txt {
+  opacity: 1;
+  visibility: visible;
+}
+@media only screen and (max-width: 599px) {
+  .list-gallery01 .block-txt {
+    display: none;
+  }
+  .list-gallery01 .head {
+    font-size: 14px;
+  }
 }
 /* フォーム */
 .form .item {

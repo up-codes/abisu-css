@@ -640,6 +640,60 @@ fnav
     .cate1
       background blue
 
+/* 記事詳細ページ */
+.articledtl01
+  .cate
+    span
+      display inline-block
+      background #000
+      color #fff
+      padding 0 5px
+      margin 0 5px 2px 0px
+    .cate1
+      background blue
+
+/* ギャラリー */
+.list-gallery01
+  a
+    display block
+    position relative
+  .img
+    opacity 1
+    transition .5s
+  .block-txt
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    display flex
+    justify-content center
+    align-items center
+    flex-direction column
+    opacity 0
+    transition .5s
+    padding 10px
+    overflow hidden
+    visibility hidden
+  .cate
+    font-size 14px
+    margin-bottom 5px
+  .head
+    font-size 18px
+  a:hover
+    opacity 1
+    .img
+      opacity 0.5
+    .block-txt
+      opacity 1
+      visibility visible
+  @media only screen and (max-width 599px)
+    .block-txt
+      display none
+    .head
+      font-size 14px
+
+
 /*! フォーム */
 .form
   .item
