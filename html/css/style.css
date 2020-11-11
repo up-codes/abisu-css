@@ -844,6 +844,7 @@ fnav
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   font-size: 30px;
+  cursor: pointer;
 }
 .slick01 .btn-slick.btn-back {
   left: 0;
