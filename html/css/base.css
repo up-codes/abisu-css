@@ -1231,6 +1231,52 @@ button[href*="tel"] {
 .up-minh500 {
   min-height: 500px;
 }
+/* max-height */
+.up-maxh0 {
+  max-height: 0px;
+}
+.up-maxh50 {
+  max-height: 50px;
+}
+.up-maxh100 {
+  max-height: 100px;
+}
+.up-maxh150 {
+  max-height: 150px;
+}
+.up-maxh200 {
+  max-height: 200px;
+}
+.up-maxh250 {
+  max-height: 250px;
+}
+.up-maxh300 {
+  max-height: 300px;
+}
+.up-maxh350 {
+  max-height: 350px;
+}
+.up-maxh400 {
+  max-height: 400px;
+}
+.up-maxh450 {
+  max-height: 450px;
+}
+.up-maxh500 {
+  max-height: 500px;
+}
+.up-maxh550 {
+  max-height: 550px;
+}
+.up-maxh600 {
+  max-height: 600px;
+}
+.up-maxh650 {
+  max-height: 650px;
+}
+.up-maxh700 {
+  max-height: 700px;
+}
 /* margin */
 .up-m-auto {
   margin: auto;
@@ -4630,6 +4676,51 @@ button[href*="tel"] {
   }
   .up-minh500_tb {
     min-height: 500px;
+  }
+  .up-maxh0_tb {
+    max-height: 0px;
+  }
+  .up-maxh50_tb {
+    max-height: 50px;
+  }
+  .up-maxh100_tb {
+    max-height: 100px;
+  }
+  .up-maxh150_tb {
+    max-height: 150px;
+  }
+  .up-maxh200_tb {
+    max-height: 200px;
+  }
+  .up-maxh250_tb {
+    max-height: 250px;
+  }
+  .up-maxh300_tb {
+    max-height: 300px;
+  }
+  .up-maxh350_tb {
+    max-height: 350px;
+  }
+  .up-maxh400_tb {
+    max-height: 400px;
+  }
+  .up-maxh450_tb {
+    max-height: 450px;
+  }
+  .up-maxh500_tb {
+    max-height: 500px;
+  }
+  .up-maxh550_tb {
+    max-height: 550px;
+  }
+  .up-maxh600_tb {
+    max-height: 600px;
+  }
+  .up-maxh650_tb {
+    max-height: 650px;
+  }
+  .up-maxh700_tb {
+    max-height: 700px;
   }
   .up-m-auto_tb {
     margin: auto;
@@ -8343,6 +8434,51 @@ button[href*="tel"] {
   }
   .up-maxw1000_sp {
     max-width: 1000px;
+  }
+  .up-maxh0_sp {
+    max-height: 0px;
+  }
+  .up-maxh50_sp {
+    max-height: 50px;
+  }
+  .up-maxh100_sp {
+    max-height: 100px;
+  }
+  .up-maxh150_sp {
+    max-height: 150px;
+  }
+  .up-maxh200_sp {
+    max-height: 200px;
+  }
+  .up-maxh250_sp {
+    max-height: 250px;
+  }
+  .up-maxh300_sp {
+    max-height: 300px;
+  }
+  .up-maxh350_sp {
+    max-height: 350px;
+  }
+  .up-maxh400_sp {
+    max-height: 400px;
+  }
+  .up-maxh450_sp {
+    max-height: 450px;
+  }
+  .up-maxh500_sp {
+    max-height: 500px;
+  }
+  .up-maxh550_sp {
+    max-height: 550px;
+  }
+  .up-maxh600_sp {
+    max-height: 600px;
+  }
+  .up-maxh650_sp {
+    max-height: 650px;
+  }
+  .up-maxh700_sp {
+    max-height: 700px;
   }
   .up-h-auto_sp {
     height: auto;

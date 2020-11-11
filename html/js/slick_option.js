@@ -19,7 +19,7 @@ $(function () {
       }
     ]
   });
-  $(".slick01-b").slick({
+  $(".slick02").slick({
     slidesToShow: 4,
     autoplay: true,
     autoplaySpeed: 0,
@@ -30,13 +30,13 @@ $(function () {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
         }
       },
       {
         breakpoint: 599,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
         }
       }
     ]
