@@ -1,5 +1,5 @@
 @charset "utf-8"
-/* version 0.2.5 */
+/* version 1.0.0 */
 
 html
   color #000
@@ -11,7 +11,7 @@ html
   /* font-family: "ヒラギノ丸ゴ Pro W4", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "HG丸ｺﾞｼｯｸM-PRO", "HGMaruGothicMPRO"; */
   line-height 1.5
   -webkit-text-size-adjust 100%
-  word-break: break-all;
+  word-break: break-word;
 
 *,
 :after,
@@ -68,7 +68,6 @@ textarea
   color inherit
   line-height inherit
 
-img,
 svg,
 video,
 canvas,
@@ -124,8 +123,7 @@ th
   font-weight normal
 
 .img img
-  margin-right auto
-  margin-left auto
+  text-align center
 
 .map
   position relative
@@ -168,40 +166,69 @@ button
   opacity 1
 
 /* inner */
+.inner500,
+.inner600,
+.inner700,
+.inner800,
+.inner900,
+.inner,
+.inner1100,
+.inner1200,
+.inner1300,
+.inner1400,
+.inner1500
+  margin-left auto
+  margin-right auto
+
+.inner500,
+.inner600,
+.inner700,
+.inner800,
+.inner900,
 .inner
-  margin 0 auto
-  max-width 1000px
   width 92%
+
+.inner1100,
+.inner1200,
+.inner1300,
+.inner1400,
+.inner1500
+  width 98%
+
+.inner500
+  max-width 500px
 .inner600
-  margin 0 auto
   max-width 600px
-  width 92%
 .inner700
-  margin 0 auto
   max-width 700px
-  width 92%
 .inner800
-  margin 0 auto
   max-width 800px
-  width 92%
 .inner900
-  margin 0 auto
   max-width 900px
-  width 92%
+.inner
+  max-width 1000px
 .inner1100
-  margin 0 auto
   max-width 1100px
-  width 98%
 .inner1200
-  margin 0 auto
   max-width 1200px
-  width 98%
+.inner1300
+  max-width 1300px
+.inner1400
+  max-width 1400px
+.inner1500
+  max-width 1500px
 @media (max-width 1024px)
-  .inner,
+  .inner500,
   .inner600,
   .inner700,
   .inner800,
-  .inner900
+  .inner900,
+  .inner,
+  .inner1100,
+  .inner1200,
+  .inner1300,
+  .inner1400,
+  .inner1500
     max-width 768px
     width 96%
 
@@ -256,29 +283,31 @@ button
   overflow hidden
 
 /* font-family */
-.up-gothic
+.up-ff-gothic
   font-family "游ゴシック", "Yu Gothic", YuGothic, "Hiragino Sans W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif
-.up-mincho
+.up-ff-mincho
   font-family "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif
+.up-ff-meiryo
+  font-family "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", sans-serif
 
 /* font-style */
-.up-italic
+.up-fs-italic
   font-style italic
 
 /* text-decoration */
-.up-underline
+.up-td-under
   text-decoration underline
 
 /* list-style-type */
-.up-list-disc
+.up-lst-disc
   list-style-type disc
-.up-list-decimal
+.up-lst-deci
   list-style-type decimal
 
 /* list-style-position */
-.up-list-inside
+.up-lsp-in
   list-style-position inside
-.up-list-outside
+.up-lsp-out
   list-style-position outside
 
 /* font-weight */
@@ -289,8 +318,12 @@ button
 .up-fw-bold
   font-weight bold
 
+/* cursor */
+.up-cur-pointer
+  cursor pointer
+
 /* 画像比率固定 */
-[class*="up-of-img"]
+[class*="up-ofi"]
   position relative
   display block
   width 100%
@@ -322,44 +355,47 @@ button
   以下@tb,@spが用意されているクラス
 ===================================*/
 /* display */
-.up-db
+.up-d-block
   display block
-.up-dib
+.up-d-iblock
   display inline-block
-.up-flex
+.up-d-flex
   display flex
-.up-none
+.up-d-none
   display none
 
 /* box-sizing */
-.up-content
+.up-bz-content
   box-sizing content-box
 
 /* position */
-.up-fixed
-  position fixed
-.up-absolute
-  position absolute
-.up-relative
+.up-pos-rel
   position relative
+.up-pos-abs
+  position absolute
+.up-pos-fix
+  position fixed
 
 /* z-index */
-for z in range(-5,5,1)
-  .up-z{z}
+for z in range(-5,-1,1)
+  .up-z-n{abs(z)}
+    z-index z
+for z in range(0,5,1)
+  .up-z-{z}
     z-index z
 
 /* color */
-.up-red
+.up-c-red
   color red
-.up-blue
+.up-c-blue
   color blue
-.up-yellow
+.up-c-yellow
   color yellow
-.up-gray
+.up-c-gray
   color gray
-.up-black
+.up-c-black
   color black
-.up-white
+.up-c-white
   color white
 
 /* background-color */
@@ -377,54 +413,52 @@ for z in range(-5,5,1)
   background-color white
 
 /* text-align */
-.up-tac
+.up-ta-c
   text-align center
-.up-tal
+.up-ta-l
   text-align left
-.up-tar
+.up-ta-r
   text-align right
 
 /* font-size */
 for fz in range(10,20,1)
-  .up-fz{fz}
+  .up-fz-{fz}
     font-size (fz)px
 for fz in range(22,70,2)
-  .up-fz{fz}
+  .up-fz-{fz}
     font-size (fz)px
-for fz in range(80,300,20)
-  .up-fz{fz}
+for fz in range(80,150,20)
+  .up-fz-{fz}
     font-size (fz)px
-.up-fz1vw
+
+.up-fz-1vw
   font-size 1vw
 for fz-vw in range(1,9,1)
-  .up-fz1\\\.{fz-vw}vw
+  .up-fz-1\\\.{fz-vw}vw
     font-size (1 + fz-vw/10)vw
-.up-fz2vw
+.up-fz-2vw
   font-size 2vw
 for fz-vw in range(1,9,1)
-  .up-fz2\\\.{fz-vw}vw
+  .up-fz-2\\\.{fz-vw}vw
     font-size (2 + fz-vw/10)vw
-.up-fz3vw
+.up-fz-3vw
   font-size 3vw
 
 
 /* line-height */
-.up-lh1
+.up-lh-1
   line-height 1
 for lh in range(1,9,1)
-  .up-lh1\\\.{lh}
+  .up-lh-1\\\.{lh}
     line-height (1 + lh/10)
-.up-lh2
+.up-lh-2
   line-height 2
 for lh in range(1,9,1)
-  .up-lh2\\\.{lh}
+  .up-lh-2\\\.{lh}
     line-height (2 + lh/10)
-.up-lh3
+.up-lh-3
   line-height 3
 
-/* cursor */
-.up-pointer
-  cursor pointer
 
 /* br */
 .up-br br
@@ -434,26 +468,26 @@ for lh in range(1,9,1)
 
 
 /* flex-wrap */
-.up-wrap
+.up-fxw-wrap
   flex-wrap wrap
-.up-wrapr
+.up-fxw-wrapr
   flex-wrap wrap-reverse
-.up-nowrap
+.up-fxw-nowrap
   flex-wrap nowrap
 
 /* flex-direction */
-.up-fd-row
+.up-fxd-row
   flex-direction row
-.up-fd-rowr
+.up-fxd-rowr
   flex-direction row-reverse
-.up-fd-col
+.up-fxd-col
   flex-direction column
-.up-fd-colr
+.up-fxd-colr
   flex-direction column-reverse
 
 /* 偶数と奇数番目で左右反転 */
-.up-fd-even > *:nth-child(even),
-.up-fd-odd > *:nth-child(odd)
+.up-fxd-even > *:nth-child(even),
+.up-fxd-odd > *:nth-child(odd)
   flex-direction: row-reverse;
 
 /* justify-content */
@@ -507,64 +541,151 @@ for lh in range(1,9,1)
   align-self auto
 
 /* grow, shrink */
-.up-grow0
+.up-fxg-0
   flex-grow 0
-.up-grow1
+.up-fxg-1
   flex-grow 1
-.up-shrink0
+.up-fxsh-0
   flex-shrink 0
-.up-shrink1
+.up-fxsh-1
   flex-shrink 1
 
-/* width */
+
+/* width(px) */
 .up-w-auto
   width auto
-.up-w48p
-  width 48%
-for width-px in range(0,500,5)
-  .up-w{width-px}
+for width-px in range(0,10,1)
+  .up-w-{width-px}
     width (width-px)px
+for width-px in range(20,300,10)
+  .up-w-{width-px}
+    width (width-px)px
+for width-px in range(350,1000,50)
+  .up-w-{width-px}
+    width (width-px)px
+/* width(%) */
+.up-w-48\\\%
+  width 48%
 for width-p in range(5,100,5)
-  .up-w{width-p}p
+  .up-w-{width-p}\\\%
     width (width-p)%
 
-/* min-width */
-for min-width-px in range(0,500,50)
-  .up-minw{min-width-px}
+/* min-width(px) */
+.up-minw-auto
+  min-width auto
+for min-width-px in range(0,10,1)
+  .up-minw-{min-width-px}
     min-width (min-width-px)px
+for min-width-px in range(20,300,10)
+  .up-minw-{min-width-px}
+    min-width (min-width-px)px
+for min-width-px in range(350,1000,50)
+  .up-minw-{min-width-px}
+    min-width (min-width-px)px
+/* min-width(%) */
+.up-minw-48\\\%
+  min-width 48%
+for min-width-p in range(5,100,5)
+  .up-minw-{min-width-p}\\\%
+    min-width (min-width-p)%
 
-/* max-width */
-for max-width-px in range(0,1000,50)
-  .up-maxw{max-width-px}
+/* max-width(px) */
+for max-width-px in range(0,10,1)
+  .up-maxw-{max-width-px}
     max-width (max-width-px)px
+for max-width-px in range(20,300,10)
+  .up-maxw-{max-width-px}
+    max-width (max-width-px)px
+for max-width-px in range(350,1000,50)
+  .up-maxw-{max-width-px}
+    max-width (max-width-px)px
+/* max-width(%) */
+.up-maxw-48\\\%
+  max-width 48%
+for max-width-p in range(5,100,5)
+  .up-maxw-{max-width-p}\\\%
+    max-width (max-width-p)%
 
-/* height */
+
+/* height(px) */
 .up-h-auto
   height auto
 .up-h-auto-i
   height auto !important
-.up-h0
-  height 0
-.up-h48p
+for height-px in range(0,10,1)
+  .up-h-{height-px}
+    height (height-px)px
+for height-px in range(20,300,10)
+  .up-h-{height-px}
+    height (height-px)px
+for height-px in range(350,1000,50)
+  .up-h-{height-px}
+    height (height-px)px
+/* height(%) */
+.up-h-48\\\%
   height 48%
 for height-p in range(5,100,5)
-  .up-h{height-p}p
+  .up-h-{height-p}\\\%
     height (height-p)%
 
-/* min-height */
-for min-height-px in range(0,500,50)
-  .up-minh{min-height-px}
+/* min-height(px) */
+.up-minh-auto
+  min-height auto
+for min-height-px in range(0,10,1)
+  .up-minh-{min-height-px}
     min-height (min-height-px)px
+for min-height-px in range(20,300,10)
+  .up-minh-{min-height-px}
+    min-height (min-height-px)px
+for min-height-px in range(350,1000,50)
+  .up-minh-{min-height-px}
+    min-height (min-height-px)px
+/* min-height(%) */
+.up-minh-48\\\%
+  min-height 48%
+for min-height-p in range(5,100,5)
+  .up-minh-{min-height-p}\\\%
+    min-height (min-height-p)%
 
-/* max-height */
-for max-height-px in range(0,700,50)
-  .up-maxh{max-height-px}
+/* max-height(px) */
+for max-height-px in range(0,10,1)
+  .up-maxh-{max-height-px}
     max-height (max-height-px)px
+for max-height-px in range(20,300,10)
+  .up-maxh-{max-height-px}
+    max-height (max-height-px)px
+for max-height-px in range(350,1000,50)
+  .up-maxh-{max-height-px}
+    max-height (max-height-px)px
+/* max-height(%) */
+.up-maxh-48\\\%
+  max-height 48%
+for max-height-p in range(5,100,5)
+  .up-maxh-{max-height-p}\\\%
+    max-height (max-height-p)%
 
 
 /* margin */
 .up-m-auto
   margin auto
+/* margin all(px 1~10) */
+range-margin-px = 0,10,1
+for margin-px in range(range-margin-px)
+  .up-m{margin-px}
+    margin (margin-px)px
+/* margin all(px 15~150) */
+range-margin-px = 15,150,5
+for margin-px in range(range-margin-px)
+  .up-m{margin-px}
+    margin (margin-px)px
+/* margin all(% 0.5~10) */
+range-margin-p = 1,10,1
+for margin-p in range(range-margin-p)
+  .up-m{margin-p - 1}\\\.5\\\%
+    margin (margin-p - .5)%
+  .up-m{margin-p}\\\%
+    margin (margin-p)%
+
 .up-ml-auto
   margin-left auto
 .up-mr-auto
@@ -572,11 +693,30 @@ for max-height-px in range(0,700,50)
 .up-mx-auto
   margin-right auto
   margin-left auto
-
+/* margin(px 1~10) */
 range-margin-px = 0,10,1
 for margin-px in range(range-margin-px)
-  .up-m{margin-px}
-    margin (margin-px)px
+  .up-mx{margin-px}
+    margin-right (margin-px)px
+    margin-left (margin-px)px
+for margin-px in range(range-margin-px)
+  .up-my{margin-px}
+    margin-top (margin-px)px
+    margin-bottom (margin-px)px
+for margin-px in range(range-margin-px)
+  .up-mt{margin-px}
+    margin-top (margin-px)px
+for margin-px in range(range-margin-px)
+  .up-mr{margin-px}
+    margin-right (margin-px)px
+for margin-px in range(range-margin-px)
+  .up-mb{margin-px}
+    margin-bottom (margin-px)px
+for margin-px in range(range-margin-px)
+  .up-ml{margin-px}
+    margin-left (margin-px)px
+/* margin(px 15~150) */
+range-margin-px = 15,150,5
 for margin-px in range(range-margin-px)
   .up-mx{margin-px}
     margin-right (margin-px)px
@@ -597,135 +737,64 @@ for margin-px in range(range-margin-px)
 for margin-px in range(range-margin-px)
   .up-ml{margin-px}
     margin-left (margin-px)px
-
-.up-m15
-  margin 15px
-.up-mx15
-  margin-right 15px
-  margin-left 15px
-.up-my15
-  margin-top 15px
-  margin-bottom 15px
-.up-mt15
-  margin-top 15px
-.up-mr15
-  margin-right 15px
-.up-mb15
-  margin-bottom 15px
-.up-ml15
-  margin-left 15px
-
-range-margin-px = 20,150,10
-for margin-px in range(range-margin-px)
-  .up-m{margin-px}
-    margin (margin-px)px
-for margin-px in range(range-margin-px)
-  .up-mx{margin-px}
-    margin-right (margin-px)px
-    margin-left (margin-px)px
-for margin-px in range(range-margin-px)
-  .up-my{margin-px}
-    margin-top (margin-px)px
-    margin-bottom (margin-px)px
-for margin-px in range(range-margin-px)
-  .up-mt{margin-px}
-    margin-top (margin-px)px
-for margin-px in range(range-margin-px)
-  .up-mr{margin-px}
-    margin-right (margin-px)px
-for margin-px in range(range-margin-px)
-  .up-mb{margin-px}
-    margin-bottom (margin-px)px
-for margin-px in range(range-margin-px)
-  .up-ml{margin-px}
-    margin-left (margin-px)px
-
+/* margin(% 0.5~10) */
 range-margin-p = 1,10,1
 for margin-p in range(range-margin-p)
-  .up-m{margin-p - 1}\\\.5p
-    margin (margin-p - .5)%
-  .up-m{margin-p}p
-    margin (margin-p)%
-for margin-p in range(range-margin-p)
-  .up-mx{margin-p - 1}\\\.5p
+  .up-mx{margin-p - 1}\\\.5\\\%
     margin-right (margin-p - .5)%
     margin-left (margin-p - .5)%
-  .up-mx{margin-p}p
+  .up-mx{margin-p}\\\%
     margin-right (margin-p)%
     margin-left (margin-p)%
 for margin-p in range(range-margin-p)
-  .up-my{margin-p - 1}\\\.5p
+  .up-my{margin-p - 1}\\\.5\\\%
     margin-top (margin-p - .5)%
     margin-bottom (margin-p - .5)%
-  .up-my{margin-p}p
+  .up-my{margin-p}\\\%
     margin-top (margin-p)%
     margin-bottom (margin-p)%
 for margin-p in range(range-margin-p)
-  .up-mt{margin-p - 1}\\\.5p
+  .up-mt{margin-p - 1}\\\.5\\\%
     margin-top (margin-p - .5)%
-  .up-mt{margin-p}p
+  .up-mt{margin-p}\\\%
     margin-top (margin-p)%
 for margin-p in range(range-margin-p)
-  .up-mr{margin-p - 1}\\\.5p
+  .up-mr{margin-p - 1}\\\.5\\\%
     margin-right (margin-p - .5)%
-  .up-mr{margin-p}p
+  .up-mr{margin-p}\\\%
     margin-right (margin-p)%
 for margin-p in range(range-margin-p)
-  .up-mb{margin-p - 1}\\\.5p
+  .up-mb{margin-p - 1}\\\.5\\\%
     margin-bottom (margin-p - .5)%
-  .up-mb{margin-p}p
+  .up-mb{margin-p}\\\%
     margin-bottom (margin-p)%
 for margin-p in range(range-margin-p)
-  .up-ml{margin-p - 1}\\\.5p
+  .up-ml{margin-p - 1}\\\.5\\\%
     margin-left (margin-p - .5)%
-  .up-ml{margin-p}p
+  .up-ml{margin-p}\\\%
     margin-left (margin-p)%
 
-/* padding */
+
+/* padding all(px 0~10) */
 range-padding-px = 0,10,1
 for padding-px in range(range-padding-px)
   .up-p{padding-px}
     padding (padding-px)px
-for padding-px in range(range-padding-px)
-  .up-px{padding-px}
-    padding-right (padding-px)px
-    padding-left (padding-px)px
-for padding-px in range(range-padding-px)
-  .up-py{padding-px}
-    padding-top (padding-px)px
-    padding-bottom (padding-px)px
-for padding-px in range(range-padding-px)
-  .up-pt{padding-px}
-    padding-top (padding-px)px
-for padding-px in range(range-padding-px)
-  .up-pr{padding-px}
-    padding-right (padding-px)px
-for padding-px in range(range-padding-px)
-  .up-pb{padding-px}
-    padding-bottom (padding-px)px
-for padding-px in range(range-padding-px)
-  .up-pl{padding-px}
-    padding-left (padding-px)px
-
-.up-px15
-  padding-right 15px
-  padding-left 15px
-.up-py15
-  padding-top 15px
-  padding-bottom 15px
-.up-pt15
-  padding-top 15px
-.up-pr15
-  padding-right 15px
-.up-pb15
-  padding-bottom 15px
-.up-pl15
-  padding-left 15px
-
-range-padding-px = 20,150,10
+/* padding all(px 15~150) */
+range-padding-px = 15,150,5
 for padding-px in range(range-padding-px)
   .up-p{padding-px}
     padding (padding-px)px
+/* padding all(% 0.5~10) */
+range-padding-p = 1,10,1
+for padding-p in range(range-padding-p)
+  .up-p{padding-p - 1}\\\.5\\\%
+    padding (padding-p - .5)%
+  .up-p{padding-p}\\\%
+    padding (padding-p)%
+
+/* padding (px 0~10) */
+range-padding-px = 0,10,1
 for padding-px in range(range-padding-px)
   .up-px{padding-px}
     padding-right (padding-px)px
@@ -746,6 +815,65 @@ for padding-px in range(range-padding-px)
 for padding-px in range(range-padding-px)
   .up-pl{padding-px}
     padding-left (padding-px)px
+/* padding (px 15~150) */
+range-padding-px = 15,150,5
+for padding-px in range(range-padding-px)
+  .up-px{padding-px}
+    padding-right (padding-px)px
+    padding-left (padding-px)px
+for padding-px in range(range-padding-px)
+  .up-py{padding-px}
+    padding-top (padding-px)px
+    padding-bottom (padding-px)px
+for padding-px in range(range-padding-px)
+  .up-pt{padding-px}
+    padding-top (padding-px)px
+for padding-px in range(range-padding-px)
+  .up-pr{padding-px}
+    padding-right (padding-px)px
+for padding-px in range(range-padding-px)
+  .up-pb{padding-px}
+    padding-bottom (padding-px)px
+for padding-px in range(range-padding-px)
+  .up-pl{padding-px}
+    padding-left (padding-px)px
+/* padding(% 0.5~10) */
+range-padding-p = 1,10,1
+for padding-p in range(range-padding-p)
+  .up-px{padding-p - 1}\\\.5\\\%
+    padding-right (padding-p - .5)%
+    padding-left (padding-p - .5)%
+  .up-px{padding-p}\\\%
+    padding-right (padding-p)%
+    padding-left (padding-p)%
+for padding-p in range(range-padding-p)
+  .up-py{padding-p - 1}\\\.5\\\%
+    padding-top (padding-p - .5)%
+    padding-bottom (padding-p - .5)%
+  .up-py{padding-p}\\\%
+    padding-top (padding-p)%
+    padding-bottom (padding-p)%
+for padding-p in range(range-padding-p)
+  .up-pt{padding-p - 1}\\\.5\\\%
+    padding-top (padding-p - .5)%
+  .up-pt{padding-p}\\\%
+    padding-top (padding-p)%
+for padding-p in range(range-padding-p)
+  .up-pr{padding-p - 1}\\\.5\\\%
+    padding-right (padding-p - .5)%
+  .up-pr{padding-p}\\\%
+    padding-right (padding-p)%
+for padding-p in range(range-padding-p)
+  .up-pb{padding-p - 1}\\\.5\\\%
+    padding-bottom (padding-p - .5)%
+  .up-pb{padding-p}\\\%
+    padding-bottom (padding-p)%
+for padding-p in range(range-padding-p)
+  .up-pl{padding-p - 1}\\\.5\\\%
+    padding-left (padding-p - .5)%
+  .up-pl{padding-p}\\\%
+    padding-left (padding-p)%
+
 
 /* カラム */
 .up-col2
@@ -834,7 +962,7 @@ for gapx-px in range(0,30,5)
 
 /* 画像比率固定 */
 for image in range(10,170,5)
-  .up-of-img{image}
+  .up-ofi-{image}
     &:after
       content ""
       display block
@@ -845,493 +973,589 @@ for image in range(10,170,5)
       left 0
 
 /* object-position */
-.up-of-c img
+.up-obp-c img
   font-family "object-fit: cover; object-position: center center;"
   object-position center
-.up-of-t img
+.up-obp-t img
   font-family "object-fit: cover; object-position: center top;"
   object-position top
-.up-of-r img
+.up-obp-r img
   font-family "object-fit: cover; object-position: right center;"
   object-position right
-.up-of-b img
+.up-obp-b img
   font-family "object-fit: cover; object-position: center bottom;"
   object-position bottom
-.up-of-l img
+.up-obp-l img
   font-family "object-fit: cover; object-position: left center;"
   object-position left
 
 /* object-position */
-.up-of-contain img
+.up-obf-contain img
   font-family "object-fit: contain; object-position: center center;"
-  object-position contain
+  object-fit contain
 
 
 @media only screen and (max-width 1024px)
   /* display */
-  .up-db_tb
+  .up-d-block\\\@tb
     display block
-  .up-dib_tb
+  .up-d-iblock\\\@tb
     display inline-block
-  .up-flex_tb
+  .up-d-flex\\\@tb
     display flex
-  .up-none_tb
+  .up-d-none\\\@tb
     display none
 
   /* box-sizing */
-  .up-content_tb
+  .up-bz-content\\\@tb
     box-sizing content-box
 
   /* position */
-  .up-fixed_tb
-    position fixed
-  .up-asolute_tb
-    position absolute
-  .up-relative_tb
+  .up-pos-rel\\\@tb
     position relative
+  .up-pos-abs\\\@tb
+    position absolute
+  .up-pos-fix\\\@tb
+    position fixed
 
   /* z-index */
-  for z in range(-5,5,1)
-    .up-z{z}_tb
+  for z in range(-5,-1,1)
+    .up-z-n{abs(z)}\\\@tb
+      z-index z
+  for z in range(0,5,1)
+    .up-z-{z}\\\@tb
       z-index z
 
   /* color */
-  .up-red_tb
+  .up-c-red\\\@tb
     color red
-  .up-blue_tb
+  .up-c-blue\\\@tb
     color blue
-  .up-yellow_tb
+  .up-c-yellow\\\@tb
     color yellow
-  .up-gray_tb
+  .up-c-gray\\\@tb
     color gray
-  .up-black_tb
+  .up-c-black\\\@tb
     color black
-  .up-white_tb
+  .up-c-white\\\@tb
     color white
 
   /* background-color */
-  .up-bgc-red_tb
+  .up-bgc-red\\\@tb
     background-color red
-  .up-bgc-blue_tb
+  .up-bgc-blue\\\@tb
     background-color blue
-  .up-bgc-yellow_tb
+  .up-bgc-yellow\\\@tb
     background-color yellow
-  .up-bgc-gray_tb
+  .up-bgc-gray\\\@tb
     background-color gray
-  .up-bgc-black_tb
+  .up-bgc-black\\\@tb
     background-color black
-  .up-bgc-white_tb
+  .up-bgc-white\\\@tb
     background-color white
 
   /* text-align */
-  .up-tac_tb
+  .up-ta-c\\\@tb
     text-align center
-  .up-tal_tb
+  .up-ta-l\\\@tb
     text-align left
-  .up-tar_tb
+  .up-ta-r\\\@tb
     text-align right
 
   /* font-size */
   for fz in range(10,20,1)
-    .up-fz{fz}_tb
+    .up-fz-{fz}\\\@tb
       font-size (fz)px
   for fz in range(22,70,2)
-    .up-fz{fz}_tb
+    .up-fz-{fz}\\\@tb
       font-size (fz)px
-  for fz in range(80,300,20)
-    .up-fz{fz}_tb
+  for fz in range(80,150,20)
+    .up-fz-{fz}\\\@tb
       font-size (fz)px
 
-  .up-fz1vw_tb
+  .up-fz-1vw\\\@tb
     font-size 1vw
   for fz-vw in range(1,9,1)
-    .up-fz1\\\.{fz-vw}vw_tb
+    .up-fz-1\\\.{fz-vw}vw\\\@tb
       font-size (1 + fz-vw/10)vw
-  .up-fz2vw_tb
+  .up-fz-2vw\\\@tb
     font-size 2vw
   for fz-vw in range(1,9,1)
-    .up-fz2\\\.{fz-vw}vw_tb
+    .up-fz-2\\\.{fz-vw}vw\\\@tb
       font-size (2 + fz-vw/10)vw
-  .up-fz3vw_tb
+  .up-fz-3vw\\\@tb
     font-size 3vw
 
+
   /* line-height */
-  .up-lh1_tb
+  .up-lh-1\\\@tb
     line-height 1
   for lh in range(1,9,1)
-    .up-lh1\\\.{lh}_tb
+    .up-lh-1\\\.{lh}\\\@tb
       line-height (1 + lh/10)
-  .up-lh2_tb
+  .up-lh-2\\\@tb
     line-height 2
   for lh in range(1,9,1)
-    .up-lh2\\\.{lh}_tb
+    .up-lh-2\\\.{lh}\\\@tb
       line-height (2 + lh/10)
-  .up-lh3_tb
+  .up-lh-3\\\@tb
     line-height 3
 
+
   /* br */
-  .up-br_tb br
+  .up-br\\\@tb br
     display inline
-  .up-br-none_tb br
+  .up-br-none\\\@tb br
     display none
 
   /* flex-wrap */
-  .up-wrap_tb
+  .up-fxw-wrap\\\@tb
     flex-wrap wrap
-  .up-wrapr_tb
+  .up-fxw-wrapr\\\@tb
     flex-wrap wrap-reverse
-  .up-nowrap_tb
+  .up-fxw-nowrap\\\@tb
     flex-wrap nowrap
 
   /* flex-direction */
-  .up-fd-row_tb
+  .up-fxd-row\\\@tb
     flex-direction row
-  .up-fd-rowr_tb
+  .up-fxd-rowr\\\@tb
     flex-direction row-reverse
-  .up-fd-col_tb
+  .up-fxd-col\\\@tb
     flex-direction column
-  .up-fd-colr_tb
+  .up-fxd-colr\\\@tb
     flex-direction column-reverse
 
   /* justify-content */
-  .up-jc-fs_tb
+  .up-jc-fs\\\@tb
     justify-content flex-start
-  .up-jc-fe_tb
+  .up-jc-fe\\\@tb
     justify-content flex-end
-  .up-jc-c_tb
+  .up-jc-c\\\@tb
     justify-content center
-  .up-jc-sb_tb
+  .up-jc-sb\\\@tb
     justify-content space-between
-  .up-jc-sa_tb
+  .up-jc-sa\\\@tb
     justify-content space-around
-  .up-jc-se_tb
+  .up-jc-se\\\@tb
     justify-content space-evenly
 
   /* align-items */
-  .up-ai-fs_tb
+  .up-ai-fs\\\@tb
     align-items flex-start
-  .up-ai-c_tb
+  .up-ai-c\\\@tb
     align-items center
-  .up-ai-fe_tb
+  .up-ai-fe\\\@tb
     align-items flex-end
-  .up-ai-b_tb
+  .up-ai-b\\\@tb
     align-items baseline
-  .up-ai-s_tb
+  .up-ai-s\\\@tb
     align-items stretch
 
   /* align-content */
-  .up-ac-fs_tb
+  .up-ac-fs\\\@tb
     align-content flex-start
-  .up-ac-c_tb
+  .up-ac-c\\\@tb
     align-content center
-  .up-ac-fe_tb
+  .up-ac-fe\\\@tb
     align-content flex-end
-  .up-ac-sb_tb
+  .up-ac-sb\\\@tb
     align-content space-between
-  .up-ac-sa_tb
+  .up-ac-sa\\\@tb
     align-content space-around
 
   /* align-self */
-  .up-as-fs_tb
+  .up-as-fs\\\@tb
     align-self flex-start
-  .up-as-c_tb
+  .up-as-c\\\@tb
     align-self center
-  .up-as-s_tb
+  .up-as-s\\\@tb
     align-self stretch
-  .up-as-fe_tb
+  .up-as-fe\\\@tb
     align-self flex-end
-  .up-as-auto_tb
+  .up-as-auto\\\@tb
     align-self auto
 
   /* grow, shrink */
-  .up-grow0_tb
+  .up-fxg-0\\\@tb
     flex-grow 0
-  .up-grow1_tb
+  .up-fxg-1\\\@tb
     flex-grow 1
-  .up-shrink0_tb
+  .up-fxsh-0\\\@tb
     flex-shrink 0
-  .up-shrink1_tb
+  .up-fxsh-1\\\@tb
     flex-shrink 1
 
-  /* width */
-  .up-w-auto_tb
+
+  /* width(px) */
+  .up-w-auto\\\@tb
     width auto
-  .up-w48p_tb
-    width 48%
-  for width-px in range(0,500,5)
-    .up-w{width-px}_tb
+  for width-px in range(0,10,1)
+    .up-w-{width-px}\\\@tb
       width (width-px)px
+  for width-px in range(20,300,10)
+    .up-w-{width-px}\\\@tb
+      width (width-px)px
+  for width-px in range(350,1000,50)
+    .up-w-{width-px}\\\@tb
+      width (width-px)px
+  /* width(%) */
+  .up-w-48\\\%\\\@tb
+    width 48%
   for width-p in range(5,100,5)
-    .up-w{width-p}p_tb
+    .up-w-{width-p}\\\%\\\@tb
       width (width-p)%
 
-  /* min-width */
-  for min-width-px in range(0,500,50)
-    .up-minw{min-width-px}_tb
+  /* min-width(px) */
+  .up-minw-auto\\\@tb
+    min-width auto
+  for min-width-px in range(0,10,1)
+    .up-minw-{min-width-px}\\\@tb
       min-width (min-width-px)px
+  for min-width-px in range(20,300,10)
+    .up-minw-{min-width-px}\\\@tb
+      min-width (min-width-px)px
+  for min-width-px in range(350,1000,50)
+    .up-minw-{min-width-px}\\\@tb
+      min-width (min-width-px)px
+  /* min-width(%) */
+  .up-minw-48\\\%\\\@tb
+    min-width 48%
+  for min-width-p in range(5,100,5)
+    .up-minw-{min-width-p}\\\%\\\@tb
+      min-width (min-width-p)%
 
-  /* max-width */
-  for max-width-px in range(0,1000,50)
-    .up-maxw{max-width-px}_tb
+  /* max-width(px) */
+  for max-width-px in range(0,10,1)
+    .up-maxw-{max-width-px}\\\@tb
       max-width (max-width-px)px
+  for max-width-px in range(20,300,10)
+    .up-maxw-{max-width-px}\\\@tb
+      max-width (max-width-px)px
+  for max-width-px in range(350,1000,50)
+    .up-maxw-{max-width-px}\\\@tb
+      max-width (max-width-px)px
+  /* max-width(%) */
+  .up-maxw-48\\\%\\\@tb
+    max-width 48%
+  for max-width-p in range(5,100,5)
+    .up-maxw-{max-width-p}\\\%\\\@tb
+      max-width (max-width-p)%
 
-  /* height */
-  .up-h-auto_tb
+
+  /* height(px) */
+  .up-h-auto\\\@tb
     height auto
-  .up-h-auto-i_tb
+  .up-h-auto-i\\\@tb
     height auto !important
-  .up-h0_tb
-    height 0
-  .up-h48p_tb
+  for height-px in range(0,10,1)
+    .up-h-{height-px}\\\@tb
+      height (height-px)px
+  for height-px in range(20,300,10)
+    .up-h-{height-px}\\\@tb
+      height (height-px)px
+  for height-px in range(350,1000,50)
+    .up-h-{height-px}\\\@tb
+      height (height-px)px
+  /* height(%) */
+  .up-h-48\\\%\\\@tb
     height 48%
   for height-p in range(5,100,5)
-    .up-h{height-p}p_tb
+    .up-h-{height-p}\\\%\\\@tb
       height (height-p)%
 
-  /* min-height */
-  for min-height-px in range(0,500,50)
-    .up-minh{min-height-px}_tb
+  /* min-height(px) */
+  .up-minh-auto\\\@tb
+    min-height auto
+  for min-height-px in range(0,10,1)
+    .up-minh-{min-height-px}\\\@tb
       min-height (min-height-px)px
+  for min-height-px in range(20,300,10)
+    .up-minh-{min-height-px}\\\@tb
+      min-height (min-height-px)px
+  for min-height-px in range(350,1000,50)
+    .up-minh-{min-height-px}\\\@tb
+      min-height (min-height-px)px
+  /* min-height(%) */
+  .up-minh-48\\\%\\\@tb
+    min-height 48%
+  for min-height-p in range(5,100,5)
+    .up-minh-{min-height-p}\\\%\\\@tb
+      min-height (min-height-p)%
 
-  /* max-height */
-  for max-height-px in range(0,700,50)
-    .up-maxh{max-height-px}_tb
+  /* max-height(px) */
+  for max-height-px in range(0,10,1)
+    .up-maxh-{max-height-px}\\\@tb
       max-height (max-height-px)px
+  for max-height-px in range(20,300,10)
+    .up-maxh-{max-height-px}\\\@tb
+      max-height (max-height-px)px
+  for max-height-px in range(350,1000,50)
+    .up-maxh-{max-height-px}\\\@tb
+      max-height (max-height-px)px
+  /* max-height(%) */
+  .up-maxh-48\\\%\\\@tb
+    max-height 48%
+  for max-height-p in range(5,100,5)
+    .up-maxh-{max-height-p}\\\%\\\@tb
+      max-height (max-height-p)%
+
 
   /* margin */
-  .up-m-auto_tb
+  .up-m-auto\\\@tb
     margin auto
-  .up-ml-auto_tb
-    margin-left auto
-  .up-mr-auto_tb
-    margin-right auto
-  .up-mx-auto_tb
-    margin-right auto
-    margin-left auto
-
+  /* margin all(px 1~10) */
   range-margin-px = 0,10,1
   for margin-px in range(range-margin-px)
-    .up-m{margin-px}_tb
+    .up-m{margin-px}\\\@tb
       margin (margin-px)px
+  /* margin all(px 15~150) */
+  range-margin-px = 15,150,5
   for margin-px in range(range-margin-px)
-    .up-mx{margin-px}_tb
-      margin-right (margin-px)px
-      margin-left (margin-px)px
-  for margin-px in range(range-margin-px)
-    .up-my{margin-px}_tb
-      margin-top (margin-px)px
-      margin-bottom (margin-px)px
-  for margin-px in range(range-margin-px)
-    .up-mt{margin-px}_tb
-      margin-top (margin-px)px
-  for margin-px in range(range-margin-px)
-    .up-mr{margin-px}_tb
-      margin-right (margin-px)px
-  for margin-px in range(range-margin-px)
-    .up-mb{margin-px}_tb
-      margin-bottom (margin-px)px
-  for margin-px in range(range-margin-px)
-    .up-ml{margin-px}_tb
-      margin-left (margin-px)px
-
-  .up-m15_tb
-    margin 15px
-  .up-mx15_tb
-    margin-right 15px
-    margin-left 15px
-  .up-my15_tb
-    margin-top 15px
-    margin-bottom 15px
-  .up-mt15_tb
-    margin-top 15px
-  .up-mr15_tb
-    margin-right 15px
-  .up-mb15_tb
-    margin-bottom 15px
-  .up-ml15_tb
-    margin-left 15px
-
-  range-margin-px = 20,150,10
-  for margin-px in range(range-margin-px)
-    .up-m{margin-px}_tb
+    .up-m{margin-px}\\\@tb
       margin (margin-px)px
-  for margin-px in range(range-margin-px)
-    .up-mx{margin-px}_tb
-      margin-right (margin-px)px
-      margin-left (margin-px)px
-  for margin-px in range(range-margin-px)
-    .up-my{margin-px}_tb
-      margin-top (margin-px)px
-      margin-bottom (margin-px)px
-  for margin-px in range(range-margin-px)
-    .up-mt{margin-px}_tb
-      margin-top (margin-px)px
-  for margin-px in range(range-margin-px)
-    .up-mr{margin-px}_tb
-      margin-right (margin-px)px
-  for margin-px in range(range-margin-px)
-    .up-mb{margin-px}_tb
-      margin-bottom (margin-px)px
-  for margin-px in range(range-margin-px)
-    .up-ml{margin-px}_tb
-      margin-left (margin-px)px
-
+  /* margin all(% 0.5~10) */
   range-margin-p = 1,10,1
   for margin-p in range(range-margin-p)
-    .up-m{margin-p - 1}\\\.5p_tb
+    .up-m{margin-p - 1}\\\.5\\\%\\\@tb
       margin (margin-p - .5)%
-    .up-m{margin-p}p_tb
+    .up-m{margin-p}\\\%\\\@tb
       margin (margin-p)%
+
+  .up-ml-auto\\\@tb
+    margin-left auto
+  .up-mr-auto\\\@tb
+    margin-right auto
+  .up-mx-auto\\\@tb
+    margin-right auto
+    margin-left auto
+  /* margin(px 1~10) */
+  range-margin-px = 0,10,1
+  for margin-px in range(range-margin-px)
+    .up-mx{margin-px}\\\@tb
+      margin-right (margin-px)px
+      margin-left (margin-px)px
+  for margin-px in range(range-margin-px)
+    .up-my{margin-px}\\\@tb
+      margin-top (margin-px)px
+      margin-bottom (margin-px)px
+  for margin-px in range(range-margin-px)
+    .up-mt{margin-px}\\\@tb
+      margin-top (margin-px)px
+  for margin-px in range(range-margin-px)
+    .up-mr{margin-px}\\\@tb
+      margin-right (margin-px)px
+  for margin-px in range(range-margin-px)
+    .up-mb{margin-px}\\\@tb
+      margin-bottom (margin-px)px
+  for margin-px in range(range-margin-px)
+    .up-ml{margin-px}\\\@tb
+      margin-left (margin-px)px
+  /* margin(px 15~150) */
+  range-margin-px = 15,150,5
+  for margin-px in range(range-margin-px)
+    .up-mx{margin-px}\\\@tb
+      margin-right (margin-px)px
+      margin-left (margin-px)px
+  for margin-px in range(range-margin-px)
+    .up-my{margin-px}\\\@tb
+      margin-top (margin-px)px
+      margin-bottom (margin-px)px
+  for margin-px in range(range-margin-px)
+    .up-mt{margin-px}\\\@tb
+      margin-top (margin-px)px
+  for margin-px in range(range-margin-px)
+    .up-mr{margin-px}\\\@tb
+      margin-right (margin-px)px
+  for margin-px in range(range-margin-px)
+    .up-mb{margin-px}\\\@tb
+      margin-bottom (margin-px)px
+  for margin-px in range(range-margin-px)
+    .up-ml{margin-px}\\\@tb
+      margin-left (margin-px)px
+  /* margin(% 0.5~10) */
+  range-margin-p = 1,10,1
   for margin-p in range(range-margin-p)
-    .up-mx{margin-p - 1}\\\.5p_tb
+    .up-mx{margin-p - 1}\\\.5\\\%\\\@tb
       margin-right (margin-p - .5)%
       margin-left (margin-p - .5)%
-    .up-mx{margin-p}p_tb
+    .up-mx{margin-p}\\\%\\\@tb
       margin-right (margin-p)%
       margin-left (margin-p)%
   for margin-p in range(range-margin-p)
-    .up-my{margin-p - 1}\\\.5p_tb
+    .up-my{margin-p - 1}\\\.5\\\%\\\@tb
       margin-top (margin-p - .5)%
       margin-bottom (margin-p - .5)%
-    .up-my{margin-p}p_tb
+    .up-my{margin-p}\\\%\\\@tb
       margin-top (margin-p)%
       margin-bottom (margin-p)%
   for margin-p in range(range-margin-p)
-    .up-mt{margin-p - 1}\\\.5p_tb
+    .up-mt{margin-p - 1}\\\.5\\\%\\\@tb
       margin-top (margin-p - .5)%
-    .up-mt{margin-p}p_tb
+    .up-mt{margin-p}\\\%\\\@tb
       margin-top (margin-p)%
   for margin-p in range(range-margin-p)
-    .up-mr{margin-p - 1}\\\.5p_tb
+    .up-mr{margin-p - 1}\\\.5\\\%\\\@tb
       margin-right (margin-p - .5)%
-    .up-mr{margin-p}p_tb
+    .up-mr{margin-p}\\\%\\\@tb
       margin-right (margin-p)%
   for margin-p in range(range-margin-p)
-    .up-mb{margin-p - 1}\\\.5p_tb
+    .up-mb{margin-p - 1}\\\.5\\\%\\\@tb
       margin-bottom (margin-p - .5)%
-    .up-mb{margin-p}p_tb
+    .up-mb{margin-p}\\\%\\\@tb
       margin-bottom (margin-p)%
   for margin-p in range(range-margin-p)
-    .up-ml{margin-p - 1}\\\.5p_tb
+    .up-ml{margin-p - 1}\\\.5\\\%\\\@tb
       margin-left (margin-p - .5)%
-    .up-ml{margin-p}p_tb
+    .up-ml{margin-p}\\\%\\\@tb
       margin-left (margin-p)%
 
 
-  /* padding */
+  /* padding all(px 0~10) */
   range-padding-px = 0,10,1
   for padding-px in range(range-padding-px)
-    .up-p{padding-px}_tb
+    .up-p{padding-px}\\\@tb
       padding (padding-px)px
+  /* padding all(px 15~150) */
+  range-padding-px = 15,150,5
   for padding-px in range(range-padding-px)
-    .up-px{padding-px}_tb
-      padding-right (padding-px)px
-      padding-left (padding-px)px
-  for padding-px in range(range-padding-px)
-    .up-py{padding-px}_tb
-      padding-top (padding-px)px
-      padding-bottom (padding-px)px
-  for padding-px in range(range-padding-px)
-    .up-pt{padding-px}_tb
-      padding-top (padding-px)px
-  for padding-px in range(range-padding-px)
-    .up-pr{padding-px}_tb
-      padding-right (padding-px)px
-  for padding-px in range(range-padding-px)
-    .up-pb{padding-px}_tb
-      padding-bottom (padding-px)px
-  for padding-px in range(range-padding-px)
-    .up-pl{padding-px}_tb
-      padding-left (padding-px)px
-
-  .up-p15_tb
-    padding 15px
-  .up-px15_tb
-    padding-right 15px
-    padding-left 15px
-  .up-py15_tb
-    padding-top 15px
-    padding-bottom 15px
-  .up-pt15_tb
-    padding-top 15px
-  .up-pr15_tb
-    padding-right 15px
-  .up-pb15_tb
-    padding-bottom 15px
-  .up-pl15_tb
-    padding-left 15px
-
-  range-padding-px = 20,150,10
-  for padding-px in range(range-padding-px)
-    .up-p{padding-px}_tb
+    .up-p{padding-px}\\\@tb
       padding (padding-px)px
+  /* padding all(% 0.5~10) */
+  range-padding-p = 1,10,1
+  for padding-p in range(range-padding-p)
+    .up-p{padding-p - 1}\\\.5\\\%\\\@tb
+      padding (padding-p - .5)%
+    .up-p{padding-p}\\\%\\\@tb
+      padding (padding-p)%
+
+  /* padding (px 0~10) */
+  range-padding-px = 0,10,1
   for padding-px in range(range-padding-px)
-    .up-px{padding-px}_tb
+    .up-px{padding-px}\\\@tb
       padding-right (padding-px)px
       padding-left (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-py{padding-px}_tb
+    .up-py{padding-px}\\\@tb
       padding-top (padding-px)px
       padding-bottom (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pt{padding-px}_tb
+    .up-pt{padding-px}\\\@tb
       padding-top (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pr{padding-px}_tb
+    .up-pr{padding-px}\\\@tb
       padding-right (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pb{padding-px}_tb
+    .up-pb{padding-px}\\\@tb
       padding-bottom (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pl{padding-px}_tb
+    .up-pl{padding-px}\\\@tb
       padding-left (padding-px)px
+  /* padding (px 15~150) */
+  range-padding-px = 15,150,5
+  for padding-px in range(range-padding-px)
+    .up-px{padding-px}\\\@tb
+      padding-right (padding-px)px
+      padding-left (padding-px)px
+  for padding-px in range(range-padding-px)
+    .up-py{padding-px}\\\@tb
+      padding-top (padding-px)px
+      padding-bottom (padding-px)px
+  for padding-px in range(range-padding-px)
+    .up-pt{padding-px}\\\@tb
+      padding-top (padding-px)px
+  for padding-px in range(range-padding-px)
+    .up-pr{padding-px}\\\@tb
+      padding-right (padding-px)px
+  for padding-px in range(range-padding-px)
+    .up-pb{padding-px}\\\@tb
+      padding-bottom (padding-px)px
+  for padding-px in range(range-padding-px)
+    .up-pl{padding-px}\\\@tb
+      padding-left (padding-px)px
+  /* padding(% 0.5~10) */
+  range-padding-p = 1,10,1
+  for padding-p in range(range-padding-p)
+    .up-px{padding-p - 1}\\\.5\\\%\\\@tb
+      padding-right (padding-p - .5)%
+      padding-left (padding-p - .5)%
+    .up-px{padding-p}\\\%\\\@tb
+      padding-right (padding-p)%
+      padding-left (padding-p)%
+  for padding-p in range(range-padding-p)
+    .up-py{padding-p - 1}\\\.5\\\%\\\@tb
+      padding-top (padding-p - .5)%
+      padding-bottom (padding-p - .5)%
+    .up-py{padding-p}\\\%\\\@tb
+      padding-top (padding-p)%
+      padding-bottom (padding-p)%
+  for padding-p in range(range-padding-p)
+    .up-pt{padding-p - 1}\\\.5\\\%\\\@tb
+      padding-top (padding-p - .5)%
+    .up-pt{padding-p}\\\%\\\@tb
+      padding-top (padding-p)%
+  for padding-p in range(range-padding-p)
+    .up-pr{padding-p - 1}\\\.5\\\%\\\@tb
+      padding-right (padding-p - .5)%
+    .up-pr{padding-p}\\\%\\\@tb
+      padding-right (padding-p)%
+  for padding-p in range(range-padding-p)
+    .up-pb{padding-p - 1}\\\.5\\\%\\\@tb
+      padding-bottom (padding-p - .5)%
+    .up-pb{padding-p}\\\%\\\@tb
+      padding-bottom (padding-p)%
+  for padding-p in range(range-padding-p)
+    .up-pl{padding-p - 1}\\\.5\\\%\\\@tb
+      padding-left (padding-p - .5)%
+    .up-pl{padding-p}\\\%\\\@tb
+      padding-left (padding-p)%
 
   /* カラム */
-  .up-col1_tb
+  .up-col1\\\@tb
     display flex
     flex-wrap wrap
     > *
       width 100%
-  .up-col2_tb
+  .up-col2\\\@tb
     display flex
     flex-wrap wrap
     > *
       width 50%
-  .up-col3_tb
+  .up-col3\\\@tb
     display flex
     flex-wrap wrap
     > *
       width 33.333%
-  .up-col4_tb
+  .up-col4\\\@tb
     display flex
     flex-wrap wrap
     > *
       width 25%
-  .up-col5_tb
+  .up-col5\\\@tb
     display flex
     flex-wrap wrap
     > *
       width 20%
-  .up-col6_tb
+  .up-col6\\\@tb
     display flex
     flex-wrap wrap
     > *
       width 16.666%
 
   for gapy in range(0,100,10)
-    .up-gapy{gapy}_tb
+    .up-gapy{gapy}\\\@tb
       > *
         margin-bottom gapy px
 
   for gapx in range(1,10,1)
-    .up-gapx{gapx}p_tb
+    .up-gapx{gapx}p\\\@tb
       margin-left -(gapx/2)%
       margin-right -(gapx/2)%
       > *
         margin-left (ceil((gapx/2),3))%
         margin-right (ceil((gapx/2),3))%
   for gapx-px in range(0,30,5)
-    .up-gapx{gapx-px}_tb
+    .up-gapx{gapx-px}\\\@tb
       margin-left -(gapx-px/2)px
       margin-right -(gapx-px/2)px
       > *
@@ -1340,101 +1564,101 @@ for image in range(10,170,5)
 
   /* gapx-p(pc*tb) */
   for gapx in range(1,10,1)
-    .up-col1.up-gapx{gapx}p_tb,
-    .up-col1_tb.up-gapx{gapx}p
+    .up-col1.up-gapx{gapx}p\\\@tb,
+    .up-col1\\\@tb.up-gapx{gapx}p
       > *
         width (100 - gapx)%
-    .up-col2.up-gapx{gapx}p_tb,
-    .up-col2_tb.up-gapx{gapx}p
+    .up-col2.up-gapx{gapx}p\\\@tb,
+    .up-col2\\\@tb.up-gapx{gapx}p
       > *
         width (50 - gapx)%
-    .up-col3.up-gapx{gapx}p_tb,
-    .up-col3_tb.up-gapx{gapx}p
+    .up-col3.up-gapx{gapx}p\\\@tb,
+    .up-col3\\\@tb.up-gapx{gapx}p
       > *
         width (33.333 - gapx)%
-    .up-col4.up-gapx{gapx}p_tb,
-    .up-col4_tb.up-gapx{gapx}p
+    .up-col4.up-gapx{gapx}p\\\@tb,
+    .up-col4\\\@tb.up-gapx{gapx}p
       > *
         width (25 - gapx)%
-    .up-col5.up-gapx{gapx}p_tb,
-    .up-col5_tb.up-gapx{gapx}p
+    .up-col5.up-gapx{gapx}p\\\@tb,
+    .up-col5\\\@tb.up-gapx{gapx}p
       > *
         width (20 - gapx)%
-    .up-col6.up-gapx{gapx}p_tb,
-    .up-col6_tb.up-gapx{gapx}p
+    .up-col6.up-gapx{gapx}p\\\@tb,
+    .up-col6\\\@tb.up-gapx{gapx}p
       > *
         width (16.666 - gapx)%
   /* gapx-px(pc*tb) */
   for gapx-px in range(0,30,5)
-    .up-col1.up-gapx{gapx-px}_tb,
-    .up-col1_tb.up-gapx{gapx-px}
+    .up-col1.up-gapx{gapx-px}\\\@tb,
+    .up-col1\\\@tb.up-gapx{gapx-px}
       > *
         width "calc(100% - %spx)" % (gapx-px)
-    .up-col2.up-gapx{gapx-px}_tb,
-    .up-col2_tb.up-gapx{gapx-px}
+    .up-col2.up-gapx{gapx-px}\\\@tb,
+    .up-col2\\\@tb.up-gapx{gapx-px}
       > *
         width "calc(50% - %spx)" % (gapx-px)
-    .up-col3.up-gapx{gapx-px}_tb,
-    .up-col3_tb.up-gapx{gapx-px}
+    .up-col3.up-gapx{gapx-px}\\\@tb,
+    .up-col3\\\@tb.up-gapx{gapx-px}
       > *
         width "calc(33.333% - %spx)" % (gapx-px)
-    .up-col4.up-gapx{gapx-px}_tb,
-    .up-col4_tb.up-gapx{gapx-px}
+    .up-col4.up-gapx{gapx-px}\\\@tb,
+    .up-col4\\\@tb.up-gapx{gapx-px}
       > *
         width "calc(25% - %spx)" % (gapx-px)
-    .up-col5.up-gapx{gapx-px}_tb,
-    .up-col5_tb.up-gapx{gapx-px}
+    .up-col5.up-gapx{gapx-px}\\\@tb,
+    .up-col5\\\@tb.up-gapx{gapx-px}
       > *
         width "calc(20% - %spx)" % (gapx-px)
-    .up-col6.up-gapx{gapx-px}_tb,
-    .up-col6_tb.up-gapx{gapx-px}
+    .up-col6.up-gapx{gapx-px}\\\@tb,
+    .up-col6\\\@tb.up-gapx{gapx-px}
       > *
         width "calc(16.666% - %spx)" % (gapx-px)
 
   /* gapx-p(tb*tb) */
   for gapx in range(1,10,1)
-    .up-col1_tb.up-gapx{gapx}p_tb
+    .up-col1\\\@tb.up-gapx{gapx}p\\\@tb
       > *
         width (100 - gapx)%
-    .up-col2_tb.up-gapx{gapx}p_tb
+    .up-col2\\\@tb.up-gapx{gapx}p\\\@tb
       > *
         width (50 - gapx)%
-    .up-col3_tb.up-gapx{gapx}p_tb
+    .up-col3\\\@tb.up-gapx{gapx}p\\\@tb
       > *
         width (33.333 - gapx)%
-    .up-col4_tb.up-gapx{gapx}p_tb
+    .up-col4\\\@tb.up-gapx{gapx}p\\\@tb
       > *
         width (25 - gapx)%
-    .up-col5_tb.up-gapx{gapx}p_tb
+    .up-col5\\\@tb.up-gapx{gapx}p\\\@tb
       > *
         width (20 - gapx)%
-    .up-col6_tb.up-gapx{gapx}p_tb
+    .up-col6\\\@tb.up-gapx{gapx}p\\\@tb
       > *
         width (16.666 - gapx)%
   /* gapx-px(tb*tb) */
   for gapx-px in range(0,30,5)
-    .up-col1_tb.up-gapx{gapx-px}_tb
+    .up-col1\\\@tb.up-gapx{gapx-px}\\\@tb
       > *
         width "calc(100% - %spx)" % (gapx-px)
-    .up-col2_tb.up-gapx{gapx-px}_tb
+    .up-col2\\\@tb.up-gapx{gapx-px}\\\@tb
       > *
         width "calc(50% - %spx)" % (gapx-px)
-    .up-col3_tb.up-gapx{gapx-px}_tb
+    .up-col3\\\@tb.up-gapx{gapx-px}\\\@tb
       > *
         width "calc(33.333% - %spx)" % (gapx-px)
-    .up-col4_tb.up-gapx{gapx-px}_tb
+    .up-col4\\\@tb.up-gapx{gapx-px}\\\@tb
       > *
         width "calc(25% - %spx)" % (gapx-px)
-    .up-col5_tb.up-gapx{gapx-px}_tb
+    .up-col5\\\@tb.up-gapx{gapx-px}\\\@tb
       > *
         width "calc(20% - %spx)" % (gapx-px)
-    .up-col6_tb.up-gapx{gapx-px}_tb
+    .up-col6\\\@tb.up-gapx{gapx-px}\\\@tb
       > *
         width "calc(16.666% - %spx)" % (gapx-px)
 
   /* 画像比率固定 */
   for image in range(10,170,5)
-    .up-of-img{image}_tb
+    .up-ofi-{image}\\\@tb
       &:after
         content ""
         display block
@@ -1445,491 +1669,589 @@ for image in range(10,170,5)
         left 0
 
   /* object-position */
-  .up-of-c_tb img
+  .up-obp-c\\\@tb img
     font-family "object-fit: cover; object-position: center center;"
     object-position center
-  .up-of-t_tb img
+  .up-obp-t\\\@tb img
     font-family "object-fit: cover; object-position: center top;"
     object-position top
-  .up-of-r_tb img
+  .up-obp-r\\\@tb img
     font-family "object-fit: cover; object-position: right center;"
     object-position right
-  .up-of-b_tb img
+  .up-obp-b\\\@tb img
     font-family "object-fit: cover; object-position: center bottom;"
     object-position bottom
-  .up-of-l_tb img
+  .up-obp-l\\\@tb img
     font-family "object-fit: cover; object-position: left center;"
     object-position left
 
   /* object-fit */
-  .up-of-contain_tb img
+  .up-obf-contain\\\@tb img
     font-family "object-fit: contain; object-position: center center;"
     object-fit contain
 
 @media only screen and (max-width 599px)
   /* display */
-  .up-db_sp
+  .up-d-block\\\@sp
     display block
-  .up-dib_sp
+  .up-d-iblock\\\@sp
     display inline-block
-  .up-flex_sp
+  .up-d-flex\\\@sp
     display flex
-  .up-none_sp
+  .up-d-none\\\@sp
     display none
 
   /* box-sizing */
-  .up-content_sp
+  .up-bz-content\\\@sp
     box-sizing content-box
 
   /* position */
-  .up-fixed_sp
-    position fixed
-  .up-asolute_sp
-    position absolute
-  .up-relative_sp
+  .up-pos-rel\\\@sp
     position relative
+  .up-pos-abs\\\@sp
+    position absolute
+  .up-pos-fix\\\@sp
+    position fixed
 
   /* z-index */
-  for z in range(-5,5,1)
-    .up-z{z}_sp
+  for z in range(-5,-1,1)
+    .up-z-n{abs(z)}\\\@sp
+      z-index z
+  for z in range(0,5,1)
+    .up-z-{z}\\\@sp
       z-index z
 
   /* color */
-  .up-red_sp
+  .up-c-red\\\@sp
     color red
-  .up-blue_sp
+  .up-c-blue\\\@sp
     color blue
-  .up-yellow_sp
+  .up-c-yellow\\\@sp
     color yellow
-  .up-gray_sp
+  .up-c-gray\\\@sp
     color gray
-  .up-black_sp
+  .up-c-black\\\@sp
     color black
-  .up-white_sp
+  .up-c-white\\\@sp
     color white
 
   /* background-color */
-  .up-bgc-red_sp
+  .up-bgc-red\\\@sp
     background-color red
-  .up-bgc-blue_sp
+  .up-bgc-blue\\\@sp
     background-color blue
-  .up-bgc-yellow_sp
+  .up-bgc-yellow\\\@sp
     background-color yellow
-  .up-bgc-gray_sp
+  .up-bgc-gray\\\@sp
     background-color gray
-  .up-bgc-black_sp
+  .up-bgc-black\\\@sp
     background-color black
-  .up-bgc-white_sp
+  .up-bgc-white\\\@sp
     background-color white
 
   /* text-align */
-  .up-tac_sp
+  .up-ta-c\\\@sp
     text-align center
-  .up-tal_sp
+  .up-ta-l\\\@sp
     text-align left
-  .up-tar_sp
+  .up-ta-r\\\@sp
     text-align right
 
   /* font-size */
   for fz in range(10,20,1)
-    .up-fz{fz}_sp
+    .up-fz-{fz}\\\@sp
       font-size (fz)px
   for fz in range(22,70,2)
-    .up-fz{fz}_sp
+    .up-fz-{fz}\\\@sp
       font-size (fz)px
-  for fz in range(80,300,20)
-    .up-fz{fz}_sp
+  for fz in range(80,150,20)
+    .up-fz-{fz}\\\@sp
       font-size (fz)px
-  .up-fz1vw_sp
+
+  .up-fz-1vw\\\@sp
     font-size 1vw
   for fz-vw in range(1,9,1)
-    .up-fz1\\\.{fz-vw}vw_sp
+    .up-fz-1\\\.{fz-vw}vw\\\@sp
       font-size (1 + fz-vw/10)vw
-  .up-fz2vw_sp
+  .up-fz-2vw\\\@sp
     font-size 2vw
   for fz-vw in range(1,9,1)
-    .up-fz2\\\.{fz-vw}vw_sp
+    .up-fz-2\\\.{fz-vw}vw\\\@sp
       font-size (2 + fz-vw/10)vw
-  .up-fz3vw_sp
+  .up-fz-3vw\\\@sp
     font-size 3vw
 
+
   /* line-height */
-  .up-lh1_sp
+  .up-lh-1\\\@sp
     line-height 1
   for lh in range(1,9,1)
-    .up-lh1\\\.{lh}_sp
+    .up-lh-1\\\.{lh}\\\@sp
       line-height (1 + lh/10)
-  .up-lh2_sp
+  .up-lh-2\\\@sp
     line-height 2
   for lh in range(1,9,1)
-    .up-lh2\\\.{lh}_sp
+    .up-lh-2\\\.{lh}\\\@sp
       line-height (2 + lh/10)
-  .up-lh3_sp
+  .up-lh-3\\\@sp
     line-height 3
 
+
   /* br */
-  .up-br_sp br
+  .up-br\\\@sp br
     display inline
-  .up-br-none_sp br
+  .up-br-none\\\@sp br
     display none
 
   /* flex-wrap */
-  .up-wrap_sp
+  .up-fxw-wrap\\\@sp
     flex-wrap wrap
-  .up-wrapr_sp
+  .up-fxw-wrapr\\\@sp
     flex-wrap wrap-reverse
-  .up-nowrap_sp
+  .up-fxw-nowrap\\\@sp
     flex-wrap nowrap
 
   /* flex-direction */
-  .up-fd-row_sp
+  .up-fxd-row\\\@sp
     flex-direction row
-  .up-fd-rowr_sp
+  .up-fxd-rowr\\\@sp
     flex-direction row-reverse
-  .up-fd-col_sp
+  .up-fxd-col\\\@sp
     flex-direction column
-  .up-fd-colr_sp
+  .up-fxd-colr\\\@sp
     flex-direction column-reverse
 
   /* justify-content */
-  .up-jc-fs_sp
+  .up-jc-fs\\\@sp
     justify-content flex-start
-  .up-jc-fe_sp
+  .up-jc-fe\\\@sp
     justify-content flex-end
-  .up-jc-c_sp
+  .up-jc-c\\\@sp
     justify-content center
-  .up-jc-sb_sp
+  .up-jc-sb\\\@sp
     justify-content space-between
-  .up-jc-sa_sp
+  .up-jc-sa\\\@sp
     justify-content space-around
-  .up-jc-se_sp
+  .up-jc-se\\\@sp
     justify-content space-evenly
 
   /* align-items */
-  .up-ai-fs_sp
+  .up-ai-fs\\\@sp
     align-items flex-start
-  .up-ai-c_sp
+  .up-ai-c\\\@sp
     align-items center
-  .up-ai-fe_sp
+  .up-ai-fe\\\@sp
     align-items flex-end
-  .up-ai-b_sp
+  .up-ai-b\\\@sp
     align-items baseline
-  .up-ai-s_sp
+  .up-ai-s\\\@sp
     align-items stretch
 
   /* align-content */
-  .up-ac-fs_sp
+  .up-ac-fs\\\@sp
     align-content flex-start
-  .up-ac-c_sp
+  .up-ac-c\\\@sp
     align-content center
-  .up-ac-fe_sp
+  .up-ac-fe\\\@sp
     align-content flex-end
-  .up-ac-sb_sp
+  .up-ac-sb\\\@sp
     align-content space-between
-  .up-ac-sa_sp
+  .up-ac-sa\\\@sp
     align-content space-around
 
   /* align-self */
-  .up-as-fs_sp
+  .up-as-fs\\\@sp
     align-self flex-start
-  .up-as-c_sp
+  .up-as-c\\\@sp
     align-self center
-  .up-as-s_sp
+  .up-as-s\\\@sp
     align-self stretch
-  .up-as-fe_sp
+  .up-as-fe\\\@sp
     align-self flex-end
-  .up-as-auto_sp
+  .up-as-auto\\\@sp
     align-self auto
 
   /* grow, shrink */
-  .up-grow0_sp
+  .up-fxg-0\\\@sp
     flex-grow 0
-  .up-grow1_sp
+  .up-fxg-1\\\@sp
     flex-grow 1
-  .up-shrink0_sp
+  .up-fxsh-0\\\@sp
     flex-shrink 0
-  .up-shrink1_sp
+  .up-fxsh-1\\\@sp
     flex-shrink 1
 
-  /* width */
-  .up-w-auto_sp
+
+  /* width(px) */
+  .up-w-auto\\\@sp
     width auto
-  .up-w48p_sp
-    width 48%
-  for width-px in range(0,500,5)
-    .up-w{width-px}_sp
+  for width-px in range(0,10,1)
+    .up-w-{width-px}\\\@sp
       width (width-px)px
+  for width-px in range(20,300,10)
+    .up-w-{width-px}\\\@sp
+      width (width-px)px
+  for width-px in range(350,1000,50)
+    .up-w-{width-px}\\\@sp
+      width (width-px)px
+  /* width(%) */
+  .up-w-48\\\%\\\@sp
+    width 48%
   for width-p in range(5,100,5)
-    .up-w{width-p}p_sp
+    .up-w-{width-p}\\\%\\\@sp
       width (width-p)%
 
-  /* min-width */
-  for min-width-px in range(0,500,50)
-    .up-minw{min-width-px}_sp
+  /* min-width(px) */
+  .up-minw-auto\\\@sp
+    min-width auto
+  for min-width-px in range(0,10,1)
+    .up-minw-{min-width-px}\\\@sp
       min-width (min-width-px)px
+  for min-width-px in range(20,300,10)
+    .up-minw-{min-width-px}\\\@sp
+      min-width (min-width-px)px
+  for min-width-px in range(350,1000,50)
+    .up-minw-{min-width-px}\\\@sp
+      min-width (min-width-px)px
+  /* min-width(%) */
+  .up-minw-48\\\%\\\@sp
+    min-width 48%
+  for min-width-p in range(5,100,5)
+    .up-minw-{min-width-p}\\\%\\\@sp
+      min-width (min-width-p)%
 
-  /* max-width */
-  for max-width-px in range(0,1000,50)
-    .up-maxw{max-width-px}_sp
+  /* max-width(px) */
+  for max-width-px in range(0,10,1)
+    .up-maxw-{max-width-px}\\\@sp
       max-width (max-width-px)px
+  for max-width-px in range(20,300,10)
+    .up-maxw-{max-width-px}\\\@sp
+      max-width (max-width-px)px
+  for max-width-px in range(350,1000,50)
+    .up-maxw-{max-width-px}\\\@sp
+      max-width (max-width-px)px
+  /* max-width(%) */
+  .up-maxw-48\\\%\\\@sp
+    max-width 48%
+  for max-width-p in range(5,100,5)
+    .up-maxw-{max-width-p}\\\%\\\@sp
+      max-width (max-width-p)%
 
-  /* max-height */
-  for max-height-px in range(0,700,50)
-    .up-maxh{max-height-px}_sp
-      max-height (max-height-px)px
 
-  /* height */
-  .up-h-auto_sp
+  /* height(px) */
+  .up-h-auto\\\@sp
     height auto
-  .up-h-auto-i_sp
+  .up-h-auto-i\\\@sp
     height auto !important
-  .up-h0_sp
-    height 0
-  .up-h48p_sp
+  for height-px in range(0,10,1)
+    .up-h-{height-px}\\\@sp
+      height (height-px)px
+  for height-px in range(20,300,10)
+    .up-h-{height-px}\\\@sp
+      height (height-px)px
+  for height-px in range(350,1000,50)
+    .up-h-{height-px}\\\@sp
+      height (height-px)px
+  /* height(%) */
+  .up-h-48\\\%\\\@sp
     height 48%
   for height-p in range(5,100,5)
-    .up-h{height-p}p_sp
+    .up-h-{height-p}\\\%\\\@sp
       height (height-p)%
 
-  /* min-height */
-  for min-height-px in range(0,500,50)
-    .up-minh{min-height-px}_sp
+  /* min-height(px) */
+  .up-minh-auto\\\@sp
+    min-height auto
+  for min-height-px in range(0,10,1)
+    .up-minh-{min-height-px}\\\@sp
       min-height (min-height-px)px
+  for min-height-px in range(20,300,10)
+    .up-minh-{min-height-px}\\\@sp
+      min-height (min-height-px)px
+  for min-height-px in range(350,1000,50)
+    .up-minh-{min-height-px}\\\@sp
+      min-height (min-height-px)px
+  /* min-height(%) */
+  .up-minh-48\\\%\\\@sp
+    min-height 48%
+  for min-height-p in range(5,100,5)
+    .up-minh-{min-height-p}\\\%\\\@sp
+      min-height (min-height-p)%
+
+  /* max-height(px) */
+  for max-height-px in range(0,10,1)
+    .up-maxh-{max-height-px}\\\@sp
+      max-height (max-height-px)px
+  for max-height-px in range(20,300,10)
+    .up-maxh-{max-height-px}\\\@sp
+      max-height (max-height-px)px
+  for max-height-px in range(350,1000,50)
+    .up-maxh-{max-height-px}\\\@sp
+      max-height (max-height-px)px
+  /* max-height(%) */
+  .up-maxh-48\\\%\\\@sp
+    max-height 48%
+  for max-height-p in range(5,100,5)
+    .up-maxh-{max-height-p}\\\%\\\@sp
+      max-height (max-height-p)%
+
 
   /* margin */
-  .up-m-auto_sp
+  .up-m-auto\\\@sp
     margin auto
-  .up-ml-auto_sp
-    margin-left auto
-  .up-mr-auto_sp
-    margin-right auto
-  .up-mx-auto_sp
-    margin-right auto
-    margin-left auto
-
+  /* margin all(px 1~10) */
   range-margin-px = 0,10,1
   for margin-px in range(range-margin-px)
-    .up-m{margin-px}_sp
+    .up-m{margin-px}\\\@sp
       margin (margin-px)px
+  /* margin all(px 15~150) */
+  range-margin-px = 15,150,5
   for margin-px in range(range-margin-px)
-    .up-mx{margin-px}_sp
-      margin-right (margin-px)px
-      margin-left (margin-px)px
-  for margin-px in range(range-margin-px)
-    .up-my{margin-px}_sp
-      margin-top (margin-px)px
-      margin-bottom (margin-px)px
-  for margin-px in range(range-margin-px)
-    .up-mt{margin-px}_sp
-      margin-top (margin-px)px
-  for margin-px in range(range-margin-px)
-    .up-mr{margin-px}_sp
-      margin-right (margin-px)px
-  for margin-px in range(range-margin-px)
-    .up-mb{margin-px}_sp
-      margin-bottom (margin-px)px
-  for margin-px in range(range-margin-px)
-    .up-ml{margin-px}_sp
-      margin-left (margin-px)px
-
-  .up-m15_sp
-    margin 15px
-  .up-mx15_sp
-    margin-right 15px
-    margin-left 15px
-  .up-my15_sp
-    margin-top 15px
-    margin-bottom 15px
-  .up-mt15_sp
-    margin-top 15px
-  .up-mr15_sp
-    margin-right 15px
-  .up-mb15_sp
-    margin-bottom 15px
-  .up-ml15_sp
-    margin-left 15px
-
-  range-margin-px = 20,150,10
-  for margin-px in range(range-margin-px)
-    .up-m{margin-px}_sp
+    .up-m{margin-px}\\\@sp
       margin (margin-px)px
-  for margin-px in range(range-margin-px)
-    .up-mx{margin-px}_sp
-      margin-right (margin-px)px
-      margin-left (margin-px)px
-  for margin-px in range(range-margin-px)
-    .up-my{margin-px}_sp
-      margin-top (margin-px)px
-      margin-bottom (margin-px)px
-  for margin-px in range(range-margin-px)
-    .up-mt{margin-px}_sp
-      margin-top (margin-px)px
-  for margin-px in range(range-margin-px)
-    .up-mr{margin-px}_sp
-      margin-right (margin-px)px
-  for margin-px in range(range-margin-px)
-    .up-mb{margin-px}_sp
-      margin-bottom (margin-px)px
-  for margin-px in range(range-margin-px)
-    .up-ml{margin-px}_sp
-      margin-left (margin-px)px
-
+  /* margin all(% 0.5~10) */
   range-margin-p = 1,10,1
   for margin-p in range(range-margin-p)
-    .up-m{margin-p - 1}\\\.5p_sp
+    .up-m{margin-p - 1}\\\.5\\\%\\\@sp
       margin (margin-p - .5)%
-    .up-m{margin-p}p_sp
+    .up-m{margin-p}\\\%\\\@sp
       margin (margin-p)%
+
+  .up-ml-auto\\\@sp
+    margin-left auto
+  .up-mr-auto\\\@sp
+    margin-right auto
+  .up-mx-auto\\\@sp
+    margin-right auto
+    margin-left auto
+  /* margin(px 1~10) */
+  range-margin-px = 0,10,1
+  for margin-px in range(range-margin-px)
+    .up-mx{margin-px}\\\@sp
+      margin-right (margin-px)px
+      margin-left (margin-px)px
+  for margin-px in range(range-margin-px)
+    .up-my{margin-px}\\\@sp
+      margin-top (margin-px)px
+      margin-bottom (margin-px)px
+  for margin-px in range(range-margin-px)
+    .up-mt{margin-px}\\\@sp
+      margin-top (margin-px)px
+  for margin-px in range(range-margin-px)
+    .up-mr{margin-px}\\\@sp
+      margin-right (margin-px)px
+  for margin-px in range(range-margin-px)
+    .up-mb{margin-px}\\\@sp
+      margin-bottom (margin-px)px
+  for margin-px in range(range-margin-px)
+    .up-ml{margin-px}\\\@sp
+      margin-left (margin-px)px
+  /* margin(px 15~150) */
+  range-margin-px = 15,150,5
+  for margin-px in range(range-margin-px)
+    .up-mx{margin-px}\\\@sp
+      margin-right (margin-px)px
+      margin-left (margin-px)px
+  for margin-px in range(range-margin-px)
+    .up-my{margin-px}\\\@sp
+      margin-top (margin-px)px
+      margin-bottom (margin-px)px
+  for margin-px in range(range-margin-px)
+    .up-mt{margin-px}\\\@sp
+      margin-top (margin-px)px
+  for margin-px in range(range-margin-px)
+    .up-mr{margin-px}\\\@sp
+      margin-right (margin-px)px
+  for margin-px in range(range-margin-px)
+    .up-mb{margin-px}\\\@sp
+      margin-bottom (margin-px)px
+  for margin-px in range(range-margin-px)
+    .up-ml{margin-px}\\\@sp
+      margin-left (margin-px)px
+  /* margin(% 0.5~10) */
+  range-margin-p = 1,10,1
   for margin-p in range(range-margin-p)
-    .up-mx{margin-p - 1}\\\.5p_sp
+    .up-mx{margin-p - 1}\\\.5\\\%\\\@sp
       margin-right (margin-p - .5)%
       margin-left (margin-p - .5)%
-    .up-mx{margin-p}p_sp
+    .up-mx{margin-p}\\\%\\\@sp
       margin-right (margin-p)%
       margin-left (margin-p)%
   for margin-p in range(range-margin-p)
-    .up-my{margin-p - 1}\\\.5p_sp
+    .up-my{margin-p - 1}\\\.5\\\%\\\@sp
       margin-top (margin-p - .5)%
       margin-bottom (margin-p - .5)%
-    .up-my{margin-p}p_sp
+    .up-my{margin-p}\\\%\\\@sp
       margin-top (margin-p)%
       margin-bottom (margin-p)%
   for margin-p in range(range-margin-p)
-    .up-mt{margin-p - 1}\\\.5p_sp
+    .up-mt{margin-p - 1}\\\.5\\\%\\\@sp
       margin-top (margin-p - .5)%
-    .up-mt{margin-p}p_sp
+    .up-mt{margin-p}\\\%\\\@sp
       margin-top (margin-p)%
   for margin-p in range(range-margin-p)
-    .up-mr{margin-p - 1}\\\.5p_sp
+    .up-mr{margin-p - 1}\\\.5\\\%\\\@sp
       margin-right (margin-p - .5)%
-    .up-mr{margin-p}p_sp
+    .up-mr{margin-p}\\\%\\\@sp
       margin-right (margin-p)%
   for margin-p in range(range-margin-p)
-    .up-mb{margin-p - 1}\\\.5p_sp
+    .up-mb{margin-p - 1}\\\.5\\\%\\\@sp
       margin-bottom (margin-p - .5)%
-    .up-mb{margin-p}p_sp
+    .up-mb{margin-p}\\\%\\\@sp
       margin-bottom (margin-p)%
   for margin-p in range(range-margin-p)
-    .up-ml{margin-p - 1}\\\.5p_sp
+    .up-ml{margin-p - 1}\\\.5\\\%\\\@sp
       margin-left (margin-p - .5)%
-    .up-ml{margin-p}p_sp
+    .up-ml{margin-p}\\\%\\\@sp
       margin-left (margin-p)%
 
 
-  /* padding */
+  /* padding all(px 0~10) */
   range-padding-px = 0,10,1
   for padding-px in range(range-padding-px)
-    .up-p{padding-px}_sp
+    .up-p{padding-px}\\\@sp
       padding (padding-px)px
+  /* padding all(px 15~150) */
+  range-padding-px = 15,150,5
   for padding-px in range(range-padding-px)
-    .up-px{padding-px}_sp
-      padding-right (padding-px)px
-      padding-left (padding-px)px
-  for padding-px in range(range-padding-px)
-    .up-py{padding-px}_sp
-      padding-top (padding-px)px
-      padding-bottom (padding-px)px
-  for padding-px in range(range-padding-px)
-    .up-pt{padding-px}_sp
-      padding-top (padding-px)px
-  for padding-px in range(range-padding-px)
-    .up-pr{padding-px}_sp
-      padding-right (padding-px)px
-  for padding-px in range(range-padding-px)
-    .up-pb{padding-px}_sp
-      padding-bottom (padding-px)px
-  for padding-px in range(range-padding-px)
-    .up-pl{padding-px}_sp
-      padding-left (padding-px)px
-
-  .up-p15_sp
-    padding 15px
-  .up-px15_sp
-    padding-right 15px
-    padding-left 15px
-  .up-py15_sp
-    padding-top 15px
-    padding-bottom 15px
-  .up-pt15_sp
-    padding-top 15px
-  .up-pr15_sp
-    padding-right 15px
-  .up-pb15_sp
-    padding-bottom 15px
-  .up-pl15_sp
-    padding-left 15px
-
-  range-padding-px = 20,150,10
-  for padding-px in range(range-padding-px)
-    .up-p{padding-px}_sp
+    .up-p{padding-px}\\\@sp
       padding (padding-px)px
+  /* padding all(% 0.5~10) */
+  range-padding-p = 1,10,1
+  for padding-p in range(range-padding-p)
+    .up-p{padding-p - 1}\\\.5\\\%\\\@sp
+      padding (padding-p - .5)%
+    .up-p{padding-p}\\\%\\\@sp
+      padding (padding-p)%
+
+  /* padding (px 0~10) */
+  range-padding-px = 0,10,1
   for padding-px in range(range-padding-px)
-    .up-px{padding-px}_sp
+    .up-px{padding-px}\\\@sp
       padding-right (padding-px)px
       padding-left (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-py{padding-px}_sp
+    .up-py{padding-px}\\\@sp
       padding-top (padding-px)px
       padding-bottom (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pt{padding-px}_sp
+    .up-pt{padding-px}\\\@sp
       padding-top (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pr{padding-px}_sp
+    .up-pr{padding-px}\\\@sp
       padding-right (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pb{padding-px}_sp
+    .up-pb{padding-px}\\\@sp
       padding-bottom (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pl{padding-px}_sp
+    .up-pl{padding-px}\\\@sp
       padding-left (padding-px)px
+  /* padding (px 15~150) */
+  range-padding-px = 15,150,5
+  for padding-px in range(range-padding-px)
+    .up-px{padding-px}\\\@sp
+      padding-right (padding-px)px
+      padding-left (padding-px)px
+  for padding-px in range(range-padding-px)
+    .up-py{padding-px}\\\@sp
+      padding-top (padding-px)px
+      padding-bottom (padding-px)px
+  for padding-px in range(range-padding-px)
+    .up-pt{padding-px}\\\@sp
+      padding-top (padding-px)px
+  for padding-px in range(range-padding-px)
+    .up-pr{padding-px}\\\@sp
+      padding-right (padding-px)px
+  for padding-px in range(range-padding-px)
+    .up-pb{padding-px}\\\@sp
+      padding-bottom (padding-px)px
+  for padding-px in range(range-padding-px)
+    .up-pl{padding-px}\\\@sp
+      padding-left (padding-px)px
+  /* padding(% 0.5~10) */
+  range-padding-p = 1,10,1
+  for padding-p in range(range-padding-p)
+    .up-px{padding-p - 1}\\\.5\\\%\\\@sp
+      padding-right (padding-p - .5)%
+      padding-left (padding-p - .5)%
+    .up-px{padding-p}\\\%\\\@sp
+      padding-right (padding-p)%
+      padding-left (padding-p)%
+  for padding-p in range(range-padding-p)
+    .up-py{padding-p - 1}\\\.5\\\%\\\@sp
+      padding-top (padding-p - .5)%
+      padding-bottom (padding-p - .5)%
+    .up-py{padding-p}\\\%\\\@sp
+      padding-top (padding-p)%
+      padding-bottom (padding-p)%
+  for padding-p in range(range-padding-p)
+    .up-pt{padding-p - 1}\\\.5\\\%\\\@sp
+      padding-top (padding-p - .5)%
+    .up-pt{padding-p}\\\%\\\@sp
+      padding-top (padding-p)%
+  for padding-p in range(range-padding-p)
+    .up-pr{padding-p - 1}\\\.5\\\%\\\@sp
+      padding-right (padding-p - .5)%
+    .up-pr{padding-p}\\\%\\\@sp
+      padding-right (padding-p)%
+  for padding-p in range(range-padding-p)
+    .up-pb{padding-p - 1}\\\.5\\\%\\\@sp
+      padding-bottom (padding-p - .5)%
+    .up-pb{padding-p}\\\%\\\@sp
+      padding-bottom (padding-p)%
+  for padding-p in range(range-padding-p)
+    .up-pl{padding-p - 1}\\\.5\\\%\\\@sp
+      padding-left (padding-p - .5)%
+    .up-pl{padding-p}\\\%\\\@sp
+      padding-left (padding-p)%
+
 
   /* カラム */
-  .up-col1_sp
+  .up-col1\\\@sp
     display flex
     flex-wrap wrap
     > *
       width 100%
-  .up-col2_sp
+  .up-col2\\\@sp
     display flex
     flex-wrap wrap
     > *
       width 50%
-  .up-col3_sp
+  .up-col3\\\@sp
     display flex
     flex-wrap wrap
     > *
       width 33.333%
-  .up-col4_sp
+  .up-col4\\\@sp
     display flex
     flex-wrap wrap
     > *
       width 25%
-  .up-col5_sp
+  .up-col5\\\@sp
     display flex
     flex-wrap wrap
     > *
       width 20%
-  .up-col6_sp
+  .up-col6\\\@sp
     display flex
     flex-wrap wrap
     > *
       width 16.666%
 
   for gapy in range(0,100,10)
-    .up-gapy{gapy}_sp
+    .up-gapy{gapy}\\\@sp
       > *
         margin-bottom gapy px
 
   for gapx in range(1,10,1)
-    .up-gapx{gapx}p_sp
+    .up-gapx{gapx}p\\\@sp
       margin-left -(gapx/2)%
       margin-right -(gapx/2)%
       > *
         margin-left (ceil((gapx/2),3))%
         margin-right (ceil((gapx/2),3))%
   for gapx-px in range(0,30,5)
-    .up-gapx{gapx-px}_sp
+    .up-gapx{gapx-px}\\\@sp
       margin-left -(gapx-px/2)px
       margin-right -(gapx-px/2)px
       > *
@@ -1938,154 +2260,154 @@ for image in range(10,170,5)
 
   /* gapx-p(pc*sp) */
   for gapx in range(1,10,1)
-    .up-col1.up-gapx{gapx}p_sp,
-    .up-col1_sp.up-gapx{gapx}p
+    .up-col1.up-gapx{gapx}p\\\@sp,
+    .up-col1\\\@sp.up-gapx{gapx}p
       > *
         width (100 - gapx)%
-    .up-col2.up-gapx{gapx}p_sp,
-    .up-col2_sp.up-gapx{gapx}p
+    .up-col2.up-gapx{gapx}p\\\@sp,
+    .up-col2\\\@sp.up-gapx{gapx}p
       > *
         width (50 - gapx)%
-    .up-col3.up-gapx{gapx}p_sp,
-    .up-col3_sp.up-gapx{gapx}p
+    .up-col3.up-gapx{gapx}p\\\@sp,
+    .up-col3\\\@sp.up-gapx{gapx}p
       > *
         width (33.333 - gapx)%
-    .up-col4.up-gapx{gapx}p_sp,
-    .up-col4_sp.up-gapx{gapx}p
+    .up-col4.up-gapx{gapx}p\\\@sp,
+    .up-col4\\\@sp.up-gapx{gapx}p
       > *
         width (25 - gapx)%
-    .up-col5.up-gapx{gapx}p_sp,
-    .up-col5_sp.up-gapx{gapx}p
+    .up-col5.up-gapx{gapx}p\\\@sp,
+    .up-col5\\\@sp.up-gapx{gapx}p
       > *
         width (20 - gapx)%
-    .up-col6.up-gapx{gapx}p_sp,
-    .up-col6_sp.up-gapx{gapx}p
+    .up-col6.up-gapx{gapx}p\\\@sp,
+    .up-col6\\\@sp.up-gapx{gapx}p
       > *
         width (16.666 - gapx)%
   /* gapx-px(pc*sp) */
   for gapx-px in range(0,30,5)
-    .up-col1.up-gapx{gapx-px}_sp,
-    .up-col1_sp.up-gapx{gapx-px}
+    .up-col1.up-gapx{gapx-px}\\\@sp,
+    .up-col1\\\@sp.up-gapx{gapx-px}
       > *
         width "calc(100% - %spx)" % (gapx-px)
-    .up-col2.up-gapx{gapx-px}_sp,
-    .up-col2_sp.up-gapx{gapx-px}
+    .up-col2.up-gapx{gapx-px}\\\@sp,
+    .up-col2\\\@sp.up-gapx{gapx-px}
       > *
         width "calc(50% - %spx)" % (gapx-px)
-    .up-col3.up-gapx{gapx-px}_sp,
-    .up-col3_sp.up-gapx{gapx-px}
+    .up-col3.up-gapx{gapx-px}\\\@sp,
+    .up-col3\\\@sp.up-gapx{gapx-px}
       > *
         width "calc(33.333% - %spx)" % (gapx-px)
-    .up-col4.up-gapx{gapx-px}_sp,
-    .up-col4_sp.up-gapx{gapx-px}
+    .up-col4.up-gapx{gapx-px}\\\@sp,
+    .up-col4\\\@sp.up-gapx{gapx-px}
       > *
         width "calc(25% - %spx)" % (gapx-px)
-    .up-col5.up-gapx{gapx-px}_sp,
-    .up-col5_sp.up-gapx{gapx-px}
+    .up-col5.up-gapx{gapx-px}\\\@sp,
+    .up-col5\\\@sp.up-gapx{gapx-px}
       > *
         width "calc(20% - %spx)" % (gapx-px)
-    .up-col6.up-gapx{gapx-px}_sp,
-    .up-col6_sp.up-gapx{gapx-px}
+    .up-col6.up-gapx{gapx-px}\\\@sp,
+    .up-col6\\\@sp.up-gapx{gapx-px}
       > *
         width "calc(16.666% - %spx)" % (gapx-px)
 
   /* gapx-p(tb*sp) */
   for gapx in range(1,10,1)
-    .up-col1_tb.up-gapx{gapx}p_sp,
-    .up-col1_sp.up-gapx{gapx}p_tb
+    .up-col1\\\@tb.up-gapx{gapx}p\\\@sp,
+    .up-col1\\\@sp.up-gapx{gapx}p\\\@tb
       > *
         width (100 - gapx)%
-    .up-col2_tb.up-gapx{gapx}p_sp,
-    .up-col2_sp.up-gapx{gapx}p_tb
+    .up-col2\\\@tb.up-gapx{gapx}p\\\@sp,
+    .up-col2\\\@sp.up-gapx{gapx}p\\\@tb
       > *
         width (50 - gapx)%
-    .up-col3_tb.up-gapx{gapx}p_sp,
-    .up-col3_sp.up-gapx{gapx}p_tb
+    .up-col3\\\@tb.up-gapx{gapx}p\\\@sp,
+    .up-col3\\\@sp.up-gapx{gapx}p\\\@tb
       > *
         width (33.333 - gapx)%
-    .up-col4_tb.up-gapx{gapx}p_sp,
-    .up-col4_sp.up-gapx{gapx}p_tb
+    .up-col4\\\@tb.up-gapx{gapx}p\\\@sp,
+    .up-col4\\\@sp.up-gapx{gapx}p\\\@tb
       > *
         width (25 - gapx)%
-    .up-col5_tb.up-gapx{gapx}p_sp,
-    .up-col5_sp.up-gapx{gapx}p_tb
+    .up-col5\\\@tb.up-gapx{gapx}p\\\@sp,
+    .up-col5\\\@sp.up-gapx{gapx}p\\\@tb
       > *
         width (20 - gapx)%
-    .up-col6_tb.up-gapx{gapx}p_sp,
-    .up-col6_sp.up-gapx{gapx}p_tb
+    .up-col6\\\@tb.up-gapx{gapx}p\\\@sp,
+    .up-col6\\\@sp.up-gapx{gapx}p\\\@tb
       > *
         width (16.666 - gapx)%
   /* gapx-px(tb*sp) */
   for gapx-px in range(0,30,5)
-    .up-col1_tb.up-gapx{gapx-px}_sp,
-    .up-col1_sp.up-gapx{gapx-px}_tb
+    .up-col1\\\@tb.up-gapx{gapx-px}\\\@sp,
+    .up-col1\\\@sp.up-gapx{gapx-px}\\\@tb
       > *
         width "calc(100% - %spx)" % (gapx-px)
-    .up-col2_tb.up-gapx{gapx-px}_sp,
-    .up-col2_sp.up-gapx{gapx-px}_tb
+    .up-col2\\\@tb.up-gapx{gapx-px}\\\@sp,
+    .up-col2\\\@sp.up-gapx{gapx-px}\\\@tb
       > *
         width "calc(50% - %spx)" % (gapx-px)
-    .up-col3_tb.up-gapx{gapx-px}_sp,
-    .up-col3_sp.up-gapx{gapx-px}_tb
+    .up-col3\\\@tb.up-gapx{gapx-px}\\\@sp,
+    .up-col3\\\@sp.up-gapx{gapx-px}\\\@tb
       > *
         width "calc(33.333% - %spx)" % (gapx-px)
-    .up-col4_tb.up-gapx{gapx-px}_sp,
-    .up-col4_sp.up-gapx{gapx-px}_tb
+    .up-col4\\\@tb.up-gapx{gapx-px}\\\@sp,
+    .up-col4\\\@sp.up-gapx{gapx-px}\\\@tb
       > *
         width "calc(25% - %spx)" % (gapx-px)
-    .up-col5_tb.up-gapx{gapx-px}_sp,
-    .up-col5_sp.up-gapx{gapx-px}_tb
+    .up-col5\\\@tb.up-gapx{gapx-px}\\\@sp,
+    .up-col5\\\@sp.up-gapx{gapx-px}\\\@tb
       > *
         width "calc(20% - %spx)" % (gapx-px)
-    .up-col6_tb.up-gapx{gapx-px}_sp,
-    .up-col6_sp.up-gapx{gapx-px}_tb
+    .up-col6\\\@tb.up-gapx{gapx-px}\\\@sp,
+    .up-col6\\\@sp.up-gapx{gapx-px}\\\@tb
       > *
         width "calc(16.666% - %spx)" % (gapx-px)
 
   /* gapx-p(sp*sp) */
   for gapx in range(1,10,1)
-    .up-col1_sp.up-gapx{gapx}p_sp
+    .up-col1\\\@sp.up-gapx{gapx}p\\\@sp
       > *
         width (100 - gapx)%
-    .up-col2_sp.up-gapx{gapx}p_sp
+    .up-col2\\\@sp.up-gapx{gapx}p\\\@sp
       > *
         width (50 - gapx)%
-    .up-col3_sp.up-gapx{gapx}p_sp
+    .up-col3\\\@sp.up-gapx{gapx}p\\\@sp
       > *
         width (33.333 - gapx)%
-    .up-col4_sp.up-gapx{gapx}p_sp
+    .up-col4\\\@sp.up-gapx{gapx}p\\\@sp
       > *
         width (25 - gapx)%
-    .up-col5_sp.up-gapx{gapx}p_sp
+    .up-col5\\\@sp.up-gapx{gapx}p\\\@sp
       > *
         width (20 - gapx)%
-    .up-col6_sp.up-gapx{gapx}p_sp
+    .up-col6\\\@sp.up-gapx{gapx}p\\\@sp
       > *
         width (16.666 - gapx)%
   /* gapx-px(sp*sp) */
   for gapx-px in range(0,30,5)
-    .up-col1_sp.up-gapx{gapx-px}_sp
+    .up-col1\\\@sp.up-gapx{gapx-px}\\\@sp
       > *
         width "calc(100% - %spx)" % (gapx-px)
-    .up-col2_sp.up-gapx{gapx-px}_sp
+    .up-col2\\\@sp.up-gapx{gapx-px}\\\@sp
       > *
         width "calc(50% - %spx)" % (gapx-px)
-    .up-col3_sp.up-gapx{gapx-px}_sp
+    .up-col3\\\@sp.up-gapx{gapx-px}\\\@sp
       > *
         width "calc(33.333% - %spx)" % (gapx-px)
-    .up-col4_sp.up-gapx{gapx-px}_sp
+    .up-col4\\\@sp.up-gapx{gapx-px}\\\@sp
       > *
         width "calc(25% - %spx)" % (gapx-px)
-    .up-col5_sp.up-gapx{gapx-px}_sp
+    .up-col5\\\@sp.up-gapx{gapx-px}\\\@sp
       > *
         width "calc(20% - %spx)" % (gapx-px)
-    .up-col6_sp.up-gapx{gapx-px}_sp
+    .up-col6\\\@sp.up-gapx{gapx-px}\\\@sp
       > *
         width "calc(16.666% - %spx)" % (gapx-px)
 
   /* 画像比率固定 */
   for image in range(10,170,5)
-    .up-of-img{image}_sp
+    .up-ofi-{image}\\\@sp
       &:after
         content ""
         display block
@@ -2096,23 +2418,23 @@ for image in range(10,170,5)
         left 0
 
   /* object-position */
-  .up-of-c_sp img
+  .up-obp-c\\\@sp img
     font-family "object-fit: cover; object-position: center center;"
     object-position center
-  .up-of-t_sp img
+  .up-obp-t\\\@sp img
     font-family "object-fit: cover; object-position: center top;"
     object-position top
-  .up-of-r_sp img
+  .up-obp-r\\\@sp img
     font-family "object-fit: cover; object-position: right center;"
     object-position right
-  .up-of-b_sp img
+  .up-obp-b\\\@sp img
     font-family "object-fit: cover; object-position: center bottom;"
     object-position bottom
-  .up-of-l_sp img
+  .up-obp-l\\\@sp img
     font-family "object-fit: cover; object-position: left center;"
     object-position left
 
   /* object-fit */
-  .up-of-contain_sp img
+  .up-obf-contain\\\@sp img
     font-family "object-fit: contain; object-position: center center;"
     object-fit contain

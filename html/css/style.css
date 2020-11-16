@@ -26,9 +26,17 @@
 .bgcolor04 {
   background-color: #000;
 }
+
+
 /* 共通コンテンツ間隔 */
 .area {
   margin-top: 80px;
+  margin-bottom: 80px;
+}
+.area-t {
+  margin-top: 80px;
+}
+.area-b {
   margin-bottom: 80px;
 }
 @media only screen and (max-width: 599px) {
@@ -37,6 +45,9 @@
     margin-bottom: 50px;
   }
 }
+
+
+
 /* 共通要素読み込みコメント（取り込み後削除） */
 [class*='load-'] {
   position: relative;
@@ -64,7 +75,12 @@
 .ttl-cmn01 {
   text-align: center;
   font-size: 28px;
+  margin-bottom: 50px;
 }
+.ttl-cmn01.ttl-small {
+  margin-bottom: 20px;
+}
+
 @media only screen and (max-width: 599px) {
   .ttl-cmn01 {
     font-size: 24px;
