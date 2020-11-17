@@ -840,6 +840,9 @@ fnav
 .slick01 {
   padding: 0 20px;
 }
+.slick01.slick-dotted {
+  margin-bottom: 50px;
+}
 .slick01 .btn-slick {
   position: absolute;
   z-index: 1;
@@ -857,19 +860,8 @@ fnav
   right: 0;
 }
 .slick01 .slick-dots {
-  position: relative;
-}
-.slick01 .slick-dots li,
-.slick01 .slick-dots li button,
-.slick01 .slick-dots li button:before {
-  width: auto;
-  height: auto;
-  margin: 0;
-  padding: 0;
-}
-.slick01 .slick-dots li button:before {
-  font-size: 50px;
-  position: relative;
+  bottom: -40px;
+  left: 0;
 }
 @media only screen and (max-width: 599px) {
   .slick01 {
