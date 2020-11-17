@@ -1,4 +1,6 @@
+/* version 1.0.0 */
 /* 見たまま編集バリデーション */
+
 [data-element-id]
   .up-relative\\\@edit
     position relative
@@ -141,6 +143,7 @@ a[data-href*="."]:hover:before
   line-height 1.8
 
 .up-d-flex
+  display block
   > div[data-collection-list-content],
   > div[data-recommend-collection-list-content],
   > div[data-collection-filtered-content],
@@ -204,7 +207,7 @@ a[data-href*="."]:hover:before
   > div[data-product-recommend-content]
     justify-content space-evenly
 
-.up-fd-row
+.up-fxd-row
   > div[data-collection-list-content],
   > div[data-recommend-collection-list-content],
   > div[data-collection-filtered-content],
@@ -213,7 +216,7 @@ a[data-href*="."]:hover:before
   > div[data-product-recommend-content]
     flex-direction row
 
-.up-fd-rowr
+.up-fxd-rowr
   > div[data-collection-list-content],
   > div[data-recommend-collection-list-content],
   > div[data-collection-filtered-content],
@@ -222,7 +225,7 @@ a[data-href*="."]:hover:before
   > div[data-product-recommend-content]
     flex-direction row-reverse
 
-.up-fd-col
+.up-fxd-col
   > div[data-collection-list-content],
   > div[data-recommend-collection-list-content],
   > div[data-collection-filtered-content],
@@ -231,7 +234,7 @@ a[data-href*="."]:hover:before
   > div[data-product-recommend-content]
     flex-direction column
 
-.up-fd-colr
+.up-fxd-colr
   > div[data-collection-list-content],
   > div[data-recommend-collection-list-content],
   > div[data-collection-filtered-content],
@@ -357,7 +360,8 @@ a[data-href*="."]:hover:before
   > div[data-product-recommend-content]
     flex-wrap nowrap
 
-.up-col1
+.up-col-1
+  display block
   > div[data-collection-list-content],
   > div[data-recommend-collection-list-content],
   > div[data-collection-filtered-content],
@@ -370,6 +374,7 @@ a[data-href*="."]:hover:before
     > *
       width 100%
 .up-col-2
+  display block
   > div[data-collection-list-content],
   > div[data-recommend-collection-list-content],
   > div[data-collection-filtered-content],
@@ -382,6 +387,7 @@ a[data-href*="."]:hover:before
     > *
       width 50%
 .up-col-3
+  display block
   > div[data-collection-list-content],
   > div[data-recommend-collection-list-content],
   > div[data-collection-filtered-content],
@@ -394,6 +400,7 @@ a[data-href*="."]:hover:before
     > *
       width 33.333%
 .up-col-4
+  display block
   > div[data-collection-list-content],
   > div[data-recommend-collection-list-content],
   > div[data-collection-filtered-content],
@@ -405,7 +412,8 @@ a[data-href*="."]:hover:before
     width 100%
     > *
       width 25%
-.up-col5
+.up-col-5
+  display block
   > div[data-collection-list-content],
   > div[data-recommend-collection-list-content],
   > div[data-collection-filtered-content],
@@ -417,7 +425,8 @@ a[data-href*="."]:hover:before
     width 100%
     > *
       width 20%
-.up-col6
+.up-col-6
+  display block
   > div[data-collection-list-content],
   > div[data-recommend-collection-list-content],
   > div[data-collection-filtered-content],
@@ -430,151 +439,60 @@ a[data-href*="."]:hover:before
     > *
       width 16.666%
 
-for gapy in range(0,100,10)
-  .up-gapy{gapy}
+/* gapy(px) */
+for gapy-px in range(0,100,10)
+  .up-gapy-{gapy-px}
     > div[data-collection-list-content],
     > div[data-recommend-collection-list-content],
     > div[data-collection-filtered-content],
     > div[data-collection-archive-content],
     > div[data-product-list-content],
     > div[data-product-recommend-content]
+      padding-bottom 0
       > *
-        margin-bottom gapy px
-
-for gapx-px in range(0,30,5)
-  .up-gapx{gapx-px}
+        padding-bottom gapy-px px
+/* gapy(%) */
+for gapy in range(1,10,1)
+  .up-gapy-{gapy}\\\%
     > div[data-collection-list-content],
     > div[data-recommend-collection-list-content],
     > div[data-collection-filtered-content],
     > div[data-collection-archive-content],
     > div[data-product-list-content],
     > div[data-product-recommend-content]
-      margin-left 0
+      padding-bottom 0
+      > *
+        padding-bottom (gapy)%
+
+/* gapx(px) */
+for gapx-px in range(0,100,10)
+  .up-gapx-{gapx-px}
+    margin-left 0
+    margin-right 0
+    > div[data-collection-list-content],
+    > div[data-recommend-collection-list-content],
+    > div[data-collection-filtered-content],
+    > div[data-collection-archive-content],
+    > div[data-product-list-content],
+    > div[data-product-recommend-content]
+      margin-left -(gapx-px/2)px
       margin-right -(gapx-px/2)px
       > *
-        margin-left (ceil((gapx-px/2),3))px
-        margin-right (ceil((gapx-px/2),3))px
-for gapx-px in range(0,30,5)
-  .up-col1.up-gapx{gapx-px}
-    > div[data-collection-list-content],
-    > div[data-recommend-collection-list-content],
-    > div[data-collection-filtered-content],
-    > div[data-collection-archive-content],
-    > div[data-product-list-content],
-    > div[data-product-recommend-content]
-      > *
-        width 100%
-  .up-col-2.up-gapx{gapx-px}
-    > div[data-collection-list-content],
-    > div[data-recommend-collection-list-content],
-    > div[data-collection-filtered-content],
-    > div[data-collection-archive-content],
-    > div[data-product-list-content],
-    > div[data-product-recommend-content]
-      > *
-        width "calc(50% - %spx)" % (gapx-px)
-  .up-col-3.up-gapx{gapx-px}
-    > div[data-collection-list-content],
-    > div[data-recommend-collection-list-content],
-    > div[data-collection-filtered-content],
-    > div[data-collection-archive-content],
-    > div[data-product-list-content],
-    > div[data-product-recommend-content]
-      > *
-        width "calc(33.333% - %spx)" % (gapx-px)
-  .up-col-4.up-gapx{gapx-px}
-    > div[data-collection-list-content],
-    > div[data-recommend-collection-list-content],
-    > div[data-collection-filtered-content],
-    > div[data-collection-archive-content],
-    > div[data-product-list-content],
-    > div[data-product-recommend-content]
-      > *
-        width "calc(25% - %spx)" % (gapx-px)
-  .up-col5.up-gapx{gapx-px}
-    > div[data-collection-list-content],
-    > div[data-recommend-collection-list-content],
-    > div[data-collection-filtered-content],
-    > div[data-collection-archive-content],
-    > div[data-product-list-content],
-    > div[data-product-recommend-content]
-      > *
-        width "calc(20% - %spx)" % (gapx-px)
-  .up-col6.up-gapx{gapx-px}
-    > div[data-collection-list-content],
-    > div[data-recommend-collection-list-content],
-    > div[data-collection-filtered-content],
-    > div[data-collection-archive-content],
-    > div[data-product-list-content],
-    > div[data-product-recommend-content]
-      > *
-        width "calc(16.666% - %spx)" % (gapx-px)
-
+        padding-left (ceil((gapx-px/2),3))px
+        padding-right (ceil((gapx-px/2),3))px
+/* gapx(%) */
 for gapx in range(1,10,1)
-  .up-gapx{gapx}p
+  .up-gapx-{gapx}p
+    margin-left 0
+    margin-right 0
     > div[data-collection-list-content],
     > div[data-recommend-collection-list-content],
     > div[data-collection-filtered-content],
     > div[data-collection-archive-content],
     > div[data-product-list-content],
     > div[data-product-recommend-content]
-      margin-left 0
+      margin-left -(gapx/2)%
       margin-right -(gapx/2)%
       > *
-        margin-left (ceil((gapx/2),3))%
-        margin-right (ceil((gapx/2),3))%
-for gapx in range(1,10,1)
-  .up-col1.up-gapx{gapx}p
-    > div[data-collection-list-content],
-    > div[data-recommend-collection-list-content],
-    > div[data-collection-filtered-content],
-    > div[data-collection-archive-content],
-    > div[data-product-list-content],
-    > div[data-product-recommend-content]
-      > *
-        width 100%
-  .up-col-2.up-gapx{gapx}p
-    > div[data-collection-list-content],
-    > div[data-recommend-collection-list-content],
-    > div[data-collection-filtered-content],
-    > div[data-collection-archive-content],
-    > div[data-product-list-content],
-    > div[data-product-recommend-content]
-      > *
-        width (50 - gapx)%
-  .up-col-3.up-gapx{gapx}p
-    > div[data-collection-list-content],
-    > div[data-recommend-collection-list-content],
-    > div[data-collection-filtered-content],
-    > div[data-collection-archive-content],
-    > div[data-product-list-content],
-    > div[data-product-recommend-content]
-      > *
-        width (33.333 - gapx)%
-  .up-col-4.up-gapx{gapx}p
-    > div[data-collection-list-content],
-    > div[data-recommend-collection-list-content],
-    > div[data-collection-filtered-content],
-    > div[data-collection-archive-content],
-    > div[data-product-list-content],
-    > div[data-product-recommend-content]
-      > *
-        width (25 - gapx)%
-  .up-col5.up-gapx{gapx}p
-    > div[data-collection-list-content],
-    > div[data-recommend-collection-list-content],
-    > div[data-collection-filtered-content],
-    > div[data-collection-archive-content],
-    > div[data-product-list-content],
-    > div[data-product-recommend-content]
-      > *
-        width (20 - gapx)%
-  .up-col6.up-gapx{gapx}p
-    > div[data-collection-list-content],
-    > div[data-recommend-collection-list-content],
-    > div[data-collection-filtered-content],
-    > div[data-collection-archive-content],
-    > div[data-product-list-content],
-    > div[data-product-recommend-content]
-      > *
-        width (16.666 - gapx)%
+        padding-left (ceil((gapx/2),3))%
+        padding-right (ceil((gapx/2),3))%

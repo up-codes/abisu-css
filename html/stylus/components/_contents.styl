@@ -1,6 +1,10 @@
 /*!*************************************
     共通要素
 **************************************/
+.area
+  margin-top 150px
+  margin-bottom 150px
+
 /*!*
 サイドメニュー
 side
@@ -37,8 +41,6 @@ side
           width 100%
         .data
           width 48%
-
-
 
 .home,
 .animation
@@ -78,6 +80,18 @@ side
       margin-bottom 10px
 
 
+
+.ttl-cmn01{
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.ttl-cmn03{
+  font-size: 20px;
+  text-align: center;
+}
+
 /*!********************************************
     各個別コンテンツ
 *********************************************/
@@ -87,52 +101,3 @@ side
 .animation
   .none-animation
     display none
-
-
-/*!ヘッダー（トップ）*/
-.home .header
-  @media only screen and (max-width: 1024px)
-    position absolute
-    z-index 250
-    padding 10px 0px
-    width 100%
-  @media only screen and (max-width: 599px)
-    .logo img
-      height 40px
-
-/*!ホームビジュアル１（トップ）*/
-.homevisual01
-  .aspect
-    max-height 700px
-
-.list-home-hf
-  .wrap
-    display flex
-    height 700px
-  .pc, .sp
-    padding 0 10px
-  .pc
-    width calc(100% - 340px)
-  .sp
-    width 340px
-    text-align right
-  iframe
-    width 100%
-    height 100%
-    border 1px solid #000
-
-.main-template
-  position relative
-  &:before
-    display block
-    height 500px
-    background #eee
-    content ''
-  &:after
-    position absolute
-    top 50%
-    width 100%
-    content 'メインコンテンツ'
-    text-align center
-    font-size 28px
-    transform translateY(-50%)

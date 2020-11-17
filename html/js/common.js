@@ -1,3 +1,4 @@
+/* version 1.0.0 */
 // JavaScript Document
 
 //object-fit　IE対応
@@ -161,7 +162,7 @@ $(function () {
 $(function () {
   $(".js-toggle").on("click", function () {
     $(this).next().slideToggle();
-    $(this).toggleClass("-parent");
+    $(this).toggleClass("is-parent");
     $(this).next().toggleClass("is-active");
   });
 });
