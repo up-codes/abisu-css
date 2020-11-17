@@ -107,6 +107,8 @@ gnav
     flex-wrap wrap
   .navlogo
     display none
+    img
+      max-height 40px
   .list01
     display flex
     flex-wrap wrap
@@ -480,7 +482,7 @@ fnav
       -o-object-position 50% 50%
       object-position 50% 50%
   .head
-    position absolute
+    position absolute !important
     top 50%
     left 50%
     font-weight bold
@@ -582,7 +584,10 @@ fnav
       -o-object-position 50% 50%
       object-position 50% 50%
   .head
-    position absolute
+    position absolute !important
+    width 96%
+    max-width 1000px
+    text-align center
     top 50%
     left 50%
     font-weight bold
@@ -590,7 +595,7 @@ fnav
     transform translate(-50%, -50%)
   @media only screen and (max-width: 599px)
     .head
-      font-size 28px
+      font-size 24px
 
 /*! パンくずリスト */
 .breadcrumb
@@ -659,7 +664,7 @@ fnav
 /*!*
 各下層ページ
 */
-/* 記事一覧ページ */
+/*! 記事一覧ページ */
 .list-article
   .cate
     span
@@ -671,7 +676,7 @@ fnav
     .cate1
       background blue
 
-/* 記事詳細ページ */
+/*! 記事詳細ページ */
 .articledtl01
   .cate
     span
@@ -683,7 +688,7 @@ fnav
     .cate1
       background blue
 
-/* ギャラリー */
+/*! ギャラリー */
 .list-gallery01
   a
     display block
@@ -723,6 +728,11 @@ fnav
       display none
     .head
       font-size 14px
+
+/*! ギャラリー詳細 */
+.gallerydtl01
+  .thumbnail
+    cursor pointer
 
 
 /*! フォーム */

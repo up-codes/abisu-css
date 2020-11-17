@@ -26,17 +26,9 @@
 .bgcolor04 {
   background-color: #000;
 }
-
-
 /* 共通コンテンツ間隔 */
 .area {
   margin-top: 80px;
-  margin-bottom: 80px;
-}
-.area-t {
-  margin-top: 80px;
-}
-.area-b {
   margin-bottom: 80px;
 }
 @media only screen and (max-width: 599px) {
@@ -45,9 +37,6 @@
     margin-bottom: 50px;
   }
 }
-
-
-
 /* 共通要素読み込みコメント（取り込み後削除） */
 [class*='load-'] {
   position: relative;
@@ -75,12 +64,7 @@
 .ttl-cmn01 {
   text-align: center;
   font-size: 28px;
-  margin-bottom: 50px;
 }
-.ttl-cmn01.ttl-small {
-  margin-bottom: 20px;
-}
-
 @media only screen and (max-width: 599px) {
   .ttl-cmn01 {
     font-size: 24px;
@@ -96,6 +80,7 @@
 /* 共通ボタン１ */
 .btn-cmn01 {
   max-width: 180px;
+  margin-top: 50px;
 }
 .btn-cmn01 a {
   display: block;
@@ -288,6 +273,9 @@ gnav
 }
 .gnav .navlogo {
   display: none;
+}
+.gnav .navlogo img {
+  max-height: 40px;
 }
 .gnav .list01 {
   display: -webkit-box;
@@ -794,7 +782,7 @@ fnav
 }
 /*IE対策*/
 .homevisual .head {
-  position: absolute;
+  position: absolute !important;
   top: 50%;
   left: 50%;
   font-weight: bold;
@@ -923,7 +911,10 @@ fnav
   object-position: 50% 50%;
 }
 .topvisual .head {
-  position: absolute;
+  position: absolute !important;
+  width: 96%;
+  max-width: 1000px;
+  text-align: center;
   top: 50%;
   left: 50%;
   font-weight: bold;
@@ -934,7 +925,7 @@ fnav
 }
 @media only screen and (max-width: 599px) {
   .topvisual .head {
-    font-size: 28px;
+    font-size: 24px;
   }
 }
 /* パンくずリスト */
@@ -1030,6 +1021,7 @@ fnav
 /**
 各下層ページ
 */
+/* 記事一覧ページ */
 .list-article .cate span {
   display: inline-block;
   background: #000;
@@ -1040,6 +1032,7 @@ fnav
 .list-article .cate .cate1 {
   background: #00f;
 }
+/* 記事詳細ページ */
 .articledtl01 .cate span {
   display: inline-block;
   background: #000;
@@ -1050,6 +1043,7 @@ fnav
 .articledtl01 .cate .cate1 {
   background: #00f;
 }
+/* ギャラリー */
 .list-gallery01 a {
   display: block;
   position: relative;
@@ -1113,6 +1107,10 @@ fnav
   .list-gallery01 .head {
     font-size: 14px;
   }
+}
+/* ギャラリー詳細 */
+.gallerydtl01 .thumbnail {
+  cursor: pointer;
 }
 /* フォーム */
 .form .item {

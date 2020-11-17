@@ -671,19 +671,19 @@ for max-height-p in range(5,100,5)
 /* margin all(px 1~10) */
 range-margin-px = 0,10,1
 for margin-px in range(range-margin-px)
-  .up-m{margin-px}
+  .up-m-{margin-px}
     margin (margin-px)px
 /* margin all(px 15~150) */
 range-margin-px = 15,150,5
 for margin-px in range(range-margin-px)
-  .up-m{margin-px}
+  .up-m-{margin-px}
     margin (margin-px)px
 /* margin all(% 0.5~10) */
 range-margin-p = 1,10,1
 for margin-p in range(range-margin-p)
-  .up-m{margin-p - 1}\\\.5\\\%
+  .up-m-{margin-p - 1}\\\.5\\\%
     margin (margin-p - .5)%
-  .up-m{margin-p}\\\%
+  .up-m-{margin-p}\\\%
     margin (margin-p)%
 
 .up-ml-auto
@@ -696,269 +696,240 @@ for margin-p in range(range-margin-p)
 /* margin(px 1~10) */
 range-margin-px = 0,10,1
 for margin-px in range(range-margin-px)
-  .up-mx{margin-px}
+  .up-mx-{margin-px}
     margin-right (margin-px)px
     margin-left (margin-px)px
 for margin-px in range(range-margin-px)
-  .up-my{margin-px}
+  .up-my-{margin-px}
     margin-top (margin-px)px
     margin-bottom (margin-px)px
 for margin-px in range(range-margin-px)
-  .up-mt{margin-px}
+  .up-mt-{margin-px}
     margin-top (margin-px)px
 for margin-px in range(range-margin-px)
-  .up-mr{margin-px}
+  .up-mr-{margin-px}
     margin-right (margin-px)px
 for margin-px in range(range-margin-px)
-  .up-mb{margin-px}
+  .up-mb-{margin-px}
     margin-bottom (margin-px)px
 for margin-px in range(range-margin-px)
-  .up-ml{margin-px}
+  .up-ml-{margin-px}
     margin-left (margin-px)px
 /* margin(px 15~150) */
 range-margin-px = 15,150,5
 for margin-px in range(range-margin-px)
-  .up-mx{margin-px}
+  .up-mx-{margin-px}
     margin-right (margin-px)px
     margin-left (margin-px)px
 for margin-px in range(range-margin-px)
-  .up-my{margin-px}
+  .up-my-{margin-px}
     margin-top (margin-px)px
     margin-bottom (margin-px)px
 for margin-px in range(range-margin-px)
-  .up-mt{margin-px}
+  .up-mt-{margin-px}
     margin-top (margin-px)px
 for margin-px in range(range-margin-px)
-  .up-mr{margin-px}
+  .up-mr-{margin-px}
     margin-right (margin-px)px
 for margin-px in range(range-margin-px)
-  .up-mb{margin-px}
+  .up-mb-{margin-px}
     margin-bottom (margin-px)px
 for margin-px in range(range-margin-px)
-  .up-ml{margin-px}
+  .up-ml-{margin-px}
     margin-left (margin-px)px
 /* margin(% 0.5~10) */
 range-margin-p = 1,10,1
 for margin-p in range(range-margin-p)
-  .up-mx{margin-p - 1}\\\.5\\\%
+  .up-mx-{margin-p - 1}\\\.5\\\%
     margin-right (margin-p - .5)%
     margin-left (margin-p - .5)%
-  .up-mx{margin-p}\\\%
+  .up-mx-{margin-p}\\\%
     margin-right (margin-p)%
     margin-left (margin-p)%
 for margin-p in range(range-margin-p)
-  .up-my{margin-p - 1}\\\.5\\\%
+  .up-my-{margin-p - 1}\\\.5\\\%
     margin-top (margin-p - .5)%
     margin-bottom (margin-p - .5)%
-  .up-my{margin-p}\\\%
+  .up-my-{margin-p}\\\%
     margin-top (margin-p)%
     margin-bottom (margin-p)%
 for margin-p in range(range-margin-p)
-  .up-mt{margin-p - 1}\\\.5\\\%
+  .up-mt-{margin-p - 1}\\\.5\\\%
     margin-top (margin-p - .5)%
-  .up-mt{margin-p}\\\%
+  .up-mt-{margin-p}\\\%
     margin-top (margin-p)%
 for margin-p in range(range-margin-p)
-  .up-mr{margin-p - 1}\\\.5\\\%
+  .up-mr-{margin-p - 1}\\\.5\\\%
     margin-right (margin-p - .5)%
-  .up-mr{margin-p}\\\%
+  .up-mr-{margin-p}\\\%
     margin-right (margin-p)%
 for margin-p in range(range-margin-p)
-  .up-mb{margin-p - 1}\\\.5\\\%
+  .up-mb-{margin-p - 1}\\\.5\\\%
     margin-bottom (margin-p - .5)%
-  .up-mb{margin-p}\\\%
+  .up-mb-{margin-p}\\\%
     margin-bottom (margin-p)%
 for margin-p in range(range-margin-p)
-  .up-ml{margin-p - 1}\\\.5\\\%
+  .up-ml-{margin-p - 1}\\\.5\\\%
     margin-left (margin-p - .5)%
-  .up-ml{margin-p}\\\%
+  .up-ml-{margin-p}\\\%
     margin-left (margin-p)%
 
 
 /* padding all(px 0~10) */
 range-padding-px = 0,10,1
 for padding-px in range(range-padding-px)
-  .up-p{padding-px}
+  .up-p-{padding-px}
     padding (padding-px)px
 /* padding all(px 15~150) */
 range-padding-px = 15,150,5
 for padding-px in range(range-padding-px)
-  .up-p{padding-px}
+  .up-p-{padding-px}
     padding (padding-px)px
 /* padding all(% 0.5~10) */
 range-padding-p = 1,10,1
 for padding-p in range(range-padding-p)
-  .up-p{padding-p - 1}\\\.5\\\%
+  .up-p-{padding-p - 1}\\\.5\\\%
     padding (padding-p - .5)%
-  .up-p{padding-p}\\\%
+  .up-p-{padding-p}\\\%
     padding (padding-p)%
 
 /* padding (px 0~10) */
 range-padding-px = 0,10,1
 for padding-px in range(range-padding-px)
-  .up-px{padding-px}
+  .up-px-{padding-px}
     padding-right (padding-px)px
     padding-left (padding-px)px
 for padding-px in range(range-padding-px)
-  .up-py{padding-px}
+  .up-py-{padding-px}
     padding-top (padding-px)px
     padding-bottom (padding-px)px
 for padding-px in range(range-padding-px)
-  .up-pt{padding-px}
+  .up-pt-{padding-px}
     padding-top (padding-px)px
 for padding-px in range(range-padding-px)
-  .up-pr{padding-px}
+  .up-pr-{padding-px}
     padding-right (padding-px)px
 for padding-px in range(range-padding-px)
-  .up-pb{padding-px}
+  .up-pb-{padding-px}
     padding-bottom (padding-px)px
 for padding-px in range(range-padding-px)
-  .up-pl{padding-px}
+  .up-pl-{padding-px}
     padding-left (padding-px)px
 /* padding (px 15~150) */
 range-padding-px = 15,150,5
 for padding-px in range(range-padding-px)
-  .up-px{padding-px}
+  .up-px-{padding-px}
     padding-right (padding-px)px
     padding-left (padding-px)px
 for padding-px in range(range-padding-px)
-  .up-py{padding-px}
+  .up-py-{padding-px}
     padding-top (padding-px)px
     padding-bottom (padding-px)px
 for padding-px in range(range-padding-px)
-  .up-pt{padding-px}
+  .up-pt-{padding-px}
     padding-top (padding-px)px
 for padding-px in range(range-padding-px)
-  .up-pr{padding-px}
+  .up-pr-{padding-px}
     padding-right (padding-px)px
 for padding-px in range(range-padding-px)
-  .up-pb{padding-px}
+  .up-pb-{padding-px}
     padding-bottom (padding-px)px
 for padding-px in range(range-padding-px)
-  .up-pl{padding-px}
+  .up-pl-{padding-px}
     padding-left (padding-px)px
 /* padding(% 0.5~10) */
 range-padding-p = 1,10,1
 for padding-p in range(range-padding-p)
-  .up-px{padding-p - 1}\\\.5\\\%
+  .up-px-{padding-p - 1}\\\.5\\\%
     padding-right (padding-p - .5)%
     padding-left (padding-p - .5)%
-  .up-px{padding-p}\\\%
+  .up-px-{padding-p}\\\%
     padding-right (padding-p)%
     padding-left (padding-p)%
 for padding-p in range(range-padding-p)
-  .up-py{padding-p - 1}\\\.5\\\%
+  .up-py-{padding-p - 1}\\\.5\\\%
     padding-top (padding-p - .5)%
     padding-bottom (padding-p - .5)%
-  .up-py{padding-p}\\\%
+  .up-py-{padding-p}\\\%
     padding-top (padding-p)%
     padding-bottom (padding-p)%
 for padding-p in range(range-padding-p)
-  .up-pt{padding-p - 1}\\\.5\\\%
+  .up-pt-{padding-p - 1}\\\.5\\\%
     padding-top (padding-p - .5)%
-  .up-pt{padding-p}\\\%
+  .up-pt-{padding-p}\\\%
     padding-top (padding-p)%
 for padding-p in range(range-padding-p)
-  .up-pr{padding-p - 1}\\\.5\\\%
+  .up-pr-{padding-p - 1}\\\.5\\\%
     padding-right (padding-p - .5)%
-  .up-pr{padding-p}\\\%
+  .up-pr-{padding-p}\\\%
     padding-right (padding-p)%
 for padding-p in range(range-padding-p)
-  .up-pb{padding-p - 1}\\\.5\\\%
+  .up-pb-{padding-p - 1}\\\.5\\\%
     padding-bottom (padding-p - .5)%
-  .up-pb{padding-p}\\\%
+  .up-pb-{padding-p}\\\%
     padding-bottom (padding-p)%
 for padding-p in range(range-padding-p)
-  .up-pl{padding-p - 1}\\\.5\\\%
+  .up-pl-{padding-p - 1}\\\.5\\\%
     padding-left (padding-p - .5)%
-  .up-pl{padding-p}\\\%
+  .up-pl-{padding-p}\\\%
     padding-left (padding-p)%
 
 
 /* カラム */
-.up-col2
+.up-col-2
   display flex
   flex-wrap wrap
   > *
     width 50%
-.up-col3
+.up-col-3
   display flex
   flex-wrap wrap
   > *
     width 33.333%
-.up-col4
+.up-col-4
   display flex
   flex-wrap wrap
   > *
     width 25%
-.up-col5
+.up-col-5
   display flex
   flex-wrap wrap
   > *
     width 20%
-.up-col6
+.up-col-6
   display flex
   flex-wrap wrap
   > *
     width 16.666%
-for gapy in range(0,100,10)
-  .up-gapy{gapy}
-    > *
-      margin-bottom gapy px
 
-for gapx in range(1,10,1)
-  .up-gapx{gapx}p
-    margin-left -(gapx/2)%
-    margin-right -(gapx/2)%
+/* gapy(px) */
+for gapy-px in range(0,100,10)
+  .up-gapy-{gapy-px}
     > *
-      margin-left (ceil((gapx/2),3))%
-      margin-right (ceil((gapx/2),3))%
-for gapx in range(1,10,1)
-  .up-col1.up-gapx{gapx}p
+      padding-bottom gapy-px px
+/* gapy(%) */
+for gapy in range(1,10,1)
+  .up-gapy-{gapy}\\\%
     > *
-      width (100 - gapx)%
-  .up-col2.up-gapx{gapx}p
-    > *
-      width (50 - gapx)%
-  .up-col3.up-gapx{gapx}p
-    > *
-      width (33.333 - gapx)%
-  .up-col4.up-gapx{gapx}p
-    > *
-      width (25 - gapx)%
-  .up-col5.up-gapx{gapx}p
-    > *
-      width (20 - gapx)%
-  .up-col6.up-gapx{gapx}p
-    > *
-      width (16.666 - gapx)%
+      padding-bottom (gapy)%
 
-for gapx-px in range(0,30,5)
-  .up-gapx{gapx-px}
+/* gapx(px) */
+for gapx-px in range(0,100,10)
+  .up-gapx-{gapx-px}
     margin-left -(gapx-px/2)px
     margin-right -(gapx-px/2)px
     > *
-      margin-left (ceil((gapx-px/2),3))px
-      margin-right (ceil((gapx-px/2),3))px
-for gapx-px in range(0,30,5)
-  .up-col1.up-gapx{gapx-px}
+      padding-left (ceil((gapx-px/2),3))px
+      padding-right (ceil((gapx-px/2),3))px
+/* gapx(%) */
+for gapx in range(1,10,1)
+  .up-gapx-{gapx}\\\%
+    margin-left -(gapx/2)%
+    margin-right -(gapx/2)%
     > *
-      width "calc(100% - %spx)" % (gapx-px)
-  .up-col2.up-gapx{gapx-px}
-    > *
-      width "calc(50% - %spx)" % (gapx-px)
-  .up-col3.up-gapx{gapx-px}
-    > *
-      width "calc(33.333% - %spx)" % (gapx-px)
-  .up-col4.up-gapx{gapx-px}
-    > *
-      width "calc(25% - %spx)" % (gapx-px)
-  .up-col5.up-gapx{gapx-px}
-    > *
-      width "calc(20% - %spx)" % (gapx-px)
-  .up-col6.up-gapx{gapx-px}
-    > *
-      width "calc(16.666% - %spx)" % (gapx-px)
+      padding-left (ceil((gapx/2),3))%
+      padding-right (ceil((gapx/2),3))%
+
 
 /* 画像比率固定 */
 for image in range(10,170,5)
@@ -1307,19 +1278,19 @@ for image in range(10,170,5)
   /* margin all(px 1~10) */
   range-margin-px = 0,10,1
   for margin-px in range(range-margin-px)
-    .up-m{margin-px}\\\@tb
+    .up-m-{margin-px}\\\@tb
       margin (margin-px)px
   /* margin all(px 15~150) */
   range-margin-px = 15,150,5
   for margin-px in range(range-margin-px)
-    .up-m{margin-px}\\\@tb
+    .up-m-{margin-px}\\\@tb
       margin (margin-px)px
   /* margin all(% 0.5~10) */
   range-margin-p = 1,10,1
   for margin-p in range(range-margin-p)
-    .up-m{margin-p - 1}\\\.5\\\%\\\@tb
+    .up-m-{margin-p - 1}\\\.5\\\%\\\@tb
       margin (margin-p - .5)%
-    .up-m{margin-p}\\\%\\\@tb
+    .up-m-{margin-p}\\\%\\\@tb
       margin (margin-p)%
 
   .up-ml-auto\\\@tb
@@ -1332,329 +1303,244 @@ for image in range(10,170,5)
   /* margin(px 1~10) */
   range-margin-px = 0,10,1
   for margin-px in range(range-margin-px)
-    .up-mx{margin-px}\\\@tb
+    .up-mx-{margin-px}\\\@tb
       margin-right (margin-px)px
       margin-left (margin-px)px
   for margin-px in range(range-margin-px)
-    .up-my{margin-px}\\\@tb
+    .up-my-{margin-px}\\\@tb
       margin-top (margin-px)px
       margin-bottom (margin-px)px
   for margin-px in range(range-margin-px)
-    .up-mt{margin-px}\\\@tb
+    .up-mt-{margin-px}\\\@tb
       margin-top (margin-px)px
   for margin-px in range(range-margin-px)
-    .up-mr{margin-px}\\\@tb
+    .up-mr-{margin-px}\\\@tb
       margin-right (margin-px)px
   for margin-px in range(range-margin-px)
-    .up-mb{margin-px}\\\@tb
+    .up-mb-{margin-px}\\\@tb
       margin-bottom (margin-px)px
   for margin-px in range(range-margin-px)
-    .up-ml{margin-px}\\\@tb
+    .up-ml-{margin-px}\\\@tb
       margin-left (margin-px)px
   /* margin(px 15~150) */
   range-margin-px = 15,150,5
   for margin-px in range(range-margin-px)
-    .up-mx{margin-px}\\\@tb
+    .up-mx-{margin-px}\\\@tb
       margin-right (margin-px)px
       margin-left (margin-px)px
   for margin-px in range(range-margin-px)
-    .up-my{margin-px}\\\@tb
+    .up-my-{margin-px}\\\@tb
       margin-top (margin-px)px
       margin-bottom (margin-px)px
   for margin-px in range(range-margin-px)
-    .up-mt{margin-px}\\\@tb
+    .up-mt-{margin-px}\\\@tb
       margin-top (margin-px)px
   for margin-px in range(range-margin-px)
-    .up-mr{margin-px}\\\@tb
+    .up-mr-{margin-px}\\\@tb
       margin-right (margin-px)px
   for margin-px in range(range-margin-px)
-    .up-mb{margin-px}\\\@tb
+    .up-mb-{margin-px}\\\@tb
       margin-bottom (margin-px)px
   for margin-px in range(range-margin-px)
-    .up-ml{margin-px}\\\@tb
+    .up-ml-{margin-px}\\\@tb
       margin-left (margin-px)px
   /* margin(% 0.5~10) */
   range-margin-p = 1,10,1
   for margin-p in range(range-margin-p)
-    .up-mx{margin-p - 1}\\\.5\\\%\\\@tb
+    .up-mx-{margin-p - 1}\\\.5\\\%\\\@tb
       margin-right (margin-p - .5)%
       margin-left (margin-p - .5)%
-    .up-mx{margin-p}\\\%\\\@tb
+    .up-mx-{margin-p}\\\%\\\@tb
       margin-right (margin-p)%
       margin-left (margin-p)%
   for margin-p in range(range-margin-p)
-    .up-my{margin-p - 1}\\\.5\\\%\\\@tb
+    .up-my-{margin-p - 1}\\\.5\\\%\\\@tb
       margin-top (margin-p - .5)%
       margin-bottom (margin-p - .5)%
-    .up-my{margin-p}\\\%\\\@tb
+    .up-my-{margin-p}\\\%\\\@tb
       margin-top (margin-p)%
       margin-bottom (margin-p)%
   for margin-p in range(range-margin-p)
-    .up-mt{margin-p - 1}\\\.5\\\%\\\@tb
+    .up-mt-{margin-p - 1}\\\.5\\\%\\\@tb
       margin-top (margin-p - .5)%
-    .up-mt{margin-p}\\\%\\\@tb
+    .up-mt-{margin-p}\\\%\\\@tb
       margin-top (margin-p)%
   for margin-p in range(range-margin-p)
-    .up-mr{margin-p - 1}\\\.5\\\%\\\@tb
+    .up-mr-{margin-p - 1}\\\.5\\\%\\\@tb
       margin-right (margin-p - .5)%
-    .up-mr{margin-p}\\\%\\\@tb
+    .up-mr-{margin-p}\\\%\\\@tb
       margin-right (margin-p)%
   for margin-p in range(range-margin-p)
-    .up-mb{margin-p - 1}\\\.5\\\%\\\@tb
+    .up-mb-{margin-p - 1}\\\.5\\\%\\\@tb
       margin-bottom (margin-p - .5)%
-    .up-mb{margin-p}\\\%\\\@tb
+    .up-mb-{margin-p}\\\%\\\@tb
       margin-bottom (margin-p)%
   for margin-p in range(range-margin-p)
-    .up-ml{margin-p - 1}\\\.5\\\%\\\@tb
+    .up-ml-{margin-p - 1}\\\.5\\\%\\\@tb
       margin-left (margin-p - .5)%
-    .up-ml{margin-p}\\\%\\\@tb
+    .up-ml-{margin-p}\\\%\\\@tb
       margin-left (margin-p)%
 
 
   /* padding all(px 0~10) */
   range-padding-px = 0,10,1
   for padding-px in range(range-padding-px)
-    .up-p{padding-px}\\\@tb
+    .up-p-{padding-px}\\\@tb
       padding (padding-px)px
   /* padding all(px 15~150) */
   range-padding-px = 15,150,5
   for padding-px in range(range-padding-px)
-    .up-p{padding-px}\\\@tb
+    .up-p-{padding-px}\\\@tb
       padding (padding-px)px
   /* padding all(% 0.5~10) */
   range-padding-p = 1,10,1
   for padding-p in range(range-padding-p)
-    .up-p{padding-p - 1}\\\.5\\\%\\\@tb
+    .up-p-{padding-p - 1}\\\.5\\\%\\\@tb
       padding (padding-p - .5)%
-    .up-p{padding-p}\\\%\\\@tb
+    .up-p-{padding-p}\\\%\\\@tb
       padding (padding-p)%
 
   /* padding (px 0~10) */
   range-padding-px = 0,10,1
   for padding-px in range(range-padding-px)
-    .up-px{padding-px}\\\@tb
+    .up-px-{padding-px}\\\@tb
       padding-right (padding-px)px
       padding-left (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-py{padding-px}\\\@tb
+    .up-py-{padding-px}\\\@tb
       padding-top (padding-px)px
       padding-bottom (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pt{padding-px}\\\@tb
+    .up-pt-{padding-px}\\\@tb
       padding-top (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pr{padding-px}\\\@tb
+    .up-pr-{padding-px}\\\@tb
       padding-right (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pb{padding-px}\\\@tb
+    .up-pb-{padding-px}\\\@tb
       padding-bottom (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pl{padding-px}\\\@tb
+    .up-pl-{padding-px}\\\@tb
       padding-left (padding-px)px
   /* padding (px 15~150) */
   range-padding-px = 15,150,5
   for padding-px in range(range-padding-px)
-    .up-px{padding-px}\\\@tb
+    .up-px-{padding-px}\\\@tb
       padding-right (padding-px)px
       padding-left (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-py{padding-px}\\\@tb
+    .up-py-{padding-px}\\\@tb
       padding-top (padding-px)px
       padding-bottom (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pt{padding-px}\\\@tb
+    .up-pt-{padding-px}\\\@tb
       padding-top (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pr{padding-px}\\\@tb
+    .up-pr-{padding-px}\\\@tb
       padding-right (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pb{padding-px}\\\@tb
+    .up-pb-{padding-px}\\\@tb
       padding-bottom (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pl{padding-px}\\\@tb
+    .up-pl-{padding-px}\\\@tb
       padding-left (padding-px)px
   /* padding(% 0.5~10) */
   range-padding-p = 1,10,1
   for padding-p in range(range-padding-p)
-    .up-px{padding-p - 1}\\\.5\\\%\\\@tb
+    .up-px-{padding-p - 1}\\\.5\\\%\\\@tb
       padding-right (padding-p - .5)%
       padding-left (padding-p - .5)%
-    .up-px{padding-p}\\\%\\\@tb
+    .up-px-{padding-p}\\\%\\\@tb
       padding-right (padding-p)%
       padding-left (padding-p)%
   for padding-p in range(range-padding-p)
-    .up-py{padding-p - 1}\\\.5\\\%\\\@tb
+    .up-py-{padding-p - 1}\\\.5\\\%\\\@tb
       padding-top (padding-p - .5)%
       padding-bottom (padding-p - .5)%
-    .up-py{padding-p}\\\%\\\@tb
+    .up-py-{padding-p}\\\%\\\@tb
       padding-top (padding-p)%
       padding-bottom (padding-p)%
   for padding-p in range(range-padding-p)
-    .up-pt{padding-p - 1}\\\.5\\\%\\\@tb
+    .up-pt-{padding-p - 1}\\\.5\\\%\\\@tb
       padding-top (padding-p - .5)%
-    .up-pt{padding-p}\\\%\\\@tb
+    .up-pt-{padding-p}\\\%\\\@tb
       padding-top (padding-p)%
   for padding-p in range(range-padding-p)
-    .up-pr{padding-p - 1}\\\.5\\\%\\\@tb
+    .up-pr-{padding-p - 1}\\\.5\\\%\\\@tb
       padding-right (padding-p - .5)%
-    .up-pr{padding-p}\\\%\\\@tb
+    .up-pr-{padding-p}\\\%\\\@tb
       padding-right (padding-p)%
   for padding-p in range(range-padding-p)
-    .up-pb{padding-p - 1}\\\.5\\\%\\\@tb
+    .up-pb-{padding-p - 1}\\\.5\\\%\\\@tb
       padding-bottom (padding-p - .5)%
-    .up-pb{padding-p}\\\%\\\@tb
+    .up-pb-{padding-p}\\\%\\\@tb
       padding-bottom (padding-p)%
   for padding-p in range(range-padding-p)
-    .up-pl{padding-p - 1}\\\.5\\\%\\\@tb
+    .up-pl-{padding-p - 1}\\\.5\\\%\\\@tb
       padding-left (padding-p - .5)%
-    .up-pl{padding-p}\\\%\\\@tb
+    .up-pl-{padding-p}\\\%\\\@tb
       padding-left (padding-p)%
 
   /* カラム */
-  .up-col1\\\@tb
+  .up-col-1\\\@tb
     display flex
     flex-wrap wrap
     > *
       width 100%
-  .up-col2\\\@tb
+  .up-col-2\\\@tb
     display flex
     flex-wrap wrap
     > *
       width 50%
-  .up-col3\\\@tb
+  .up-col-3\\\@tb
     display flex
     flex-wrap wrap
     > *
       width 33.333%
-  .up-col4\\\@tb
+  .up-col-4\\\@tb
     display flex
     flex-wrap wrap
     > *
       width 25%
-  .up-col5\\\@tb
+  .up-col-5\\\@tb
     display flex
     flex-wrap wrap
     > *
       width 20%
-  .up-col6\\\@tb
+  .up-col-6\\\@tb
     display flex
     flex-wrap wrap
     > *
       width 16.666%
 
-  for gapy in range(0,100,10)
-    .up-gapy{gapy}\\\@tb
+  /* gapy(px) */
+  for gapy-px in range(0,100,10)
+    .up-gapy-{gapy-px}\\\@tb
       > *
-        margin-bottom gapy px
+        padding-bottom gapy-px px
+  /* gapy(%) */
+  for gapy in range(1,10,1)
+    .up-gapy-{gapy}\\\%\\\@tb
+      > *
+        padding-bottom (gapy)%
 
-  for gapx in range(1,10,1)
-    .up-gapx{gapx}p\\\@tb
-      margin-left -(gapx/2)%
-      margin-right -(gapx/2)%
-      > *
-        margin-left (ceil((gapx/2),3))%
-        margin-right (ceil((gapx/2),3))%
-  for gapx-px in range(0,30,5)
-    .up-gapx{gapx-px}\\\@tb
+  /* gapx(px) */
+  for gapx-px in range(0,100,10)
+    .up-gapx-{gapx-px}\\\@tb
       margin-left -(gapx-px/2)px
       margin-right -(gapx-px/2)px
       > *
-        margin-left (ceil((gapx-px/2),3))px
-        margin-right (ceil((gapx-px/2),3))px
-
-  /* gapx-p(pc*tb) */
+        padding-left (ceil((gapx-px/2),3))px
+        padding-right (ceil((gapx-px/2),3))px
+  /* gapx(%) */
   for gapx in range(1,10,1)
-    .up-col1.up-gapx{gapx}p\\\@tb,
-    .up-col1\\\@tb.up-gapx{gapx}p
+    .up-gapx-{gapx}\\\%\\\@tb
+      margin-left -(gapx/2)%
+      margin-right -(gapx/2)%
       > *
-        width (100 - gapx)%
-    .up-col2.up-gapx{gapx}p\\\@tb,
-    .up-col2\\\@tb.up-gapx{gapx}p
-      > *
-        width (50 - gapx)%
-    .up-col3.up-gapx{gapx}p\\\@tb,
-    .up-col3\\\@tb.up-gapx{gapx}p
-      > *
-        width (33.333 - gapx)%
-    .up-col4.up-gapx{gapx}p\\\@tb,
-    .up-col4\\\@tb.up-gapx{gapx}p
-      > *
-        width (25 - gapx)%
-    .up-col5.up-gapx{gapx}p\\\@tb,
-    .up-col5\\\@tb.up-gapx{gapx}p
-      > *
-        width (20 - gapx)%
-    .up-col6.up-gapx{gapx}p\\\@tb,
-    .up-col6\\\@tb.up-gapx{gapx}p
-      > *
-        width (16.666 - gapx)%
-  /* gapx-px(pc*tb) */
-  for gapx-px in range(0,30,5)
-    .up-col1.up-gapx{gapx-px}\\\@tb,
-    .up-col1\\\@tb.up-gapx{gapx-px}
-      > *
-        width "calc(100% - %spx)" % (gapx-px)
-    .up-col2.up-gapx{gapx-px}\\\@tb,
-    .up-col2\\\@tb.up-gapx{gapx-px}
-      > *
-        width "calc(50% - %spx)" % (gapx-px)
-    .up-col3.up-gapx{gapx-px}\\\@tb,
-    .up-col3\\\@tb.up-gapx{gapx-px}
-      > *
-        width "calc(33.333% - %spx)" % (gapx-px)
-    .up-col4.up-gapx{gapx-px}\\\@tb,
-    .up-col4\\\@tb.up-gapx{gapx-px}
-      > *
-        width "calc(25% - %spx)" % (gapx-px)
-    .up-col5.up-gapx{gapx-px}\\\@tb,
-    .up-col5\\\@tb.up-gapx{gapx-px}
-      > *
-        width "calc(20% - %spx)" % (gapx-px)
-    .up-col6.up-gapx{gapx-px}\\\@tb,
-    .up-col6\\\@tb.up-gapx{gapx-px}
-      > *
-        width "calc(16.666% - %spx)" % (gapx-px)
+        padding-left (ceil((gapx/2),3))%
+        padding-right (ceil((gapx/2),3))%
 
-  /* gapx-p(tb*tb) */
-  for gapx in range(1,10,1)
-    .up-col1\\\@tb.up-gapx{gapx}p\\\@tb
-      > *
-        width (100 - gapx)%
-    .up-col2\\\@tb.up-gapx{gapx}p\\\@tb
-      > *
-        width (50 - gapx)%
-    .up-col3\\\@tb.up-gapx{gapx}p\\\@tb
-      > *
-        width (33.333 - gapx)%
-    .up-col4\\\@tb.up-gapx{gapx}p\\\@tb
-      > *
-        width (25 - gapx)%
-    .up-col5\\\@tb.up-gapx{gapx}p\\\@tb
-      > *
-        width (20 - gapx)%
-    .up-col6\\\@tb.up-gapx{gapx}p\\\@tb
-      > *
-        width (16.666 - gapx)%
-  /* gapx-px(tb*tb) */
-  for gapx-px in range(0,30,5)
-    .up-col1\\\@tb.up-gapx{gapx-px}\\\@tb
-      > *
-        width "calc(100% - %spx)" % (gapx-px)
-    .up-col2\\\@tb.up-gapx{gapx-px}\\\@tb
-      > *
-        width "calc(50% - %spx)" % (gapx-px)
-    .up-col3\\\@tb.up-gapx{gapx-px}\\\@tb
-      > *
-        width "calc(33.333% - %spx)" % (gapx-px)
-    .up-col4\\\@tb.up-gapx{gapx-px}\\\@tb
-      > *
-        width "calc(25% - %spx)" % (gapx-px)
-    .up-col5\\\@tb.up-gapx{gapx-px}\\\@tb
-      > *
-        width "calc(20% - %spx)" % (gapx-px)
-    .up-col6\\\@tb.up-gapx{gapx-px}\\\@tb
-      > *
-        width "calc(16.666% - %spx)" % (gapx-px)
 
   /* 画像比率固定 */
   for image in range(10,170,5)
@@ -2002,19 +1888,19 @@ for image in range(10,170,5)
   /* margin all(px 1~10) */
   range-margin-px = 0,10,1
   for margin-px in range(range-margin-px)
-    .up-m{margin-px}\\\@sp
+    .up-m-{margin-px}\\\@sp
       margin (margin-px)px
   /* margin all(px 15~150) */
   range-margin-px = 15,150,5
   for margin-px in range(range-margin-px)
-    .up-m{margin-px}\\\@sp
+    .up-m-{margin-px}\\\@sp
       margin (margin-px)px
   /* margin all(% 0.5~10) */
   range-margin-p = 1,10,1
   for margin-p in range(range-margin-p)
-    .up-m{margin-p - 1}\\\.5\\\%\\\@sp
+    .up-m-{margin-p - 1}\\\.5\\\%\\\@sp
       margin (margin-p - .5)%
-    .up-m{margin-p}\\\%\\\@sp
+    .up-m-{margin-p}\\\%\\\@sp
       margin (margin-p)%
 
   .up-ml-auto\\\@sp
@@ -2027,383 +1913,245 @@ for image in range(10,170,5)
   /* margin(px 1~10) */
   range-margin-px = 0,10,1
   for margin-px in range(range-margin-px)
-    .up-mx{margin-px}\\\@sp
+    .up-mx-{margin-px}\\\@sp
       margin-right (margin-px)px
       margin-left (margin-px)px
   for margin-px in range(range-margin-px)
-    .up-my{margin-px}\\\@sp
+    .up-my-{margin-px}\\\@sp
       margin-top (margin-px)px
       margin-bottom (margin-px)px
   for margin-px in range(range-margin-px)
-    .up-mt{margin-px}\\\@sp
+    .up-mt-{margin-px}\\\@sp
       margin-top (margin-px)px
   for margin-px in range(range-margin-px)
-    .up-mr{margin-px}\\\@sp
+    .up-mr-{margin-px}\\\@sp
       margin-right (margin-px)px
   for margin-px in range(range-margin-px)
-    .up-mb{margin-px}\\\@sp
+    .up-mb-{margin-px}\\\@sp
       margin-bottom (margin-px)px
   for margin-px in range(range-margin-px)
-    .up-ml{margin-px}\\\@sp
+    .up-ml-{margin-px}\\\@sp
       margin-left (margin-px)px
   /* margin(px 15~150) */
   range-margin-px = 15,150,5
   for margin-px in range(range-margin-px)
-    .up-mx{margin-px}\\\@sp
+    .up-mx-{margin-px}\\\@sp
       margin-right (margin-px)px
       margin-left (margin-px)px
   for margin-px in range(range-margin-px)
-    .up-my{margin-px}\\\@sp
+    .up-my-{margin-px}\\\@sp
       margin-top (margin-px)px
       margin-bottom (margin-px)px
   for margin-px in range(range-margin-px)
-    .up-mt{margin-px}\\\@sp
+    .up-mt-{margin-px}\\\@sp
       margin-top (margin-px)px
   for margin-px in range(range-margin-px)
-    .up-mr{margin-px}\\\@sp
+    .up-mr-{margin-px}\\\@sp
       margin-right (margin-px)px
   for margin-px in range(range-margin-px)
-    .up-mb{margin-px}\\\@sp
+    .up-mb-{margin-px}\\\@sp
       margin-bottom (margin-px)px
   for margin-px in range(range-margin-px)
-    .up-ml{margin-px}\\\@sp
+    .up-ml-{margin-px}\\\@sp
       margin-left (margin-px)px
   /* margin(% 0.5~10) */
   range-margin-p = 1,10,1
   for margin-p in range(range-margin-p)
-    .up-mx{margin-p - 1}\\\.5\\\%\\\@sp
+    .up-mx-{margin-p - 1}\\\.5\\\%\\\@sp
       margin-right (margin-p - .5)%
       margin-left (margin-p - .5)%
-    .up-mx{margin-p}\\\%\\\@sp
+    .up-mx-{margin-p}\\\%\\\@sp
       margin-right (margin-p)%
       margin-left (margin-p)%
   for margin-p in range(range-margin-p)
-    .up-my{margin-p - 1}\\\.5\\\%\\\@sp
+    .up-my-{margin-p - 1}\\\.5\\\%\\\@sp
       margin-top (margin-p - .5)%
       margin-bottom (margin-p - .5)%
-    .up-my{margin-p}\\\%\\\@sp
+    .up-my-{margin-p}\\\%\\\@sp
       margin-top (margin-p)%
       margin-bottom (margin-p)%
   for margin-p in range(range-margin-p)
-    .up-mt{margin-p - 1}\\\.5\\\%\\\@sp
+    .up-mt-{margin-p - 1}\\\.5\\\%\\\@sp
       margin-top (margin-p - .5)%
-    .up-mt{margin-p}\\\%\\\@sp
+    .up-mt-{margin-p}\\\%\\\@sp
       margin-top (margin-p)%
   for margin-p in range(range-margin-p)
-    .up-mr{margin-p - 1}\\\.5\\\%\\\@sp
+    .up-mr-{margin-p - 1}\\\.5\\\%\\\@sp
       margin-right (margin-p - .5)%
-    .up-mr{margin-p}\\\%\\\@sp
+    .up-mr-{margin-p}\\\%\\\@sp
       margin-right (margin-p)%
   for margin-p in range(range-margin-p)
-    .up-mb{margin-p - 1}\\\.5\\\%\\\@sp
+    .up-mb-{margin-p - 1}\\\.5\\\%\\\@sp
       margin-bottom (margin-p - .5)%
-    .up-mb{margin-p}\\\%\\\@sp
+    .up-mb-{margin-p}\\\%\\\@sp
       margin-bottom (margin-p)%
   for margin-p in range(range-margin-p)
-    .up-ml{margin-p - 1}\\\.5\\\%\\\@sp
+    .up-ml-{margin-p - 1}\\\.5\\\%\\\@sp
       margin-left (margin-p - .5)%
-    .up-ml{margin-p}\\\%\\\@sp
+    .up-ml-{margin-p}\\\%\\\@sp
       margin-left (margin-p)%
 
 
   /* padding all(px 0~10) */
   range-padding-px = 0,10,1
   for padding-px in range(range-padding-px)
-    .up-p{padding-px}\\\@sp
+    .up-p-{padding-px}\\\@sp
       padding (padding-px)px
   /* padding all(px 15~150) */
   range-padding-px = 15,150,5
   for padding-px in range(range-padding-px)
-    .up-p{padding-px}\\\@sp
+    .up-p-{padding-px}\\\@sp
       padding (padding-px)px
   /* padding all(% 0.5~10) */
   range-padding-p = 1,10,1
   for padding-p in range(range-padding-p)
-    .up-p{padding-p - 1}\\\.5\\\%\\\@sp
+    .up-p-{padding-p - 1}\\\.5\\\%\\\@sp
       padding (padding-p - .5)%
-    .up-p{padding-p}\\\%\\\@sp
+    .up-p-{padding-p}\\\%\\\@sp
       padding (padding-p)%
 
   /* padding (px 0~10) */
   range-padding-px = 0,10,1
   for padding-px in range(range-padding-px)
-    .up-px{padding-px}\\\@sp
+    .up-px-{padding-px}\\\@sp
       padding-right (padding-px)px
       padding-left (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-py{padding-px}\\\@sp
+    .up-py-{padding-px}\\\@sp
       padding-top (padding-px)px
       padding-bottom (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pt{padding-px}\\\@sp
+    .up-pt-{padding-px}\\\@sp
       padding-top (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pr{padding-px}\\\@sp
+    .up-pr-{padding-px}\\\@sp
       padding-right (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pb{padding-px}\\\@sp
+    .up-pb-{padding-px}\\\@sp
       padding-bottom (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pl{padding-px}\\\@sp
+    .up-pl-{padding-px}\\\@sp
       padding-left (padding-px)px
   /* padding (px 15~150) */
   range-padding-px = 15,150,5
   for padding-px in range(range-padding-px)
-    .up-px{padding-px}\\\@sp
+    .up-px-{padding-px}\\\@sp
       padding-right (padding-px)px
       padding-left (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-py{padding-px}\\\@sp
+    .up-py-{padding-px}\\\@sp
       padding-top (padding-px)px
       padding-bottom (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pt{padding-px}\\\@sp
+    .up-pt-{padding-px}\\\@sp
       padding-top (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pr{padding-px}\\\@sp
+    .up-pr-{padding-px}\\\@sp
       padding-right (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pb{padding-px}\\\@sp
+    .up-pb-{padding-px}\\\@sp
       padding-bottom (padding-px)px
   for padding-px in range(range-padding-px)
-    .up-pl{padding-px}\\\@sp
+    .up-pl-{padding-px}\\\@sp
       padding-left (padding-px)px
   /* padding(% 0.5~10) */
   range-padding-p = 1,10,1
   for padding-p in range(range-padding-p)
-    .up-px{padding-p - 1}\\\.5\\\%\\\@sp
+    .up-px-{padding-p - 1}\\\.5\\\%\\\@sp
       padding-right (padding-p - .5)%
       padding-left (padding-p - .5)%
-    .up-px{padding-p}\\\%\\\@sp
+    .up-px-{padding-p}\\\%\\\@sp
       padding-right (padding-p)%
       padding-left (padding-p)%
   for padding-p in range(range-padding-p)
-    .up-py{padding-p - 1}\\\.5\\\%\\\@sp
+    .up-py-{padding-p - 1}\\\.5\\\%\\\@sp
       padding-top (padding-p - .5)%
       padding-bottom (padding-p - .5)%
-    .up-py{padding-p}\\\%\\\@sp
+    .up-py-{padding-p}\\\%\\\@sp
       padding-top (padding-p)%
       padding-bottom (padding-p)%
   for padding-p in range(range-padding-p)
-    .up-pt{padding-p - 1}\\\.5\\\%\\\@sp
+    .up-pt-{padding-p - 1}\\\.5\\\%\\\@sp
       padding-top (padding-p - .5)%
-    .up-pt{padding-p}\\\%\\\@sp
+    .up-pt-{padding-p}\\\%\\\@sp
       padding-top (padding-p)%
   for padding-p in range(range-padding-p)
-    .up-pr{padding-p - 1}\\\.5\\\%\\\@sp
+    .up-pr-{padding-p - 1}\\\.5\\\%\\\@sp
       padding-right (padding-p - .5)%
-    .up-pr{padding-p}\\\%\\\@sp
+    .up-pr-{padding-p}\\\%\\\@sp
       padding-right (padding-p)%
   for padding-p in range(range-padding-p)
-    .up-pb{padding-p - 1}\\\.5\\\%\\\@sp
+    .up-pb-{padding-p - 1}\\\.5\\\%\\\@sp
       padding-bottom (padding-p - .5)%
-    .up-pb{padding-p}\\\%\\\@sp
+    .up-pb-{padding-p}\\\%\\\@sp
       padding-bottom (padding-p)%
   for padding-p in range(range-padding-p)
-    .up-pl{padding-p - 1}\\\.5\\\%\\\@sp
+    .up-pl-{padding-p - 1}\\\.5\\\%\\\@sp
       padding-left (padding-p - .5)%
-    .up-pl{padding-p}\\\%\\\@sp
+    .up-pl-{padding-p}\\\%\\\@sp
       padding-left (padding-p)%
 
 
   /* カラム */
-  .up-col1\\\@sp
+  .up-col-1\\\@sp
     display flex
     flex-wrap wrap
     > *
       width 100%
-  .up-col2\\\@sp
+  .up-col-2\\\@sp
     display flex
     flex-wrap wrap
     > *
       width 50%
-  .up-col3\\\@sp
+  .up-col-3\\\@sp
     display flex
     flex-wrap wrap
     > *
       width 33.333%
-  .up-col4\\\@sp
+  .up-col-4\\\@sp
     display flex
     flex-wrap wrap
     > *
       width 25%
-  .up-col5\\\@sp
+  .up-col-5\\\@sp
     display flex
     flex-wrap wrap
     > *
       width 20%
-  .up-col6\\\@sp
+  .up-col-6\\\@sp
     display flex
     flex-wrap wrap
     > *
       width 16.666%
 
-  for gapy in range(0,100,10)
-    .up-gapy{gapy}\\\@sp
+  /* gapy(px) */
+  for gapy-px in range(0,100,10)
+    .up-gapy-{gapy-px}\\\@sp
       > *
-        margin-bottom gapy px
+        padding-bottom gapy-px px
+  /* gapy(%) */
+  for gapy in range(1,10,1)
+    .up-gapy-{gapy}\\\%\\\@sp
+      > *
+        padding-bottom (gapy)%
 
-  for gapx in range(1,10,1)
-    .up-gapx{gapx}p\\\@sp
-      margin-left -(gapx/2)%
-      margin-right -(gapx/2)%
-      > *
-        margin-left (ceil((gapx/2),3))%
-        margin-right (ceil((gapx/2),3))%
-  for gapx-px in range(0,30,5)
-    .up-gapx{gapx-px}\\\@sp
+  /* gapx(px) */
+  for gapx-px in range(0,100,10)
+    .up-gapx-{gapx-px}\\\@sp
       margin-left -(gapx-px/2)px
       margin-right -(gapx-px/2)px
       > *
-        margin-left (ceil((gapx-px/2),3))px
-        margin-right (ceil((gapx-px/2),3))px
-
-  /* gapx-p(pc*sp) */
+        padding-left (ceil((gapx-px/2),3))px
+        padding-right (ceil((gapx-px/2),3))px
+  /* gapx(%) */
   for gapx in range(1,10,1)
-    .up-col1.up-gapx{gapx}p\\\@sp,
-    .up-col1\\\@sp.up-gapx{gapx}p
+    .up-gapx-{gapx}\\\%\\\@sp
+      margin-left -(gapx/2)%
+      margin-right -(gapx/2)%
       > *
-        width (100 - gapx)%
-    .up-col2.up-gapx{gapx}p\\\@sp,
-    .up-col2\\\@sp.up-gapx{gapx}p
-      > *
-        width (50 - gapx)%
-    .up-col3.up-gapx{gapx}p\\\@sp,
-    .up-col3\\\@sp.up-gapx{gapx}p
-      > *
-        width (33.333 - gapx)%
-    .up-col4.up-gapx{gapx}p\\\@sp,
-    .up-col4\\\@sp.up-gapx{gapx}p
-      > *
-        width (25 - gapx)%
-    .up-col5.up-gapx{gapx}p\\\@sp,
-    .up-col5\\\@sp.up-gapx{gapx}p
-      > *
-        width (20 - gapx)%
-    .up-col6.up-gapx{gapx}p\\\@sp,
-    .up-col6\\\@sp.up-gapx{gapx}p
-      > *
-        width (16.666 - gapx)%
-  /* gapx-px(pc*sp) */
-  for gapx-px in range(0,30,5)
-    .up-col1.up-gapx{gapx-px}\\\@sp,
-    .up-col1\\\@sp.up-gapx{gapx-px}
-      > *
-        width "calc(100% - %spx)" % (gapx-px)
-    .up-col2.up-gapx{gapx-px}\\\@sp,
-    .up-col2\\\@sp.up-gapx{gapx-px}
-      > *
-        width "calc(50% - %spx)" % (gapx-px)
-    .up-col3.up-gapx{gapx-px}\\\@sp,
-    .up-col3\\\@sp.up-gapx{gapx-px}
-      > *
-        width "calc(33.333% - %spx)" % (gapx-px)
-    .up-col4.up-gapx{gapx-px}\\\@sp,
-    .up-col4\\\@sp.up-gapx{gapx-px}
-      > *
-        width "calc(25% - %spx)" % (gapx-px)
-    .up-col5.up-gapx{gapx-px}\\\@sp,
-    .up-col5\\\@sp.up-gapx{gapx-px}
-      > *
-        width "calc(20% - %spx)" % (gapx-px)
-    .up-col6.up-gapx{gapx-px}\\\@sp,
-    .up-col6\\\@sp.up-gapx{gapx-px}
-      > *
-        width "calc(16.666% - %spx)" % (gapx-px)
+        padding-left (ceil((gapx/2),3))%
+        padding-right (ceil((gapx/2),3))%
 
-  /* gapx-p(tb*sp) */
-  for gapx in range(1,10,1)
-    .up-col1\\\@tb.up-gapx{gapx}p\\\@sp,
-    .up-col1\\\@sp.up-gapx{gapx}p\\\@tb
-      > *
-        width (100 - gapx)%
-    .up-col2\\\@tb.up-gapx{gapx}p\\\@sp,
-    .up-col2\\\@sp.up-gapx{gapx}p\\\@tb
-      > *
-        width (50 - gapx)%
-    .up-col3\\\@tb.up-gapx{gapx}p\\\@sp,
-    .up-col3\\\@sp.up-gapx{gapx}p\\\@tb
-      > *
-        width (33.333 - gapx)%
-    .up-col4\\\@tb.up-gapx{gapx}p\\\@sp,
-    .up-col4\\\@sp.up-gapx{gapx}p\\\@tb
-      > *
-        width (25 - gapx)%
-    .up-col5\\\@tb.up-gapx{gapx}p\\\@sp,
-    .up-col5\\\@sp.up-gapx{gapx}p\\\@tb
-      > *
-        width (20 - gapx)%
-    .up-col6\\\@tb.up-gapx{gapx}p\\\@sp,
-    .up-col6\\\@sp.up-gapx{gapx}p\\\@tb
-      > *
-        width (16.666 - gapx)%
-  /* gapx-px(tb*sp) */
-  for gapx-px in range(0,30,5)
-    .up-col1\\\@tb.up-gapx{gapx-px}\\\@sp,
-    .up-col1\\\@sp.up-gapx{gapx-px}\\\@tb
-      > *
-        width "calc(100% - %spx)" % (gapx-px)
-    .up-col2\\\@tb.up-gapx{gapx-px}\\\@sp,
-    .up-col2\\\@sp.up-gapx{gapx-px}\\\@tb
-      > *
-        width "calc(50% - %spx)" % (gapx-px)
-    .up-col3\\\@tb.up-gapx{gapx-px}\\\@sp,
-    .up-col3\\\@sp.up-gapx{gapx-px}\\\@tb
-      > *
-        width "calc(33.333% - %spx)" % (gapx-px)
-    .up-col4\\\@tb.up-gapx{gapx-px}\\\@sp,
-    .up-col4\\\@sp.up-gapx{gapx-px}\\\@tb
-      > *
-        width "calc(25% - %spx)" % (gapx-px)
-    .up-col5\\\@tb.up-gapx{gapx-px}\\\@sp,
-    .up-col5\\\@sp.up-gapx{gapx-px}\\\@tb
-      > *
-        width "calc(20% - %spx)" % (gapx-px)
-    .up-col6\\\@tb.up-gapx{gapx-px}\\\@sp,
-    .up-col6\\\@sp.up-gapx{gapx-px}\\\@tb
-      > *
-        width "calc(16.666% - %spx)" % (gapx-px)
-
-  /* gapx-p(sp*sp) */
-  for gapx in range(1,10,1)
-    .up-col1\\\@sp.up-gapx{gapx}p\\\@sp
-      > *
-        width (100 - gapx)%
-    .up-col2\\\@sp.up-gapx{gapx}p\\\@sp
-      > *
-        width (50 - gapx)%
-    .up-col3\\\@sp.up-gapx{gapx}p\\\@sp
-      > *
-        width (33.333 - gapx)%
-    .up-col4\\\@sp.up-gapx{gapx}p\\\@sp
-      > *
-        width (25 - gapx)%
-    .up-col5\\\@sp.up-gapx{gapx}p\\\@sp
-      > *
-        width (20 - gapx)%
-    .up-col6\\\@sp.up-gapx{gapx}p\\\@sp
-      > *
-        width (16.666 - gapx)%
-  /* gapx-px(sp*sp) */
-  for gapx-px in range(0,30,5)
-    .up-col1\\\@sp.up-gapx{gapx-px}\\\@sp
-      > *
-        width "calc(100% - %spx)" % (gapx-px)
-    .up-col2\\\@sp.up-gapx{gapx-px}\\\@sp
-      > *
-        width "calc(50% - %spx)" % (gapx-px)
-    .up-col3\\\@sp.up-gapx{gapx-px}\\\@sp
-      > *
-        width "calc(33.333% - %spx)" % (gapx-px)
-    .up-col4\\\@sp.up-gapx{gapx-px}\\\@sp
-      > *
-        width "calc(25% - %spx)" % (gapx-px)
-    .up-col5\\\@sp.up-gapx{gapx-px}\\\@sp
-      > *
-        width "calc(20% - %spx)" % (gapx-px)
-    .up-col6\\\@sp.up-gapx{gapx-px}\\\@sp
-      > *
-        width "calc(16.666% - %spx)" % (gapx-px)
 
   /* 画像比率固定 */
   for image in range(10,170,5)
