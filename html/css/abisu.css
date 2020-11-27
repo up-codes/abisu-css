@@ -1,4 +1,4 @@
-/* version 1.0.0 */
+/* version 1.0.1 */
 /* 見たまま編集バリデーション */
 [data-element-id] .up-relative\@edit {
   position: relative;
@@ -158,9 +158,6 @@ a[data-href*="."]:hover:before {
   font-weight: bold;
   font-size: 12px;
   line-height: 1.8;
-}
-[data-element-id] .up-d-flex {
-  display: block;
 }
 [data-element-id] .up-d-flex > div[data-collection-list-content],
 [data-element-id] .up-d-flex > div[data-recommend-collection-list-content],
@@ -422,9 +419,6 @@ a[data-href*="."]:hover:before {
       -ms-flex-wrap: nowrap;
           flex-wrap: nowrap;
 }
-[data-element-id] .up-col-1 {
-  display: block;
-}
 [data-element-id] .up-col-1 > div[data-collection-list-content],
 [data-element-id] .up-col-1 > div[data-recommend-collection-list-content],
 [data-element-id] .up-col-1 > div[data-collection-filtered-content],
@@ -447,9 +441,6 @@ a[data-href*="."]:hover:before {
 [data-element-id] .up-col-1 > div[data-product-list-content] > *,
 [data-element-id] .up-col-1 > div[data-product-recommend-content] > * {
   width: 100%;
-}
-[data-element-id] .up-col-2 {
-  display: block;
 }
 [data-element-id] .up-col-2 > div[data-collection-list-content],
 [data-element-id] .up-col-2 > div[data-recommend-collection-list-content],
@@ -474,9 +465,6 @@ a[data-href*="."]:hover:before {
 [data-element-id] .up-col-2 > div[data-product-recommend-content] > * {
   width: 50%;
 }
-[data-element-id] .up-col-3 {
-  display: block;
-}
 [data-element-id] .up-col-3 > div[data-collection-list-content],
 [data-element-id] .up-col-3 > div[data-recommend-collection-list-content],
 [data-element-id] .up-col-3 > div[data-collection-filtered-content],
@@ -499,9 +487,6 @@ a[data-href*="."]:hover:before {
 [data-element-id] .up-col-3 > div[data-product-list-content] > *,
 [data-element-id] .up-col-3 > div[data-product-recommend-content] > * {
   width: 33.333%;
-}
-[data-element-id] .up-col-4 {
-  display: block;
 }
 [data-element-id] .up-col-4 > div[data-collection-list-content],
 [data-element-id] .up-col-4 > div[data-recommend-collection-list-content],
@@ -526,9 +511,6 @@ a[data-href*="."]:hover:before {
 [data-element-id] .up-col-4 > div[data-product-recommend-content] > * {
   width: 25%;
 }
-[data-element-id] .up-col-5 {
-  display: block;
-}
 [data-element-id] .up-col-5 > div[data-collection-list-content],
 [data-element-id] .up-col-5 > div[data-recommend-collection-list-content],
 [data-element-id] .up-col-5 > div[data-collection-filtered-content],
@@ -551,9 +533,6 @@ a[data-href*="."]:hover:before {
 [data-element-id] .up-col-5 > div[data-product-list-content] > *,
 [data-element-id] .up-col-5 > div[data-product-recommend-content] > * {
   width: 20%;
-}
-[data-element-id] .up-col-6 {
-  display: block;
 }
 [data-element-id] .up-col-6 > div[data-collection-list-content],
 [data-element-id] .up-col-6 > div[data-recommend-collection-list-content],
