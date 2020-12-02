@@ -1,4 +1,4 @@
-/* version 1.0.1 */
+/* version 1.0.2 */
 /* 見たまま編集バリデーション */
 
 [data-element-id]
@@ -489,3 +489,44 @@ for gapx in range(1,10,1)
       > *
         padding-left (ceil((gapx/2),3))%
         padding-right (ceil((gapx/2),3))%
+
+
+/* 表示・非表示 */
+[data-element-id] .show
+  display block
+  border solid 4px green
+  position relative
+  &:after
+    display block
+    content "PC用です。"
+    color #fff
+    font-weight 700
+    background green
+    padding 5px
+    text-align center
+
+[data-element-id] .show\@tb
+  display block
+  border solid 4px green
+  position relative
+  &:after
+    display block
+    content "モバイル用です。"
+    color #fff
+    font-weight 700
+    background green
+    padding 5px
+    text-align center
+
+[data-element-id] .show\@sp
+  display block
+  border solid 4px green
+  position relative
+  &:after
+    display block
+    content "モバイル用です。"
+    color #fff
+    font-weight 700
+    background green
+    padding 5px
+    text-align center

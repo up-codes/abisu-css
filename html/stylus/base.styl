@@ -1,5 +1,5 @@
 @charset "utf-8"
-/* version 1.0.0 */
+/* version 1.0.1 */
 
 html
   color #000
@@ -966,6 +966,13 @@ for image in range(10,170,5)
   object-fit contain
 
 
+/* 表示・非表示 */
+.up-show
+  display block
+.up-hide
+  display none
+
+
 @media only screen and (max-width 1024px)
   /* display */
   .up-d-block\\\@tb
@@ -1575,6 +1582,12 @@ for image in range(10,170,5)
   .up-obf-contain\\\@tb img
     font-family "object-fit: contain; object-position: center center;"
     object-fit contain
+
+  /* 表示・非表示 */
+  .up-show\\\@tb
+    display block
+  .up-hide\\\@tb
+    display none
 
 @media only screen and (max-width 599px)
   /* display */
@@ -2186,3 +2199,9 @@ for image in range(10,170,5)
   .up-obf-contain\\\@sp img
     font-family "object-fit: contain; object-position: center center;"
     object-fit contain
+
+  /* 表示・非表示 */
+  .up-show\\\@sp
+    display block
+  .up-hide\\\@sp
+    display none

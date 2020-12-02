@@ -1,4 +1,4 @@
-/* version 1.0.1 */
+/* version 1.0.2 */
 /* 見たまま編集バリデーション */
 [data-element-id] .up-relative\@edit {
   position: relative;
@@ -1358,6 +1358,49 @@ a[data-href*="."]:hover:before {
 [data-element-id] .up-gapx-10p > div[data-product-recommend-content] > * {
   padding-left: 5%;
   padding-right: 5%;
+}
+/* 表示・非表示 */
+[data-element-id] .show {
+  display: block;
+  border: solid 4px #008000;
+  position: relative;
+}
+[data-element-id] .show:after {
+  display: block;
+  content: "PC用です。";
+  color: #fff;
+  font-weight: 700;
+  background: #008000;
+  padding: 5px;
+  text-align: center;
+}
+[data-element-id] .show@tb {
+  display: block;
+  border: solid 4px #008000;
+  position: relative;
+}
+[data-element-id] .show@tb:after {
+  display: block;
+  content: "モバイル用です。";
+  color: #fff;
+  font-weight: 700;
+  background: #008000;
+  padding: 5px;
+  text-align: center;
+}
+[data-element-id] .show@sp {
+  display: block;
+  border: solid 4px #008000;
+  position: relative;
+}
+[data-element-id] .show@sp:after {
+  display: block;
+  content: "モバイル用です。";
+  color: #fff;
+  font-weight: 700;
+  background: #008000;
+  padding: 5px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=abisu.css.map */

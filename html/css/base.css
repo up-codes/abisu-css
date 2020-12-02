@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* version 1.0.0 */
+/* version 1.0.1 */
 html {
   color: #000;
   font-weight: normal;
@@ -5751,6 +5751,13 @@ button[href*="tel"] {
   -o-object-fit: contain;
      object-fit: contain;
 }
+/* 表示・非表示 */
+.up-show {
+  display: block;
+}
+.up-hide {
+  display: none;
+}
 @media only screen and (max-width: 1024px) {
   .up-d-block\@tb {
     display: block;
@@ -11044,6 +11051,12 @@ button[href*="tel"] {
     font-family: "object-fit: contain; object-position: center center;";
     -o-object-fit: contain;
        object-fit: contain;
+  }
+  .up-show\@tb {
+    display: block;
+  }
+  .up-hide\@tb {
+    display: none;
   }
 }
 @media only screen and (max-width: 599px) {
@@ -16339,6 +16352,12 @@ button[href*="tel"] {
     font-family: "object-fit: contain; object-position: center center;";
     -o-object-fit: contain;
        object-fit: contain;
+  }
+  .up-show\@sp {
+    display: block;
+  }
+  .up-hide\@sp {
+    display: none;
   }
 }
 
