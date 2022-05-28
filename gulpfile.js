@@ -15,6 +15,8 @@ const plumber = require('gulp-plumber'); //watch中にエラー防止
 const notify = require('gulp-notify'); //エラーを通知
 const browserSync = require('browser-sync') //ブラウザ自動更新
 const debug = require('gulp-debug'); //デバッグ
+const cleanCss = require('gulp-clean-css'); //cssを最小化
+const rename = require('gulp-rename'); //リネーム
 
 /// abisu(stylus)コンパイル //////////////////////////////////////////
 const srcAbisu = {
@@ -55,7 +57,8 @@ const srcBase = {
   srcCom: [
     'html/stylus/base.styl'
   ],
-  dstDir: 'html/css'
+  dstDir: 'html/css',
+  minDir: 'html/css/base.css'
 }
 
 function cacheBase() {
@@ -75,6 +78,15 @@ function Base() {
     }))
     .pipe(postcss([autoprefixer()]))
     .pipe(sourcemaps.write('/'))
+    .pipe(dest(srcBase.dstDir))
+}
+
+function BaseMin() {
+  return src(srcBase.minDir)
+    .pipe(cleanCss())
+    .pipe(rename({
+      extname: '.min.css'
+    }))
     .pipe(dest(srcBase.dstDir))
     .pipe(browserSync.reload({
       stream: true
@@ -213,7 +225,7 @@ const browserSyncFunc = () => {
 /// 監視ファイル ////////////////////////////////////////////
 function watchFile() {
   watch(srcAbisu.srcDir, series(cacheAbisu, Abisu))
-  watch(srcBase.srcDir, series(cacheBase, Base))
+  watch(srcBase.srcDir, series(cacheBase, Base, BaseMin))
   // watch(srcAnimation.srcDir, series(cacheAnimation, Animation))
   watch(srcComponents.srcDir, series(cacheComponents, Components))
   watch(srcContents.srcDir, series(cacheContents, Contents))
