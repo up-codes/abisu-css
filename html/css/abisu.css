@@ -1374,12 +1374,12 @@ a[data-href*="."]:hover:before {
   padding: 5px;
   text-align: center;
 }
-[data-element-id] .show@tb {
+[data-element-id] .show\@tb {
   display: block;
   border: solid 4px #008000;
   position: relative;
 }
-[data-element-id] .show@tb:after {
+[data-element-id] .show\@tb:after {
   display: block;
   content: "モバイル用です。";
   color: #fff;
@@ -1388,12 +1388,12 @@ a[data-href*="."]:hover:before {
   padding: 5px;
   text-align: center;
 }
-[data-element-id] .show@sp {
+[data-element-id] .show\@sp {
   display: block;
   border: solid 4px #008000;
   position: relative;
 }
-[data-element-id] .show@sp:after {
+[data-element-id] .show\@sp:after {
   display: block;
   content: "モバイル用です。";
   color: #fff;
