@@ -20,16 +20,17 @@ const rename = require('gulp-rename'); //リネーム
 
 /// abisu(stylus)コンパイル //////////////////////////////////////////
 const srcAbisu = {
-  srcDir: 'html/stylus/abisu.styl',
+  srcDir: 'html/stylus/abisu1.1.styl',
   srcCom: [
-    'html/stylus/abisu.styl'
+    'html/stylus/abisu1.1.styl'
   ],
-  dstDir: 'html/css'
+  dstDir: 'html/css',
+  minDir: 'html/css/abisu1.1.css'
 }
 
 function cacheAbisu() {
   return src(srcAbisu.srcDir)
-    .pipe(cache('abisu'))
+    .pipe(cache('abisu1.1'))
 }
 
 function Abisu() {
@@ -50,20 +51,32 @@ function Abisu() {
     }))
 }
 
+function AbisuMin() {
+  return src(srcAbisu.minDir)
+    .pipe(cleanCss())
+    .pipe(rename({
+      extname: '.min.css'
+    }))
+    .pipe(dest(srcAbisu.dstDir))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+}
+
 
 /// base(stylus)コンパイル //////////////////////////////////////////
 const srcBase = {
-  srcDir: 'html/stylus/base.styl',
+  srcDir: 'html/stylus/base1.1.styl',
   srcCom: [
-    'html/stylus/base.styl'
+    'html/stylus/base1.1.styl'
   ],
   dstDir: 'html/css',
-  minDir: 'html/css/base.css'
+  minDir: 'html/css/base1.1.css'
 }
 
 function cacheBase() {
   return src(srcBase.srcDir)
-    .pipe(cache('base'))
+    .pipe(cache('base1.1'))
 }
 
 function Base() {
@@ -224,7 +237,7 @@ const browserSyncFunc = () => {
 
 /// 監視ファイル ////////////////////////////////////////////
 function watchFile() {
-  watch(srcAbisu.srcDir, series(cacheAbisu, Abisu))
+  watch(srcAbisu.srcDir, series(cacheAbisu, Abisu, AbisuMin))
   watch(srcBase.srcDir, series(cacheBase, Base, BaseMin))
   // watch(srcAnimation.srcDir, series(cacheAnimation, Animation))
   watch(srcComponents.srcDir, series(cacheComponents, Components))
