@@ -17,6 +17,9 @@ const browserSync = require('browser-sync') //ブラウザ自動更新
 const debug = require('gulp-debug'); //デバッグ
 const cleanCss = require('gulp-clean-css'); //cssを最小化
 const rename = require('gulp-rename'); //リネーム
+const imagemin = require('gulp-imagemin'); //画像圧縮
+const pngquant = require('imagemin-pngquant'); //png画像の圧縮 
+const changed = require('gulp-changed'); //画像の差分を取得
 
 /// abisu(stylus)コンパイル //////////////////////////////////////////
 const srcAbisu = {
@@ -276,6 +279,40 @@ const browserSyncFunc = () => {
   })
 }
 
+/// 画像圧縮 //////////////////////////////////////////
+const srcImage = {
+  srcDir: 'html/compression/*.{jpg,jpeg,png,gif,svg}',
+  dstDir: 'html/images'
+}
+
+function imageMinCom() {
+  return src(srcImage.srcDir)
+    .pipe(changed(srcImage.dstDir))
+    .pipe(
+      imagemin([
+        imagemin.mozjpeg({
+          quality: 80
+        }),
+        imagemin.svgo({
+          plugins: [{
+            removeViewBox: true
+          }, {
+            cleanupIDs: false
+          }],
+        }),
+        imagemin.gifsicle({
+          interlaced: true,
+        }),
+        pngquant({
+          quality: [0.65, 0.8],
+          speed: 1,
+        }),
+      ])
+    )
+    .pipe(dest(srcImage.dstDir))
+}
+
+
 
 /// 監視ファイル ////////////////////////////////////////////
 function watchFile() {
@@ -286,6 +323,7 @@ function watchFile() {
   watch(srcComponents.srcDir, series(cacheComponents, Components))
   watch(srcContents.srcDir, series(cacheContents, Contents))
   watch(srcHTML.srcDir, HTML)
+  watch(srcImage.srcDir, imageMinCom)
 }
 
 
