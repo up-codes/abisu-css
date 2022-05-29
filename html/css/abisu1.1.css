@@ -1,3 +1,4 @@
+@charset 'utf-8';
 /* version 1.1 */
 /* 見たまま編集バリデーション */
 [data-element-id] .up-relative\@edit {
@@ -42,6 +43,21 @@
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
+}
+[data-element-id] .fead-text {
+  opacity: 1;
+}
+[data-element-id] .fead-text.str {
+  opacity: 1;
+}
+[data-element-id] .fead-cover:before {
+  content: none;
+}
+[data-element-id] .fead-cover > * {
+  opacity: 1;
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
 }
 [data-element-id] .imgalt {
   position: relative;
