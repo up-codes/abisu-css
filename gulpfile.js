@@ -106,6 +106,48 @@ function BaseMin() {
     }))
 }
 
+/// base_k(stylus)コンパイル //////////////////////////////////////////
+const srcBaseK = {
+  srcDir: 'html/stylus/base_k1.1.styl',
+  srcCom: [
+    'html/stylus/base_k1.1.styl'
+  ],
+  dstDir: 'html/css',
+  minDir: 'html/css/base_k1.1.css'
+}
+
+function cacheBaseK() {
+  return src(srcBaseK.srcDir)
+    .pipe(cache('base_k1.1'))
+}
+
+function BaseK() {
+  return src(srcBaseK.srcCom)
+    .pipe(sourcemaps.init())
+    .pipe(progeny())
+    .pipe(plumber({
+      errorHandler: notify.onError('Error: <%= error.message %>')
+    }))
+    .pipe(stylus({
+      compress: false
+    }))
+    .pipe(postcss([autoprefixer()]))
+    .pipe(sourcemaps.write('/'))
+    .pipe(dest(srcBaseK.dstDir))
+}
+
+function BaseKMin() {
+  return src(srcBaseK.minDir)
+    .pipe(cleanCss())
+    .pipe(rename({
+      extname: '.min.css'
+    }))
+    .pipe(dest(srcBaseK.dstDir))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+}
+
 
 /// animation(stylus)コンパイル //////////////////////////////////////////
 // const srcAnimation = {
@@ -239,6 +281,7 @@ const browserSyncFunc = () => {
 function watchFile() {
   watch(srcAbisu.srcDir, series(cacheAbisu, Abisu, AbisuMin))
   watch(srcBase.srcDir, series(cacheBase, Base, BaseMin))
+  watch(srcBaseK.srcDir, series(cacheBaseK, BaseK, BaseKMin))
   // watch(srcAnimation.srcDir, series(cacheAnimation, Animation))
   watch(srcComponents.srcDir, series(cacheComponents, Components))
   watch(srcContents.srcDir, series(cacheContents, Contents))
