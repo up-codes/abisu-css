@@ -23,6 +23,7 @@ const changed = require('gulp-changed'); //画像の差分を取得
 const filelog = require('gulp-filelog'); //処理されたファイル名をログに流す
 const imageResize = require('gulp-image-resize'); //画像をリサイズする
 const webp = require('gulp-webp'); //画像をwebpに変換する
+const ejs = require('gulp-ejs'); //ejsファイル
 
 /// abisu(stylus)コンパイル //////////////////////////////////////////
 const srcAbisu = {
@@ -271,6 +272,28 @@ function HTML() {
     }))
 }
 
+/// ejs監視 ////////////////////////////////////////////
+var srcEjs = {
+  srcDir: [
+    'html/ejs/**/*.ejs',
+    "!" + "html/ejs/**/_*.ejs"
+  ],
+  dstDir: 'html'
+}
+
+function ejsToHTML() {
+  return src(srcEjs.srcDir)
+    .pipe(plumber())
+    .pipe(ejs())
+    .pipe(rename({
+      extname: '.html'
+    }))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+    .pipe(dest(srcEjs.dstDir));
+}
+
 
 /// ブラウザ自動更新 ////////////////////////////////////////////
 const browserSyncFunc = () => {
@@ -478,6 +501,7 @@ function watchFile() {
   watch(srcComponents.srcDir, series(cacheComponents, Components))
   watch(srcContents.srcDir, series(cacheContents, Contents))
   watch(srcHTML.srcDir, HTML)
+  watch(srcEjs.srcDir, ejsToHTML)
   watch(srcImage.comDir, imageMinCom)
   watch(srcImage.resize2000Dir, imageResize2000)
   watch(srcImage.resize1500Dir, imageResize1500)
