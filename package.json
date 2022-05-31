@@ -28,6 +28,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-stylus": "^2.7.0",
+    "gulp-webp": "^4.0.1",
     "imagemin-pngquant": "^9.0.2",
     "stylus-supremacy": "^2.12.7"
   },

@@ -22,6 +22,7 @@ const pngquant = require('imagemin-pngquant'); //png画像の圧縮
 const changed = require('gulp-changed'); //画像の差分を取得
 const filelog = require('gulp-filelog'); //処理されたファイル名をログに流す
 const imageResize = require('gulp-image-resize'); //画像をリサイズする
+const webp = require('gulp-webp'); //画像をwebpに変換する
 
 /// abisu(stylus)コンパイル //////////////////////////////////////////
 const srcAbisu = {
@@ -452,7 +453,21 @@ function imageResize500() {
     .pipe(filelog())
 }
 
+/// 画像をwebpに変換 //////////////////////////////////////////
+const srcWebp = {
+  srcDir: 'html/webp/*.{jpg,jpeg,png,gif,svg}',
+  dstDir: 'html/images'
+}
 
+function imageToWebp() {
+  return src(srcWebp.srcDir)
+    .pipe(changed(srcWebp.dstDir))
+    .pipe(rename(function (path) {
+      path.basename += path.extname;
+    }))
+    .pipe(webp())
+    .pipe(dest(srcWebp.dstDir));
+}
 
 /// 監視ファイル ////////////////////////////////////////////
 function watchFile() {
@@ -468,6 +483,7 @@ function watchFile() {
   watch(srcImage.resize1500Dir, imageResize1500)
   watch(srcImage.resize1000Dir, imageResize1000)
   watch(srcImage.resize500Dir, imageResize500)
+  watch(srcWebp.srcDir, imageToWebp)
 }
 
 
