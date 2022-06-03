@@ -20,6 +20,7 @@
     "gulp-debug": "^4.0.0",
     "gulp-ejs": "^5.1.0",
     "gulp-filelog": "^0.4.1",
+    "gulp-html-beautify": "^1.0.1",
     "gulp-image-resize": "^0.13.1",
     "gulp-imagemin": "^7.1.0",
     "gulp-notify": "^3.2.0",

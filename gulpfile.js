@@ -24,6 +24,7 @@ const filelog = require('gulp-filelog'); //処理されたファイル名をロ�
 const imageResize = require('gulp-image-resize'); //画像をリサイズする
 const webp = require('gulp-webp'); //画像をwebpに変換する
 const ejs = require('gulp-ejs'); //ejsファイル
+const htmlbeautify = require('gulp-html-beautify'); //コード整形
 
 /// abisu(stylus)コンパイル //////////////////////////////////////////
 const srcAbisu = {
@@ -285,6 +286,16 @@ function ejsToHTML() {
   return src(srcEjs.srcDir)
     .pipe(plumber())
     .pipe(ejs())
+    .pipe(
+      htmlbeautify({
+        indent_size: 2,
+        indent_char: " ",
+        max_preserve_newlines: 0,
+        preserve_newlines: false,
+        indent_inner_html: false,
+        extra_liners: [],
+      })
+    )
     .pipe(rename({
       extname: '.html'
     }))
