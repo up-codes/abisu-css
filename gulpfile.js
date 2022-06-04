@@ -292,11 +292,12 @@ const browserSyncFunc = () => {
 
 
 const srcImage = {
-  comDir: 'html/compression/*.{jpg,jpeg,png,gif,svg}',
-  resize2000Dir: 'html/resize/to_2000/*.{jpg,jpeg,png,gif,svg}',
-  resize1500Dir: 'html/resize/to_1500/*.{jpg,jpeg,png,gif,svg}',
-  resize1000Dir: 'html/resize/to_1000/*.{jpg,jpeg,png,gif,svg}',
-  resize500Dir: 'html/resize/to_500/*.{jpg,jpeg,png,gif,svg}',
+  comDir: 'html/compression/*.{jpg,jpeg,JPG,JPEG,png,gif,svg}',
+  resize2000Dir: 'html/resize/to_2000/*.{jpg,jpeg,JPG,JPEG,png,gif,svg}',
+  resize1500Dir: 'html/resize/to_1500/*.{jpg,jpeg,JPG,JPEG,png,gif,svg}',
+  resize1000Dir: 'html/resize/to_1000/*.{jpg,jpeg,JPG,JPEG,png,gif,svg}',
+  resize800Dir: 'html/resize/to_800/*.{jpg,jpeg,JPG,JPEG,png,gif,svg}',
+  resize500Dir: 'html/resize/to_500/*.{jpg,jpeg,JPG,JPEG,png,gif,svg}',
   dstDir: 'html/images'
 }
 const mozjpegOptions = {
@@ -317,7 +318,7 @@ const pngquantOptions = {
   speed: 1
 }
 
-/// 画像圧縮のみ //////////////////////////////////////////
+/// 画像圧縮 //////////////////////////////////////////
 function imageMinCom() {
   return src(srcImage.comDir)
     .pipe(changed(srcImage.dstDir))
@@ -340,7 +341,7 @@ function imageMinCom() {
     .pipe(dest(srcImage.dstDir))
 }
 
-/// 画像リサイズ＋圧縮 //////////////////////////////////////////
+/// 画像リサイズ＋webp変換 //////////////////////////////////////////
 function imageResize2000() {
   return src(srcImage.resize2000Dir)
     .pipe(changed(srcImage.dstDir))
@@ -350,22 +351,6 @@ function imageResize2000() {
         crop: false,
         upscale: false
       })
-    )
-    .pipe(
-      imagemin([
-        imagemin.mozjpeg({
-          mozjpegOptions
-        }),
-        imagemin.svgo({
-          svgoOptions
-        }),
-        imagemin.gifsicle({
-          gifsicleOptions
-        }),
-        pngquant({
-          pngquantOptions
-        }),
-      ])
     )
     .pipe(dest(srcImage.dstDir))
     .pipe(filelog())
@@ -381,22 +366,10 @@ function imageResize1500() {
         upscale: false
       })
     )
-    .pipe(
-      imagemin([
-        imagemin.mozjpeg({
-          mozjpegOptions
-        }),
-        imagemin.svgo({
-          svgoOptions
-        }),
-        imagemin.gifsicle({
-          gifsicleOptions
-        }),
-        pngquant({
-          pngquantOptions
-        }),
-      ])
-    )
+    .pipe(rename(function (path) {
+      path.basename += path.extname;
+    }))
+    .pipe(webp())
     .pipe(dest(srcImage.dstDir))
     .pipe(filelog())
 }
@@ -411,22 +384,28 @@ function imageResize1000() {
         upscale: false
       })
     )
+    .pipe(rename(function (path) {
+      path.basename += path.extname;
+    }))
+    .pipe(webp())
+    .pipe(dest(srcImage.dstDir))
+    .pipe(filelog())
+}
+
+function imageResize800() {
+  return src(srcImage.resize800Dir)
+    .pipe(changed(srcImage.dstDir))
     .pipe(
-      imagemin([
-        imagemin.mozjpeg({
-          mozjpegOptions
-        }),
-        imagemin.svgo({
-          svgoOptions
-        }),
-        imagemin.gifsicle({
-          gifsicleOptions
-        }),
-        pngquant({
-          pngquantOptions
-        }),
-      ])
+      imageResize({
+        width: 800,
+        crop: false,
+        upscale: false
+      })
     )
+    .pipe(rename(function (path) {
+      path.basename += path.extname;
+    }))
+    .pipe(webp())
     .pipe(dest(srcImage.dstDir))
     .pipe(filelog())
 }
@@ -441,29 +420,17 @@ function imageResize500() {
         upscale: false
       })
     )
-    .pipe(
-      imagemin([
-        imagemin.mozjpeg({
-          mozjpegOptions
-        }),
-        imagemin.svgo({
-          svgoOptions
-        }),
-        imagemin.gifsicle({
-          gifsicleOptions
-        }),
-        pngquant({
-          pngquantOptions
-        }),
-      ])
-    )
+    .pipe(rename(function (path) {
+      path.basename += path.extname;
+    }))
+    .pipe(webp())
     .pipe(dest(srcImage.dstDir))
     .pipe(filelog())
 }
 
 /// 画像をwebpに変換 //////////////////////////////////////////
 const srcWebp = {
-  srcDir: 'html/webp/*.{jpg,jpeg,png,gif,svg}',
+  srcDir: 'html/webp/*.{jpg,jpeg,JPG,JPEG,png,gif,svg}',
   dstDir: 'html/images'
 }
 
@@ -491,6 +458,7 @@ function watchFile() {
   watch(srcImage.resize2000Dir, imageResize2000)
   watch(srcImage.resize1500Dir, imageResize1500)
   watch(srcImage.resize1000Dir, imageResize1000)
+  watch(srcImage.resize800Dir, imageResize800)
   watch(srcImage.resize500Dir, imageResize500)
   watch(srcWebp.srcDir, imageToWebp)
 }
