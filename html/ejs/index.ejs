@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <% let path = 'index'; %>
+  <%- include('./_inc/_meta', {path: path}) %>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/slick-theme.css">
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/base1.1.min.css">
+  <link rel="stylesheet" href="css/abisu1.1.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.3/ofi.js"></script>
+  <script src="js/slick.min.js"></script>
+  <script src="js/slick_option.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
+  <script src="js/common.js"></script>
+</head>
+
+<body>
+  <div id="wrapper" class="wrapper home <%= path %>">
+    <%- include('./_inc/_header', {path: path}) %>
+
+    <!-- メインコンテンツ -->
+    <main id="main" class="main">
+      <div class="homevisual">
+        <div class="img"><img src="https://placehold.jp/500x500.png" alt=""></div>
+        <div class="inner head">メインビジュアル</div>
+      </div>
+
+      <section class="home01 area">
+        <div class="inner">
+          <img src="https://placehold.jp/30/bcc6d6/ffffff/1000x500.png?text=%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84" alt="">
+        </div>
+      </section>
+
+      <section class="home02 area">
+        <div class="inner">
+          <ul class="slick01">
+            <li class="item up-adb up-mx-10 up-mx-5@sp">
+              <a href="#">
+                <div class="img"><span class="up-ofi-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
+                <div class="head"><a href="#">タイトル</a></div>
+                <div class="txt">テキストが入ります</div>
+              </a>
+            </li>
+            <li class="item up-adb up-mx-10 up-mx-5@sp">
+              <a href="#">
+                <div class="img"><span class="up-ofi-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
+                <div class="head"><a href="#">タイトル</a></div>
+                <div class="txt">テキストが入ります</div>
+              </a>
+            </li>
+            <li class="item up-adb up-mx-10 up-mx-5@sp">
+              <a href="#">
+                <div class="img"><span class="up-ofi-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
+                <div class="head"><a href="#">タイトル</a></div>
+                <div class="txt">テキストが入ります</div>
+              </a>
+            </li>
+            <li class="item up-adb up-mx-10 up-mx-5@sp">
+              <a href="#">
+                <div class="img"><span class="up-ofi-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
+                <div class="head"><a href="#">タイトル</a></div>
+                <div class="txt">テキストが入ります</div>
+              </a>
+            </li>
+            <li class="item up-adb up-mx-10 up-mx-5@sp">
+              <a href="#">
+                <div class="img"><span class="up-ofi-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
+                <div class="head"><a href="#">タイトル</a></div>
+                <div class="txt">テキストが入ります</div>
+              </a>
+            </li>
+            <li class="item up-adb up-mx-10 up-mx-5@sp">
+              <a href="#">
+                <div class="img"><span class="up-ofi-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
+                <div class="head"><a href="#">タイトル</a></div>
+                <div class="txt">テキストが入ります</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <%- include('./_inc/_footer') %>
+  </div>
+</body>
+
+</html>

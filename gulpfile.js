@@ -25,6 +25,7 @@ const imageResize = require('gulp-image-resize'); //画像をリサイズする
 const webp = require('gulp-webp'); //画像をwebpに変換する
 const ejs = require('gulp-ejs'); //ejsファイル
 const htmlbeautify = require('gulp-html-beautify'); //コード整形
+const fs = require('fs'); //jsonファイル操作
 
 /// abisu(stylus)コンパイル //////////////////////////////////////////
 const srcAbisu = {
@@ -157,39 +158,6 @@ function BaseKMin() {
 }
 
 
-/// animation(stylus)コンパイル //////////////////////////////////////////
-// const srcAnimation = {
-//   srcDir: 'html/stylus/animation.styl',
-//   srcCom: [
-//     'html/stylus/animation.styl'
-//   ],
-//   dstDir: 'html/css'
-// }
-
-// function cacheAnimation() {
-//   return src(srcAnimation.srcDir)
-//     .pipe(cache('animation'))
-// }
-
-// function Animation() {
-//   return src(srcAnimation.srcCom)
-//     .pipe(sourcemaps.init())
-//     .pipe(progeny())
-//     .pipe(plumber({
-//       errorHandler: notify.onError('Error: <%= error.message %>')
-//     }))
-//     .pipe(stylus({
-//       compress: false
-//     }))
-//     .pipe(postcss([autoprefixer()]))
-//     .pipe(sourcemaps.write('/'))
-//     .pipe(dest(srcAnimation.dstDir))
-//     .pipe(browserSync.reload({
-//       stream: true
-//     }))
-// }
-
-
 /// components(stylus)コンパイル //////////////////////////////////////////
 const srcComponents = {
   srcDir: 'html/stylus/components/*.styl',
@@ -279,13 +247,16 @@ var srcEjs = {
     'html/ejs/**/*.ejs',
     "!" + "html/ejs/**/_*.ejs"
   ],
+  jsonDir: 'html/data/site.json',
   dstDir: 'html'
 }
 
 function ejsToHTML() {
   return src(srcEjs.srcDir)
     .pipe(plumber())
-    .pipe(ejs())
+    .pipe(ejs({
+      jsonData: JSON.parse(fs.readFileSync(srcEjs.jsonDir))
+    }))
     .pipe(
       htmlbeautify({
         indent_size: 2,
@@ -312,6 +283,9 @@ const browserSyncFunc = () => {
     server: {
       baseDir: 'html',
       index: 'index.html',
+      open: 'external',
+      https: true,
+      cors: true,
     },
   })
 }
@@ -508,11 +482,11 @@ function watchFile() {
   watch(srcAbisu.srcDir, series(cacheAbisu, Abisu, AbisuMin))
   watch(srcBase.srcDir, series(cacheBase, Base, BaseMin))
   watch(srcBaseK.srcDir, series(cacheBaseK, BaseK, BaseKMin))
-  // watch(srcAnimation.srcDir, series(cacheAnimation, Animation))
   watch(srcComponents.srcDir, series(cacheComponents, Components))
   watch(srcContents.srcDir, series(cacheContents, Contents))
   watch(srcHTML.srcDir, HTML)
   watch(srcEjs.srcDir, ejsToHTML)
+  watch(srcEjs.jsonDir, ejsToHTML)
   watch(srcImage.comDir, imageMinCom)
   watch(srcImage.resize2000Dir, imageResize2000)
   watch(srcImage.resize1500Dir, imageResize1500)
