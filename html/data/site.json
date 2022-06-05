@@ -43,6 +43,16 @@
       "title": "コンポーネント2",
       "description": "ディスクリプション",
       "keywords": "キーワード"
+    },
+    "component3": {
+      "title": "コンポーネント3",
+      "description": "ディスクリプション",
+      "keywords": "キーワード"
+    },
+    "component4": {
+      "title": "コンポーネント4",
+      "description": "ディスクリプション",
+      "keywords": "キーワード"
     }
   }
 }

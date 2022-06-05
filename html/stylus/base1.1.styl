@@ -418,9 +418,11 @@ button
 /* z-index */
 for z in range(-5,-1,1)
   .up-z-n{abs(z)}
+    position relative
     z-index z
 for z in range(0,5,1)
   .up-z-{z}
+    position relative
     z-index z
 
 /* color */
@@ -511,10 +513,217 @@ for lh in range(1,9,1)
 .up-fxd-colr
   flex-direction column-reverse
 
-/* 偶数と奇数番目で左右反転 */
+/* 偶数と奇数番目で左右反転No.1 */
 .up-fxd-even > *:nth-child(even),
 .up-fxd-odd > *:nth-child(odd)
   flex-direction: row-reverse;
+
+/* 偶数と奇数番目で左右反転No.2 */
+.up-fxd-even2>*:nth-child(even) .up-d-flex,
+.up-fxd-odd2>*:nth-child(odd) .up-d-flex {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+/* 片方のみブラウザ幅いっぱい（1200px基準） */
+
+.up-left-1200 {
+  margin-left: calc(50% - 600px);
+}
+
+.up-right-1200 {
+  margin-right: calc(50% - 600px);
+}
+
+[class*=up-fxd-even]>.up-left-1200:nth-child(even),
+[class*=up-fxd-odd]>.up-left-1200:nth-child(odd) {
+  margin-left: 0;
+  margin-right: calc(50% - 600px);
+}
+
+[class*=up-fxd-even]>.up-right-1200:nth-child(even),
+[class*=up-fxd-odd]>.up-right-1200:nth-child(odd) {
+  margin-right: 0;
+  margin-left: calc(50% - 600px);
+}
+
+@media only screen and (max-width: 1224px) {
+  .up-left-1200 {
+    margin-left: 2%;
+  }
+
+  .up-right-1200 {
+    margin-right: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-left-1200:nth-child(even),
+  [class*=up-fxd-odd]>.up-left-1200:nth-child(odd) {
+    margin-left: 0;
+    margin-right: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-right-1200:nth-child(even),
+  [class*=up-fxd-odd]>.up-right-1200:nth-child(odd) {
+    margin-right: 0;
+    margin-left: 2%;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .up-left-1200 {
+    margin-right: 2%;
+  }
+
+  .up-right-1200 {
+    margin-left: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-left-1200:nth-child(even),
+  [class*=up-fxd-odd]>.up-left-1200:nth-child(odd) {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-right-1200:nth-child(even),
+  [class*=up-fxd-odd]>.up-right-1200:nth-child(odd) {
+    margin-right: 2%;
+    margin-left: 2%;
+  }
+}
+
+/* 片方のみブラウザ幅いっぱい（1100px基準） */
+
+.up-left-1100 {
+  margin-left: calc(50% - 550px);
+}
+
+.up-right-1100 {
+  margin-right: calc(50% - 550px);
+}
+
+[class*=up-fxd-even]>.up-left-1100:nth-child(even),
+[class*=up-fxd-odd]>.up-left-1100:nth-child(odd) {
+  margin-left: 0;
+  margin-right: calc(50% - 550px);
+}
+
+[class*=up-fxd-even]>.up-right-1100:nth-child(even),
+[class*=up-fxd-odd]>.up-right-1100:nth-child(odd) {
+  margin-right: 0;
+  margin-left: calc(50% - 550px);
+}
+
+@media only screen and (max-width: 1122px) {
+  .up-left-1100 {
+    margin-left: 2%;
+  }
+
+  .up-right-1100 {
+    margin-right: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-left-1100:nth-child(even),
+  [class*=up-fxd-odd]>.up-left-1100:nth-child(odd) {
+    margin-left: 0;
+    margin-right: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-right-1100:nth-child(even),
+  [class*=up-fxd-odd]>.up-right-1100:nth-child(odd) {
+    margin-right: 0;
+    margin-left: 2%;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .up-left-1100 {
+    margin-right: 2%;
+  }
+
+  .up-right-1100 {
+    margin-left: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-left-1100:nth-child(even),
+  [class*=up-fxd-odd]>.up-left-1100:nth-child(odd) {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-right-1100:nth-child(even),
+  [class*=up-fxd-odd]>.up-right-1100:nth-child(odd) {
+    margin-right: 2%;
+    margin-left: 2%;
+  }
+}
+
+/* 片方のみブラウザ幅いっぱい（1000px基準） */
+
+.up-left-1000 {
+  margin-left: calc(50% - 500px);
+}
+
+.up-right-1000 {
+  margin-right: calc(50% - 500px);
+}
+
+[class*=up-fxd-even]>.up-left-1000:nth-child(even),
+[class*=up-fxd-odd]>.up-left-1000:nth-child(odd) {
+  margin-left: 0;
+  margin-right: calc(50% - 500px);
+}
+
+[class*=up-fxd-even]>.up-right-1000:nth-child(even),
+[class*=up-fxd-odd]>.up-right-1000:nth-child(odd) {
+  margin-right: 0;
+  margin-left: calc(50% - 500px);
+}
+
+@media only screen and (max-width: 1024px) {
+  .up-left-1000 {
+    margin-left: 2%;
+  }
+
+  .up-right-1000 {
+    margin-right: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-left-1000:nth-child(even),
+  [class*=up-fxd-odd]>.up-left-1000:nth-child(odd) {
+    margin-left: 0;
+    margin-right: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-right-1000:nth-child(even),
+  [class*=up-fxd-odd]>.up-right-1000:nth-child(odd) {
+    margin-right: 0;
+    margin-left: 2%;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .up-left-1000 {
+    margin-right: 2%;
+  }
+
+  .up-right-1000 {
+    margin-left: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-left-1000:nth-child(even),
+  [class*=up-fxd-odd]>.up-left-1000:nth-child(odd) {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-right-1000:nth-child(even),
+  [class*=up-fxd-odd]>.up-right-1000:nth-child(odd) {
+    margin-right: 2%;
+    margin-left: 2%;
+  }
+}
 
 /* justify-content */
 .up-jc-s
@@ -897,12 +1106,60 @@ for padding-p in range(range-padding-p)
 
 
 /* grid-template-columns */
-for min in range(0,100,10)
-  .up-fit-{min}
+for col in range(1,6,1)
+  .up-col-{col}
+    display grid
+    grid-template-columns repeat((col), minmax(auto, 1fr))
+for min in range(0,500,50)
+  .up-col-fit{min}
+    display grid
     grid-template-columns repeat(auto-fit, minmax((min)px, 1fr))
-for min in range(150,500,50)
-  .up-fit-{min}
-    grid-template-columns repeat(auto-fit, minmax((min)px, 1fr))
+for min in range(0,500,50)
+  .up-col-fill{min}
+    display grid
+    grid-template-columns repeat(auto-fill, minmax((min)px, 1fr))
+
+/* grid-column, grid-row */
+.up-gcol-auto
+  grid-column auto
+for column in range(2,7,1)
+  .up-gcol-1-{column}
+    grid-column 1 / column
+for column in range(3,7,1)
+  .up-gcol-2-{column}
+    grid-column 2 / column
+for column in range(4,7,1)
+  .up-gcol-3-{column}
+    grid-column 3 / column
+for column in range(5,7,1)
+  .up-gcol-4-{column}
+    grid-column 4 / column
+for column in range(6,7,1)
+  .up-gcol-5-{column}
+    grid-column 5 / column
+for column in range(7,7,1)
+  .up-gcol-6-{column}
+    grid-column 6 / column
+.up-grow-auto
+  grid-row auto
+for row in range(2,7,1)
+  .up-grow-1-{row}
+    grid-row 1 / row
+for row in range(3,7,1)
+  .up-grow-2-{row}
+    grid-row 2 / row
+for row in range(4,7,1)
+  .up-grow-3-{row}
+    grid-row 3 / row
+for row in range(5,7,1)
+  .up-grow-4-{row}
+    grid-row 4 / row
+for row in range(6,7,1)
+  .up-grow-5-{row}
+    grid-row 5 / row
+for row in range(7,7,1)
+  .up-grow-6-{row}
+    grid-row 6 / row
 
 /* gapx(px) */
 for gapx-px in range(0,100,10)
@@ -1004,9 +1261,11 @@ for image in range(10,170,5)
   /* z-index */
   for z in range(-5,-1,1)
     .up-z-n{abs(z)}\\\@tb
+      position relative
       z-index z
   for z in range(0,5,1)
     .up-z-{z}\\\@tb
+      position relative
       z-index z
 
   /* color */
@@ -1475,37 +1734,55 @@ for image in range(10,170,5)
     .up-pl-{padding-p}\\\%\\\@tb
       padding-left (padding-p)%
 
-  /* カラム */
-  .up-col-1\\\@tb
-    display flex
-    flex-wrap wrap
-    > *
-      width 100%
-  .up-col-2\\\@tb
-    display flex
-    flex-wrap wrap
-    > *
-      width 50%
-  .up-col-3\\\@tb
-    display flex
-    flex-wrap wrap
-    > *
-      width 33.333%
-  .up-col-4\\\@tb
-    display flex
-    flex-wrap wrap
-    > *
-      width 25%
-  .up-col-5\\\@tb
-    display flex
-    flex-wrap wrap
-    > *
-      width 20%
-  .up-col-6\\\@tb
-    display flex
-    flex-wrap wrap
-    > *
-      width 16.666%
+  /* grid-template-columns */
+  for min in range(0,100,10)
+    .up-col-fit{min}\\\@tb
+      grid-template-columns repeat(auto-fit, minmax((min)px, 1fr))
+  for min in range(150,500,50)
+    .up-col-fit{min}\\\@tb
+      grid-template-columns repeat(auto-fit, minmax((min)px, 1fr))
+
+  /* grid-column, grid-row */
+  .up-gcol-auto\\\@tb
+    grid-column auto
+  for column in range(2,7,1)
+    .up-gcol-1-{column}\\\@tb
+      grid-column 1 / column
+  for column in range(3,7,1)
+    .up-gcol-2-{column}\\\@tb
+      grid-column 2 / column
+  for column in range(4,7,1)
+    .up-gcol-3-{column}\\\@tb
+      grid-column 3 / column
+  for column in range(5,7,1)
+    .up-gcol-4-{column}\\\@tb
+      grid-column 4 / column
+  for column in range(6,7,1)
+    .up-gcol-5-{column}\\\@tb
+      grid-column 5 / column
+  for column in range(7,7,1)
+    .up-gcol-6-{column}\\\@tb
+      grid-column 6 / column
+  .up-grow-auto\\\@tb
+    grid-row auto
+  for row in range(2,7,1)
+    .up-grow-1-{row}\\\@tb
+      grid-row 1 / row
+  for row in range(3,7,1)
+    .up-grow-2-{row}\\\@tb
+      grid-row 2 / row
+  for row in range(4,7,1)
+    .up-grow-3-{row}\\\@tb
+      grid-row 3 / row
+  for row in range(5,7,1)
+    .up-grow-4-{row}\\\@tb
+      grid-row 4 / row
+  for row in range(6,7,1)
+    .up-grow-5-{row}\\\@tb
+      grid-row 5 / row
+  for row in range(7,7,1)
+    .up-grow-6-{row}\\\@tb
+      grid-row 6 / row
 
   /* gapx(px) */
   for gapx-px in range(0,100,10)
@@ -1583,9 +1860,9 @@ for image in range(10,170,5)
     display inline-block
   .up-d-flex\\\@sp
     display flex
-  .up-d-grid\\\@tb
+  .up-d-grid\\\@sp
     display grid
-  .up-d-contents\\\@tb
+  .up-d-contents\\\@sp
     display contents
   .up-d-none\\\@sp
     display none
@@ -1605,9 +1882,11 @@ for image in range(10,170,5)
   /* z-index */
   for z in range(-5,-1,1)
     .up-z-n{abs(z)}\\\@sp
+      position relative
       z-index z
   for z in range(0,5,1)
     .up-z-{z}\\\@sp
+      position relative
       z-index z
 
   /* color */
@@ -2076,38 +2355,55 @@ for image in range(10,170,5)
     .up-pl-{padding-p}\\\%\\\@sp
       padding-left (padding-p)%
 
+  /* grid-template-columns */
+  for min in range(0,100,10)
+    .up-col-fit{min}\\\@sp
+      grid-template-columns repeat(auto-fit, minmax((min)px, 1fr))
+  for min in range(150,500,50)
+    .up-col-fit{min}\\\@sp
+      grid-template-columns repeat(auto-fit, minmax((min)px, 1fr))
 
-  /* カラム */
-  .up-col-1\\\@sp
-    display flex
-    flex-wrap wrap
-    > *
-      width 100%
-  .up-col-2\\\@sp
-    display flex
-    flex-wrap wrap
-    > *
-      width 50%
-  .up-col-3\\\@sp
-    display flex
-    flex-wrap wrap
-    > *
-      width 33.333%
-  .up-col-4\\\@sp
-    display flex
-    flex-wrap wrap
-    > *
-      width 25%
-  .up-col-5\\\@sp
-    display flex
-    flex-wrap wrap
-    > *
-      width 20%
-  .up-col-6\\\@sp
-    display flex
-    flex-wrap wrap
-    > *
-      width 16.666%
+  /* grid-column, grid-row */
+  .up-gcol-auto\\\@sp
+    grid-column auto
+  for column in range(2,7,1)
+    .up-gcol-1-{column}\\\@sp
+      grid-column 1 / column
+  for column in range(3,7,1)
+    .up-gcol-2-{column}\\\@sp
+      grid-column 2 / column
+  for column in range(4,7,1)
+    .up-gcol-3-{column}\\\@sp
+      grid-column 3 / column
+  for column in range(5,7,1)
+    .up-gcol-4-{column}\\\@sp
+      grid-column 4 / column
+  for column in range(6,7,1)
+    .up-gcol-5-{column}\\\@sp
+      grid-column 5 / column
+  for column in range(7,7,1)
+    .up-gcol-6-{column}\\\@sp
+      grid-column 6 / column
+  .up-grow-auto\\\@sp
+    grid-row auto
+  for row in range(2,7,1)
+    .up-grow-1-{row}\\\@sp
+      grid-row 1 / row
+  for row in range(3,7,1)
+    .up-grow-2-{row}\\\@sp
+      grid-row 2 / row
+  for row in range(4,7,1)
+    .up-grow-3-{row}\\\@sp
+      grid-row 3 / row
+  for row in range(5,7,1)
+    .up-grow-4-{row}\\\@sp
+      grid-row 4 / row
+  for row in range(6,7,1)
+    .up-grow-5-{row}\\\@sp
+      grid-row 5 / row
+  for row in range(7,7,1)
+    .up-grow-6-{row}\\\@sp
+      grid-row 6 / row
 
   /* gapx(px) */
   for gapx-px in range(0,100,10)
