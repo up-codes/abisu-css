@@ -115,6 +115,48 @@ function BaseMin() {
     }))
 }
 
+/// base_new(stylus)コンパイル //////////////////////////////////////////
+const srcBaseNew = {
+  srcDir: 'html/stylus/base_new1.1.styl',
+  srcCom: [
+    'html/stylus/base_new1.1.styl'
+  ],
+  dstDir: 'html/css',
+  minDir: 'html/css/base_new1.1.css'
+}
+
+function cacheBaseNew() {
+  return src(srcBaseNew.srcDir)
+    .pipe(cache('base_new1.1'))
+}
+
+function BaseNew() {
+  return src(srcBaseNew.srcCom)
+    .pipe(sourcemaps.init())
+    .pipe(progeny())
+    .pipe(plumber({
+      errorHandler: notify.onError('Error: <%= error.message %>')
+    }))
+    .pipe(stylus({
+      compress: false
+    }))
+    .pipe(postcss([autoprefixer()]))
+    .pipe(sourcemaps.write('/'))
+    .pipe(dest(srcBaseNew.dstDir))
+}
+
+function BaseNewMin() {
+  return src(srcBaseNew.minDir)
+    .pipe(cleanCss())
+    .pipe(rename({
+      extname: '.min.css'
+    }))
+    .pipe(dest(srcBaseNew.dstDir))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+}
+
 /// base_k(stylus)コンパイル //////////////////////////////////////////
 const srcBaseK = {
   srcDir: 'html/stylus/base_k1.1.styl',
@@ -448,6 +490,7 @@ function imageToWebp() {
 function watchFile() {
   watch(srcAbisu.srcDir, series(cacheAbisu, Abisu, AbisuMin))
   watch(srcBase.srcDir, series(cacheBase, Base, BaseMin))
+  watch(srcBaseNew.srcDir, series(cacheBaseNew, BaseNew, BaseNewMin))
   watch(srcBaseK.srcDir, series(cacheBaseK, BaseK, BaseKMin))
   watch(srcComponents.srcDir, series(cacheComponents, Components))
   watch(srcContents.srcDir, series(cacheContents, Contents))

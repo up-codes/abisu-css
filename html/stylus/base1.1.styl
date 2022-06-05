@@ -396,6 +396,10 @@ button
   display inline-block
 .up-d-flex
   display flex
+.up-d-grid
+  display grid
+.up-d-contents
+  display contents
 .up-d-none
   display none
 
@@ -466,19 +470,6 @@ for fz in range(80,150,20)
   .up-fz-{fz}
     font-size (fz)px
 
-.up-fz-1vw
-  font-size 1vw
-for fz-vw in range(1,9,1)
-  .up-fz-1\\\.{fz-vw}vw
-    font-size (1 + fz-vw/10)vw
-.up-fz-2vw
-  font-size 2vw
-for fz-vw in range(1,9,1)
-  .up-fz-2\\\.{fz-vw}vw
-    font-size (2 + fz-vw/10)vw
-.up-fz-3vw
-  font-size 3vw
-
 
 /* line-height */
 .up-lh-1
@@ -526,12 +517,18 @@ for lh in range(1,9,1)
   flex-direction: row-reverse;
 
 /* justify-content */
+.up-jc-s
+  justify-content start
 .up-jc-fs
   justify-content flex-start
+.up-jc-e
+  justify-content end
 .up-jc-fe
   justify-content flex-end
 .up-jc-c
   justify-content center
+.up-jc-sh
+  justify-content stretch
 .up-jc-sb
   justify-content space-between
 .up-jc-sa
@@ -539,41 +536,77 @@ for lh in range(1,9,1)
 .up-jc-se
   justify-content space-evenly
 
+/* justify-items */
+.up-ji-st
+  justify-items start
+.up-ji-e
+  justify-items end
+.up-ji-c
+  justify-items center
+.up-ji-sh
+  justify-items stretch
+
 /* align-items */
+.up-ai-st
+  align-items start
 .up-ai-fs
   align-items flex-start
 .up-ai-c
   align-items center
+.up-ai-e
+  align-items end
 .up-ai-fe
   align-items flex-end
 .up-ai-b
   align-items baseline
-.up-ai-s
+.up-ai-sh
   align-items stretch
 
 /* align-content */
+.up-ac-s
+  align-content start
 .up-ac-fs
   align-content flex-start
 .up-ac-c
   align-content center
+.up-ac-e
+  align-content end
 .up-ac-fe
   align-content flex-end
+.up-ac-sh
+  align-content stretch
 .up-ac-sb
   align-content space-between
 .up-ac-sa
   align-content space-around
+.up-ac-se
+  align-content space-evenly
 
 /* align-self */
+.up-as-s
+  align-self start
 .up-as-fs
   align-self flex-start
 .up-as-c
   align-self center
-.up-as-s
+.up-as-sh
   align-self stretch
 .up-as-fe
   align-self flex-end
+.up-as-e
+  align-self end
 .up-as-auto
   align-self auto
+
+/* justify-self */
+.up-js-s
+  justify-self start
+.up-js-e
+  justify-items end
+.up-js-c
+  justify-items center
+.up-js-sh
+  justify-items stretch
 
 /* grow, shrink */
 .up-fxg-0
@@ -584,6 +617,13 @@ for lh in range(1,9,1)
   flex-shrink 0
 .up-fxsh-1
   flex-shrink 1
+
+/* order */
+.up-order-n1
+  order -1
+for o in range(0,10,1)
+  .up-order-{o}
+    order o
 
 
 /* width(px) */
@@ -605,24 +645,6 @@ for width-p in range(5,100,5)
   .up-w-{width-p}\\\%
     width (width-p)%
 
-/* min-width(px) */
-.up-minw-auto
-  min-width auto
-for min-width-px in range(0,10,1)
-  .up-minw-{min-width-px}
-    min-width (min-width-px)px
-for min-width-px in range(20,300,10)
-  .up-minw-{min-width-px}
-    min-width (min-width-px)px
-for min-width-px in range(350,1000,50)
-  .up-minw-{min-width-px}
-    min-width (min-width-px)px
-/* min-width(%) */
-.up-minw-48\\\%
-  min-width 48%
-for min-width-p in range(5,100,5)
-  .up-minw-{min-width-p}\\\%
-    min-width (min-width-p)%
 
 /* max-width(px) */
 for max-width-px in range(0,10,1)
@@ -662,42 +684,6 @@ for height-px in range(350,1000,50)
 for height-p in range(5,100,5)
   .up-h-{height-p}\\\%
     height (height-p)%
-
-/* min-height(px) */
-.up-minh-auto
-  min-height auto
-for min-height-px in range(0,10,1)
-  .up-minh-{min-height-px}
-    min-height (min-height-px)px
-for min-height-px in range(20,300,10)
-  .up-minh-{min-height-px}
-    min-height (min-height-px)px
-for min-height-px in range(350,1000,50)
-  .up-minh-{min-height-px}
-    min-height (min-height-px)px
-/* min-height(%) */
-.up-minh-48\\\%
-  min-height 48%
-for min-height-p in range(5,100,5)
-  .up-minh-{min-height-p}\\\%
-    min-height (min-height-p)%
-
-/* max-height(px) */
-for max-height-px in range(0,10,1)
-  .up-maxh-{max-height-px}
-    max-height (max-height-px)px
-for max-height-px in range(20,300,10)
-  .up-maxh-{max-height-px}
-    max-height (max-height-px)px
-for max-height-px in range(350,1000,50)
-  .up-maxh-{max-height-px}
-    max-height (max-height-px)px
-/* max-height(%) */
-.up-maxh-48\\\%
-  max-height 48%
-for max-height-p in range(5,100,5)
-  .up-maxh-{max-height-p}\\\%
-    max-height (max-height-p)%
 
 
 /* margin */
@@ -910,60 +896,40 @@ for padding-p in range(range-padding-p)
     padding-left (padding-p)%
 
 
-/* カラム */
-.up-col-2
-  display flex
-  flex-wrap wrap
-  > *
-    width 50%
-.up-col-3
-  display flex
-  flex-wrap wrap
-  > *
-    width 33.333%
-.up-col-4
-  display flex
-  flex-wrap wrap
-  > *
-    width 25%
-.up-col-5
-  display flex
-  flex-wrap wrap
-  > *
-    width 20%
-.up-col-6
-  display flex
-  flex-wrap wrap
-  > *
-    width 16.666%
-
-/* gapy(px) */
-for gapy-px in range(0,100,10)
-  .up-gapy-{gapy-px}
-    > *
-      padding-bottom gapy-px px
-/* gapy(%) */
-for gapy in range(1,10,1)
-  .up-gapy-{gapy}\\\%
-    > *
-      padding-bottom (gapy)%
+/* grid-template-columns */
+for min in range(0,100,10)
+  .up-fit-{min}
+    grid-template-columns repeat(auto-fit, minmax((min)px, 1fr))
+for min in range(150,500,50)
+  .up-fit-{min}
+    grid-template-columns repeat(auto-fit, minmax((min)px, 1fr))
 
 /* gapx(px) */
 for gapx-px in range(0,100,10)
   .up-gapx-{gapx-px}
-    margin-left -(gapx-px/2)px
-    margin-right -(gapx-px/2)px
-    > *
-      padding-left (ceil((gapx-px/2),3))px
-      padding-right (ceil((gapx-px/2),3))px
+    column-gap (gapx-px)px
 /* gapx(%) */
 for gapx in range(1,10,1)
   .up-gapx-{gapx}\\\%
-    margin-left -(gapx/2)%
-    margin-right -(gapx/2)%
-    > *
-      padding-left (ceil((gapx/2),3))%
-      padding-right (ceil((gapx/2),3))%
+    column-gap (gapx)%
+
+/* gapy(px) */
+for gapy-px in range(0,200,10)
+  .up-gapy-{gapy-px}
+    row-gap (gapy-px)px
+/* gapy(%) */
+for gapy in range(1,10,1)
+  .up-gapy-{gapy}\\\%
+    row-gap (gapy)%
+
+/* gap(px) */
+for gap-px in range(0,100,10)
+  .up-gap-{gap-px}
+    gap (gap-px)px (gap-px)px
+/* gap(%) */
+for gap in range(1,10,1)
+  .up-gap-{gap}\\\%
+    gap (gap)% (gap)%
 
 
 /* 画像比率固定 */
@@ -1016,6 +982,10 @@ for image in range(10,170,5)
     display inline-block
   .up-d-flex\\\@tb
     display flex
+  .up-d-grid\\\@tb
+    display grid
+  .up-d-contents\\\@tb
+    display contents
   .up-d-none\\\@tb
     display none
 
@@ -1086,19 +1056,6 @@ for image in range(10,170,5)
     .up-fz-{fz}\\\@tb
       font-size (fz)px
 
-  .up-fz-1vw\\\@tb
-    font-size 1vw
-  for fz-vw in range(1,9,1)
-    .up-fz-1\\\.{fz-vw}vw\\\@tb
-      font-size (1 + fz-vw/10)vw
-  .up-fz-2vw\\\@tb
-    font-size 2vw
-  for fz-vw in range(1,9,1)
-    .up-fz-2\\\.{fz-vw}vw\\\@tb
-      font-size (2 + fz-vw/10)vw
-  .up-fz-3vw\\\@tb
-    font-size 3vw
-
 
   /* line-height */
   .up-lh-1\\\@tb
@@ -1140,12 +1097,18 @@ for image in range(10,170,5)
     flex-direction column-reverse
 
   /* justify-content */
+  .up-jc-s\\\@tb
+    justify-content start
   .up-jc-fs\\\@tb
     justify-content flex-start
+  .up-jc-e\\\@tb
+    justify-content end
   .up-jc-fe\\\@tb
     justify-content flex-end
   .up-jc-c\\\@tb
     justify-content center
+  .up-jc-sh\\\@tb
+    justify-content stretch
   .up-jc-sb\\\@tb
     justify-content space-between
   .up-jc-sa\\\@tb
@@ -1153,41 +1116,77 @@ for image in range(10,170,5)
   .up-jc-se\\\@tb
     justify-content space-evenly
 
+  /* justify-items */
+  .up-ji-st\\\@tb
+    justify-items start
+  .up-ji-e\\\@tb
+    justify-items end
+  .up-ji-c\\\@tb
+    justify-items center
+  .up-ji-sh\\\@tb
+    justify-items stretch
+
   /* align-items */
+  .up-ai-st\\\@tb
+    align-items start
   .up-ai-fs\\\@tb
     align-items flex-start
   .up-ai-c\\\@tb
     align-items center
+  .up-ai-e\\\@tb
+    align-items end
   .up-ai-fe\\\@tb
     align-items flex-end
   .up-ai-b\\\@tb
     align-items baseline
-  .up-ai-s\\\@tb
+  .up-ai-sh\\\@tb
     align-items stretch
 
   /* align-content */
+  .up-ac-s\\\@tb
+    align-content start
   .up-ac-fs\\\@tb
     align-content flex-start
   .up-ac-c\\\@tb
     align-content center
+  .up-ac-e\\\@tb
+    align-content end
   .up-ac-fe\\\@tb
     align-content flex-end
+  .up-ac-sh\\\@tb
+    align-content stretch
   .up-ac-sb\\\@tb
     align-content space-between
   .up-ac-sa\\\@tb
     align-content space-around
+  .up-ac-se\\\@tb
+    align-content space-evenly
 
   /* align-self */
+  .up-as-s\\\@tb
+    align-self start
   .up-as-fs\\\@tb
     align-self flex-start
   .up-as-c\\\@tb
     align-self center
-  .up-as-s\\\@tb
+  .up-as-sh\\\@tb
     align-self stretch
   .up-as-fe\\\@tb
     align-self flex-end
+  .up-as-e\\\@tb
+    align-self end
   .up-as-auto\\\@tb
     align-self auto
+
+  /* justify-self */
+  .up-js-s\\\@tb
+    justify-self start
+  .up-js-e\\\@tb
+    justify-items end
+  .up-js-c\\\@tb
+    justify-items center
+  .up-js-sh\\\@tb
+    justify-items stretch
 
   /* grow, shrink */
   .up-fxg-0\\\@tb
@@ -1198,6 +1197,13 @@ for image in range(10,170,5)
     flex-shrink 0
   .up-fxsh-1\\\@tb
     flex-shrink 1
+
+  /* order */
+  .up-order-n1\\\@tb
+    order -1
+  for o in range(0,10,1)
+    .up-order-{o}\\\@tb
+      order o
 
 
   /* width(px) */
@@ -1219,24 +1225,6 @@ for image in range(10,170,5)
     .up-w-{width-p}\\\%\\\@tb
       width (width-p)%
 
-  /* min-width(px) */
-  .up-minw-auto\\\@tb
-    min-width auto
-  for min-width-px in range(0,10,1)
-    .up-minw-{min-width-px}\\\@tb
-      min-width (min-width-px)px
-  for min-width-px in range(20,300,10)
-    .up-minw-{min-width-px}\\\@tb
-      min-width (min-width-px)px
-  for min-width-px in range(350,1000,50)
-    .up-minw-{min-width-px}\\\@tb
-      min-width (min-width-px)px
-  /* min-width(%) */
-  .up-minw-48\\\%\\\@tb
-    min-width 48%
-  for min-width-p in range(5,100,5)
-    .up-minw-{min-width-p}\\\%\\\@tb
-      min-width (min-width-p)%
 
   /* max-width(px) */
   for max-width-px in range(0,10,1)
@@ -1276,42 +1264,6 @@ for image in range(10,170,5)
   for height-p in range(5,100,5)
     .up-h-{height-p}\\\%\\\@tb
       height (height-p)%
-
-  /* min-height(px) */
-  .up-minh-auto\\\@tb
-    min-height auto
-  for min-height-px in range(0,10,1)
-    .up-minh-{min-height-px}\\\@tb
-      min-height (min-height-px)px
-  for min-height-px in range(20,300,10)
-    .up-minh-{min-height-px}\\\@tb
-      min-height (min-height-px)px
-  for min-height-px in range(350,1000,50)
-    .up-minh-{min-height-px}\\\@tb
-      min-height (min-height-px)px
-  /* min-height(%) */
-  .up-minh-48\\\%\\\@tb
-    min-height 48%
-  for min-height-p in range(5,100,5)
-    .up-minh-{min-height-p}\\\%\\\@tb
-      min-height (min-height-p)%
-
-  /* max-height(px) */
-  for max-height-px in range(0,10,1)
-    .up-maxh-{max-height-px}\\\@tb
-      max-height (max-height-px)px
-  for max-height-px in range(20,300,10)
-    .up-maxh-{max-height-px}\\\@tb
-      max-height (max-height-px)px
-  for max-height-px in range(350,1000,50)
-    .up-maxh-{max-height-px}\\\@tb
-      max-height (max-height-px)px
-  /* max-height(%) */
-  .up-maxh-48\\\%\\\@tb
-    max-height 48%
-  for max-height-p in range(5,100,5)
-    .up-maxh-{max-height-p}\\\%\\\@tb
-      max-height (max-height-p)%
 
 
   /* margin */
@@ -1555,33 +1507,32 @@ for image in range(10,170,5)
     > *
       width 16.666%
 
-  /* gapy(px) */
-  for gapy-px in range(0,100,10)
-    .up-gapy-{gapy-px}\\\@tb
-      > *
-        padding-bottom gapy-px px
-  /* gapy(%) */
-  for gapy in range(1,10,1)
-    .up-gapy-{gapy}\\\%\\\@tb
-      > *
-        padding-bottom (gapy)%
-
   /* gapx(px) */
   for gapx-px in range(0,100,10)
     .up-gapx-{gapx-px}\\\@tb
-      margin-left -(gapx-px/2)px
-      margin-right -(gapx-px/2)px
-      > *
-        padding-left (ceil((gapx-px/2),3))px
-        padding-right (ceil((gapx-px/2),3))px
+      column-gap (gapx-px)px
   /* gapx(%) */
   for gapx in range(1,10,1)
     .up-gapx-{gapx}\\\%\\\@tb
-      margin-left -(gapx/2)%
-      margin-right -(gapx/2)%
-      > *
-        padding-left (ceil((gapx/2),3))%
-        padding-right (ceil((gapx/2),3))%
+      column-gap (gapx)%
+
+  /* gapy(px) */
+  for gapy-px in range(0,200,10)
+    .up-gapy-{gapy-px}\\\@tb
+      row-gap (gapy-px)px
+  /* gapy(%) */
+  for gapy in range(1,10,1)
+    .up-gapy-{gapy}\\\%\\\@tb
+      row-gap (gapy)%
+
+  /* gap(px) */
+  for gap-px in range(0,100,10)
+    .up-gap-{gap-px}\\\@tb
+      gap (gap-px)px (gap-px)px
+  /* gap(%) */
+  for gap in range(1,10,1)
+    .up-gap-{gap}\\\%\\\@tb
+      gap (gap)% (gap)%
 
 
   /* 画像比率固定 */
@@ -1632,6 +1583,10 @@ for image in range(10,170,5)
     display inline-block
   .up-d-flex\\\@sp
     display flex
+  .up-d-grid\\\@tb
+    display grid
+  .up-d-contents\\\@tb
+    display contents
   .up-d-none\\\@sp
     display none
 
@@ -1702,19 +1657,6 @@ for image in range(10,170,5)
     .up-fz-{fz}\\\@sp
       font-size (fz)px
 
-  .up-fz-1vw\\\@sp
-    font-size 1vw
-  for fz-vw in range(1,9,1)
-    .up-fz-1\\\.{fz-vw}vw\\\@sp
-      font-size (1 + fz-vw/10)vw
-  .up-fz-2vw\\\@sp
-    font-size 2vw
-  for fz-vw in range(1,9,1)
-    .up-fz-2\\\.{fz-vw}vw\\\@sp
-      font-size (2 + fz-vw/10)vw
-  .up-fz-3vw\\\@sp
-    font-size 3vw
-
 
   /* line-height */
   .up-lh-1\\\@sp
@@ -1756,12 +1698,18 @@ for image in range(10,170,5)
     flex-direction column-reverse
 
   /* justify-content */
+  .up-jc-s\\\@sp
+    justify-content start
   .up-jc-fs\\\@sp
     justify-content flex-start
+  .up-jc-e\\\@sp
+    justify-content end
   .up-jc-fe\\\@sp
     justify-content flex-end
   .up-jc-c\\\@sp
     justify-content center
+  .up-jc-sh\\\@sp
+    justify-content stretch
   .up-jc-sb\\\@sp
     justify-content space-between
   .up-jc-sa\\\@sp
@@ -1769,41 +1717,77 @@ for image in range(10,170,5)
   .up-jc-se\\\@sp
     justify-content space-evenly
 
+  /* justify-items */
+  .up-ji-st\\\@sp
+    justify-items start
+  .up-ji-e\\\@sp
+    justify-items end
+  .up-ji-c\\\@sp
+    justify-items center
+  .up-ji-sh\\\@sp
+    justify-items stretch
+
   /* align-items */
+  .up-ai-st\\\@sp
+    align-items start
   .up-ai-fs\\\@sp
     align-items flex-start
   .up-ai-c\\\@sp
     align-items center
+  .up-ai-e\\\@sp
+    align-items end
   .up-ai-fe\\\@sp
     align-items flex-end
   .up-ai-b\\\@sp
     align-items baseline
-  .up-ai-s\\\@sp
+  .up-ai-sh\\\@sp
     align-items stretch
 
   /* align-content */
+  .up-ac-s\\\@sp
+    align-content start
   .up-ac-fs\\\@sp
     align-content flex-start
   .up-ac-c\\\@sp
     align-content center
+  .up-ac-e\\\@sp
+    align-content end
   .up-ac-fe\\\@sp
     align-content flex-end
+  .up-ac-sh\\\@sp
+    align-content stretch
   .up-ac-sb\\\@sp
     align-content space-between
   .up-ac-sa\\\@sp
     align-content space-around
+  .up-ac-se\\\@sp
+    align-content space-evenly
 
   /* align-self */
+  .up-as-s\\\@sp
+    align-self start
   .up-as-fs\\\@sp
     align-self flex-start
   .up-as-c\\\@sp
     align-self center
-  .up-as-s\\\@sp
+  .up-as-sh\\\@sp
     align-self stretch
   .up-as-fe\\\@sp
     align-self flex-end
+  .up-as-e\\\@sp
+    align-self end
   .up-as-auto\\\@sp
     align-self auto
+
+  /* justify-self */
+  .up-js-s\\\@sp
+    justify-self start
+  .up-js-e\\\@sp
+    justify-items end
+  .up-js-c\\\@sp
+    justify-items center
+  .up-js-sh\\\@sp
+    justify-items stretch
 
   /* grow, shrink */
   .up-fxg-0\\\@sp
@@ -1814,6 +1798,13 @@ for image in range(10,170,5)
     flex-shrink 0
   .up-fxsh-1\\\@sp
     flex-shrink 1
+
+  /* order */
+  .up-order-n1\\\@sp
+    order -1
+  for o in range(0,10,1)
+    .up-order-{o}\\\@sp
+      order o
 
 
   /* width(px) */
@@ -1835,24 +1826,6 @@ for image in range(10,170,5)
     .up-w-{width-p}\\\%\\\@sp
       width (width-p)%
 
-  /* min-width(px) */
-  .up-minw-auto\\\@sp
-    min-width auto
-  for min-width-px in range(0,10,1)
-    .up-minw-{min-width-px}\\\@sp
-      min-width (min-width-px)px
-  for min-width-px in range(20,300,10)
-    .up-minw-{min-width-px}\\\@sp
-      min-width (min-width-px)px
-  for min-width-px in range(350,1000,50)
-    .up-minw-{min-width-px}\\\@sp
-      min-width (min-width-px)px
-  /* min-width(%) */
-  .up-minw-48\\\%\\\@sp
-    min-width 48%
-  for min-width-p in range(5,100,5)
-    .up-minw-{min-width-p}\\\%\\\@sp
-      min-width (min-width-p)%
 
   /* max-width(px) */
   for max-width-px in range(0,10,1)
@@ -1892,42 +1865,6 @@ for image in range(10,170,5)
   for height-p in range(5,100,5)
     .up-h-{height-p}\\\%\\\@sp
       height (height-p)%
-
-  /* min-height(px) */
-  .up-minh-auto\\\@sp
-    min-height auto
-  for min-height-px in range(0,10,1)
-    .up-minh-{min-height-px}\\\@sp
-      min-height (min-height-px)px
-  for min-height-px in range(20,300,10)
-    .up-minh-{min-height-px}\\\@sp
-      min-height (min-height-px)px
-  for min-height-px in range(350,1000,50)
-    .up-minh-{min-height-px}\\\@sp
-      min-height (min-height-px)px
-  /* min-height(%) */
-  .up-minh-48\\\%\\\@sp
-    min-height 48%
-  for min-height-p in range(5,100,5)
-    .up-minh-{min-height-p}\\\%\\\@sp
-      min-height (min-height-p)%
-
-  /* max-height(px) */
-  for max-height-px in range(0,10,1)
-    .up-maxh-{max-height-px}\\\@sp
-      max-height (max-height-px)px
-  for max-height-px in range(20,300,10)
-    .up-maxh-{max-height-px}\\\@sp
-      max-height (max-height-px)px
-  for max-height-px in range(350,1000,50)
-    .up-maxh-{max-height-px}\\\@sp
-      max-height (max-height-px)px
-  /* max-height(%) */
-  .up-maxh-48\\\%\\\@sp
-    max-height 48%
-  for max-height-p in range(5,100,5)
-    .up-maxh-{max-height-p}\\\%\\\@sp
-      max-height (max-height-p)%
 
 
   /* margin */
@@ -2172,33 +2109,32 @@ for image in range(10,170,5)
     > *
       width 16.666%
 
-  /* gapy(px) */
-  for gapy-px in range(0,100,10)
-    .up-gapy-{gapy-px}\\\@sp
-      > *
-        padding-bottom gapy-px px
-  /* gapy(%) */
-  for gapy in range(1,10,1)
-    .up-gapy-{gapy}\\\%\\\@sp
-      > *
-        padding-bottom (gapy)%
-
   /* gapx(px) */
   for gapx-px in range(0,100,10)
     .up-gapx-{gapx-px}\\\@sp
-      margin-left -(gapx-px/2)px
-      margin-right -(gapx-px/2)px
-      > *
-        padding-left (ceil((gapx-px/2),3))px
-        padding-right (ceil((gapx-px/2),3))px
+      column-gap (gapx-px)px
   /* gapx(%) */
   for gapx in range(1,10,1)
     .up-gapx-{gapx}\\\%\\\@sp
-      margin-left -(gapx/2)%
-      margin-right -(gapx/2)%
-      > *
-        padding-left (ceil((gapx/2),3))%
-        padding-right (ceil((gapx/2),3))%
+      column-gap (gapx)%
+
+  /* gapy(px) */
+  for gapy-px in range(0,200,10)
+    .up-gapy-{gapy-px}\\\@sp
+      row-gap (gapy-px)px
+  /* gapy(%) */
+  for gapy in range(1,10,1)
+    .up-gapy-{gapy}\\\%\\\@sp
+      row-gap (gapy)%
+
+  /* gap(px) */
+  for gap-px in range(0,100,10)
+    .up-gap-{gap-px}\\\@sp
+      gap (gap-px)px (gap-px)px
+  /* gap(%) */
+  for gap in range(1,10,1)
+    .up-gap-{gap}\\\%\\\@sp
+      gap (gap)% (gap)%
 
 
   /* 画像比率固定 */
