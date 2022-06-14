@@ -1,15 +1,15 @@
 {
   "name": "gulptest",
-  "version": "1.0.0",
+  "version": "1.1",
   "main": "index.js",
   "scripts": {
     "gulp": "gulp",
     "supremacy": "stylus-supremacy format ./html/stylus/component/*.styl --replace --options ./stylus.json"
   },
   "keywords": [],
-  "author": "",
+  "author": "S.K",
   "license": "ISC",
-  "description": "",
+  "description": "IEサポート終了に伴う大規模改修",
   "devDependencies": {
     "autoprefixer": "^9.6.1",
     "browser-sync": "^2.26.7",
@@ -21,6 +21,7 @@
     "gulp-debug": "^4.0.0",
     "gulp-ejs": "^5.1.0",
     "gulp-filelog": "^0.4.1",
+    "gulp-header": "^2.0.9",
     "gulp-html-beautify": "^1.0.1",
     "gulp-image-resize": "^0.13.1",
     "gulp-imagemin": "^7.1.0",

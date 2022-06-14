@@ -26,20 +26,31 @@ const webp = require('gulp-webp'); //画像をwebpに変換する
 const ejs = require('gulp-ejs'); //ejsファイル
 const htmlbeautify = require('gulp-html-beautify'); //コード整形
 const fs = require('fs'); //jsonファイル操作
+const header = require('gulp-header'); //コメントアウトをファイルの先頭に追記
 
 /// abisu(stylus)コンパイル //////////////////////////////////////////
 const srcAbisu = {
-  srcDir: 'html/stylus/abisu1.1.styl',
+  srcDir: 'html/stylus/abisu.styl',
   srcCom: [
-    'html/stylus/abisu1.1.styl'
+    'html/stylus/abisu.styl'
   ],
   dstDir: 'html/css',
-  minDir: 'html/css/abisu1.1.css'
+  minDir: 'html/css/abisu.css'
 }
+
+const pkg = require('./package.json'); //package.jspnの記述内容をコメントアウトに使用する
+
+const banner = ['/**',
+  ' * @version <%= pkg.version %>',
+  ' * @author <%= pkg.author %>',
+  ' * @description <%= pkg.description %>',
+  ' */',
+  ''
+].join('\n');
 
 function cacheAbisu() {
   return src(srcAbisu.srcDir)
-    .pipe(cache('abisu1.1'))
+    .pipe(cache('abisu'))
 }
 
 function Abisu() {
@@ -63,6 +74,9 @@ function Abisu() {
 function AbisuMin() {
   return src(srcAbisu.minDir)
     .pipe(cleanCss())
+    .pipe(header(banner, {
+      pkg: pkg
+    }))
     .pipe(rename({
       extname: '.min.css'
     }))
@@ -75,17 +89,17 @@ function AbisuMin() {
 
 /// base(stylus)コンパイル //////////////////////////////////////////
 const srcBase = {
-  srcDir: 'html/stylus/base1.1.styl',
+  srcDir: 'html/stylus/base.styl',
   srcCom: [
-    'html/stylus/base1.1.styl'
+    'html/stylus/base.styl'
   ],
   dstDir: 'html/css',
-  minDir: 'html/css/base1.1.css'
+  minDir: 'html/css/base.css'
 }
 
 function cacheBase() {
   return src(srcBase.srcDir)
-    .pipe(cache('base1.1'))
+    .pipe(cache('base'))
 }
 
 function Base() {
@@ -106,6 +120,9 @@ function Base() {
 function BaseMin() {
   return src(srcBase.minDir)
     .pipe(cleanCss())
+    .pipe(header(banner, {
+      pkg: pkg
+    }))
     .pipe(rename({
       extname: '.min.css'
     }))
@@ -115,61 +132,19 @@ function BaseMin() {
     }))
 }
 
-/// base_new(stylus)コンパイル //////////////////////////////////////////
-const srcBaseNew = {
-  srcDir: 'html/stylus/base_new1.1.styl',
-  srcCom: [
-    'html/stylus/base_new1.1.styl'
-  ],
-  dstDir: 'html/css',
-  minDir: 'html/css/base_new1.1.css'
-}
-
-function cacheBaseNew() {
-  return src(srcBaseNew.srcDir)
-    .pipe(cache('base_new1.1'))
-}
-
-function BaseNew() {
-  return src(srcBaseNew.srcCom)
-    .pipe(sourcemaps.init())
-    .pipe(progeny())
-    .pipe(plumber({
-      errorHandler: notify.onError('Error: <%= error.message %>')
-    }))
-    .pipe(stylus({
-      compress: false
-    }))
-    .pipe(postcss([autoprefixer()]))
-    .pipe(sourcemaps.write('/'))
-    .pipe(dest(srcBaseNew.dstDir))
-}
-
-function BaseNewMin() {
-  return src(srcBaseNew.minDir)
-    .pipe(cleanCss())
-    .pipe(rename({
-      extname: '.min.css'
-    }))
-    .pipe(dest(srcBaseNew.dstDir))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-}
-
 /// base_k(stylus)コンパイル //////////////////////////////////////////
 const srcBaseK = {
-  srcDir: 'html/stylus/base_k1.1.styl',
+  srcDir: 'html/stylus/base_k.styl',
   srcCom: [
-    'html/stylus/base_k1.1.styl'
+    'html/stylus/base_k.styl'
   ],
   dstDir: 'html/css',
-  minDir: 'html/css/base_k1.1.css'
+  minDir: 'html/css/base_k.css'
 }
 
 function cacheBaseK() {
   return src(srcBaseK.srcDir)
-    .pipe(cache('base_k1.1'))
+    .pipe(cache('base_k'))
 }
 
 function BaseK() {
@@ -190,6 +165,9 @@ function BaseK() {
 function BaseKMin() {
   return src(srcBaseK.minDir)
     .pipe(cleanCss())
+    .pipe(header(banner, {
+      pkg: pkg
+    }))
     .pipe(rename({
       extname: '.min.css'
     }))
@@ -283,6 +261,19 @@ function HTML() {
     }))
 }
 
+/// JS監視 ////////////////////////////////////////////
+var srcJS = {
+  srcDir: 'html/js/*.js',
+}
+
+function JS() {
+  return src(srcJS.srcDir)
+    .pipe(cache('js'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+}
+
 /// ejs監視 ////////////////////////////////////////////
 var srcEjs = {
   srcDir: [
@@ -334,12 +325,12 @@ const browserSyncFunc = () => {
 
 
 const srcImage = {
-  comDir: 'html/compression/*.{jpg,jpeg,JPG,JPEG,png,gif,svg}',
-  resize2000Dir: 'html/resize/to_2000/*.{jpg,jpeg,JPG,JPEG,png,gif,svg}',
-  resize1500Dir: 'html/resize/to_1500/*.{jpg,jpeg,JPG,JPEG,png,gif,svg}',
-  resize1000Dir: 'html/resize/to_1000/*.{jpg,jpeg,JPG,JPEG,png,gif,svg}',
-  resize800Dir: 'html/resize/to_800/*.{jpg,jpeg,JPG,JPEG,png,gif,svg}',
-  resize500Dir: 'html/resize/to_500/*.{jpg,jpeg,JPG,JPEG,png,gif,svg}',
+  comDir: 'compression/*.{jpg,jpeg,JPG,JPEG,png,gif,svg,webp}',
+  resize2000Dir: 'resize/to_2000/*.{jpg,jpeg,JPG,JPEG,png,gif,svg,webp}',
+  resize1500Dir: 'resize/to_1500/*.{jpg,jpeg,JPG,JPEG,png,gif,svg,webp}',
+  resize1000Dir: 'resize/to_1000/*.{jpg,jpeg,JPG,JPEG,png,gif,svg,webp}',
+  resize800Dir: 'resize/to_800/*.{jpg,jpeg,JPG,JPEG,png,gif,svg,webp}',
+  resize500Dir: 'resize/to_500/*.{jpg,jpeg,JPG,JPEG,png,gif,svg,webp}',
   dstDir: 'html/images'
 }
 const mozjpegOptions = {
@@ -472,7 +463,7 @@ function imageResize500() {
 
 /// 画像をwebpに変換 //////////////////////////////////////////
 const srcWebp = {
-  srcDir: 'html/webp/*.{jpg,jpeg,JPG,JPEG,png,gif,svg}',
+  srcDir: 'webp/*.{jpg,jpeg,JPG,JPEG,png,gif,svg}',
   dstDir: 'html/images'
 }
 
@@ -490,11 +481,11 @@ function imageToWebp() {
 function watchFile() {
   watch(srcAbisu.srcDir, series(cacheAbisu, Abisu, AbisuMin))
   watch(srcBase.srcDir, series(cacheBase, Base, BaseMin))
-  watch(srcBaseNew.srcDir, series(cacheBaseNew, BaseNew, BaseNewMin))
   watch(srcBaseK.srcDir, series(cacheBaseK, BaseK, BaseKMin))
   watch(srcComponents.srcDir, series(cacheComponents, Components))
   watch(srcContents.srcDir, series(cacheContents, Contents))
   watch(srcHTML.srcDir, HTML)
+  watch(srcJS.srcDir, JS)
   watch(srcEjs.srcDir, ejsToHTML)
   watch(srcEjs.jsonDir, ejsToHTML)
   watch(srcImage.comDir, imageMinCom)

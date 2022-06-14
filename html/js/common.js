@@ -297,62 +297,6 @@ $(function () {
 });
 
 
-//テキストトリミング
-$(window).load(function () {
-  $('.up-reader3').each(function () {
-    var $target = $(this);
-    var html = $target.html();
-    var $clone = $target.clone();
-    var fs = $target.css('font-size');
-    var lh = $target.css('line-height');
-    var lines = '3'; //表示したい行数
-    var lhp = Math.round((parseInt(lh) / parseInt(fs)) * 10) / 10;
-    var calc = parseInt(fs) * lhp * parseInt(lines);
-    $target.css('height', calc);
-    $clone
-      .css({
-        display: 'none',
-        position: 'absolute',
-        overflow: 'visible'
-      })
-      .width($target.width())
-      .height('auto');
-    $target.after($clone);
-    while ((html.length > 0) && ($clone.height() > $target.height())) {
-      html = html.substr(0, html.length - 1);
-      $clone.html(html + '…');
-    }
-    $target.html($clone.html());
-    $clone.remove();
-  });
-  $('.up-reader2').each(function () {
-    var $target = $(this);
-    var html = $target.html();
-    var $clone = $target.clone();
-    var fs = $target.css('font-size');
-    var lh = $target.css('line-height');
-    var lines = '2'; //表示したい行数
-    var lhp = Math.round((parseInt(lh) / parseInt(fs)) * 10) / 10;
-    var calc = parseInt(fs) * lhp * parseInt(lines);
-    $target.css('height', calc);
-    $clone
-      .css({
-        display: 'none',
-        position: 'absolute',
-        overflow: 'visible'
-      })
-      .width($target.width())
-      .height('auto');
-    $target.after($clone);
-    while ((html.length > 0) && ($clone.height() > $target.height())) {
-      html = html.substr(0, html.length - 1);
-      $clone.html(html + '…');
-    }
-    $target.html($clone.html());
-    $clone.remove();
-  });
-});
-
 
 //スクロール・ページ内リンク
 $(function () {
