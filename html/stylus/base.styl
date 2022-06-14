@@ -126,21 +126,20 @@ th
   text-align center
 
 .map
-  position relative
   overflow hidden
-  &:after
-    display block
-    padding-top 50%
-    content ""
   iframe
-    position absolute
-    top 0
-    right 0
-    left 0
+    aspect-ratio 2 / 1
     margin auto
     max-width initial
     width 100%
-    height 100%
+
+.youtube
+  overflow hidden
+  iframe
+    aspect-ratio 16 / 9
+    margin auto
+    max-width initial
+    width 100%
 
 a,
 button
@@ -160,7 +159,7 @@ button
 
 .wrapper
   overflow hidden
-  min-width 320px
+  min-width 375px
 [data-element-id] .wrapper
   padding-top 0 !important
   opacity 1
@@ -361,15 +360,11 @@ for fw in range(100,900,100)
   cursor pointer
 
 /* 画像比率固定 */
-[class*="up-ofi"]
-  position relative
+[class*="up-asr"]
   display block
   width 100%
   img
     width 100%
-    height 100% !important
-    /* IE対策 */
-    font-family "object-fit: cover; object-position: 50% 50%;"
     object-fit cover
     object-position 50% 50%
 
@@ -1252,39 +1247,34 @@ for gap in range(1,10,1)
   .up-gap-{gap}\\\%
     gap (gap)% (gap)%
 
-
 /* 画像比率固定 */
 for image in range(10,170,5)
-  .up-ofi-{image}
-    &:after
-      content ""
-      display block
-      padding-top (image)%
+  .up-asr-{image}
     img
-      position absolute
-      top 0
-      left 0
+      aspect-ratio 100 / image
 
 /* object-position */
 .up-obp-c img
-  font-family "object-fit: cover; object-position: center center;"
   object-position center
 .up-obp-t img
-  font-family "object-fit: cover; object-position: center top;"
   object-position top
 .up-obp-r img
-  font-family "object-fit: cover; object-position: right center;"
   object-position right
 .up-obp-b img
-  font-family "object-fit: cover; object-position: center bottom;"
   object-position bottom
 .up-obp-l img
-  font-family "object-fit: cover; object-position: left center;"
   object-position left
 
-/* object-position */
+/* object-fit */
+.up-ofi
+  img
+    width 100%
+    height 100%
+    object-fit cover
+    object-position 50% 50%
+.up-obf-cover img
+  object-fit cover
 .up-obf-contain img
-  font-family "object-fit: contain; object-position: center center;"
   object-fit contain
 
 
@@ -1823,12 +1813,18 @@ for image in range(10,170,5)
       padding-left (padding-p)%
 
   /* grid-template-columns */
-  for min in range(0,100,10)
+  for col in range(1,6,1)
+    .up-col-{col}\\\@tb
+      display grid
+      grid-template-columns repeat((col), minmax(auto, 1fr))
+  for min in range(0,500,50)
     .up-col-fit{min}\\\@tb
+      display grid
       grid-template-columns repeat(auto-fit, minmax((min)px, 1fr))
-  for min in range(150,500,50)
-    .up-col-fit{min}\\\@tb
-      grid-template-columns repeat(auto-fit, minmax((min)px, 1fr))
+  for min in range(0,500,50)
+    .up-col-fill{min}\\\@tb
+      display grid
+      grid-template-columns repeat(auto-fill, minmax((min)px, 1fr))
 
   /* grid-column, grid-row */
   .up-gcol-auto\\\@tb
@@ -1902,36 +1898,32 @@ for image in range(10,170,5)
 
   /* 画像比率固定 */
   for image in range(10,170,5)
-    .up-ofi-{image}\\\@tb
-      &:after
-        content ""
-        display block
-        padding-top (image)%
+    .up-asr-{image}\\\@tb
       img
-        position absolute
-        top 0
-        left 0
+        aspect-ratio 100 / image
 
   /* object-position */
   .up-obp-c\\\@tb img
-    font-family "object-fit: cover; object-position: center center;"
     object-position center
   .up-obp-t\\\@tb img
-    font-family "object-fit: cover; object-position: center top;"
     object-position top
   .up-obp-r\\\@tb img
-    font-family "object-fit: cover; object-position: right center;"
     object-position right
   .up-obp-b\\\@tb img
-    font-family "object-fit: cover; object-position: center bottom;"
     object-position bottom
   .up-obp-l\\\@tb img
-    font-family "object-fit: cover; object-position: left center;"
     object-position left
 
   /* object-fit */
+  .up-ofi\\\@tb
+    img
+      width 100%
+      height 100%
+      object-fit cover
+      object-position 50% 50%
+  .up-obf-cover\\\@tb img
+    object-fit cover
   .up-obf-contain\\\@tb img
-    font-family "object-fit: contain; object-position: center center;"
     object-fit contain
 
   /* 表示・非表示 */
@@ -2468,12 +2460,18 @@ for image in range(10,170,5)
       padding-left (padding-p)%
 
   /* grid-template-columns */
-  for min in range(0,100,10)
+  for col in range(1,6,1)
+    .up-col-{col}\\\@sp
+      display grid
+      grid-template-columns repeat((col), minmax(auto, 1fr))
+  for min in range(0,500,50)
     .up-col-fit{min}\\\@sp
+      display grid
       grid-template-columns repeat(auto-fit, minmax((min)px, 1fr))
-  for min in range(150,500,50)
-    .up-col-fit{min}\\\@sp
-      grid-template-columns repeat(auto-fit, minmax((min)px, 1fr))
+  for min in range(0,500,50)
+    .up-col-fill{min}\\\@sp
+      display grid
+      grid-template-columns repeat(auto-fill, minmax((min)px, 1fr))
 
   /* grid-column, grid-row */
   .up-gcol-auto\\\@sp
@@ -2547,36 +2545,32 @@ for image in range(10,170,5)
 
   /* 画像比率固定 */
   for image in range(10,170,5)
-    .up-ofi-{image}\\\@sp
-      &:after
-        content ""
-        display block
-        padding-top (image)%
+    .up-asr-{image}\\\@sp
       img
-        position absolute
-        top 0
-        left 0
+        aspect-ratio 100 / image
 
   /* object-position */
   .up-obp-c\\\@sp img
-    font-family "object-fit: cover; object-position: center center;"
     object-position center
   .up-obp-t\\\@sp img
-    font-family "object-fit: cover; object-position: center top;"
     object-position top
   .up-obp-r\\\@sp img
-    font-family "object-fit: cover; object-position: right center;"
     object-position right
   .up-obp-b\\\@sp img
-    font-family "object-fit: cover; object-position: center bottom;"
     object-position bottom
   .up-obp-l\\\@sp img
-    font-family "object-fit: cover; object-position: left center;"
     object-position left
 
   /* object-fit */
+  .up-ofi\\\@sp
+    img
+      width 100%
+      height 100%
+      object-fit cover
+      object-position 50% 50%
+  .up-obf-cover\\\@sp img
+    object-fit cover
   .up-obf-contain\\\@sp img
-    font-family "object-fit: contain; object-position: center center;"
     object-fit contain
 
   /* 表示・非表示 */

@@ -22,11 +22,6 @@ $(function () {
   }
 });
 
-//object-fit　IE対応
-$(function () {
-  objectFitImages();
-});
-
 // match height
 $(function () {
   if (edit_design_check == -1) {
