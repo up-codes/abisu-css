@@ -1,0 +1,58 @@
+{
+  "siteInfo": {
+    "baseTitle": "大阪市阿倍野でホームページ制作なら天王寺駅徒歩1分の株式会社ユニソンプラネット",
+    "baseH1": "大阪市阿倍野でホームページ制作なら天王寺駅徒歩1分の株式会社ユニソンプラネット"
+  },
+  "pages": {
+    "index": {
+      "title": "TOPページ",
+      "description": "ディスクリプション",
+      "keywords": "キーワード"
+    },
+    "article": {
+      "title": "記事一覧ページ",
+      "description": "ディスクリプション",
+      "keywords": "キーワード"
+    },
+    "article_detail": {
+      "title": "記事詳細ページ",
+      "description": "ディスクリプション",
+      "keywords": "キーワード"
+    },
+    "form": {
+      "title": "フォーム",
+      "description": "ディスクリプション",
+      "keywords": "キーワード"
+    },
+    "gallery": {
+      "title": "ギャラリー",
+      "description": "ディスクリプション",
+      "keywords": "キーワード"
+    },
+    "gallery_detail": {
+      "title": "ギャラリー詳細ページ",
+      "description": "ディスクリプション",
+      "keywords": "キーワード"
+    },
+    "component": {
+      "title": "コンポーネント",
+      "description": "ディスクリプション",
+      "keywords": "キーワード"
+    },
+    "component2": {
+      "title": "コンポーネント2",
+      "description": "ディスクリプション",
+      "keywords": "キーワード"
+    },
+    "component3": {
+      "title": "コンポーネント3",
+      "description": "ディスクリプション",
+      "keywords": "キーワード"
+    },
+    "component4": {
+      "title": "コンポーネント4",
+      "description": "ディスクリプション",
+      "keywords": "キーワード"
+    }
+  }
+}

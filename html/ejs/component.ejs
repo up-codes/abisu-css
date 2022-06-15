@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width">
-  <meta name="format-detection" content="telephone=no">
-  <title>コンポーネント｜大阪市阿倍野でホームページ制作なら天王寺駅徒歩1分の株式会社ユニソンプラネット</title>
-  <meta name="description" content="ディスクリプション">
-  <meta name="keywords" content="キーワード">
+  <% let path = 'component'; %>
+  <%- include('./_inc/_meta', {path: path}) %>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
   <link rel="stylesheet" href="css/abisu.css">
   <link rel="stylesheet" href="css/slick-theme.css">
@@ -21,6 +17,7 @@
   <script src="js/common.js"></script>
   <script src="js/components.js"></script>
 </head>
+
 <body>
   <div class="wrapper home">
     <div class="side">
@@ -36,18 +33,23 @@
       </ul>
       <div class="btn"></div>
     </div>
+
     <main class="main">
       <section id="button" class="area inner">
         <div class="inner">
           <h2 class="ttl ttl-cmn01">ボタン</h2>
+
           <div class="box up-mb-20">
             <h3 class="ttl-cmn02">一般</h3>
+
             <div class="up-btn01"><a href="#">btn01</a></div>
             <div class="up-btn02"><a href="#">btn02</a></div>
             <div class="up-btn03"><a href="#">btn03</a></div>
           </div>
+
           <div class="box up-mb-20">
             <h3 class="ttl-cmn02">変形</h3>
+
             <div class="up-btn-grow"><a href="#">Grow</a></div>
             <div class="up-btn-shrink"><a href="#">Shrink</a></div>
             <div class="up-btn-pulse"><a href="#">Pulse</a></div>
@@ -66,8 +68,10 @@
             <div class="up-btn-wobble-top"><a href="#">Wobble Top</a></div>
             <div class="up-btn-wobble-bottom"><a href="#">Wobble Bottom</a></div>
           </div>
+
           <div class="box up-mb-20">
             <h3 class="ttl-cmn02">境界線</h3>
+
             <div class="up-btn-border-fade"><a href="#">Border Fade</a></div>
             <div class="up-btn-hollow"><a href="#">Hollow</a></div>
             <div class="up-btn-trim"><a href="#">Trim</a></div>
@@ -75,8 +79,10 @@
             <div class="up-btn-outline-in"><a href="#">Outline In</a></div>
             <div class="up-btn-round-corners"><a href="#">Round Corners</a></div>
           </div>
+
           <div class="box up-mb-20">
             <h3 class="ttl-cmn02">影</h3>
+
             <div class="up-btn-shadow"><a href="#">Shadow</a></div>
             <div class="up-btn-grow-shadow"><a href="#">Grow Shadow</a></div>
             <div class="up-btn-float-shadow"><a href="#">Float Shadow</a></div>
@@ -85,8 +91,10 @@
             <div class="up-btn-box-shadow-outset"><a href="#">Box Shadow Outset</a></div>
             <div class="up-btn-box-shadow-inset"><a href="#">Box Shadow Inset</a></div>
           </div>
+
           <div class="box up-mb-20">
             <h3 class="ttl-cmn02">吹き出し</h3>
+
             <div class="up-btn-bubble-top"><a href="#">Bubble Top</a></div>
             <div class="up-btn-bubble-right"><a href="#">Bubble Right</a></div>
             <div class="up-btn-bubble-bottom"><a href="#">Bubble Bottom</a></div>
@@ -96,15 +104,19 @@
             <div class="up-btn-bubble-float-bottom"><a href="#">Bubble Float Bottom</a></div>
             <div class="up-btn-bubble-float-left"><a href="#">Bubble Float Left</a></div>
           </div>
+
           <div class="box up-mb-20">
             <h3 class="ttl-cmn02">カール</h3>
+
             <div class="up-btn-curl-top-left"><a href="#">Curl Top Left</a></div>
             <div class="up-btn-curl-top-right"><a href="#">Curl Top Right</a></div>
             <div class="up-btn-curl-bottom-right"><a href="#">Curl Bottom Right</a></div>
             <div class="up-btn-curl-bottom-left"><a href="#">Curl Bottom Left</a></div>
           </div>
+
           <div class="box up-mb-20">
             <h3 class="ttl-cmn02">バックグラウンド</h3>
+
             <div class="up-btn-swipe"><a href="#">Swipe</a></div>
             <div class="up-btn-diagonal-swipe"><a href="#">Diagonal Swipe</a></div>
             <div class="up-btn-double-swipe"><a href="#">Double Swipe</a></div>
@@ -119,14 +131,18 @@
             <div class="up-btn-horizontal-overlap"><a href="#"><span>Horizontal Overlap</span></a></div>
             <div class="up-btn-collision"><a href="#">Collision</a></div>
           </div>
+
           <div class="box">
             <h3 class="ttl-cmn02">グラデーション</h3>
+
             <div class="up-btn-rise"><a href="#"><span class="gradient"></span>Rise</a></div>
             <div class="up-btn-spin"><a href="#"><span class="gradient"></span>Spin</a></div>
             <div class="up-btn-sweep"><a href="#"><span class="gradient"></span>Sweep</a></div>
           </div>
         </div>
       </section>
+
+
       <section id="image" class="area">
         <div class="inner">
           <h2 class="ttl ttl-cmn01">画像</h2>
@@ -158,6 +174,8 @@
           </div>
         </div>
       </section>
+
+
       <section id="list" class="area none-animation">
         <h2 class="ttl ttl-cmn01">リスト</h2>
         <div class="area">
@@ -180,6 +198,7 @@
             </ul>
           </div>
         </div>
+
         <div class="area">
           <div class="inner">
             <h2 class="ttl ttl-cmn01">テストタイトル</h2>
@@ -205,6 +224,7 @@
             </ul>
           </div>
         </div>
+
         <div class="area">
           <div class="inner">
             <dl class="list-cmp03">
@@ -223,6 +243,7 @@
             </dl>
           </div>
         </div>
+
         <div class="area">
           <div class="inner">
             <ul class="list-cmp04 up-col-5 up-gapx-2% up-gapy-20 up-col-4@tb up-col-3@sp up-gapy-10@sp">
@@ -277,6 +298,7 @@
             </ul>
           </div>
         </div>
+
         <div class="area">
           <div class="inner">
             <ul class="list-cmp06 up-d-flex up-fxw-wrap up-jc-c up-gapx-2% up-gapy-10">
@@ -288,56 +310,76 @@
             </ul>
           </div>
         </div>
+
         <div class="area">
           <div class="inner">
             <dl class="list-cmp07">
               <div class="item">
                 <dt class="datattl">テキストが入ります</dt>
-                <dd class="data"> テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります </dd>
+                <dd class="data">
+                  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+                </dd>
               </div>
               <div class="item">
                 <dt class="datattl">テキストが入ります</dt>
-                <dd class="data"> テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります </dd>
+                <dd class="data">
+                  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+                </dd>
               </div>
             </dl>
           </div>
         </div>
+
         <div class="area">
           <div class="inner">
             <dl class="list-cmp08">
               <div class="item">
                 <dt class="datattl">テキスト</dt>
-                <dd class="data"> テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります </dd>
+                <dd class="data">
+                  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+                </dd>
               </div>
               <div class="item">
                 <dt class="datattl">テキスト</dt>
-                <dd class="data"> テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります </dd>
+                <dd class="data">
+                  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+                </dd>
               </div>
               <div class="item">
                 <dt class="datattl">テキスト</dt>
-                <dd class="data"> テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります </dd>
+                <dd class="data">
+                  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+                </dd>
               </div>
             </dl>
           </div>
         </div>
+
         <div class="area">
           <div class="inner">
             <dl class="list-cmp09">
               <div class="item">
                 <dt class="datattl js-toggle is-parent">テキスト</dt>
-                <dd class="data" style="display: block;"> テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります </dd>
+                <dd class="data" style="display: block;">
+                  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+                </dd>
               </div>
               <div class="item">
                 <dt class="datattl js-toggle">テキスト</dt>
-                <dd class="data"> テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります </dd>
+                <dd class="data">
+                  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+                </dd>
               </div>
               <div class="item">
                 <dt class="datattl js-toggle">テキスト</dt>
-                <dd class="data"> テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります </dd>
+                <dd class="data">
+                  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+                </dd>
               </div>
             </dl>
           </div>
         </div>
+
         <div class="area">
           <div class="inner">
             <ul class="list-cmp10 up-d-flex up-fxd-col up-gapy-40 up-maxw-350@sp up-mx-auto@sp">
@@ -374,6 +416,7 @@
             </ul>
           </div>
         </div>
+
         <div class="area">
           <div class="inner">
             <ul class="pagenation01">
@@ -387,6 +430,7 @@
             </ul>
           </div>
         </div>
+
         <div class="area">
           <div class="inner">
             <ul class="pagenation02">
@@ -401,6 +445,8 @@
           </div>
         </div>
       </section>
+
+
       <section id="table" class="area none-animation">
         <div class="inner">
           <h2 class="ttl ttl-cmn01">表</h2>
@@ -578,6 +624,7 @@
           </div>
         </div>
       </section>
+
       <section id="gallery" class="area">
         <div class="inner">
           <h2 class="ttl ttl-cmn01">ギャラリー</h2>
@@ -591,6 +638,7 @@
               </ul>
             </div>
           </div>
+
           <div class="area">
             <div class="up-gallery-auto">
               <div class="mainblock">
@@ -634,6 +682,8 @@
           </div>
         </div>
       </section>
+
+
       <section id="layout" class="area none-animation">
         <div class="inner">
           <h2 class="ttl ttl-cmn01">レイアウト</h2>
@@ -643,7 +693,9 @@
             <div class="img up-w-30% up-w-100%@sp up-mb-10@sp"><img src="https://placehold.jp/500x500.png" alt=""></div>
             <div class="block-txt up-w-65% up-w-100%@sp">
               <h3 class="head up-fw-bold up-fz-20 up-mb-20">タイトルが入ります</h3>
-              <div class="txt"> テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります </div>
+              <div class="txt">
+                テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+              </div>
             </div>
           </div>
         </div>
@@ -653,7 +705,9 @@
             <div class="inner">
               <div class="block-txt up-w-65% up-w-100%@sp">
                 <h3 class="head up-fw-bold up-fz-20 up-mb-20">タイトルが入ります</h3>
-                <div class="txt"> テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります </div>
+                <div class="txt">
+                  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+                </div>
               </div>
             </div>
           </div>
@@ -664,12 +718,15 @@
               <div class="img up-asr-50 up-asr-100@tb up-asr-70@sp"><img src="https://placehold.jp/500x500.png" alt=""></div>
               <div class="block-txt up-w-65% up-w-100%@sp">
                 <h3 class="head up-fw-bold up-fz-20 up-mb-20">タイトルが入ります</h3>
-                <div class="txt"> テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります </div>
+                <div class="txt">
+                  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
       <section id="appear" class="area">
         <h2 class="ttl ttl-cmn01">表示アニメーション</h2>
         <div class="areab">
@@ -679,7 +736,9 @@
               <div class="img up-w-30% up-w-100%@sp up-mb-10@sp"><img src="https://placehold.jp/500x500.png" alt=""></div>
               <div class="block-txt up-w-65% up-w-100%@sp">
                 <h3 class="head up-fw-bold up-fz-20 up-mb-20">タイトルが入ります</h3>
-                <div class="txt"> テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります </div>
+                <div class="txt">
+                  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+                </div>
               </div>
             </div>
             <div class="up-btn01 up-mt-20 up-tar js-play"><span>再生</span></div>
@@ -692,7 +751,9 @@
               <div class="img up-w-30% up-w-100%@sp up-mb-10@sp"><img src="https://placehold.jp/500x500.png" alt=""></div>
               <div class="block-txt up-w-65% up-w-100%@sp">
                 <h3 class="head up-fw-bold up-fz-20 up-mb-20">タイトルが入ります</h3>
-                <div class="txt"> テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります </div>
+                <div class="txt">
+                  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+                </div>
               </div>
             </div>
             <div class="up-btn01 up-mt-20 up-tar js-play"><span>再生</span></div>
@@ -705,7 +766,9 @@
               <div class="img up-w-30% up-w-100%@sp up-mb-10@sp"><img src="https://placehold.jp/500x500.png" alt=""></div>
               <div class="block-txt up-w-65% up-w-100%@sp">
                 <h3 class="head up-fw-bold up-fz-20 up-mb-20">タイトルが入ります</h3>
-                <div class="txt"> テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります </div>
+                <div class="txt">
+                  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+                </div>
               </div>
             </div>
             <div class="up-btn01 up-mt-20 up-tar js-play"><span>再生</span></div>
@@ -718,7 +781,9 @@
               <div class="img up-w-30% up-w-100%@sp up-mb-10@sp"><img src="https://placehold.jp/500x500.png" alt=""></div>
               <div class="block-txt up-w-65% up-w-100%@sp">
                 <h3 class="head up-fw-bold up-fz-20 up-mb-20">タイトルが入ります</h3>
-                <div class="txt"> テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります </div>
+                <div class="txt">
+                  テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+                </div>
               </div>
             </div>
             <div class="up-btn01 up-mt-20 up-tar js-play"><span>再生</span></div>
@@ -732,7 +797,9 @@
               <div class="block-txt up-w-65% up-w-100%@sp">
                 <h3 class="head up-fw-bold up-fz-20 up-mb-20 anime-cmp01"><span class="anime-cmp01in">タイトルが入ります</span></h3>
                 <div class="txt anime-cmp01">
-                  <div class="anime-cmp01in"> テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります </div>
+                  <div class="anime-cmp01in">
+                    テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+                  </div>
                 </div>
               </div>
             </div>
@@ -743,4 +810,5 @@
     </main>
   </div>
 </body>
+
 </html>

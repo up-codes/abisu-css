@@ -1,29 +1,118 @@
-/* version 1.0.0 */
+/* version 1.1 */
 // JavaScript Document
 
-//object-fit　IE対応
+// 見たまま編集画面判定用
+var pathname = location.pathname;
+var edit_design_check = pathname.search(/\/admin\/pages\/.*\/edit_design/);
+
+
+// IE11判別
 $(function () {
-  objectFitImages();
-});
-
-
-//fead系
-$(window).on('load scroll', function () {
-  $(".fead-mv, .fead-up, .fead-left, .fead-right").each(function () {
-    var ele = $(this);
-    var pos = ele.offset().top;
-    var scroll = $(window).scrollTop();
-
-    if (scroll > pos) {
-      ele.addClass("mv");
-    } else if (scroll > pos - window.innerHeight) {
-      setTimeout(function () {
-        ele.addClass("mv");
-      }, 400);
+  if (edit_design_check == -1) {
+    var ua = window.navigator.userAgent.toLowerCase();
+    var isIE = (ua.indexOf('msie') >= 0 || ua.indexOf('trident') >= 0);
+    if (isIE) {
+      var array = /(msie|rv:?)\s?([\d\.]+)/.exec(ua);
+      var version = (array) ? array[2] : '';
+      version = version.split('.')[0];
+      if (version === '11') {
+        $('body').addClass('ie11');
+      }
     }
-  });
+  }
 });
 
+// match height
+$(function () {
+  if (edit_design_check == -1) {
+    $(window).on('load', function () {
+      $('.match_01').matchHeight();
+      $('.match_02').matchHeight();
+      $('.match_03').matchHeight();
+    });
+  }
+});
+
+// fead系
+$(function () {
+  if (edit_design_check == -1) {
+
+    $("[class*='fead-']").each(function () {
+
+      var scroll = $(window).scrollTop();
+      var wh = window.innerHeight;
+      var ele = $(this);
+      var pos = ele.offset().top;
+      var flag = true;
+
+      if (ele.hasClass("fead-text")) {
+        var str = ele.text();
+        ele.text("");
+        var ary = [];
+
+        for (var i = 0; i < str.length; i++) {
+          var create = $("<span></span>", {
+            class: "str",
+            text: str[i],
+          });
+          ary.push(create);
+          ele.append(ary[i]);
+        }
+      }
+
+      if (flag) {
+        if (scroll > pos - wh) {
+          setTimeout(function () {
+            ele.addClass("mv");
+          }, 400);
+          if (ele.hasClass("fead-text")) {
+            feadText(ele);
+          }
+          if (ele.hasClass("fead-order")) {
+            feadOrder(ele);
+          }
+          flag = false;
+        }
+      }
+
+      $(window).scroll(function () {
+        if (flag) {
+          scroll = $(window).scrollTop();
+          if (scroll > pos - wh) {
+            setTimeout(function () {
+              ele.addClass("mv");
+            }, 400);
+            if (ele.hasClass("fead-text")) {
+              feadText(ele);
+            }
+            if (ele.hasClass("fead-order")) {
+              feadOrder(ele);
+            }
+            flag = false;
+          }
+        }
+      });
+
+      function feadText(ele) {
+        var ele = ele;
+        ele.find(".str").each(function (e) {
+          $(this).delay(e * 100).queue(function () {
+            $(this).addClass("textin");
+          });
+        });
+      };
+
+      function feadOrder(ele) {
+        ele.children().each(function (e) {
+          $(this).delay(200 * e).queue(function () {
+            $(this).addClass('mv');
+          });
+        });
+      }
+
+    });
+  }
+});
 
 //alt自動挿入(altlist)
 $(window).load(function () {
@@ -55,37 +144,41 @@ $(function () {
 
 
 //グローバルナビ固定
-$(window).on('load resize', function () {
-  if ($('.gnav').length) {
-    var w = window.innerWidth;
-    var obj = $('.gnav').offset().top;
-    var h = $('.gnav').outerHeight();
-    $(window).on('load scroll resize', function () {
-      if ($(this).scrollTop() > obj && (w > 1024)) {
-        $(".gnav").addClass("fixed");
-        $("#wrapper").css('padding-top', h);
-      } else {
-        $(".gnav").removeClass("fixed");
-        $("#wrapper").css('padding-top', 0);
-      }
-    });
+$(window).on("load", function () {
+  if (edit_design_check == -1) {
+    if ($(".gnav").length) {
+      var w = window.innerWidth;
+      var obj = $(".gnav").offset().top;
+      var h = $(".gnav").outerHeight();
+      $(window).on("load scroll resize", function () {
+        if ($(this).scrollTop() > obj && w > 1024) {
+          $(".gnav").addClass("fixed");
+          $(".wrapper").css("padding-top", h);
+        } else {
+          $(".gnav").removeClass("fixed");
+          $(".wrapper").css("padding-top", 0);
+        }
+      });
+    }
   }
 });
 
 
 //ハンバーガーメニュー
 $(function () {
-  $('.toggle').click(function () {
-    $(this).toggleClass('active');
-    $(".gnav").toggleClass('action');
-    $("body").toggleClass('overlay');
-  });
+  if (edit_design_check == -1) {
+    $('.toggle').click(function () {
+      $(this).toggleClass('active');
+      $(".gnav").toggleClass('action');
+      $("body").toggleClass('overlay');
+    });
 
-  $('.gnav a').click(function () {
-    $(this).toggleClass('active');
-    $(".gnav").toggleClass('action');
-    $("body").toggleClass('overlay');
-  });
+    $('.gnav a').click(function () {
+      $(this).toggleClass('active');
+      $(".gnav").toggleClass('action');
+      $("body").toggleClass('overlay');
+    });
+  }
 });
 
 
@@ -113,7 +206,7 @@ $(function () {
 
 //子要素が空なら親要素消す
 $(function () {
-  if (!($('[data-element-id]').length)) {
+  if (edit_design_check == -1) {
     $(".js-contp").each(function () {
       var contC = $('.js-contc', this);
       var cont = contC.html();
@@ -129,17 +222,46 @@ $(function () {
 
 
 //hoverで画像差し替え
-$(function () {
-  $('.js-thumb img').mouseover(function () {
-    var selectedSrc = $(this).attr('src').replace(/^(.+)_thumb(\.gif|\.jpg|\.png+)$/, "$1" + "$2");
-    $('.js-mainimg img').stop().fadeOut(200,
-      function () {
-        $('.js-mainimg img').attr('src', selectedSrc);
-        $('.js-mainimg img').stop().fadeIn(200);
+const ua = navigator.userAgent;
+if (ua.indexOf("Trident") !== -1) {
+  $(window).load(function () {
+    $(".js-thumb img").mouseover(function () {
+      var selectedSrc = $(this)
+        .attr("src")
+        .replace(/^(.+)_thumb(\.gif|\.jpg|\.png+)$/, "$1" + "$2");
+      $(".js-mainimg img")
+        .stop()
+        .fadeOut(50, function () {
+          $(".js-mainimg img").css(
+            "background-image",
+            'url("' + selectedSrc + '")'
+          );
+          $(".js-mainimg img").stop().fadeIn(200);
+        });
+    });
+    $(".js-thumb li").each(function () {
+      var imgsrc = $("img", this).attr("data-ofi-src");
+      var result = imgsrc.match("jpg|png|gif");
+      if (result != null) {} else {
+        $(this).remove();
       }
-    );
+    });
   });
-});
+} else {
+  $(window).load(function () {
+    $(".js-thumb img").mouseover(function () {
+      var selectedSrc = $(this)
+        .attr("src")
+        .replace(/^(.+)_thumb(\.gif|\.jpg|\.png+)$/, "$1" + "$2");
+      $(".js-mainimg img")
+        .stop()
+        .fadeOut(50, function () {
+          $(".js-mainimg img").attr("src", selectedSrc);
+          $(".js-mainimg img").stop().fadeIn(200);
+        });
+    });
+  });
+}
 
 
 //カテゴリーを分割し、クラスを付与
@@ -160,68 +282,15 @@ $(function () {
 
 //トグルメニュー
 $(function () {
-  $(".js-toggle").on("click", function () {
-    $(this).next().slideToggle();
-    $(this).toggleClass("is-parent");
-    $(this).next().toggleClass("is-active");
-  });
+  if (edit_design_check == -1) {
+    $(".js-toggle").on("click", function () {
+      $(this).next().slideToggle();
+      $(this).toggleClass("is-parent");
+      $(this).next().toggleClass("is-active");
+    });
+  }
 });
 
-//テキストトリミング
-$(window).load(function () {
-  $('.up-reader3').each(function () {
-    var $target = $(this);
-    var html = $target.html();
-    var $clone = $target.clone();
-    var fs = $target.css('font-size');
-    var lh = $target.css('line-height');
-    var lines = '3'; //表示したい行数
-    var lhp = Math.round((parseInt(lh) / parseInt(fs)) * 10) / 10;
-    var calc = parseInt(fs) * lhp * parseInt(lines);
-    $target.css('height', calc);
-    $clone
-      .css({
-        display: 'none',
-        position: 'absolute',
-        overflow: 'visible'
-      })
-      .width($target.width())
-      .height('auto');
-    $target.after($clone);
-    while ((html.length > 0) && ($clone.height() > $target.height())) {
-      html = html.substr(0, html.length - 1);
-      $clone.html(html + '…');
-    }
-    $target.html($clone.html());
-    $clone.remove();
-  });
-  $('.up-reader2').each(function () {
-    var $target = $(this);
-    var html = $target.html();
-    var $clone = $target.clone();
-    var fs = $target.css('font-size');
-    var lh = $target.css('line-height');
-    var lines = '2'; //表示したい行数
-    var lhp = Math.round((parseInt(lh) / parseInt(fs)) * 10) / 10;
-    var calc = parseInt(fs) * lhp * parseInt(lines);
-    $target.css('height', calc);
-    $clone
-      .css({
-        display: 'none',
-        position: 'absolute',
-        overflow: 'visible'
-      })
-      .width($target.width())
-      .height('auto');
-    $target.after($clone);
-    while ((html.length > 0) && ($clone.height() > $target.height())) {
-      html = html.substr(0, html.length - 1);
-      $clone.html(html + '…');
-    }
-    $target.html($clone.html());
-    $clone.remove();
-  });
-});
 
 
 //スクロール・ページ内リンク
@@ -258,7 +327,6 @@ $(function () {
     var target = $(hash);
     if (!(target.length)) {
       $('body,html').css('opacity', '1');
-      scrollToAnker(hash);
     } else if (target.length) {
       var position = target.offset().top;
       var w = window.innerWidth;

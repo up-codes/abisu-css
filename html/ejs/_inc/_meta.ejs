@@ -1,0 +1,10 @@
+<% let title = jsonData.pages[path].title %>
+<% let description = jsonData.pages[path].description %>
+<% let keywords = jsonData.pages[path].keywords %>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width">
+<meta name="format-detection" content="telephone=no">
+<title><%= title %>｜<%= jsonData.siteInfo.baseTitle %></title>
+<meta name="description" content="<%= description %>">
+<meta name="keywords" content="<%= keywords %>">
