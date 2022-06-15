@@ -134,12 +134,25 @@ th
     width 100%
 
 .youtube
+  display block
+  width 100%
   overflow hidden
+  aspect-ratio 16 / 9
   iframe
-    aspect-ratio 16 / 9
     margin auto
     max-width initial
     width 100%
+    height 100%
+
+.iframe
+  display block
+  width 100%
+  overflow hidden
+  iframe
+    margin auto
+    max-width initial
+    width 100%
+    height 100%
 
 a,
 button
@@ -360,11 +373,21 @@ for fw in range(100,900,100)
   cursor pointer
 
 /* 画像比率固定 */
+.up-ofi
+  display block
+  width 100%
+  img
+    width 100%
+    height 100%
+    object-fit cover
+    object-position 50% 50%
+
 [class*="up-asr"]
   display block
   width 100%
   img
     width 100%
+    height 100%
     object-fit cover
     object-position 50% 50%
 
@@ -397,6 +420,20 @@ for fw in range(100,900,100)
 .up-circle
   overflow hidden
   border-radius 50%
+
+/* 絶対配置 */
+.up-pa-100
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+
+.up-pa-50
+  position absolute
+  top 50%
+  left 50%
+  transform translate(-50%, -50%)
 
 
 /*===================================
@@ -434,14 +471,6 @@ for fw in range(100,900,100)
 .up-bz-content
   box-sizing content-box
 
-/* position */
-.up-pos-rel
-  position relative
-.up-pos-abs
-  position absolute
-.up-pos-fix
-  position fixed
-
 /* z-index */
 for z in range(-5,-1,1)
   .up-z-n{abs(z)}
@@ -451,6 +480,15 @@ for z in range(0,5,1)
   .up-z-{z}
     position relative
     z-index z
+
+/* position */
+.up-pos-rel
+  position relative
+.up-pos-abs
+  position absolute
+.up-pos-fix
+  position fixed
+
 
 /* color */
 .up-c-red
@@ -488,10 +526,22 @@ for z in range(0,5,1)
 .up-ta-r
   text-align right
 
+/* opacity */
+for opacity in range(5,100,5)
+  .up-opa-{opacity}
+    opacity 0.01 * opacity
+
 /* letter-spacing */
-for letter in range(1,20,1)
-  .up-ls-00{letter}
+for letter in range(1,9,1)
+  .up-ls-0\\\.0{letter}em
     letter-spacing 0.01 * (letter)em
+.up-ls-0\\\.1em
+  letter-spacing 0.1em
+for letter in range(11,19,1)
+  .up-ls-0\\\.{letter}em
+    letter-spacing 0.01 * (letter)em
+.up-ls-0\\\.2em
+  letter-spacing 0.2em
 
 /* font-size */
 for fz in range(10,20,1)
@@ -555,34 +605,29 @@ for lh in range(1,9,1)
 
 /* 偶数と奇数番目で左右反転No.2 */
 .up-fxd-even2>*:nth-child(even) .up-d-flex,
-.up-fxd-odd2>*:nth-child(odd) .up-d-flex {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
-}
+.up-fxd-odd2>*:nth-child(odd) .up-d-flex
+  -webkit-box-orient horizontal
+  -webkit-box-direction reverse
+  -ms-flex-direction row-reverse
+  flex-direction row-reverse
 
 /* 片方のみブラウザ幅いっぱい（1200px基準） */
 
-.up-left-1200 {
-  margin-left: calc(50% - 600px);
-}
+.up-left-1200
+  margin-left calc(50% - 600px)
 
-.up-right-1200 {
-  margin-right: calc(50% - 600px);
-}
+.up-right-1200
+  margin-right calc(50% - 600px)
 
 [class*=up-fxd-even]>.up-left-1200:nth-child(even),
-[class*=up-fxd-odd]>.up-left-1200:nth-child(odd) {
-  margin-left: 0;
-  margin-right: calc(50% - 600px);
-}
+[class*=up-fxd-odd]>.up-left-1200:nth-child(odd)
+  margin-left 0
+  margin-right calc(50% - 600px)
 
 [class*=up-fxd-even]>.up-right-1200:nth-child(even),
-[class*=up-fxd-odd]>.up-right-1200:nth-child(odd) {
-  margin-right: 0;
-  margin-left: calc(50% - 600px);
-}
+[class*=up-fxd-odd]>.up-right-1200:nth-child(odd)
+  margin-right 0
+  margin-left calc(50% - 600px)
 
 @media only screen and (max-width: 1224px) {
   .up-left-1200 {
@@ -1250,8 +1295,7 @@ for gap in range(1,10,1)
 /* 画像比率固定 */
 for image in range(10,170,5)
   .up-asr-{image}
-    img
-      aspect-ratio 100 / image
+    aspect-ratio 100 / image
 
 /* object-position */
 .up-obp-c img
@@ -1266,12 +1310,6 @@ for image in range(10,170,5)
   object-position left
 
 /* object-fit */
-.up-ofi
-  img
-    width 100%
-    height 100%
-    object-fit cover
-    object-position 50% 50%
 .up-obf-cover img
   object-fit cover
 .up-obf-contain img
@@ -1899,8 +1937,7 @@ for image in range(10,170,5)
   /* 画像比率固定 */
   for image in range(10,170,5)
     .up-asr-{image}\\\@tb
-      img
-        aspect-ratio 100 / image
+      aspect-ratio 100 / image
 
   /* object-position */
   .up-obp-c\\\@tb img
@@ -1915,12 +1952,6 @@ for image in range(10,170,5)
     object-position left
 
   /* object-fit */
-  .up-ofi\\\@tb
-    img
-      width 100%
-      height 100%
-      object-fit cover
-      object-position 50% 50%
   .up-obf-cover\\\@tb img
     object-fit cover
   .up-obf-contain\\\@tb img
@@ -2546,8 +2577,7 @@ for image in range(10,170,5)
   /* 画像比率固定 */
   for image in range(10,170,5)
     .up-asr-{image}\\\@sp
-      img
-        aspect-ratio 100 / image
+      aspect-ratio 100 / image
 
   /* object-position */
   .up-obp-c\\\@sp img
@@ -2562,12 +2592,6 @@ for image in range(10,170,5)
     object-position left
 
   /* object-fit */
-  .up-ofi\\\@sp
-    img
-      width 100%
-      height 100%
-      object-fit cover
-      object-position 50% 50%
   .up-obf-cover\\\@sp img
     object-fit cover
   .up-obf-contain\\\@sp img

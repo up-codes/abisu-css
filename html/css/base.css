@@ -136,13 +136,27 @@ th {
   width: 100%;
 }
 .youtube {
+  display: block;
+  width: 100%;
   overflow: hidden;
+  aspect-ratio: 16/9;
 }
 .youtube iframe {
-  aspect-ratio: 16/9;
   margin: auto;
   max-width: initial;
   width: 100%;
+  height: 100%;
+}
+.iframe {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+.iframe iframe {
+  margin: auto;
+  max-width: initial;
+  width: 100%;
+  height: 100%;
 }
 a,
 button {
@@ -457,12 +471,25 @@ button[href*="tel"] {
   cursor: pointer;
 }
 /* 画像比率固定 */
+.up-ofi {
+  display: block;
+  width: 100%;
+}
+.up-ofi img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+}
 [class*="up-asr"] {
   display: block;
   width: 100%;
 }
 [class*="up-asr"] img {
   width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: 50% 50%;
@@ -496,6 +523,22 @@ button[href*="tel"] {
 .up-circle {
   overflow: hidden;
   border-radius: 50%;
+}
+/* 絶対配置 */
+.up-pa-100 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.up-pa-50 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 /*===================================
   以下@tb,@spが用意されているクラス
@@ -550,16 +593,6 @@ button[href*="tel"] {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
 }
-/* position */
-.up-pos-rel {
-  position: relative;
-}
-.up-pos-abs {
-  position: absolute;
-}
-.up-pos-fix {
-  position: fixed;
-}
 /* z-index */
 .up-z-n5 {
   position: relative;
@@ -604,6 +637,16 @@ button[href*="tel"] {
 .up-z-5 {
   position: relative;
   z-index: 5;
+}
+/* position */
+.up-pos-rel {
+  position: relative;
+}
+.up-pos-abs {
+  position: absolute;
+}
+.up-pos-fix {
+  position: fixed;
 }
 /* color */
 .up-c-red {
@@ -653,65 +696,126 @@ button[href*="tel"] {
 .up-ta-r {
   text-align: right;
 }
+/* opacity */
+.up-opa-5 {
+  opacity: 0.05;
+}
+.up-opa-10 {
+  opacity: 0.1;
+}
+.up-opa-15 {
+  opacity: 0.15;
+}
+.up-opa-20 {
+  opacity: 0.2;
+}
+.up-opa-25 {
+  opacity: 0.25;
+}
+.up-opa-30 {
+  opacity: 0.3;
+}
+.up-opa-35 {
+  opacity: 0.35;
+}
+.up-opa-40 {
+  opacity: 0.4;
+}
+.up-opa-45 {
+  opacity: 0.45;
+}
+.up-opa-50 {
+  opacity: 0.5;
+}
+.up-opa-55 {
+  opacity: 0.55;
+}
+.up-opa-60 {
+  opacity: 0.6;
+}
+.up-opa-65 {
+  opacity: 0.65;
+}
+.up-opa-70 {
+  opacity: 0.7;
+}
+.up-opa-75 {
+  opacity: 0.75;
+}
+.up-opa-80 {
+  opacity: 0.8;
+}
+.up-opa-85 {
+  opacity: 0.85;
+}
+.up-opa-90 {
+  opacity: 0.9;
+}
+.up-opa-95 {
+  opacity: 0.95;
+}
+.up-opa-100 {
+  opacity: 1;
+}
 /* letter-spacing */
-.up-ls-001 {
+.up-ls-0\.01em {
   letter-spacing: 0.01em;
 }
-.up-ls-002 {
+.up-ls-0\.02em {
   letter-spacing: 0.02em;
 }
-.up-ls-003 {
+.up-ls-0\.03em {
   letter-spacing: 0.03em;
 }
-.up-ls-004 {
+.up-ls-0\.04em {
   letter-spacing: 0.04em;
 }
-.up-ls-005 {
+.up-ls-0\.05em {
   letter-spacing: 0.05em;
 }
-.up-ls-006 {
+.up-ls-0\.06em {
   letter-spacing: 0.06em;
 }
-.up-ls-007 {
+.up-ls-0\.07em {
   letter-spacing: 0.07em;
 }
-.up-ls-008 {
+.up-ls-0\.08em {
   letter-spacing: 0.08em;
 }
-.up-ls-009 {
+.up-ls-0\.09em {
   letter-spacing: 0.09em;
 }
-.up-ls-0010 {
+.up-ls-0\.1em {
   letter-spacing: 0.1em;
 }
-.up-ls-0011 {
+.up-ls-0\.11em {
   letter-spacing: 0.11em;
 }
-.up-ls-0012 {
+.up-ls-0\.12em {
   letter-spacing: 0.12em;
 }
-.up-ls-0013 {
+.up-ls-0\.13em {
   letter-spacing: 0.13em;
 }
-.up-ls-0014 {
+.up-ls-0\.14em {
   letter-spacing: 0.14em;
 }
-.up-ls-0015 {
+.up-ls-0\.15em {
   letter-spacing: 0.15em;
 }
-.up-ls-0016 {
+.up-ls-0\.16em {
   letter-spacing: 0.16em;
 }
-.up-ls-0017 {
+.up-ls-0\.17em {
   letter-spacing: 0.17em;
 }
-.up-ls-0018 {
+.up-ls-0\.18em {
   letter-spacing: 0.18em;
 }
-.up-ls-0019 {
+.up-ls-0\.19em {
   letter-spacing: 0.19em;
 }
-.up-ls-0020 {
+.up-ls-0\.2em {
   letter-spacing: 0.2em;
 }
 /* font-size */
@@ -5666,103 +5770,103 @@ button[href*="tel"] {
   gap: 10% 10%;
 }
 /* 画像比率固定 */
-.up-asr-10 img {
+.up-asr-10 {
   aspect-ratio: 100/10;
 }
-.up-asr-15 img {
+.up-asr-15 {
   aspect-ratio: 100/15;
 }
-.up-asr-20 img {
+.up-asr-20 {
   aspect-ratio: 100/20;
 }
-.up-asr-25 img {
+.up-asr-25 {
   aspect-ratio: 100/25;
 }
-.up-asr-30 img {
+.up-asr-30 {
   aspect-ratio: 100/30;
 }
-.up-asr-35 img {
+.up-asr-35 {
   aspect-ratio: 100/35;
 }
-.up-asr-40 img {
+.up-asr-40 {
   aspect-ratio: 100/40;
 }
-.up-asr-45 img {
+.up-asr-45 {
   aspect-ratio: 100/45;
 }
-.up-asr-50 img {
+.up-asr-50 {
   aspect-ratio: 100/50;
 }
-.up-asr-55 img {
+.up-asr-55 {
   aspect-ratio: 100/55;
 }
-.up-asr-60 img {
+.up-asr-60 {
   aspect-ratio: 100/60;
 }
-.up-asr-65 img {
+.up-asr-65 {
   aspect-ratio: 100/65;
 }
-.up-asr-70 img {
+.up-asr-70 {
   aspect-ratio: 100/70;
 }
-.up-asr-75 img {
+.up-asr-75 {
   aspect-ratio: 100/75;
 }
-.up-asr-80 img {
+.up-asr-80 {
   aspect-ratio: 100/80;
 }
-.up-asr-85 img {
+.up-asr-85 {
   aspect-ratio: 100/85;
 }
-.up-asr-90 img {
+.up-asr-90 {
   aspect-ratio: 100/90;
 }
-.up-asr-95 img {
+.up-asr-95 {
   aspect-ratio: 100/95;
 }
-.up-asr-100 img {
+.up-asr-100 {
   aspect-ratio: 100/100;
 }
-.up-asr-105 img {
+.up-asr-105 {
   aspect-ratio: 100/105;
 }
-.up-asr-110 img {
+.up-asr-110 {
   aspect-ratio: 100/110;
 }
-.up-asr-115 img {
+.up-asr-115 {
   aspect-ratio: 100/115;
 }
-.up-asr-120 img {
+.up-asr-120 {
   aspect-ratio: 100/120;
 }
-.up-asr-125 img {
+.up-asr-125 {
   aspect-ratio: 100/125;
 }
-.up-asr-130 img {
+.up-asr-130 {
   aspect-ratio: 100/130;
 }
-.up-asr-135 img {
+.up-asr-135 {
   aspect-ratio: 100/135;
 }
-.up-asr-140 img {
+.up-asr-140 {
   aspect-ratio: 100/140;
 }
-.up-asr-145 img {
+.up-asr-145 {
   aspect-ratio: 100/145;
 }
-.up-asr-150 img {
+.up-asr-150 {
   aspect-ratio: 100/150;
 }
-.up-asr-155 img {
+.up-asr-155 {
   aspect-ratio: 100/155;
 }
-.up-asr-160 img {
+.up-asr-160 {
   aspect-ratio: 100/160;
 }
-.up-asr-165 img {
+.up-asr-165 {
   aspect-ratio: 100/165;
 }
-.up-asr-170 img {
+.up-asr-170 {
   aspect-ratio: 100/170;
 }
 /* object-position */
@@ -5787,14 +5891,6 @@ button[href*="tel"] {
      object-position: left;
 }
 /* object-fit */
-.up-ofi img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: 50% 50%;
-     object-position: 50% 50%;
-}
 .up-obf-cover img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -10459,103 +10555,103 @@ button[href*="tel"] {
   .up-gap-10\%\@tb {
     gap: 10% 10%;
   }
-  .up-asr-10\@tb img {
+  .up-asr-10\@tb {
     aspect-ratio: 100/10;
   }
-  .up-asr-15\@tb img {
+  .up-asr-15\@tb {
     aspect-ratio: 100/15;
   }
-  .up-asr-20\@tb img {
+  .up-asr-20\@tb {
     aspect-ratio: 100/20;
   }
-  .up-asr-25\@tb img {
+  .up-asr-25\@tb {
     aspect-ratio: 100/25;
   }
-  .up-asr-30\@tb img {
+  .up-asr-30\@tb {
     aspect-ratio: 100/30;
   }
-  .up-asr-35\@tb img {
+  .up-asr-35\@tb {
     aspect-ratio: 100/35;
   }
-  .up-asr-40\@tb img {
+  .up-asr-40\@tb {
     aspect-ratio: 100/40;
   }
-  .up-asr-45\@tb img {
+  .up-asr-45\@tb {
     aspect-ratio: 100/45;
   }
-  .up-asr-50\@tb img {
+  .up-asr-50\@tb {
     aspect-ratio: 100/50;
   }
-  .up-asr-55\@tb img {
+  .up-asr-55\@tb {
     aspect-ratio: 100/55;
   }
-  .up-asr-60\@tb img {
+  .up-asr-60\@tb {
     aspect-ratio: 100/60;
   }
-  .up-asr-65\@tb img {
+  .up-asr-65\@tb {
     aspect-ratio: 100/65;
   }
-  .up-asr-70\@tb img {
+  .up-asr-70\@tb {
     aspect-ratio: 100/70;
   }
-  .up-asr-75\@tb img {
+  .up-asr-75\@tb {
     aspect-ratio: 100/75;
   }
-  .up-asr-80\@tb img {
+  .up-asr-80\@tb {
     aspect-ratio: 100/80;
   }
-  .up-asr-85\@tb img {
+  .up-asr-85\@tb {
     aspect-ratio: 100/85;
   }
-  .up-asr-90\@tb img {
+  .up-asr-90\@tb {
     aspect-ratio: 100/90;
   }
-  .up-asr-95\@tb img {
+  .up-asr-95\@tb {
     aspect-ratio: 100/95;
   }
-  .up-asr-100\@tb img {
+  .up-asr-100\@tb {
     aspect-ratio: 100/100;
   }
-  .up-asr-105\@tb img {
+  .up-asr-105\@tb {
     aspect-ratio: 100/105;
   }
-  .up-asr-110\@tb img {
+  .up-asr-110\@tb {
     aspect-ratio: 100/110;
   }
-  .up-asr-115\@tb img {
+  .up-asr-115\@tb {
     aspect-ratio: 100/115;
   }
-  .up-asr-120\@tb img {
+  .up-asr-120\@tb {
     aspect-ratio: 100/120;
   }
-  .up-asr-125\@tb img {
+  .up-asr-125\@tb {
     aspect-ratio: 100/125;
   }
-  .up-asr-130\@tb img {
+  .up-asr-130\@tb {
     aspect-ratio: 100/130;
   }
-  .up-asr-135\@tb img {
+  .up-asr-135\@tb {
     aspect-ratio: 100/135;
   }
-  .up-asr-140\@tb img {
+  .up-asr-140\@tb {
     aspect-ratio: 100/140;
   }
-  .up-asr-145\@tb img {
+  .up-asr-145\@tb {
     aspect-ratio: 100/145;
   }
-  .up-asr-150\@tb img {
+  .up-asr-150\@tb {
     aspect-ratio: 100/150;
   }
-  .up-asr-155\@tb img {
+  .up-asr-155\@tb {
     aspect-ratio: 100/155;
   }
-  .up-asr-160\@tb img {
+  .up-asr-160\@tb {
     aspect-ratio: 100/160;
   }
-  .up-asr-165\@tb img {
+  .up-asr-165\@tb {
     aspect-ratio: 100/165;
   }
-  .up-asr-170\@tb img {
+  .up-asr-170\@tb {
     aspect-ratio: 100/170;
   }
   .up-obp-c\@tb img {
@@ -10577,14 +10673,6 @@ button[href*="tel"] {
   .up-obp-l\@tb img {
     -o-object-position: left;
        object-position: left;
-  }
-  .up-ofi\@tb img {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: 50% 50%;
-       object-position: 50% 50%;
   }
   .up-obf-cover\@tb img {
     -o-object-fit: cover;
@@ -15250,103 +15338,103 @@ button[href*="tel"] {
   .up-gap-10\%\@sp {
     gap: 10% 10%;
   }
-  .up-asr-10\@sp img {
+  .up-asr-10\@sp {
     aspect-ratio: 100/10;
   }
-  .up-asr-15\@sp img {
+  .up-asr-15\@sp {
     aspect-ratio: 100/15;
   }
-  .up-asr-20\@sp img {
+  .up-asr-20\@sp {
     aspect-ratio: 100/20;
   }
-  .up-asr-25\@sp img {
+  .up-asr-25\@sp {
     aspect-ratio: 100/25;
   }
-  .up-asr-30\@sp img {
+  .up-asr-30\@sp {
     aspect-ratio: 100/30;
   }
-  .up-asr-35\@sp img {
+  .up-asr-35\@sp {
     aspect-ratio: 100/35;
   }
-  .up-asr-40\@sp img {
+  .up-asr-40\@sp {
     aspect-ratio: 100/40;
   }
-  .up-asr-45\@sp img {
+  .up-asr-45\@sp {
     aspect-ratio: 100/45;
   }
-  .up-asr-50\@sp img {
+  .up-asr-50\@sp {
     aspect-ratio: 100/50;
   }
-  .up-asr-55\@sp img {
+  .up-asr-55\@sp {
     aspect-ratio: 100/55;
   }
-  .up-asr-60\@sp img {
+  .up-asr-60\@sp {
     aspect-ratio: 100/60;
   }
-  .up-asr-65\@sp img {
+  .up-asr-65\@sp {
     aspect-ratio: 100/65;
   }
-  .up-asr-70\@sp img {
+  .up-asr-70\@sp {
     aspect-ratio: 100/70;
   }
-  .up-asr-75\@sp img {
+  .up-asr-75\@sp {
     aspect-ratio: 100/75;
   }
-  .up-asr-80\@sp img {
+  .up-asr-80\@sp {
     aspect-ratio: 100/80;
   }
-  .up-asr-85\@sp img {
+  .up-asr-85\@sp {
     aspect-ratio: 100/85;
   }
-  .up-asr-90\@sp img {
+  .up-asr-90\@sp {
     aspect-ratio: 100/90;
   }
-  .up-asr-95\@sp img {
+  .up-asr-95\@sp {
     aspect-ratio: 100/95;
   }
-  .up-asr-100\@sp img {
+  .up-asr-100\@sp {
     aspect-ratio: 100/100;
   }
-  .up-asr-105\@sp img {
+  .up-asr-105\@sp {
     aspect-ratio: 100/105;
   }
-  .up-asr-110\@sp img {
+  .up-asr-110\@sp {
     aspect-ratio: 100/110;
   }
-  .up-asr-115\@sp img {
+  .up-asr-115\@sp {
     aspect-ratio: 100/115;
   }
-  .up-asr-120\@sp img {
+  .up-asr-120\@sp {
     aspect-ratio: 100/120;
   }
-  .up-asr-125\@sp img {
+  .up-asr-125\@sp {
     aspect-ratio: 100/125;
   }
-  .up-asr-130\@sp img {
+  .up-asr-130\@sp {
     aspect-ratio: 100/130;
   }
-  .up-asr-135\@sp img {
+  .up-asr-135\@sp {
     aspect-ratio: 100/135;
   }
-  .up-asr-140\@sp img {
+  .up-asr-140\@sp {
     aspect-ratio: 100/140;
   }
-  .up-asr-145\@sp img {
+  .up-asr-145\@sp {
     aspect-ratio: 100/145;
   }
-  .up-asr-150\@sp img {
+  .up-asr-150\@sp {
     aspect-ratio: 100/150;
   }
-  .up-asr-155\@sp img {
+  .up-asr-155\@sp {
     aspect-ratio: 100/155;
   }
-  .up-asr-160\@sp img {
+  .up-asr-160\@sp {
     aspect-ratio: 100/160;
   }
-  .up-asr-165\@sp img {
+  .up-asr-165\@sp {
     aspect-ratio: 100/165;
   }
-  .up-asr-170\@sp img {
+  .up-asr-170\@sp {
     aspect-ratio: 100/170;
   }
   .up-obp-c\@sp img {
@@ -15368,14 +15456,6 @@ button[href*="tel"] {
   .up-obp-l\@sp img {
     -o-object-position: left;
        object-position: left;
-  }
-  .up-ofi\@sp img {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: 50% 50%;
-       object-position: 50% 50%;
   }
   .up-obf-cover\@sp img {
     -o-object-fit: cover;
