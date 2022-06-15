@@ -447,6 +447,12 @@ for fw in range(100,900,100)
 .up-wm-vrl
   writing-mode vertical-rl
 
+/* white-space */
+.up-ws-no
+  white-space nowrap
+.up-ws-normal
+  white-space normal
+
 /* display */
 .up-d-block
   display block
@@ -1331,6 +1337,12 @@ for image in range(10,170,5)
     writing-mode vertical-lr
   .up-wm-vrl\\\@tb
     writing-mode vertical-rl
+
+  /* white-space */
+  .up-ws-no\\\@tb
+    white-space nowrap
+  .up-ws-normal\\\@tb
+    white-space normal
     
   /* display */
   .up-d-block\\\@tb
@@ -1972,6 +1984,12 @@ for image in range(10,170,5)
   .up-wm-vrl\\\@sp
     writing-mode vertical-rl
 
+  /* white-space */
+  .up-ws-no\\\@sp
+    white-space nowrap
+  .up-ws-normal\\\@sp
+    white-space normal
+
   /* display */
   .up-d-block\\\@sp
     display block
@@ -2602,3 +2620,547 @@ for image in range(10,170,5)
     display block
   .up-hide\\\@sp
     display none
+
+
+/* ここからabisu.cssの内容 */ 
+
+[data-element-id]
+  .up-relative\\\@edit
+    position relative
+  .up-absolute\\\@edit
+    position absolute
+  .up-spmark_edit
+    border solid 1px #000
+    &:before
+      content "スマホ時のみ表示"
+      display block
+      position relative
+      z-index 2
+      font-size 12px
+      color #fff
+      background #000
+
+[data-element-id] .up-none
+  display inherit
+
+[data-element-id] [class*="heightLine"]
+  height auto !important
+
+[data-element-id] .fead-mv
+  opacity 1
+[data-element-id] .fead-up
+  opacity 1
+  transform translateY(0)
+[data-element-id] .fead-left
+  opacity 1
+  transform translate3d(0,0,0)
+[data-element-id] .fead-right
+  opacity 1
+  transform translate3d(0,0,0)
+[data-element-id] .fead-text
+  opacity 1
+  &.str
+    opacity 1
+[data-element-id] .fead-cover
+  &:before
+    content none
+[data-element-id] .fead-cover
+  & > *
+    opacity 1
+    transform none
+
+[data-element-id] .imgalt
+  position relative
+  z-index 50
+  overflow hidden
+  padding 2px 4px
+  max-height 70px
+  background #333
+  color orange
+  text-align left
+  font-size 14px
+
+[data-element-id] .altcolor
+  color red
+
+[data-common-area]
+  position relative
+
+[data-common-area]:hover:before
+  position absolute !important
+  bottom 100%
+  left 50%
+  box-sizing border-box
+  padding 5px
+  min-width 200px
+  width 100%
+  background #555
+  color #FDC44F
+  content "共通要素です。"
+  text-align center
+  font-weight bold
+  font-size 12px
+  transform translateX(-50%)
+
+a[data-href="#"]
+  position relative !important
+  display block
+  outline solid red 5px!important
+  opacity 1
+
+a[data-href="#"]:hover:before
+  position absolute !important
+  bottom 100%
+  left 50%
+  box-sizing border-box
+  padding 5px
+  min-width 200px
+  width 100%
+  background #555
+  color red
+  content "リンクが設定されていない可能性があります。"
+  font-weight bold
+  font-size 12px
+  transform translateX(-50%)
+
+a[data-href*="."]
+  position relative !important
+  display block
+  outline solid red 5px!important
+  opacity 1
+
+a[data-href*="."]:hover:before
+  position absolute !important
+  bottom 100%
+  left 50%
+  box-sizing border-box
+  padding 5px
+  min-width 200px
+  width 100%
+  background #555
+  color red
+  content "外部リンクの可能性があります。リンクが飛ばない可能性がありますので注意してください。"
+  font-weight bold
+  font-size 12px
+  transform translateX(-50%)
+
+[data-element-id][data-uk-slideshow]:hover:before
+  position absolute
+  z-index 1000
+  display block
+  clear both
+  padding 5px
+  width 100%
+  background #4c4c4c
+  color red
+  content "※①画像をダブルクリック、②変更（歯車マーク）、③スライドショーから編集してください。"
+  text-align left
+  letter-spacing 1px
+  font-weight bold
+  font-size 12px
+  line-height 1.8
+
+[data-collection-list-content]:hover:before
+  position absolute
+  z-index 1000
+  display block
+  clear both
+  padding 5px
+  width 100%
+  background #4c4c4c
+  color red
+  content "※こちらは見たまま編集ができません。①ページのどこかをダブルクリック、②左下（もしくは左上）のCMSロゴをクリック、③画面右上のメニュー（三本線マーク）から「カスタムコンテンツ管理」をクリック、④編集したいカスタムコンテンツの一覧（三本線マーク）から記事投稿・記事編集ができます。"
+  text-align left
+  letter-spacing 1px
+  font-weight bold
+  font-size 12px
+  line-height 1.8
+
+[data-element-id] .up-d-flex
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    display flex
+    width 100%
+
+[data-element-id] .up-jc-fs
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    justify-content flex-start
+
+[data-element-id] .up-jc-fe
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    justify-content flex-end
+
+[data-element-id] .up-jc-c
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    justify-content center
+
+[data-element-id] .up-jc-sb
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    justify-content space-between
+
+[data-element-id] .up-jc-sa
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    justify-content space-around
+
+[data-element-id] .up-jc-se
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    justify-content space-evenly
+
+[data-element-id] .up-fxd-row
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    flex-direction row
+
+[data-element-id] .up-fxd-rowr
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    flex-direction row-reverse
+
+[data-element-id] .up-fxd-col
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    flex-direction column
+
+[data-element-id] .up-fxd-colr
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    flex-direction column-reverse
+
+[data-element-id] .up-ai-fs
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    align-items flex-start
+
+[data-element-id] .up-ai-c
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    align-items center
+
+[data-element-id] .up-ai-fe
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    align-items flex-end
+
+[data-element-id] .up-ai-b
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    align-items baseline
+
+[data-element-id] .up-ai-s
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    align-items stretch
+
+[data-element-id] .up-ac-fs
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    align-content flex-start
+
+[data-element-id] .up-ac-c
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    align-content center
+
+[data-element-id] .up-ac-fe
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    align-content flex-end
+
+[data-element-id] .up-ac-sb
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    align-content space-between
+
+[data-element-id] .up-ac-sa
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    align-content space-around
+
+[data-element-id] .up-fxw-wrap
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    flex-wrap wrap
+
+[data-element-id] .up-fxw-wrapr
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    flex-wrap wrap-reverse
+
+[data-element-id] .up-nowrap
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    flex-wrap nowrap
+
+[data-element-id] .up-col-1
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    display flex
+    flex-wrap wrap
+    width 100%
+    > *
+      width 100%
+[data-element-id] .up-col-2
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    display flex
+    flex-wrap wrap
+    width 100%
+    > *
+      width 50%
+[data-element-id] .up-col-3
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    display flex
+    flex-wrap wrap
+    width 100%
+    > *
+      width 33.333%
+[data-element-id] .up-col-4
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    display flex
+    flex-wrap wrap
+    width 100%
+    > *
+      width 25%
+[data-element-id] .up-col-5
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    display flex
+    flex-wrap wrap
+    width 100%
+    > *
+      width 20%
+[data-element-id] .up-col-6
+  > div[data-collection-list-content],
+  > div[data-recommend-collection-list-content],
+  > div[data-collection-filtered-content],
+  > div[data-collection-archive-content],
+  > div[data-product-list-content],
+  > div[data-product-recommend-content]
+    display flex
+    flex-wrap wrap
+    width 100%
+    > *
+      width 16.666%
+
+/* gapy(px) */
+for gapy-px in range(0,100,10)
+  [data-element-id] .up-gapy-{gapy-px}
+    > div[data-collection-list-content],
+    > div[data-recommend-collection-list-content],
+    > div[data-collection-filtered-content],
+    > div[data-collection-archive-content],
+    > div[data-product-list-content],
+    > div[data-product-recommend-content]
+      padding-bottom 0
+      > *
+        padding-bottom gapy-px px
+/* gapy(%) */
+for gapy in range(1,10,1)
+  [data-element-id] .up-gapy-{gapy}\\\%
+    > div[data-collection-list-content],
+    > div[data-recommend-collection-list-content],
+    > div[data-collection-filtered-content],
+    > div[data-collection-archive-content],
+    > div[data-product-list-content],
+    > div[data-product-recommend-content]
+      padding-bottom 0
+      > *
+        padding-bottom (gapy)%
+
+/* gapx(px) */
+for gapx-px in range(0,100,10)
+  [data-element-id] .up-gapx-{gapx-px}
+    margin-left 0
+    margin-right 0
+    > div[data-collection-list-content],
+    > div[data-recommend-collection-list-content],
+    > div[data-collection-filtered-content],
+    > div[data-collection-archive-content],
+    > div[data-product-list-content],
+    > div[data-product-recommend-content]
+      margin-left -(gapx-px/2)px
+      margin-right -(gapx-px/2)px
+      > *
+        padding-left (ceil((gapx-px/2),3))px
+        padding-right (ceil((gapx-px/2),3))px
+/* gapx(%) */
+for gapx in range(1,10,1)
+  [data-element-id] .up-gapx-{gapx}p
+    margin-left 0
+    margin-right 0
+    > div[data-collection-list-content],
+    > div[data-recommend-collection-list-content],
+    > div[data-collection-filtered-content],
+    > div[data-collection-archive-content],
+    > div[data-product-list-content],
+    > div[data-product-recommend-content]
+      margin-left -(gapx/2)%
+      margin-right -(gapx/2)%
+      > *
+        padding-left (ceil((gapx/2),3))%
+        padding-right (ceil((gapx/2),3))%
+
+
+/* 表示・非表示 */
+[data-element-id] .show
+  display block
+  border solid 4px green
+  position relative
+  &:after
+    display block
+    content "PC用"
+    color #fff
+    font-weight 700
+    background green
+    padding 5px
+    text-align center
+
+[data-element-id] .show\\\@tb
+  display block
+  border solid 4px green
+  position relative
+  &:after
+    display block
+    content "モバイル用"
+    color #fff
+    font-weight 700
+    background green
+    padding 5px
+    text-align center
+
+[data-element-id] .show\\\@sp
+  display block
+  border solid 4px green
+  position relative
+  &:after
+    display block
+    content "モバイル用"
+    color #fff
+    font-weight 700
+    background green
+    padding 5px
+    text-align center
