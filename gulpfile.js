@@ -29,14 +29,14 @@ const fs = require('fs'); //jsonファイル操作
 const header = require('gulp-header'); //コメントアウトをファイルの先頭に追記
 
 /// abisu(stylus)コンパイル //////////////////////////////////////////
-const srcAbisu = {
-  srcDir: 'html/stylus/abisu.styl',
-  srcCom: [
-    'html/stylus/abisu.styl'
-  ],
-  dstDir: 'html/css',
-  minDir: 'html/css/abisu.css'
-}
+// const srcAbisu = {
+//   srcDir: 'html/stylus/abisu.styl',
+//   srcCom: [
+//     'html/stylus/abisu.styl'
+//   ],
+//   dstDir: 'html/css',
+//   minDir: 'html/css/abisu.css'
+// }
 
 const pkg = require('./package.json'); //package.jspnの記述内容をコメントアウトに使用する
 
@@ -48,43 +48,43 @@ const banner = ['/**',
   ''
 ].join('\n');
 
-function cacheAbisu() {
-  return src(srcAbisu.srcDir)
-    .pipe(cache('abisu'))
-}
+// function cacheAbisu() {
+//   return src(srcAbisu.srcDir)
+//     .pipe(cache('abisu'))
+// }
 
-function Abisu() {
-  return src(srcAbisu.srcCom)
-    .pipe(sourcemaps.init())
-    .pipe(progeny())
-    .pipe(plumber({
-      errorHandler: notify.onError('Error: <%= error.message %>')
-    }))
-    .pipe(stylus({
-      compress: false
-    }))
-    .pipe(postcss([autoprefixer()]))
-    .pipe(sourcemaps.write('/'))
-    .pipe(dest(srcAbisu.dstDir))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-}
+// function Abisu() {
+//   return src(srcAbisu.srcCom)
+//     .pipe(sourcemaps.init())
+//     .pipe(progeny())
+//     .pipe(plumber({
+//       errorHandler: notify.onError('Error: <%= error.message %>')
+//     }))
+//     .pipe(stylus({
+//       compress: false
+//     }))
+//     .pipe(postcss([autoprefixer()]))
+//     .pipe(sourcemaps.write('/'))
+//     .pipe(dest(srcAbisu.dstDir))
+//     .pipe(browserSync.reload({
+//       stream: true
+//     }))
+// }
 
-function AbisuMin() {
-  return src(srcAbisu.minDir)
-    .pipe(cleanCss())
-    .pipe(header(banner, {
-      pkg: pkg
-    }))
-    .pipe(rename({
-      extname: '.min.css'
-    }))
-    .pipe(dest(srcAbisu.dstDir))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-}
+// function AbisuMin() {
+//   return src(srcAbisu.minDir)
+//     .pipe(cleanCss())
+//     .pipe(header(banner, {
+//       pkg: pkg
+//     }))
+//     .pipe(rename({
+//       extname: '.min.css'
+//     }))
+//     .pipe(dest(srcAbisu.dstDir))
+//     .pipe(browserSync.reload({
+//       stream: true
+//     }))
+// }
 
 
 /// base(stylus)コンパイル //////////////////////////////////////////
@@ -479,7 +479,7 @@ function imageToWebp() {
 
 /// 監視ファイル ////////////////////////////////////////////
 function watchFile() {
-  watch(srcAbisu.srcDir, series(cacheAbisu, Abisu, AbisuMin))
+  // watch(srcAbisu.srcDir, series(cacheAbisu, Abisu, AbisuMin))
   watch(srcBase.srcDir, series(cacheBase, Base, BaseMin))
   watch(srcBaseK.srcDir, series(cacheBaseK, BaseK, BaseKMin))
   watch(srcComponents.srcDir, series(cacheComponents, Components))
