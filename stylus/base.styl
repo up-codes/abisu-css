@@ -373,21 +373,13 @@ for fw in range(100,900,100)
   cursor pointer
 
 /* 画像比率固定 */
-.up-ofi
+[class*="up-ofi"]
+  position relative
   display block
   width 100%
   img
     width 100%
-    height 100%
-    object-fit cover
-    object-position 50% 50%
-
-[class*="up-asr"]
-  display block
-  width 100%
-  img
-    width 100%
-    height 100%
+    height 100% !important
     object-fit cover
     object-position 50% 50%
 
@@ -462,8 +454,6 @@ for fw in range(100,900,100)
   display flex
 .up-d-grid
   display grid
-.up-d-contents
-  display contents
 .up-d-none
   display none
 
@@ -480,11 +470,9 @@ for fw in range(100,900,100)
 /* z-index */
 for z in range(-5,-1,1)
   .up-z-n{abs(z)}
-    position relative
     z-index z
 for z in range(0,5,1)
   .up-z-{z}
-    position relative
     z-index z
 
 /* position */
@@ -1215,93 +1203,79 @@ for padding-p in range(range-padding-p)
     padding-left (padding-p)%
 
 
-/* grid-template-columns */
-for col in range(1,6,1)
-  .up-col-{col}
-    display grid
-    grid-template-columns repeat((col), minmax(auto, 1fr))
-for min in range(0,500,50)
-  .up-col-fit{min}
-    display grid
-    grid-template-columns repeat(auto-fit, minmax((min)px, 1fr))
-for min in range(0,500,50)
-  .up-col-fill{min}
-    display grid
-    grid-template-columns repeat(auto-fill, minmax((min)px, 1fr))
+/* カラム */
+.up-col-2
+  display flex
+  flex-wrap wrap
+  > *
+    width 50%
+.up-col-3
+  display flex
+  flex-wrap wrap
+  > *
+    width 33.333%
+.up-col-4
+  display flex
+  flex-wrap wrap
+  > *
+    width 25%
+.up-col-5
+  display flex
+  flex-wrap wrap
+  > *
+    width 20%
+.up-col-6
+  display flex
+  flex-wrap wrap
+  > *
+    width 16.666%
 
-/* grid-column, grid-row */
-.up-gcol-auto
-  grid-column auto
-for column in range(2,7,1)
-  .up-gcol-1-{column}
-    grid-column 1 / column
-for column in range(3,7,1)
-  .up-gcol-2-{column}
-    grid-column 2 / column
-for column in range(4,7,1)
-  .up-gcol-3-{column}
-    grid-column 3 / column
-for column in range(5,7,1)
-  .up-gcol-4-{column}
-    grid-column 4 / column
-for column in range(6,7,1)
-  .up-gcol-5-{column}
-    grid-column 5 / column
-for column in range(7,7,1)
-  .up-gcol-6-{column}
-    grid-column 6 / column
-.up-grow-auto
-  grid-row auto
-for row in range(2,7,1)
-  .up-grow-1-{row}
-    grid-row 1 / row
-for row in range(3,7,1)
-  .up-grow-2-{row}
-    grid-row 2 / row
-for row in range(4,7,1)
-  .up-grow-3-{row}
-    grid-row 3 / row
-for row in range(5,7,1)
-  .up-grow-4-{row}
-    grid-row 4 / row
-for row in range(6,7,1)
-  .up-grow-5-{row}
-    grid-row 5 / row
-for row in range(7,7,1)
-  .up-grow-6-{row}
-    grid-row 6 / row
+/* gapy(px) */
+for gapy-px in range(0,100,10)
+  .up-gapy-{gapy-px}
+    > *
+      padding-bottom gapy-px px
+/* gapy(%) */
+for gapy in range(1,10,1)
+  .up-gapy-{gapy}\\\%
+    > *
+      padding-bottom (gapy)%
 
 /* gapx(px) */
 for gapx-px in range(0,100,10)
   .up-gapx-{gapx-px}
-    column-gap (gapx-px)px
+    margin-left -(gapx-px/2)px
+    margin-right -(gapx-px/2)px
+    > *
+      padding-left (ceil((gapx-px/2),3))px
+      padding-right (ceil((gapx-px/2),3))px
 /* gapx(%) */
 for gapx in range(1,10,1)
   .up-gapx-{gapx}\\\%
-    column-gap (gapx)%
+    margin-left -(gapx/2)%
+    margin-right -(gapx/2)%
+    > *
+      padding-left (ceil((gapx/2),3))%
+      padding-right (ceil((gapx/2),3))%
 
-/* gapy(px) */
-for gapy-px in range(0,200,10)
-  .up-gapy-{gapy-px}
-    row-gap (gapy-px)px
-/* gapy(%) */
-for gapy in range(1,10,1)
-  .up-gapy-{gapy}\\\%
-    row-gap (gapy)%
 
-/* gap(px) */
-for gap-px in range(0,100,10)
-  .up-gap-{gap-px}
-    gap (gap-px)px (gap-px)px
-/* gap(%) */
-for gap in range(1,10,1)
-  .up-gap-{gap}\\\%
-    gap (gap)% (gap)%
+/* rgap(px) */
+for row-gap in range(0,200,10)
+  .up-rgap-{row-gap}
+    row-gap (row-gap)px
+
 
 /* 画像比率固定 */
 for image in range(10,170,5)
-  .up-asr-{image}
-    aspect-ratio 100 / image
+  .up-ofi-{image}
+    &:after
+      content ""
+      display block
+      padding-top (image)%
+    img
+      position absolute
+      top 0
+      left 0
 
 /* object-position */
 .up-obp-c img
@@ -1353,8 +1327,6 @@ for image in range(10,170,5)
     display flex
   .up-d-grid\\\@tb
     display grid
-  .up-d-contents\\\@tb
-    display contents
   .up-d-none\\\@tb
     display none
 
@@ -1379,11 +1351,9 @@ for image in range(10,170,5)
   /* z-index */
   for z in range(-5,-1,1)
     .up-z-n{abs(z)}\\\@tb
-      position relative
       z-index z
   for z in range(0,5,1)
     .up-z-{z}\\\@tb
-      position relative
       z-index z
 
   /* color */
@@ -1862,94 +1832,84 @@ for image in range(10,170,5)
     .up-pl-{padding-p}\\\%\\\@tb
       padding-left (padding-p)%
 
-  /* grid-template-columns */
-  for col in range(1,6,1)
-    .up-col-{col}\\\@tb
-      display grid
-      grid-template-columns repeat((col), minmax(auto, 1fr))
-  for min in range(0,500,50)
-    .up-col-fit{min}\\\@tb
-      display grid
-      grid-template-columns repeat(auto-fit, minmax((min)px, 1fr))
-  for min in range(0,500,50)
-    .up-col-fill{min}\\\@tb
-      display grid
-      grid-template-columns repeat(auto-fill, minmax((min)px, 1fr))
+  /* カラム */
+  .up-col-1\\\@tb
+    display flex
+    flex-wrap wrap
+    > *
+      width 100%
+  .up-col-2\\\@tb
+    display flex
+    flex-wrap wrap
+    > *
+      width 50%
+  .up-col-3\\\@tb
+    display flex
+    flex-wrap wrap
+    > *
+      width 33.333%
+  .up-col-4\\\@tb
+    display flex
+    flex-wrap wrap
+    > *
+      width 25%
+  .up-col-5\\\@tb
+    display flex
+    flex-wrap wrap
+    > *
+      width 20%
+  .up-col-6\\\@tb
+    display flex
+    flex-wrap wrap
+    > *
+      width 16.666%
 
-  /* grid-column, grid-row */
-  .up-gcol-auto\\\@tb
-    grid-column auto
-  for column in range(2,7,1)
-    .up-gcol-1-{column}\\\@tb
-      grid-column 1 / column
-  for column in range(3,7,1)
-    .up-gcol-2-{column}\\\@tb
-      grid-column 2 / column
-  for column in range(4,7,1)
-    .up-gcol-3-{column}\\\@tb
-      grid-column 3 / column
-  for column in range(5,7,1)
-    .up-gcol-4-{column}\\\@tb
-      grid-column 4 / column
-  for column in range(6,7,1)
-    .up-gcol-5-{column}\\\@tb
-      grid-column 5 / column
-  for column in range(7,7,1)
-    .up-gcol-6-{column}\\\@tb
-      grid-column 6 / column
-  .up-grow-auto\\\@tb
-    grid-row auto
-  for row in range(2,7,1)
-    .up-grow-1-{row}\\\@tb
-      grid-row 1 / row
-  for row in range(3,7,1)
-    .up-grow-2-{row}\\\@tb
-      grid-row 2 / row
-  for row in range(4,7,1)
-    .up-grow-3-{row}\\\@tb
-      grid-row 3 / row
-  for row in range(5,7,1)
-    .up-grow-4-{row}\\\@tb
-      grid-row 4 / row
-  for row in range(6,7,1)
-    .up-grow-5-{row}\\\@tb
-      grid-row 5 / row
-  for row in range(7,7,1)
-    .up-grow-6-{row}\\\@tb
-      grid-row 6 / row
+  /* gapy(px) */
+  for gapy-px in range(0,100,10)
+    .up-gapy-{gapy-px}\\\@tb
+      > *
+        padding-bottom gapy-px px
+  /* gapy(%) */
+  for gapy in range(1,10,1)
+    .up-gapy-{gapy}\\\%\\\@tb
+      > *
+        padding-bottom (gapy)%
 
   /* gapx(px) */
   for gapx-px in range(0,100,10)
     .up-gapx-{gapx-px}\\\@tb
-      column-gap (gapx-px)px
+      margin-left -(gapx-px/2)px
+      margin-right -(gapx-px/2)px
+      > *
+        padding-left (ceil((gapx-px/2),3))px
+        padding-right (ceil((gapx-px/2),3))px
   /* gapx(%) */
   for gapx in range(1,10,1)
     .up-gapx-{gapx}\\\%\\\@tb
-      column-gap (gapx)%
+      margin-left -(gapx/2)%
+      margin-right -(gapx/2)%
+      > *
+        padding-left (ceil((gapx/2),3))%
+        padding-right (ceil((gapx/2),3))%
 
-  /* gapy(px) */
-  for gapy-px in range(0,200,10)
-    .up-gapy-{gapy-px}\\\@tb
-      row-gap (gapy-px)px
-  /* gapy(%) */
-  for gapy in range(1,10,1)
-    .up-gapy-{gapy}\\\%\\\@tb
-      row-gap (gapy)%
 
-  /* gap(px) */
-  for gap-px in range(0,100,10)
-    .up-gap-{gap-px}\\\@tb
-      gap (gap-px)px (gap-px)px
-  /* gap(%) */
-  for gap in range(1,10,1)
-    .up-gap-{gap}\\\%\\\@tb
-      gap (gap)% (gap)%
+  /* rgap(px) */
+  for row-gap in range(0,200,10)
+    .up-rgap-{row-gap}\\\@tb
+      row-gap (row-gap)px
 
 
   /* 画像比率固定 */
   for image in range(10,170,5)
-    .up-asr-{image}\\\@tb
-      aspect-ratio 100 / image
+    .up-ofi-{image}\\\@tb
+      &:after
+        content ""
+        display block
+        padding-top (image)%
+      img
+        position absolute
+        top 0
+        left 0
 
   /* object-position */
   .up-obp-c\\\@tb img
@@ -1999,8 +1959,6 @@ for image in range(10,170,5)
     display flex
   .up-d-grid\\\@sp
     display grid
-  .up-d-contents\\\@sp
-    display contents
   .up-d-none\\\@sp
     display none
 
@@ -2025,11 +1983,9 @@ for image in range(10,170,5)
   /* z-index */
   for z in range(-5,-1,1)
     .up-z-n{abs(z)}\\\@sp
-      position relative
       z-index z
   for z in range(0,5,1)
     .up-z-{z}\\\@sp
-      position relative
       z-index z
 
   /* color */
@@ -2508,94 +2464,85 @@ for image in range(10,170,5)
     .up-pl-{padding-p}\\\%\\\@sp
       padding-left (padding-p)%
 
-  /* grid-template-columns */
-  for col in range(1,6,1)
-    .up-col-{col}\\\@sp
-      display grid
-      grid-template-columns repeat((col), minmax(auto, 1fr))
-  for min in range(0,500,50)
-    .up-col-fit{min}\\\@sp
-      display grid
-      grid-template-columns repeat(auto-fit, minmax((min)px, 1fr))
-  for min in range(0,500,50)
-    .up-col-fill{min}\\\@sp
-      display grid
-      grid-template-columns repeat(auto-fill, minmax((min)px, 1fr))
+  /* カラム */
+  .up-col-1\\\@sp
+    display flex
+    flex-wrap wrap
+    > *
+      width 100%
+  .up-col-2\\\@sp
+    display flex
+    flex-wrap wrap
+    > *
+      width 50%
+  .up-col-3\\\@sp
+    display flex
+    flex-wrap wrap
+    > *
+      width 33.333%
+  .up-col-4\\\@sp
+    display flex
+    flex-wrap wrap
+    > *
+      width 25%
+  .up-col-5\\\@sp
+    display flex
+    flex-wrap wrap
+    > *
+      width 20%
+  .up-col-6\\\@sp
+    display flex
+    flex-wrap wrap
+    > *
+      width 16.666%
 
-  /* grid-column, grid-row */
-  .up-gcol-auto\\\@sp
-    grid-column auto
-  for column in range(2,7,1)
-    .up-gcol-1-{column}\\\@sp
-      grid-column 1 / column
-  for column in range(3,7,1)
-    .up-gcol-2-{column}\\\@sp
-      grid-column 2 / column
-  for column in range(4,7,1)
-    .up-gcol-3-{column}\\\@sp
-      grid-column 3 / column
-  for column in range(5,7,1)
-    .up-gcol-4-{column}\\\@sp
-      grid-column 4 / column
-  for column in range(6,7,1)
-    .up-gcol-5-{column}\\\@sp
-      grid-column 5 / column
-  for column in range(7,7,1)
-    .up-gcol-6-{column}\\\@sp
-      grid-column 6 / column
-  .up-grow-auto\\\@sp
-    grid-row auto
-  for row in range(2,7,1)
-    .up-grow-1-{row}\\\@sp
-      grid-row 1 / row
-  for row in range(3,7,1)
-    .up-grow-2-{row}\\\@sp
-      grid-row 2 / row
-  for row in range(4,7,1)
-    .up-grow-3-{row}\\\@sp
-      grid-row 3 / row
-  for row in range(5,7,1)
-    .up-grow-4-{row}\\\@sp
-      grid-row 4 / row
-  for row in range(6,7,1)
-    .up-grow-5-{row}\\\@sp
-      grid-row 5 / row
-  for row in range(7,7,1)
-    .up-grow-6-{row}\\\@sp
-      grid-row 6 / row
+  /* gapy(px) */
+  for gapy-px in range(0,100,10)
+    .up-gapy-{gapy-px}\\\@sp
+      > *
+        padding-bottom gapy-px px
+  /* gapy(%) */
+  for gapy in range(1,10,1)
+    .up-gapy-{gapy}\\\%\\\@sp
+      > *
+        padding-bottom (gapy)%
 
   /* gapx(px) */
   for gapx-px in range(0,100,10)
     .up-gapx-{gapx-px}\\\@sp
-      column-gap (gapx-px)px
+      margin-left -(gapx-px/2)px
+      margin-right -(gapx-px/2)px
+      > *
+        padding-left (ceil((gapx-px/2),3))px
+        padding-right (ceil((gapx-px/2),3))px
   /* gapx(%) */
   for gapx in range(1,10,1)
     .up-gapx-{gapx}\\\%\\\@sp
-      column-gap (gapx)%
+      margin-left -(gapx/2)%
+      margin-right -(gapx/2)%
+      > *
+        padding-left (ceil((gapx/2),3))%
+        padding-right (ceil((gapx/2),3))%
 
-  /* gapy(px) */
-  for gapy-px in range(0,200,10)
-    .up-gapy-{gapy-px}\\\@sp
-      row-gap (gapy-px)px
-  /* gapy(%) */
-  for gapy in range(1,10,1)
-    .up-gapy-{gapy}\\\%\\\@sp
-      row-gap (gapy)%
 
-  /* gap(px) */
-  for gap-px in range(0,100,10)
-    .up-gap-{gap-px}\\\@sp
-      gap (gap-px)px (gap-px)px
-  /* gap(%) */
-  for gap in range(1,10,1)
-    .up-gap-{gap}\\\%\\\@sp
-      gap (gap)% (gap)%
+  /* rgap(px) */
+  for row-gap in range(0,200,10)
+    .up-rgap-{row-gap}\\\@sp
+      row-gap (row-gap)px
+      
 
 
   /* 画像比率固定 */
   for image in range(10,170,5)
-    .up-asr-{image}\\\@sp
-      aspect-ratio 100 / image
+    .up-ofi-{image}\\\@sp
+      &:after
+        content ""
+        display block
+        padding-top (image)%
+      img
+        position absolute
+        top 0
+        left 0
 
   /* object-position */
   .up-obp-c\\\@sp img
