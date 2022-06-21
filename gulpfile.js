@@ -276,6 +276,7 @@ function JS() {
 
 /// ejs監視 ////////////////////////////////////////////
 var srcEjs = {
+  watchDir: 'ejs/**/*.ejs',
   srcDir: [
     'ejs/**/*.ejs',
     "!" + "ejs/**/_*.ejs"
@@ -486,7 +487,7 @@ function watchFile() {
   watch(srcContents.srcDir, series(cacheContents, Contents))
   watch(srcHTML.srcDir, HTML)
   watch(srcJS.srcDir, JS)
-  watch(srcEjs.srcDir, ejsToHTML)
+  watch(srcEjs.watchDir, ejsToHTML)
   watch(srcEjs.jsonDir, ejsToHTML)
   watch(srcImage.comDir, imageMinCom)
   watch(srcImage.resize2000Dir, imageResize2000)

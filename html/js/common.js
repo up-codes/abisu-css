@@ -1,4 +1,4 @@
-/* version 1.1 */
+/* version 1.1.1 */
 // JavaScript Document
 
 // 見たまま編集画面判定用
@@ -132,17 +132,20 @@ $(window).on("load", function () {
 //ハンバーガーメニュー
 $(function () {
   if (edit_design_check == -1) {
-    $('.toggle').click(function () {
-      $(this).toggleClass('active');
-      $(".gnav").toggleClass('action');
-      $("body").toggleClass('overlay');
-    });
+    var w = window.innerWidth;
+    if (w < 1024) {
+      $('.toggle').click(function () {
+        $(this).toggleClass('active');
+        $(".gnav").toggleClass('action');
+        $("body").toggleClass('overlay');
+      });
 
-    $('.gnav a').click(function () {
-      $(this).toggleClass('active');
-      $(".gnav").toggleClass('action');
-      $("body").toggleClass('overlay');
-    });
+      $('.gnav a').click(function () {
+        $(this).toggleClass('active');
+        $(".gnav").toggleClass('action');
+        $("body").toggleClass('overlay');
+      });
+    }
   }
 });
 

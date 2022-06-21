@@ -95,7 +95,6 @@
   right: 5px;
   top: 50%;
   -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   content: "\f054";
   font-weight: 600;
@@ -114,10 +113,8 @@
 ===================================*/
 /*h1ページタイトル */
 .pagettl {
-  display: none;
-}
-[data-element-id] .pagettl {
-  display: none;
+  font-size: 12px;
+  padding: 0 5px;
 }
 /**
 ヘッダー
@@ -128,16 +125,10 @@ header
 }
 .header .contents {
   display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
           align-items: center;
 }
 .header .logo img {
@@ -145,13 +136,12 @@ header
 }
 .header .right {
   display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
           align-items: center;
+  flex-wrap: wrap;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
 }
 .header .right .txt {
   margin-right: 10px;
@@ -193,8 +183,6 @@ header
     left: 0;
     z-index: 250;
     display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     width: 100%;
   }
@@ -204,16 +192,10 @@ header
   }
   .fix-bottom a {
     display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
             justify-content: center;
     -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
             align-items: center;
     height: 100%;
     padding: 10px 5px;
@@ -258,18 +240,13 @@ gnav
   width: 100%;
   height: auto;
   background: #fff;
-  -webkit-box-shadow: 0 0 5px 0 #999;
-          box-shadow: 0 0 5px 0 #999;
+  box-shadow: 0 0 5px 0 #999;
   cursor: pointer;
 }
 .gnav .wrap {
   display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 .gnav .navlogo {
   display: none;
@@ -279,15 +256,9 @@ gnav
 }
 .gnav .list01 {
   display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  -webkit-justify-content: space-around;
-      -ms-flex-pack: distribute;
-          justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-around;
   width: 100%;
 }
 .gnav .item01 {
@@ -319,7 +290,6 @@ gnav
   -webkit-transition: 0.5s;
   transition: 0.5s;
   -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
           transform: translateX(-50%);
 }
 .gnav .item02 a {
@@ -376,7 +346,6 @@ gnav
     background: none;
     opacity: 1;
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
   }
   .gnav .list02 a {
@@ -523,8 +492,6 @@ fnav
 }
 .fnav .wrap {
   display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
 }
 .fnav .list01 {
@@ -603,9 +570,7 @@ fnav
 }
 @media only screen and (max-width: 1024px) {
   .fnav .wrap {
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+    flex-wrap: wrap;
   }
   .fnav .list01 {
     margin-bottom: 10px;
@@ -632,15 +597,9 @@ fnav
 */
 .column2 .inner {
   display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: nowrap;
-      -ms-flex-wrap: nowrap;
-          flex-wrap: nowrap;
+  flex-wrap: nowrap;
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
           justify-content: space-between;
 }
 .column2 .side {
@@ -651,22 +610,16 @@ fnav
 }
 @media only screen and (max-width: 1024px) {
   .column2 .inner {
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+    flex-wrap: wrap;
   }
   .column2 .side {
     -webkit-box-ordinal-group: 4;
-    -webkit-order: 3;
-        -ms-flex-order: 3;
             order: 3;
     margin-bottom: 50px;
     width: 100%;
   }
   .column2 .mainwrap {
     -webkit-box-ordinal-group: 3;
-    -webkit-order: 2;
-        -ms-flex-order: 2;
             order: 2;
     margin-bottom: 50px;
     width: 100%;
@@ -679,16 +632,10 @@ fnav
 @media only screen and (max-width: 1024px) {
   .side {
     display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
             justify-content: space-between;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+    flex-wrap: wrap;
   }
   .side .list {
     width: 48%;
@@ -727,15 +674,9 @@ fnav
 @media only screen and (max-width: 1024px) {
   .list-side.type-archive .datawrap {
     display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+    flex-wrap: wrap;
     -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
             justify-content: space-between;
   }
   .list-side.type-archive .datawrap .datattl {
@@ -788,7 +729,6 @@ fnav
   font-weight: bold;
   font-size: 40px;
   -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
 @media only screen and (max-width: 599px) {
@@ -848,7 +788,6 @@ fnav
   z-index: 1;
   top: 50%;
   -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   font-size: 30px;
   cursor: pointer;
@@ -912,7 +851,6 @@ fnav
   font-weight: bold;
   font-size: 34px;
   -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
 @media only screen and (max-width: 599px) {
@@ -944,16 +882,10 @@ fnav
 /* ページネーション */
 .pagenation {
   display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
           align-items: center;
 }
 .pagenation .item {
@@ -1052,21 +984,13 @@ fnav
   width: 100%;
   height: 100%;
   display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
           align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
           flex-direction: column;
   opacity: 0;
   -webkit-transition: 0.5s;
@@ -1107,30 +1031,18 @@ fnav
 /* フォーム */
 .form .item {
   display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: nowrap;
-      -ms-flex-wrap: nowrap;
-          flex-wrap: nowrap;
+  flex-wrap: nowrap;
   padding: 20px 0;
   border-bottom: 2px solid #999;
 }
 .form .datattl {
   display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-shrink: 0;
-      -ms-flex-negative: 0;
-          flex-shrink: 0;
+  flex-shrink: 0;
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-      -ms-flex-align: start;
           align-items: flex-start;
   width: 200px;
   color: #000;
@@ -1150,8 +1062,7 @@ fnav
   width: 100%;
 }
 .form .data input {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin-top: 5px;
   margin-bottom: 5px;
   padding: 5px;
@@ -1163,8 +1074,7 @@ fnav
 }
 .form .data input[type='radio'] + label {
   position: relative;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin-right: 20px;
   padding-left: 20px;
   line-height: 200%;
@@ -1179,8 +1089,7 @@ fnav
   border: 1px solid #303841;
   border-radius: 50%;
   background: #fff;
-  -webkit-box-shadow: inset 1px 1px 0 1px #999;
-          box-shadow: inset 1px 1px 0 1px #999;
+  box-shadow: inset 1px 1px 0 1px #999;
   content: '';
 }
 .form .data input[type='radio']:checked + label::after {
@@ -1203,15 +1112,13 @@ fnav
   width: 70px;
 }
 .form .data select {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 5px;
   border: 1px solid #999;
   color: inherit;
 }
 .form .data textarea {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 5px;
   width: 100%;
   height: 170px;
@@ -1244,9 +1151,7 @@ fnav
 }
 @media only screen and (max-width: 1024px) {
   .form .item {
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+    flex-wrap: wrap;
   }
   .form .datattl {
     display: block;
