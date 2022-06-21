@@ -1,125 +1,102 @@
-<!DOCTYPE html>
-<html lang="ja">
+<% let path = 'gallery'; %>
+<%- include('./_inc/_header', {path: path}) %>
 
-<head>
-  <% let path = 'gallery'; %>
-  <%- include('./_inc/_meta', {path: path}) %>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-  <link rel="stylesheet" href="css/base.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  <script src="js/slick_option.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
-  <script src="js/common.js"></script>
-</head>
-
-<body>
-  <div id="wrapper" class="<%= path %>">
-    <%- include('./_inc/_header', {path: path}) %>
-
-    <main id="main" class="main">
-      <div class="topvisual">
-        <div class="img"><img src="https://placehold.jp/500x500.png" alt="ギャラリー一覧"></div>
-        <h2 class="head">ギャラリー一覧</h2>
-      </div>
-
-      <div class="breadcrumb">
-        <div class="inner">
-          <ul class="list">
-            <li class="item home"><a href="#">HOME</a></li>
-            <li class="item now">Page1</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="gallery01 area">
-        <div class="inner">
-          <ul class="list-gallery01 up-col-4 up-gapx-5% up-gapy-30 up-col-3@tb up-col-2@sp">
-            <li class="item altlist">
-              <a href="#">
-                <div class="img"><span class="up-asr-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
-                <div class="block-txt">
-                  <div class="cate">カテゴリー</div>
-                  <div class="head alt">スタイル名スタイル名スタイル名スタイル名スタイル名スタイル名スタイル名スタイル名スタイル名</div>
-                </div>
-              </a>
-            </li>
-            <li class="item altlist">
-              <a href="#">
-                <div class="img"><span class="up-asr-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
-                <div class="block-txt">
-                  <div class="cate">カテゴリー</div>
-                  <div class="head alt">スタイル名</div>
-                </div>
-              </a>
-            </li>
-            <li class="item altlist">
-              <a href="#">
-                <div class="img"><span class="up-asr-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
-                <div class="block-txt">
-                  <div class="cate">カテゴリー</div>
-                  <div class="head alt">スタイル名</div>
-                </div>
-              </a>
-            </li>
-            <li class="item altlist">
-              <a href="#">
-                <div class="img"><span class="up-asr-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
-                <div class="block-txt">
-                  <div class="cate">カテゴリー</div>
-                  <div class="head alt">スタイル名</div>
-                </div>
-              </a>
-            </li>
-            <li class="item altlist">
-              <a href="#">
-                <div class="img"><span class="up-asr-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
-                <div class="block-txt">
-                  <div class="cate">カテゴリー</div>
-                  <div class="head alt">スタイル名</div>
-                </div>
-              </a>
-            </li>
-            <li class="item altlist">
-              <a href="#">
-                <div class="img"><span class="up-asr-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
-                <div class="block-txt">
-                  <div class="cate">カテゴリー</div>
-                  <div class="head alt">スタイル名</div>
-                </div>
-              </a>
-            </li>
-            <li class="item altlist">
-              <a href="#">
-                <div class="img"><span class="up-asr-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
-                <div class="block-txt">
-                  <div class="cate">カテゴリー</div>
-                  <div class="head alt">スタイル名</div>
-                </div>
-              </a>
-            </li>
-          </ul>
-
-          <ul class="pagenation up-my-50 fead-mv">
-            <li class="item prev"><a href="#"></a></li>
-            <li class="item number"><a href="#">1 </a></li>
-            <li class="item now">2</li>
-            <li class="item number"><a href="#">3</a></li>
-            <li class="item number"><a href="#">4</a></li>
-            <li class="item number"><a href="#">5</a></li>
-            <li class="item next"><a href="#"></a></li>
-          </ul>
-        </div>
-      </div>
-
-
-    </main>
-
-    <%- include('./_inc/_footer') %>
+<main id="main" class="main">
+  <div class="topvisual">
+    <div class="img"><img src="https://placehold.jp/500x500.png" alt="ギャラリー一覧"></div>
+    <h2 class="head">ギャラリー一覧</h2>
   </div>
-</body>
 
-</html>
+  <div class="breadcrumb">
+    <div class="inner">
+      <ul class="list">
+        <li class="item home"><a href="#">HOME</a></li>
+        <li class="item now">Page1</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="gallery01 area">
+    <div class="inner">
+      <ul class="list-gallery01 up-col-4 up-gapx-5% up-gapy-30 up-col-3@tb up-col-2@sp">
+        <li class="item altlist">
+          <a href="#">
+            <div class="img"><span class="up-asr-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
+            <div class="block-txt">
+              <div class="cate">カテゴリー</div>
+              <div class="head alt">スタイル名スタイル名スタイル名スタイル名スタイル名スタイル名スタイル名スタイル名スタイル名</div>
+            </div>
+          </a>
+        </li>
+        <li class="item altlist">
+          <a href="#">
+            <div class="img"><span class="up-asr-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
+            <div class="block-txt">
+              <div class="cate">カテゴリー</div>
+              <div class="head alt">スタイル名</div>
+            </div>
+          </a>
+        </li>
+        <li class="item altlist">
+          <a href="#">
+            <div class="img"><span class="up-asr-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
+            <div class="block-txt">
+              <div class="cate">カテゴリー</div>
+              <div class="head alt">スタイル名</div>
+            </div>
+          </a>
+        </li>
+        <li class="item altlist">
+          <a href="#">
+            <div class="img"><span class="up-asr-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
+            <div class="block-txt">
+              <div class="cate">カテゴリー</div>
+              <div class="head alt">スタイル名</div>
+            </div>
+          </a>
+        </li>
+        <li class="item altlist">
+          <a href="#">
+            <div class="img"><span class="up-asr-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
+            <div class="block-txt">
+              <div class="cate">カテゴリー</div>
+              <div class="head alt">スタイル名</div>
+            </div>
+          </a>
+        </li>
+        <li class="item altlist">
+          <a href="#">
+            <div class="img"><span class="up-asr-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
+            <div class="block-txt">
+              <div class="cate">カテゴリー</div>
+              <div class="head alt">スタイル名</div>
+            </div>
+          </a>
+        </li>
+        <li class="item altlist">
+          <a href="#">
+            <div class="img"><span class="up-asr-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
+            <div class="block-txt">
+              <div class="cate">カテゴリー</div>
+              <div class="head alt">スタイル名</div>
+            </div>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="pagenation up-my-50 fead-mv">
+        <li class="item prev"><a href="#"></a></li>
+        <li class="item number"><a href="#">1 </a></li>
+        <li class="item now">2</li>
+        <li class="item number"><a href="#">3</a></li>
+        <li class="item number"><a href="#">4</a></li>
+        <li class="item number"><a href="#">5</a></li>
+        <li class="item next"><a href="#"></a></li>
+      </ul>
+    </div>
+  </div>
+
+
+</main>
+
+<%- include('./_inc/_footer', {path: path}) %>

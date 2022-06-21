@@ -1,163 +1,136 @@
-<!DOCTYPE html>
-<html lang="ja">
+<% let path = 'form'; %>
+<%- include('./_inc/_header', {path: path}) %>
 
-<head>
-  <% let path = 'form'; %>
-  <%- include('./_inc/_meta', {path: path}) %>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-  <link rel="stylesheet" href="css/jquery.datetimepicker.min.css">
-  <link rel="stylesheet" href="css/base.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  <script src="js/slick_option.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
-  <script src="js/juery.datetimepicker.full.nmin.js"></script>
-  <script src="js/datepick_option.js"></script>
-  <script src="js/jquery.zip2addr.js"></script>
-  <script src="js/common.js"></script>
-</head>
-
-<body>
-  <div id="wrapper" class="contact">
-    <%- include('./_inc/_header', {path: path}) %>
-
-    <main id="main" class="main">
-      <div class="topvisual">
-        <div class="img"><img src="https://placehold.jp/500x500.png" alt="フォーム"></div>
-        <h2 class="head">フォーム</h2>
-      </div>
-
-      <div class="breadcrumb">
-        <div class="inner">
-          <ul class="list">
-            <li class="item home"><a href="#">HOME</a></li>
-            <li class="item now">Page1</li>
-          </ul>
-        </div>
-      </div>
-
-      <section id="form" class="area none-animation">
-        <div class="inner">
-          <div class="form">
-            <dl class="list">
-              <div class="item">
-                <dt class="datattl">
-                  <label for="name">お名前</label><span class="require">必須</span>
-                </dt>
-                <dd class="data">
-                  <input type="text" id="name">
-                </dd>
-              </div>
-              <div class="item">
-                <dt class="datattl">
-                  <label for="furi">ふりがな</label><span class="require">必須</span>
-                </dt>
-                <dd class="data">
-                  <input type="text" id="furi">
-                </dd>
-              </div>
-              <div class="item">
-                <dt class="datattl">
-                  <label for="mail">メールアドレス</label><span class="require">必須</span>
-                </dt>
-                <dd class="data">
-                  <input type="text" id="mail">
-                </dd>
-              </div>
-              <div class="item">
-                <dt class="datattl">
-                  <label for="tele">電話番号</label>
-                </dt>
-                <dd class="data">
-                  <input type="text" id="tele">
-                </dd>
-              </div>
-              <div class="item">
-                <dt class="datattl">
-                  <label for="number01">郵便番号</label>
-                </dt>
-                <dd class="data">
-                  <input type="text" id="number01" class="js-number" onKeyUp="$('.js-number').zip2addr('.js-address');">
-                </dd>
-              </div>
-              <div class="item">
-                <dt class="datattl">
-                  <label for="address01">住所</label>
-                </dt>
-                <dd class="data">
-                  <input type="text" id="address01" class="js-address">
-                </dd>
-              </div>
-              <div class="item">
-                <dt class="datattl">
-                  <label for="address01">ご希望の日時</label>
-                </dt>
-                <dd class="data datepick">
-                  <input type="text" id="address01">
-                </dd>
-              </div>
-              <div class="item">
-                <dt class="datattl">
-                  <label for="">学年</label><span class="require">必須</span>
-                </dt>
-                <dd class="data">
-                  <div><input type="radio" name="requirement" value="recruit" id="recruit" class=""><label for="recruit">競売マニュアル（PDF）希望</label></div>
-                  <div><input type="radio" name="requirement" value="other" id="other" class=""><label for="other">新築・仲介物件のお問合せ</label></div>
-                  <div><input type="radio" name="requirement" value="other" id="other" class=""><label for="other">競売物件のお問合せ</label></div>
-                  <div><input type="radio" name="requirement" value="other" id="other" class=""><label for="other">相続の手続き・登記のお問合せ</label></div>
-                  <div><input type="radio" name="requirement" value="other" id="other" class=""><label for="other">その他（ご質問・ご相談）</label>
-                    <span class="datain">※他サイトで見つけた物件につきましては、<br>
-                      　そのURL（物件所在・価格等）をご記入下さい。</span></div>
-                </dd>
-              </div>
-              <div class="item">
-                <dt class="datattl">
-                  <label for="">学年</label><span class="require">必須</span>
-                </dt>
-                <dd class="data data01">
-                  <div>
-                    <select name="level" id="">
-                      <option value="level0">-</option>
-                      <option value="level1">小学１年</option>
-                      <option value="level2">小学２年</option>
-                      <option value="level3">小学３年</option>
-                      <option value="level4">小学４年</option>
-                      <option value="level5">小学５年</option>
-                      <option value="level6">小学６年</option>
-                      <option value="level6">中学１年</option>
-                      <option value="level7">中学２年</option>
-                      <option value="level8">中学３年</option>
-                      <option value="level9">高校１年</option>
-                      <option value="level10">高校２年</option>
-                      <option value="level11">高校３年</option>
-                    </select>
-                  </div>
-                </dd>
-              </div>
-              <div class="item">
-                <dt class="datattl">
-                  <label for="detail">お問い合わせ内容</label><span class="require">必須</span>
-                </dt>
-                <dd class="data">
-                  <textarea id="detail"></textarea>
-                </dd>
-              </div>
-            </dl>
-            <div class="btn btn-back up-d-flex up-fxw-wrap up-jc-c">
-              <button type="button">戻る</button>
-              <button type="button">確認</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <%- include('./_inc/_footer') %>
+<main id="main" class="main">
+  <div class="topvisual">
+    <div class="img"><img src="https://placehold.jp/500x500.png" alt="フォーム"></div>
+    <h2 class="head">フォーム</h2>
   </div>
-</body>
 
-</html>
+  <div class="breadcrumb">
+    <div class="inner">
+      <ul class="list">
+        <li class="item home"><a href="#">HOME</a></li>
+        <li class="item now">Page1</li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="form" class="area none-animation">
+    <div class="inner">
+      <div class="form">
+        <dl class="list">
+          <div class="item">
+            <dt class="datattl">
+              <label for="name">お名前</label><span class="require">必須</span>
+            </dt>
+            <dd class="data">
+              <input type="text" id="name">
+            </dd>
+          </div>
+          <div class="item">
+            <dt class="datattl">
+              <label for="furi">ふりがな</label><span class="require">必須</span>
+            </dt>
+            <dd class="data">
+              <input type="text" id="furi">
+            </dd>
+          </div>
+          <div class="item">
+            <dt class="datattl">
+              <label for="mail">メールアドレス</label><span class="require">必須</span>
+            </dt>
+            <dd class="data">
+              <input type="text" id="mail">
+            </dd>
+          </div>
+          <div class="item">
+            <dt class="datattl">
+              <label for="tele">電話番号</label>
+            </dt>
+            <dd class="data">
+              <input type="text" id="tele">
+            </dd>
+          </div>
+          <div class="item">
+            <dt class="datattl">
+              <label for="number01">郵便番号</label>
+            </dt>
+            <dd class="data">
+              <input type="text" id="number01" class="js-number" onKeyUp="$('.js-number').zip2addr('.js-address');">
+            </dd>
+          </div>
+          <div class="item">
+            <dt class="datattl">
+              <label for="address01">住所</label>
+            </dt>
+            <dd class="data">
+              <input type="text" id="address01" class="js-address">
+            </dd>
+          </div>
+          <div class="item">
+            <dt class="datattl">
+              <label for="address01">ご希望の日時</label>
+            </dt>
+            <dd class="data datepick">
+              <input type="text" id="address01">
+            </dd>
+          </div>
+          <div class="item">
+            <dt class="datattl">
+              <label for="">学年</label><span class="require">必須</span>
+            </dt>
+            <dd class="data">
+              <div><input type="radio" name="requirement" value="recruit" id="recruit" class=""><label for="recruit">競売マニュアル（PDF）希望</label></div>
+              <div><input type="radio" name="requirement" value="other" id="other" class=""><label for="other">新築・仲介物件のお問合せ</label></div>
+              <div><input type="radio" name="requirement" value="other" id="other" class=""><label for="other">競売物件のお問合せ</label></div>
+              <div><input type="radio" name="requirement" value="other" id="other" class=""><label for="other">相続の手続き・登記のお問合せ</label></div>
+              <div><input type="radio" name="requirement" value="other" id="other" class=""><label for="other">その他（ご質問・ご相談）</label>
+                <span class="datain">※他サイトで見つけた物件につきましては、<br>
+                  　そのURL（物件所在・価格等）をご記入下さい。</span></div>
+            </dd>
+          </div>
+          <div class="item">
+            <dt class="datattl">
+              <label for="">学年</label><span class="require">必須</span>
+            </dt>
+            <dd class="data data01">
+              <div>
+                <select name="level" id="">
+                  <option value="level0">-</option>
+                  <option value="level1">小学１年</option>
+                  <option value="level2">小学２年</option>
+                  <option value="level3">小学３年</option>
+                  <option value="level4">小学４年</option>
+                  <option value="level5">小学５年</option>
+                  <option value="level6">小学６年</option>
+                  <option value="level6">中学１年</option>
+                  <option value="level7">中学２年</option>
+                  <option value="level8">中学３年</option>
+                  <option value="level9">高校１年</option>
+                  <option value="level10">高校２年</option>
+                  <option value="level11">高校３年</option>
+                </select>
+              </div>
+            </dd>
+          </div>
+          <div class="item">
+            <dt class="datattl">
+              <label for="detail">お問い合わせ内容</label><span class="require">必須</span>
+            </dt>
+            <dd class="data">
+              <textarea id="detail"></textarea>
+            </dd>
+          </div>
+        </dl>
+        <div class="btn btn-back up-d-flex up-fxw-wrap up-jc-c">
+          <button type="button">戻る</button>
+          <button type="button">確認</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<%- include('./_inc/_footer', {path: path}) %>
