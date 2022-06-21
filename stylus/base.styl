@@ -946,12 +946,6 @@ for min-width-px in range(20,300,10)
 for min-width-px in range(350,1000,50)
   .up-minw-{min-width-px}
     min-width (min-width-px)px
-/* min-width(%) */
-.up-minw-48\\\%
-  min-width 48%
-for min-width-p in range(5,100,5)
-  .up-minw-{min-width-p}\\\%
-    min-width (min-width-p)%
 
 /* max-width(px) */
 for max-width-px in range(0,10,1)
@@ -963,12 +957,6 @@ for max-width-px in range(20,300,10)
 for max-width-px in range(350,1000,50)
   .up-maxw-{max-width-px}
     max-width (max-width-px)px
-/* max-width(%) */
-.up-maxw-48\\\%
-  max-width 48%
-for max-width-p in range(5,100,5)
-  .up-maxw-{max-width-p}\\\%
-    max-width (max-width-p)%
 
 
 /* height(px) */
@@ -985,34 +973,11 @@ for height-px in range(20,300,10)
 for height-px in range(350,1000,50)
   .up-h-{height-px}
     height (height-px)px
-/* height(%) */
-.up-h-48\\\%
-  height 48%
-for height-p in range(5,100,5)
-  .up-h-{height-p}\\\%
-    height (height-p)%
 
 
 /* margin */
 .up-m-auto
   margin auto
-/* margin all(px 1~10) */
-range-margin-px = 0,10,1
-for margin-px in range(range-margin-px)
-  .up-m-{margin-px}
-    margin (margin-px)px
-/* margin all(px 15~150) */
-range-margin-px = 15,150,5
-for margin-px in range(range-margin-px)
-  .up-m-{margin-px}
-    margin (margin-px)px
-/* margin all(% 0.5~10) */
-range-margin-p = 1,10,1
-for margin-p in range(range-margin-p)
-  .up-m-{margin-p - 1}\\\.5\\\%
-    margin (margin-p - .5)%
-  .up-m-{margin-p}\\\%
-    margin (margin-p)%
 
 .up-ml-auto
   margin-left auto
@@ -1065,42 +1030,6 @@ for margin-px in range(range-margin-px)
 for margin-px in range(range-margin-px)
   .up-ml-{margin-px}
     margin-left (margin-px)px
-/* margin(% 0.5~10) */
-range-margin-p = 1,10,1
-for margin-p in range(range-margin-p)
-  .up-mx-{margin-p - 1}\\\.5\\\%
-    margin-right (margin-p - .5)%
-    margin-left (margin-p - .5)%
-  .up-mx-{margin-p}\\\%
-    margin-right (margin-p)%
-    margin-left (margin-p)%
-for margin-p in range(range-margin-p)
-  .up-my-{margin-p - 1}\\\.5\\\%
-    margin-top (margin-p - .5)%
-    margin-bottom (margin-p - .5)%
-  .up-my-{margin-p}\\\%
-    margin-top (margin-p)%
-    margin-bottom (margin-p)%
-for margin-p in range(range-margin-p)
-  .up-mt-{margin-p - 1}\\\.5\\\%
-    margin-top (margin-p - .5)%
-  .up-mt-{margin-p}\\\%
-    margin-top (margin-p)%
-for margin-p in range(range-margin-p)
-  .up-mr-{margin-p - 1}\\\.5\\\%
-    margin-right (margin-p - .5)%
-  .up-mr-{margin-p}\\\%
-    margin-right (margin-p)%
-for margin-p in range(range-margin-p)
-  .up-mb-{margin-p - 1}\\\.5\\\%
-    margin-bottom (margin-p - .5)%
-  .up-mb-{margin-p}\\\%
-    margin-bottom (margin-p)%
-for margin-p in range(range-margin-p)
-  .up-ml-{margin-p - 1}\\\.5\\\%
-    margin-left (margin-p - .5)%
-  .up-ml-{margin-p}\\\%
-    margin-left (margin-p)%
 
 
 /* padding all(px 0~10) */
@@ -1260,7 +1189,7 @@ for gapx in range(1,10,1)
 
 
 /* rgap(px) */
-for row-gap in range(0,200,10)
+for row-gap in range(0,150,10)
   .up-rgap-{row-gap}
     row-gap (row-gap)px
 
@@ -1582,6 +1511,18 @@ for image in range(10,170,5)
     .up-w-{width-p}\\\%\\\@tb
       width (width-p)%
 
+  /* min-width(px) */
+  .up-minw-auto\\\@tb
+    min-width auto
+  for min-width-px in range(0,10,1)
+    .up-minw-{min-width-px}\\\@tb
+      min-width (min-width-px)px
+  for min-width-px in range(20,300,10)
+    .up-minw-{min-width-px}\\\@tb
+      min-width (min-width-px)px
+  for min-width-px in range(350,1000,50)
+    .up-minw-{min-width-px}\\\@tb
+      min-width (min-width-px)px
 
   /* max-width(px) */
   for max-width-px in range(0,10,1)
@@ -1593,12 +1534,6 @@ for image in range(10,170,5)
   for max-width-px in range(350,1000,50)
     .up-maxw-{max-width-px}\\\@tb
       max-width (max-width-px)px
-  /* max-width(%) */
-  .up-maxw-48\\\%\\\@tb
-    max-width 48%
-  for max-width-p in range(5,100,5)
-    .up-maxw-{max-width-p}\\\%\\\@tb
-      max-width (max-width-p)%
 
 
   /* height(px) */
@@ -1615,34 +1550,11 @@ for image in range(10,170,5)
   for height-px in range(350,1000,50)
     .up-h-{height-px}\\\@tb
       height (height-px)px
-  /* height(%) */
-  .up-h-48\\\%\\\@tb
-    height 48%
-  for height-p in range(5,100,5)
-    .up-h-{height-p}\\\%\\\@tb
-      height (height-p)%
 
 
   /* margin */
   .up-m-auto\\\@tb
     margin auto
-  /* margin all(px 1~10) */
-  range-margin-px = 0,10,1
-  for margin-px in range(range-margin-px)
-    .up-m-{margin-px}\\\@tb
-      margin (margin-px)px
-  /* margin all(px 15~150) */
-  range-margin-px = 15,150,5
-  for margin-px in range(range-margin-px)
-    .up-m-{margin-px}\\\@tb
-      margin (margin-px)px
-  /* margin all(% 0.5~10) */
-  range-margin-p = 1,10,1
-  for margin-p in range(range-margin-p)
-    .up-m-{margin-p - 1}\\\.5\\\%\\\@tb
-      margin (margin-p - .5)%
-    .up-m-{margin-p}\\\%\\\@tb
-      margin (margin-p)%
 
   .up-ml-auto\\\@tb
     margin-left auto
@@ -1695,42 +1607,6 @@ for image in range(10,170,5)
   for margin-px in range(range-margin-px)
     .up-ml-{margin-px}\\\@tb
       margin-left (margin-px)px
-  /* margin(% 0.5~10) */
-  range-margin-p = 1,10,1
-  for margin-p in range(range-margin-p)
-    .up-mx-{margin-p - 1}\\\.5\\\%\\\@tb
-      margin-right (margin-p - .5)%
-      margin-left (margin-p - .5)%
-    .up-mx-{margin-p}\\\%\\\@tb
-      margin-right (margin-p)%
-      margin-left (margin-p)%
-  for margin-p in range(range-margin-p)
-    .up-my-{margin-p - 1}\\\.5\\\%\\\@tb
-      margin-top (margin-p - .5)%
-      margin-bottom (margin-p - .5)%
-    .up-my-{margin-p}\\\%\\\@tb
-      margin-top (margin-p)%
-      margin-bottom (margin-p)%
-  for margin-p in range(range-margin-p)
-    .up-mt-{margin-p - 1}\\\.5\\\%\\\@tb
-      margin-top (margin-p - .5)%
-    .up-mt-{margin-p}\\\%\\\@tb
-      margin-top (margin-p)%
-  for margin-p in range(range-margin-p)
-    .up-mr-{margin-p - 1}\\\.5\\\%\\\@tb
-      margin-right (margin-p - .5)%
-    .up-mr-{margin-p}\\\%\\\@tb
-      margin-right (margin-p)%
-  for margin-p in range(range-margin-p)
-    .up-mb-{margin-p - 1}\\\.5\\\%\\\@tb
-      margin-bottom (margin-p - .5)%
-    .up-mb-{margin-p}\\\%\\\@tb
-      margin-bottom (margin-p)%
-  for margin-p in range(range-margin-p)
-    .up-ml-{margin-p - 1}\\\.5\\\%\\\@tb
-      margin-left (margin-p - .5)%
-    .up-ml-{margin-p}\\\%\\\@tb
-      margin-left (margin-p)%
 
 
   /* padding all(px 0~10) */
@@ -1894,7 +1770,7 @@ for image in range(10,170,5)
 
 
   /* rgap(px) */
-  for row-gap in range(0,200,10)
+  for row-gap in range(0,150,10)
     .up-rgap-{row-gap}\\\@tb
       row-gap (row-gap)px
 
@@ -2214,6 +2090,18 @@ for image in range(10,170,5)
     .up-w-{width-p}\\\%\\\@sp
       width (width-p)%
 
+  /* min-width(px) */
+  .up-minw-auto\\\@sp
+    min-width auto
+  for min-width-px in range(0,10,1)
+    .up-minw-{min-width-px}\\\@sp
+      min-width (min-width-px)px
+  for min-width-px in range(20,300,10)
+    .up-minw-{min-width-px}\\\@sp
+      min-width (min-width-px)px
+  for min-width-px in range(350,1000,50)
+    .up-minw-{min-width-px}\\\@sp
+      min-width (min-width-px)px
 
   /* max-width(px) */
   for max-width-px in range(0,10,1)
@@ -2225,12 +2113,6 @@ for image in range(10,170,5)
   for max-width-px in range(350,1000,50)
     .up-maxw-{max-width-px}\\\@sp
       max-width (max-width-px)px
-  /* max-width(%) */
-  .up-maxw-48\\\%\\\@sp
-    max-width 48%
-  for max-width-p in range(5,100,5)
-    .up-maxw-{max-width-p}\\\%\\\@sp
-      max-width (max-width-p)%
 
 
   /* height(px) */
@@ -2247,34 +2129,11 @@ for image in range(10,170,5)
   for height-px in range(350,1000,50)
     .up-h-{height-px}\\\@sp
       height (height-px)px
-  /* height(%) */
-  .up-h-48\\\%\\\@sp
-    height 48%
-  for height-p in range(5,100,5)
-    .up-h-{height-p}\\\%\\\@sp
-      height (height-p)%
 
 
   /* margin */
   .up-m-auto\\\@sp
     margin auto
-  /* margin all(px 1~10) */
-  range-margin-px = 0,10,1
-  for margin-px in range(range-margin-px)
-    .up-m-{margin-px}\\\@sp
-      margin (margin-px)px
-  /* margin all(px 15~150) */
-  range-margin-px = 15,150,5
-  for margin-px in range(range-margin-px)
-    .up-m-{margin-px}\\\@sp
-      margin (margin-px)px
-  /* margin all(% 0.5~10) */
-  range-margin-p = 1,10,1
-  for margin-p in range(range-margin-p)
-    .up-m-{margin-p - 1}\\\.5\\\%\\\@sp
-      margin (margin-p - .5)%
-    .up-m-{margin-p}\\\%\\\@sp
-      margin (margin-p)%
 
   .up-ml-auto\\\@sp
     margin-left auto
@@ -2327,42 +2186,6 @@ for image in range(10,170,5)
   for margin-px in range(range-margin-px)
     .up-ml-{margin-px}\\\@sp
       margin-left (margin-px)px
-  /* margin(% 0.5~10) */
-  range-margin-p = 1,10,1
-  for margin-p in range(range-margin-p)
-    .up-mx-{margin-p - 1}\\\.5\\\%\\\@sp
-      margin-right (margin-p - .5)%
-      margin-left (margin-p - .5)%
-    .up-mx-{margin-p}\\\%\\\@sp
-      margin-right (margin-p)%
-      margin-left (margin-p)%
-  for margin-p in range(range-margin-p)
-    .up-my-{margin-p - 1}\\\.5\\\%\\\@sp
-      margin-top (margin-p - .5)%
-      margin-bottom (margin-p - .5)%
-    .up-my-{margin-p}\\\%\\\@sp
-      margin-top (margin-p)%
-      margin-bottom (margin-p)%
-  for margin-p in range(range-margin-p)
-    .up-mt-{margin-p - 1}\\\.5\\\%\\\@sp
-      margin-top (margin-p - .5)%
-    .up-mt-{margin-p}\\\%\\\@sp
-      margin-top (margin-p)%
-  for margin-p in range(range-margin-p)
-    .up-mr-{margin-p - 1}\\\.5\\\%\\\@sp
-      margin-right (margin-p - .5)%
-    .up-mr-{margin-p}\\\%\\\@sp
-      margin-right (margin-p)%
-  for margin-p in range(range-margin-p)
-    .up-mb-{margin-p - 1}\\\.5\\\%\\\@sp
-      margin-bottom (margin-p - .5)%
-    .up-mb-{margin-p}\\\%\\\@sp
-      margin-bottom (margin-p)%
-  for margin-p in range(range-margin-p)
-    .up-ml-{margin-p - 1}\\\.5\\\%\\\@sp
-      margin-left (margin-p - .5)%
-    .up-ml-{margin-p}\\\%\\\@sp
-      margin-left (margin-p)%
 
 
   /* padding all(px 0~10) */
@@ -2526,7 +2349,7 @@ for image in range(10,170,5)
 
 
   /* rgap(px) */
-  for row-gap in range(0,200,10)
+  for row-gap in range(0,150,10)
     .up-rgap-{row-gap}\\\@sp
       row-gap (row-gap)px
       
