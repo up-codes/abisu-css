@@ -1640,7 +1640,7 @@
   background: #e1e1e1;
   color: #666;
 }
-.up-btn-float-shadow a: before {
+.up-btn-float-shadow a:before {
   position: absolute;
   top: 100%;
   left: 5%;
