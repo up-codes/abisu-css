@@ -89,9 +89,9 @@ const banner = ['/**',
 
 /// base(stylus)コンパイル //////////////////////////////////////////
 const srcBase = {
-  srcDir: 'html/stylus/base.styl',
+  srcDir: 'stylus/base.styl',
   srcCom: [
-    'html/stylus/base.styl'
+    'stylus/base.styl'
   ],
   dstDir: 'html/css',
   minDir: 'html/css/base.css'
@@ -134,9 +134,9 @@ function BaseMin() {
 
 /// base_k(stylus)コンパイル //////////////////////////////////////////
 const srcBaseK = {
-  srcDir: 'html/stylus/base_k.styl',
+  srcDir: 'stylus/base_k.styl',
   srcCom: [
-    'html/stylus/base_k.styl'
+    'stylus/base_k.styl'
   ],
   dstDir: 'html/css',
   minDir: 'html/css/base_k.css'
@@ -180,12 +180,12 @@ function BaseKMin() {
 
 /// components(stylus)コンパイル //////////////////////////////////////////
 const srcComponents = {
-  srcDir: 'html/stylus/components/*.styl',
+  srcDir: 'stylus/components/*.styl',
   srcCom: [
-    'html/stylus/components.styl',
-    // '!' + 'html/stylus/**/_*.styl',
+    'stylus/components.styl',
+    // '!' + 'stylus/**/_*.styl',
   ],
-  // dstBack: 'html/stylus',
+  // dstBack: 'stylus',
   dstDir: 'html/css'
 }
 
@@ -215,12 +215,12 @@ function Components() {
 
 /// contents(stylus)コンパイル //////////////////////////////////////////
 const srcContents = {
-  srcDir: 'html/stylus/contents/*.styl',
+  srcDir: 'stylus/contents/*.styl',
   srcCom: [
-    'html/stylus/style.styl',
-    // '!' + 'html/stylus/**/_*.styl',
+    'stylus/style.styl',
+    // '!' + 'stylus/**/_*.styl',
   ],
-  // dstBack: 'html/stylus',
+  // dstBack: 'stylus',
   dstDir: 'html/css'
 }
 
@@ -276,11 +276,12 @@ function JS() {
 
 /// ejs監視 ////////////////////////////////////////////
 var srcEjs = {
+  watchDir: 'ejs/**/*.ejs',
   srcDir: [
-    'html/ejs/**/*.ejs',
-    "!" + "html/ejs/**/_*.ejs"
+    'ejs/**/*.ejs',
+    "!" + "ejs/**/_*.ejs"
   ],
-  jsonDir: 'html/data/site.json',
+  jsonDir: 'data/site.json',
   dstDir: 'html'
 }
 
@@ -486,7 +487,7 @@ function watchFile() {
   watch(srcContents.srcDir, series(cacheContents, Contents))
   watch(srcHTML.srcDir, HTML)
   watch(srcJS.srcDir, JS)
-  watch(srcEjs.srcDir, ejsToHTML)
+  watch(srcEjs.watchDir, ejsToHTML)
   watch(srcEjs.jsonDir, ejsToHTML)
   watch(srcImage.comDir, imageMinCom)
   watch(srcImage.resize2000Dir, imageResize2000)

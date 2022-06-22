@@ -1,6 +1,6 @@
 {
   "name": "gulptest",
-  "version": "1.1",
+  "version": "1.1.1",
   "main": "index.js",
   "scripts": {
     "gulp": "gulp",
@@ -37,10 +37,9 @@
     "stylus-supremacy": "^2.12.7"
   },
   "browserslist": [
-    "> 1%",
+    "> 5%",
     "last 2 versions",
-    "ie >= 9",
-    "Android >= 4",
-    "ios_saf >= 8"
+    "not dead",
+    "Android >= 4"
   ]
 }

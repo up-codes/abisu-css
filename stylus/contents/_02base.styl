@@ -1,0 +1,258 @@
+/*!===================================
+  基本設定
+===================================*/
+cmn = '../images/common/'
+//キーカラー設定
+color1 = #000
+color2 = #000
+color3 = #000
+color4 = #000
+
+.color01
+  color color1
+.color02
+  color color2
+.color03
+  color color3
+.color04
+  color color4
+
+.bgcolor01
+  background-color color1
+.bgcolor02
+  background-color color2
+.bgcolor03
+  background-color color3
+.bgcolor04
+  background-color color4
+
+gothic = '游ゴシック', YuGothic, Hiragino Sans, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic Pro', Hiragino Kaku Gothic ProN, 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif
+mincho = '游明朝', 'YuMincho', 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝', 'Sawarabi Mincho', serif
+meiryo = 'メイリオ', Meiryo, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', sans-serif
+
+
+/*! 共通コンテンツ間隔 */
+.area
+  margin-top 80px
+  margin-bottom 80px
+  @media only screen and (max-width 599px)
+    margin-top 50px
+    margin-bottom 50px
+
+
+/*! 共通要素読み込みコメント（取り込み後削除） */
+[class*='load-']
+  position relative
+  min-height 50px
+  border 3px solid #00bcd4
+  &:before
+    position absolute
+    z-index 100
+    display block
+    background #00bcd4
+    color yellow
+    content '共通要素'
+    text-align center
+    font-weight bold
+
+/* 偶数と奇数番目で左右反転No.2 */
+.up-fxd-even2>*:nth-child(even) .up-d-flex,
+.up-fxd-odd2>*:nth-child(odd) .up-d-flex
+  -webkit-box-orient horizontal
+  -webkit-box-direction reverse
+  -ms-flex-direction row-reverse
+  flex-direction row-reverse
+
+/* 片方のみブラウザ幅いっぱい（1200px基準） */
+
+.up-left-1200
+  margin-left calc(50% - 600px)
+
+.up-right-1200
+  margin-right calc(50% - 600px)
+
+[class*=up-fxd-even]>.up-left-1200:nth-child(even),
+[class*=up-fxd-odd]>.up-left-1200:nth-child(odd)
+  margin-left 0
+  margin-right calc(50% - 600px)
+
+[class*=up-fxd-even]>.up-right-1200:nth-child(even),
+[class*=up-fxd-odd]>.up-right-1200:nth-child(odd)
+  margin-right 0
+  margin-left calc(50% - 600px)
+
+@media only screen and (max-width: 1224px) {
+  .up-left-1200 {
+    margin-left: 2%;
+  }
+
+  .up-right-1200 {
+    margin-right: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-left-1200:nth-child(even),
+  [class*=up-fxd-odd]>.up-left-1200:nth-child(odd) {
+    margin-left: 0;
+    margin-right: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-right-1200:nth-child(even),
+  [class*=up-fxd-odd]>.up-right-1200:nth-child(odd) {
+    margin-right: 0;
+    margin-left: 2%;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .up-left-1200 {
+    margin-right: 2%;
+  }
+
+  .up-right-1200 {
+    margin-left: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-left-1200:nth-child(even),
+  [class*=up-fxd-odd]>.up-left-1200:nth-child(odd) {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-right-1200:nth-child(even),
+  [class*=up-fxd-odd]>.up-right-1200:nth-child(odd) {
+    margin-right: 2%;
+    margin-left: 2%;
+  }
+}
+
+/* 片方のみブラウザ幅いっぱい（1100px基準） */
+
+.up-left-1100 {
+  margin-left: calc(50% - 550px);
+}
+
+.up-right-1100 {
+  margin-right: calc(50% - 550px);
+}
+
+[class*=up-fxd-even]>.up-left-1100:nth-child(even),
+[class*=up-fxd-odd]>.up-left-1100:nth-child(odd) {
+  margin-left: 0;
+  margin-right: calc(50% - 550px);
+}
+
+[class*=up-fxd-even]>.up-right-1100:nth-child(even),
+[class*=up-fxd-odd]>.up-right-1100:nth-child(odd) {
+  margin-right: 0;
+  margin-left: calc(50% - 550px);
+}
+
+@media only screen and (max-width: 1122px) {
+  .up-left-1100 {
+    margin-left: 2%;
+  }
+
+  .up-right-1100 {
+    margin-right: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-left-1100:nth-child(even),
+  [class*=up-fxd-odd]>.up-left-1100:nth-child(odd) {
+    margin-left: 0;
+    margin-right: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-right-1100:nth-child(even),
+  [class*=up-fxd-odd]>.up-right-1100:nth-child(odd) {
+    margin-right: 0;
+    margin-left: 2%;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .up-left-1100 {
+    margin-right: 2%;
+  }
+
+  .up-right-1100 {
+    margin-left: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-left-1100:nth-child(even),
+  [class*=up-fxd-odd]>.up-left-1100:nth-child(odd) {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-right-1100:nth-child(even),
+  [class*=up-fxd-odd]>.up-right-1100:nth-child(odd) {
+    margin-right: 2%;
+    margin-left: 2%;
+  }
+}
+
+/* 片方のみブラウザ幅いっぱい（1000px基準） */
+
+.up-left-1000 {
+  margin-left: calc(50% - 500px);
+}
+
+.up-right-1000 {
+  margin-right: calc(50% - 500px);
+}
+
+[class*=up-fxd-even]>.up-left-1000:nth-child(even),
+[class*=up-fxd-odd]>.up-left-1000:nth-child(odd) {
+  margin-left: 0;
+  margin-right: calc(50% - 500px);
+}
+
+[class*=up-fxd-even]>.up-right-1000:nth-child(even),
+[class*=up-fxd-odd]>.up-right-1000:nth-child(odd) {
+  margin-right: 0;
+  margin-left: calc(50% - 500px);
+}
+
+@media only screen and (max-width: 1024px) {
+  .up-left-1000 {
+    margin-left: 2%;
+  }
+
+  .up-right-1000 {
+    margin-right: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-left-1000:nth-child(even),
+  [class*=up-fxd-odd]>.up-left-1000:nth-child(odd) {
+    margin-left: 0;
+    margin-right: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-right-1000:nth-child(even),
+  [class*=up-fxd-odd]>.up-right-1000:nth-child(odd) {
+    margin-right: 0;
+    margin-left: 2%;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .up-left-1000 {
+    margin-right: 2%;
+  }
+
+  .up-right-1000 {
+    margin-left: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-left-1000:nth-child(even),
+  [class*=up-fxd-odd]>.up-left-1000:nth-child(odd) {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-right-1000:nth-child(even),
+  [class*=up-fxd-odd]>.up-right-1000:nth-child(odd) {
+    margin-right: 2%;
+    margin-left: 2%;
+  }
+}

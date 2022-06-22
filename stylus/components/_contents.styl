@@ -1,0 +1,98 @@
+/*!*************************************
+    共通要素
+**************************************/
+.area
+  margin-top 150px
+  margin-bottom 150px
+
+/*!*
+サイドメニュー
+side
+*/
+.list-side01
+  .datattl
+    position relative
+    margin-bottom 20px
+    padding 10px
+    border-radius 2em
+    background color1
+    color #fff
+    text-align center
+    font-size 20px
+  .data
+    margin-bottom 10px
+    padding-left 10px
+  a
+    position relative
+    display inline-block
+    padding-left 20px
+    &:before
+      position absolute
+      left 0
+      color color1
+      content '>'
+  @media only screen and (max-width: 1024px)
+    &.-archive
+      .datawrap
+        display flex
+        flex-wrap wrap
+        justify-content space-between
+        .datattl
+          width 100%
+        .data
+          width 48%
+
+.home,
+.animation
+  .side
+    position fixed
+    background rgba(#fff, .9)
+    z-index 100
+    left 0
+    top 0
+    width 200px
+    height 100%
+    padding 20px 20px
+    box-shadow 0px 0px 5px 0px #ccc
+    transform translateX(calc(-100% + 1px))
+    transition .5s
+    &:hover
+      transform translateX(0)
+    .btn
+      position absolute
+      top 50%
+      left 100%
+      transform translateY(-50%)
+      cursor pointer
+      background rgba(#fff, .9)
+      text-align center
+      padding 10px 5px
+      &:after
+        content '\f054'
+        font-weight 600
+        font-family 'Font Awesome 5 Free'
+    .item
+      margin-bottom 10px
+
+
+
+.ttl-cmn01{
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.ttl-cmn03{
+  font-size: 20px;
+  text-align: center;
+}
+
+/*!********************************************
+    各個別コンテンツ
+*********************************************/
+/*!*
+アニメーション
+*/
+.animation
+  .none-animation
+    display none

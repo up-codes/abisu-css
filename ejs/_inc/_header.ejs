@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<% let title = jsonData.pages[path].title %>
+<% let description = jsonData.pages[path].description %>
+<% let keywords = jsonData.pages[path].keywords %>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width">
+  <meta name="format-detection" content="telephone=no">
+  <title><%= title %>｜<%= jsonData.siteInfo.baseTitle %></title>
+  <meta name="description" content="<%= description %>">
+  <meta name="keywords" content="<%= keywords %>">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <link rel="stylesheet" href="css/base.min.css">
+  <% if( path === 'component' ){ %>
+  <link rel="stylesheet" href="css/components.css">
+  <% } %>
+  <% if( path === 'form' ){ %>
+  <link rel="stylesheet" href="css/jquery.datetimepicker.min.css">
+  <% } %>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="js/slick_option.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
+  <% if( path === 'form' ){ %>
+  <script src="js/juery.datetimepicker.full.nmin.js"></script>
+  <script src="js/datepick_option.js"></script>
+  <script src="js/jquery.zip2addr.js"></script>
+  <% } %>
+  <% if(path === 'component'){ %>
+  <script src="js/components.js"></script>
+  <% } %>
+  <script src="js/common.js"></script>
+</head>
+
+<body>
+  <div id="wrapper" class="wrapper home <%= path %>">
+
+    <h1 class="pagettl"><%= jsonData.pages[path].title %>｜<%= jsonData.siteInfo.baseH1 %></h1>
+    <!-- ヘッダー -->
+    <header id="header" class="header">
+      <div class="contents inner">
+        <div class="left">
+          <div class="logo">
+            <a href="index.html"><img src="https://placehold.jp/3d4070/ffffff/200x80.png?text=LOGO" alt="ロゴ"></a>
+          </div>
+        </div>
+        <div class="right">
+          <div class="address up-fz-12 up-ta-r up-w-100% up-mb-10">大阪府大阪市阿倍野区阿倍野筋1-1-43</div>
+          <div class="txt">ご予約＆<span class="txtin">お問い合わせ</span></div>
+          <div class="tel">0000-00-0000</div>
+        </div>
+      </div>
+      <nav id="gnav" class="gnav">
+        <div class="wrap inner">
+          <div class="navlogo"><a href="index.html"><img src="https://placehold.jp/3d4070/ffffff/200x80.png?text=LOGO" alt="ロゴ"></a></div>
+          <ul class="list01">
+            <li class="item01"><a href="index.html">TOP</a></li>
+            <li class="item01"><a href="article.html">記事一覧</a></li>
+            <li class="item01"><a href="article_detail.html">記事詳細</a></li>
+            <li class="item01"><a href="form.html">フォーム</a></li>
+            <li class="item01 "><a href="gallery.html">ギャラリー</a></li>
+            <li class="item01"><a href="gallery_detail.html">ギャラリー詳細</a></li>
+            <li class="item01 -parent">
+              <span class="itemin">ドロップダウン</span>
+              <ul class="list02">
+                <li class="item02"><a href="component.html">コンポーネント</a></li>
+                <li class="item02"><a href="component2.html">コンポーネント２</a></li>
+                <li class="item02"><a href="component3.html">コンポーネント３</a></li>
+                <li class="item02"><a href="component4.html">コンポーネント４</a></li>
+              </ul>
+            </li>
+            <li class="item01 up-d-none up-d-block@tb"><a href="#">アイテム</a></li>
+            <li class="item01 up-d-none up-d-block@tb"><a href="#">アイテム</a></li>
+            <li class="item01 up-d-none up-d-block@tb"><a href="#">アイテム</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="fix-bottom">
+        <div class="item tel">000-0000-0000</div>
+        <div class="item contact"><a href="#">CONTACT</a></div>
+      </div>
+      <div class="toggle"><span class="bar accordion-toggle"></span></div>
+      <div class="totop"></div>
+    </header>

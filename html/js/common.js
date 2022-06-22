@@ -1,37 +1,10 @@
-/* version 1.1 */
+/* version 1.1.1 */
 // JavaScript Document
 
 // 見たまま編集画面判定用
 var pathname = location.pathname;
 var edit_design_check = pathname.search(/\/admin\/pages\/.*\/edit_design/);
 
-
-// IE11判別
-$(function () {
-  if (edit_design_check == -1) {
-    var ua = window.navigator.userAgent.toLowerCase();
-    var isIE = (ua.indexOf('msie') >= 0 || ua.indexOf('trident') >= 0);
-    if (isIE) {
-      var array = /(msie|rv:?)\s?([\d\.]+)/.exec(ua);
-      var version = (array) ? array[2] : '';
-      version = version.split('.')[0];
-      if (version === '11') {
-        $('body').addClass('ie11');
-      }
-    }
-  }
-});
-
-// match height
-$(function () {
-  if (edit_design_check == -1) {
-    $(window).on('load', function () {
-      $('.match_01').matchHeight();
-      $('.match_02').matchHeight();
-      $('.match_03').matchHeight();
-    });
-  }
-});
 
 // fead系
 $(function () {
@@ -121,14 +94,6 @@ $(window).load(function () {
     $(this).find("img").attr("alt", alt);
   });
 });
-//altの引用元は非表示にする場合
-$(window).load(function () {
-  $(".altlist01").each(function () {
-    var alt = $(this).find(".alt01").text();
-    $(this).find("img").attr("alt", alt);
-    $(".alt01").hide();
-  });
-});
 
 
 //電話番号リンク自動追加(tel)
@@ -167,17 +132,20 @@ $(window).on("load", function () {
 //ハンバーガーメニュー
 $(function () {
   if (edit_design_check == -1) {
-    $('.toggle').click(function () {
-      $(this).toggleClass('active');
-      $(".gnav").toggleClass('action');
-      $("body").toggleClass('overlay');
-    });
+    var w = window.innerWidth;
+    if (w < 1024) {
+      $('.toggle').click(function () {
+        $(this).toggleClass('active');
+        $(".gnav").toggleClass('action');
+        $("body").toggleClass('overlay');
+      });
 
-    $('.gnav a').click(function () {
-      $(this).toggleClass('active');
-      $(".gnav").toggleClass('action');
-      $("body").toggleClass('overlay');
-    });
+      $('.gnav a').click(function () {
+        $(this).toggleClass('active');
+        $(".gnav").toggleClass('action');
+        $("body").toggleClass('overlay');
+      });
+    }
   }
 });
 
@@ -222,46 +190,17 @@ $(function () {
 
 
 //hoverで画像差し替え
-const ua = navigator.userAgent;
-if (ua.indexOf("Trident") !== -1) {
-  $(window).load(function () {
-    $(".js-thumb img").mouseover(function () {
-      var selectedSrc = $(this)
-        .attr("src")
-        .replace(/^(.+)_thumb(\.gif|\.jpg|\.png+)$/, "$1" + "$2");
-      $(".js-mainimg img")
-        .stop()
-        .fadeOut(50, function () {
-          $(".js-mainimg img").css(
-            "background-image",
-            'url("' + selectedSrc + '")'
-          );
-          $(".js-mainimg img").stop().fadeIn(200);
-        });
-    });
-    $(".js-thumb li").each(function () {
-      var imgsrc = $("img", this).attr("data-ofi-src");
-      var result = imgsrc.match("jpg|png|gif");
-      if (result != null) {} else {
-        $(this).remove();
+$(function () {
+  $('.js-thumb img').mouseover(function () {
+    var selectedSrc = $(this).attr('src').replace(/^(.+)_thumb(\.gif|\.jpg|\.png+)$/, "$1" + "$2");
+    $('.js-mainimg img').stop().fadeOut(200,
+      function () {
+        $('.js-mainimg img').attr('src', selectedSrc);
+        $('.js-mainimg img').stop().fadeIn(200);
       }
-    });
+    );
   });
-} else {
-  $(window).load(function () {
-    $(".js-thumb img").mouseover(function () {
-      var selectedSrc = $(this)
-        .attr("src")
-        .replace(/^(.+)_thumb(\.gif|\.jpg|\.png+)$/, "$1" + "$2");
-      $(".js-mainimg img")
-        .stop()
-        .fadeOut(50, function () {
-          $(".js-mainimg img").attr("src", selectedSrc);
-          $(".js-mainimg img").stop().fadeIn(200);
-        });
-    });
-  });
-}
+});
 
 
 //カテゴリーを分割し、クラスを付与
@@ -327,6 +266,7 @@ $(function () {
     var target = $(hash);
     if (!(target.length)) {
       $('body,html').css('opacity', '1');
+      scrollToAnker(hash);
     } else if (target.length) {
       var position = target.offset().top;
       var w = window.innerWidth;
