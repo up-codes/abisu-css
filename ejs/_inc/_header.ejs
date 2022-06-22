@@ -16,11 +16,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
   <link rel="stylesheet" href="css/base.min.css">
-  <% if( path === 'component' ){ %>
+  <% if( path === 'component' || path === 'component4' ){ %>
   <link rel="stylesheet" href="css/components.css">
   <% } %>
   <% if( path === 'form' ){ %>
-  <link rel="stylesheet" href="css/jquery.datetimepicker.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css" integrity="sha512-bYPO5jmStZ9WI2602V2zaivdAnbAhtfzmxnEGh9RwtlI00I9s8ulGe4oBa5XxiC6tCITJH/QG70jswBhbLkxPw==" crossorigin="anonymous" />
+  <% } %>
+  <% if(path === 'component4'){ %>
+  <link rel="stylesheet" href="https://unpkg.com/scroll-hint@1.1.10/css/scroll-hint.css">
   <% } %>
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -28,12 +31,16 @@
   <script src="js/slick_option.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
   <% if( path === 'form' ){ %>
-  <script src="js/juery.datetimepicker.full.nmin.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha512-AIOTidJAcHBH2G/oZv9viEGXRqDNmfdPVPYOYKGy3fti0xIplnlgMHUGfuNRzC6FkzIo0iIxgFnr9RikFxK+sw==" crossorigin="anonymous"></script>
   <script src="js/datepick_option.js"></script>
   <script src="js/jquery.zip2addr.js"></script>
   <% } %>
-  <% if(path === 'component'){ %>
+  <% if(path === 'component' || path === 'component4'){ %>
   <script src="js/components.js"></script>
+  <% } %>
+  <% if(path === 'component4'){ %>
+  <script src="https://unpkg.com/scroll-hint@1.1.10/js/scroll-hint.js"></script>
+  <script src="js/scroll-hint_option.js"></script>
   <% } %>
   <script src="js/common.js"></script>
 </head>

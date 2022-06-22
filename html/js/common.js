@@ -1,4 +1,4 @@
-/* version 1.1.1 */
+/* version 1.1.2 */
 // JavaScript Document
 
 // 見たまま編集画面判定用
