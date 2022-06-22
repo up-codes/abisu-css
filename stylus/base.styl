@@ -306,7 +306,7 @@ button
   & > *
     opacity 0
     transform translateY(50px)
-  &.mv
+  & > *.mv
     opacity 1
     transform translateY(0)
     transition 0.5s ease-out
@@ -683,11 +683,11 @@ for lh in range(1,9,1)
 .up-js-s
   justify-self start
 .up-js-e
-  justify-items end
+  justify-self end
 .up-js-c
-  justify-items center
+  justify-self center
 .up-js-sh
-  justify-items stretch
+  justify-self stretch
 
 /* grow, shrink */
 .up-fxg-0
@@ -1182,11 +1182,11 @@ for image in range(10,170,5)
   .up-js-s\\\@tb
     justify-self start
   .up-js-e\\\@tb
-    justify-items end
+    justify-self end
   .up-js-c\\\@tb
-    justify-items center
+    justify-self center
   .up-js-sh\\\@tb
-    justify-items stretch
+    justify-self stretch
 
   /* grow, shrink */
   .up-fxg-0\\\@tb
@@ -1674,11 +1674,11 @@ for image in range(10,170,5)
   .up-js-s\\\@sp
     justify-self start
   .up-js-e\\\@sp
-    justify-items end
+    justify-self end
   .up-js-c\\\@sp
-    justify-items center
+    justify-self center
   .up-js-sh\\\@sp
-    justify-items stretch
+    justify-self stretch
 
   /* grow, shrink */
   .up-fxg-0\\\@sp
