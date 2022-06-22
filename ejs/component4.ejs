@@ -1,6 +1,19 @@
 <% let path = 'component4'; %>
 <%- include('./_inc/_header', {path: path}) %>
 <main class="main" id="main">
+  <div class="topvisual">
+    <div class="img"><img src="https://placehold.jp/500x500.png" alt="コンポーネント"></div>
+    <h2 class="head">コンポーネント<br>（base.cssに記載なし）</h2>
+  </div>
+
+  <div class="breadcrumb">
+    <div class="inner">
+      <ul class="list">
+        <li class="item home"><a href="index.html">HOME</a></li>
+        <li class="item now">コンポーネント</li>
+      </ul>
+    </div>
+  </div>
   <section class="up-py-60" id="aspect02">
     <div class="inner fead-up">
       <h2 class="up-fz-32 up-fz-22@sp up-ta-c up-mb-50 up-fw-bold">「.youtube」でYouTubeの埋め込み</h2>
@@ -22,7 +35,7 @@
       <h2 class="up-fz-32 up-fz-22@sp up-ta-c up-mb-50 up-fw-bold">
         「.up-pa-100」と「.up-ofi」の組み合わせで背景画像を実装する
       </h2>
-      <div class="up-pos-rel up-p-10%">
+      <div class="up-pos-rel up-p-100 up-p-70@tb up-p-30@sp">
         <div class="up-pa-100 up-ofi">
           <img src="https://placehold.jp/500x500.png" alt="">
         </div>
@@ -38,7 +51,7 @@
       <h2 class="up-fz-32 up-fz-22@sp up-ta-c up-mb-50 up-fw-bold">
         「.up-opa-系」で背景画像を透過させる
       </h2>
-      <div class="up-pos-rel up-p-10%">
+      <div class="up-pos-rel up-p-100 up-p-70@tb up-p-30@sp">
         <div class="up-pa-100 up-ofi up-bgc-black">
           <img src="https://placehold.jp/500x500.png" alt="" class="up-opa-50">
         </div>

@@ -1,5 +1,5 @@
 @charset "utf-8"
-/* version 1.1 */
+/* version 1.1.1 */
 
 [class*="heightLine"]
   display block
@@ -298,9 +298,6 @@ for o in range(0,10,1)
   width max-content
 .up-w-fit
   width fit-content
-for width-px in range(0,10,1)
-  .up-w-{width-px}
-    width (width-px)px
 for width-px in range(20,300,10)
   .up-w-{width-px}
     width (width-px)px
@@ -356,11 +353,6 @@ for gapy-px in range(0,100,10)
   .up-gapy-{gapy-px}
     > *
       padding-bottom gapy-px px
-/* gapy(%) */
-for gapy in range(1,10,1)
-  .up-gapy-{gapy}\\\%
-    > *
-      padding-bottom (gapy)%
 
 /* gapx(px) */
 for gapx-px in range(0,100,10)
@@ -370,14 +362,6 @@ for gapx-px in range(0,100,10)
     > *
       padding-left (ceil((gapx-px/2),3))px
       padding-right (ceil((gapx-px/2),3))px
-/* gapx(%) */
-for gapx in range(1,10,1)
-  .up-gapx-{gapx}\\\%
-    margin-left -(gapx/2)%
-    margin-right -(gapx/2)%
-    > *
-      padding-left (ceil((gapx/2),3))%
-      padding-right (ceil((gapx/2),3))%
 
 
 /* rgap(px) */
@@ -625,11 +609,6 @@ for image in range(10,170,5)
     .up-gapy-{gapy-px}\\\@tb
       > *
         padding-bottom gapy-px px
-  /* gapy(%) */
-  for gapy in range(1,10,1)
-    .up-gapy-{gapy}\\\%\\\@tb
-      > *
-        padding-bottom (gapy)%
 
   /* gapx(px) */
   for gapx-px in range(0,100,10)
@@ -639,14 +618,6 @@ for image in range(10,170,5)
       > *
         padding-left (ceil((gapx-px/2),3))px
         padding-right (ceil((gapx-px/2),3))px
-  /* gapx(%) */
-  for gapx in range(1,10,1)
-    .up-gapx-{gapx}\\\%\\\@tb
-      margin-left -(gapx/2)%
-      margin-right -(gapx/2)%
-      > *
-        padding-left (ceil((gapx/2),3))%
-        padding-right (ceil((gapx/2),3))%
 
 
   /* rgap(px) */
@@ -909,11 +880,6 @@ for image in range(10,170,5)
     .up-gapy-{gapy-px}\\\@sp
       > *
         padding-bottom gapy-px px
-  /* gapy(%) */
-  for gapy in range(1,10,1)
-    .up-gapy-{gapy}\\\%\\\@sp
-      > *
-        padding-bottom (gapy)%
 
   /* gapx(px) */
   for gapx-px in range(0,100,10)
@@ -923,14 +889,6 @@ for image in range(10,170,5)
       > *
         padding-left (ceil((gapx-px/2),3))px
         padding-right (ceil((gapx-px/2),3))px
-  /* gapx(%) */
-  for gapx in range(1,10,1)
-    .up-gapx-{gapx}\\\%\\\@sp
-      margin-left -(gapx/2)%
-      margin-right -(gapx/2)%
-      > *
-        padding-left (ceil((gapx/2),3))%
-        padding-right (ceil((gapx/2),3))%
 
 
   /* rgap(px) */
@@ -1433,18 +1391,6 @@ for gapy-px in range(0,100,10)
       padding-bottom 0
       > *
         padding-bottom gapy-px px
-/* gapy(%) */
-for gapy in range(1,10,1)
-  [data-element-id] .up-gapy-{gapy}\\\%
-    > div[data-collection-list-content],
-    > div[data-recommend-collection-list-content],
-    > div[data-collection-filtered-content],
-    > div[data-collection-archive-content],
-    > div[data-product-list-content],
-    > div[data-product-recommend-content]
-      padding-bottom 0
-      > *
-        padding-bottom (gapy)%
 
 /* gapx(px) */
 for gapx-px in range(0,100,10)
@@ -1462,22 +1408,6 @@ for gapx-px in range(0,100,10)
       > *
         padding-left (ceil((gapx-px/2),3))px
         padding-right (ceil((gapx-px/2),3))px
-/* gapx(%) */
-for gapx in range(1,10,1)
-  [data-element-id] .up-gapx-{gapx}p
-    margin-left 0
-    margin-right 0
-    > div[data-collection-list-content],
-    > div[data-recommend-collection-list-content],
-    > div[data-collection-filtered-content],
-    > div[data-collection-archive-content],
-    > div[data-product-list-content],
-    > div[data-product-recommend-content]
-      margin-left -(gapx/2)%
-      margin-right -(gapx/2)%
-      > *
-        padding-left (ceil((gapx/2),3))%
-        padding-right (ceil((gapx/2),3))%
 
 
 /* 表示・非表示 */
