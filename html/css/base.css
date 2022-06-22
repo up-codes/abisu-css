@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* version 1.1.1*/
+/* version 1.1.2 */
 html {
   color: #000;
   font-weight: normal;
@@ -360,7 +360,7 @@ button[href*="tel"] {
   -webkit-transform: translateY(50px);
           transform: translateY(50px);
 }
-.fead-order.mv {
+.fead-order > *.mv {
   opacity: 1;
   -webkit-transform: translateY(0);
           transform: translateY(0);
@@ -1198,13 +1198,13 @@ button[href*="tel"] {
   justify-self: start;
 }
 .up-js-e {
-  justify-items: end;
+  justify-self: end;
 }
 .up-js-c {
-  justify-items: center;
+  justify-self: center;
 }
 .up-js-sh {
-  justify-items: stretch;
+  justify-self: stretch;
 }
 /* grow, shrink */
 .up-fxg-0 {
@@ -3605,13 +3605,13 @@ button[href*="tel"] {
     justify-self: start;
   }
   .up-js-e\@tb {
-    justify-items: end;
+    justify-self: end;
   }
   .up-js-c\@tb {
-    justify-items: center;
+    justify-self: center;
   }
   .up-js-sh\@tb {
-    justify-items: stretch;
+    justify-self: stretch;
   }
   .up-fxg-0\@tb {
     -webkit-box-flex: 0;
@@ -5983,13 +5983,13 @@ button[href*="tel"] {
     justify-self: start;
   }
   .up-js-e\@sp {
-    justify-items: end;
+    justify-self: end;
   }
   .up-js-c\@sp {
-    justify-items: center;
+    justify-self: center;
   }
   .up-js-sh\@sp {
-    justify-items: stretch;
+    justify-self: stretch;
   }
   .up-fxg-0\@sp {
     -webkit-box-flex: 0;

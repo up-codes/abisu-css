@@ -476,6 +476,9 @@
   width: 30%;
   text-align: right;
 }
+.component4 .table-cmp01 .table {
+  width: 1000px;
+}
 /*共通テーブル２*/
 .table-cmp02 .head {
   margin-bottom: 10px;
