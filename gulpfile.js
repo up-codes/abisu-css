@@ -198,16 +198,16 @@ function Contents() {
 
 /// import(stylus)コンパイル //////////////////////////////////////////
 const srcImport = {
-  srcDir: 'html/stylus/import/*.styl',
+  srcDir: 'html/stylus/_*.styl',
   srcCom: [
-    'html/stylus/style.styl',
+    'html/stylus/style.styl'
   ],
   dstDir: 'html/css'
 }
 
 function cacheImport() {
   return src(srcImport.srcDir)
-    .pipe(cache('import'))
+    .pipe(cache('_'))
 }
 
 function Import() {
@@ -227,7 +227,6 @@ function Import() {
       stream: true
     }))
 }
-
 
 /// HTML監視 ////////////////////////////////////////////
 var srcHTML = {
@@ -268,6 +267,7 @@ var srcEjs = {
 
 function ejsToHTML() {
   return src(srcEjs.srcDir)
+    .pipe(cache('ejs'))
     .pipe(plumber())
     .pipe(ejs({
       jsonData: JSON.parse(fs.readFileSync(srcEjs.jsonDir))
