@@ -247,6 +247,40 @@ function Contents() {
     }))
 }
 
+/// import(stylus)コンパイル //////////////////////////////////////////
+const srcImport = {
+  srcDir: 'stylus/import/*.styl',
+  srcCom: [
+    'stylus/style.styl',
+    // '!' + 'stylus/**/_*.styl',
+  ],
+  // dstBack: 'stylus',
+  dstDir: 'html/css'
+}
+
+function cacheImport() {
+  return src(srcImport.srcDir)
+    .pipe(cache('import'))
+}
+
+function Import() {
+  return src(srcImport.srcCom)
+    .pipe(sourcemaps.init())
+    .pipe(progeny())
+    .pipe(plumber({
+      errorHandler: notify.onError('Error: <%= error.message %>')
+    }))
+    .pipe(stylus({
+      compress: false
+    }))
+    .pipe(postcss([autoprefixer()]))
+    .pipe(sourcemaps.write('/'))
+    .pipe(dest(srcImport.dstDir))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+}
+
 
 /// HTML監視 ////////////////////////////////////////////
 var srcHTML = {
@@ -485,6 +519,7 @@ function watchFile() {
   watch(srcBaseK.srcDir, series(cacheBaseK, BaseK, BaseKMin))
   watch(srcComponents.srcDir, series(cacheComponents, Components))
   watch(srcContents.srcDir, series(cacheContents, Contents))
+  watch(srcImport.srcDir, series(cacheImport, Import))
   watch(srcHTML.srcDir, HTML)
   watch(srcJS.srcDir, JS)
   watch(srcEjs.watchDir, ejsToHTML)
