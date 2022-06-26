@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* version 1.1.2 */
+/* version 1.1.3 */
 html {
   color: #000;
   font-weight: normal;
@@ -127,33 +127,42 @@ th {
 }
 .map {
   overflow: hidden;
+  position: relative;
+  padding-top: 50%;
 }
 .map iframe {
-  aspect-ratio: 2/1;
   margin: auto;
   max-width: initial;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
 }
 .youtube {
-  display: block;
-  width: 100%;
   overflow: hidden;
-  aspect-ratio: 16/9;
+  position: relative;
+  padding-top: 56.25%;
 }
 .youtube iframe {
   margin: auto;
   max-width: initial;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
 }
 .iframe {
-  display: block;
-  width: 100%;
   overflow: hidden;
+  position: relative;
 }
 .iframe iframe {
   margin: auto;
   max-width: initial;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
 }
@@ -409,9 +418,11 @@ button[href*="tel"] {
 /* list-style-type */
 .up-lst-disc {
   list-style-type: disc;
+  padding-left: 1em;
 }
 .up-lst-deci {
   list-style-type: decimal;
+  padding-left: 1em;
 }
 /* list-style-position */
 .up-lsp-in {
@@ -3078,7 +3089,7 @@ button[href*="tel"] {
 .up-hide {
   display: none;
 }
-@media only screen and (max-width: 1024px) {
+@media (max-width: 1024px) {
   .up-wm-h\@tb {
     -webkit-writing-mode: horizontal-tb;
         -ms-writing-mode: lr-tb;
@@ -5456,7 +5467,7 @@ button[href*="tel"] {
     display: none;
   }
 }
-@media only screen and (max-width: 599px) {
+@media (max-width: 599px) {
   .up-wm-h\@sp {
     -webkit-writing-mode: horizontal-tb;
         -ms-writing-mode: lr-tb;
