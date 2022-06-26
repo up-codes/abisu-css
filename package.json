@@ -37,7 +37,7 @@
     "stylus-supremacy": "^2.12.7"
   },
   "browserslist": [
-    "> 5%",
+    "> 2%",
     "last 2 versions",
     "not dead",
     "Android >= 4"
