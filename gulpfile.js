@@ -28,18 +28,10 @@ const htmlbeautify = require('gulp-html-beautify'); //コード整形
 const fs = require('fs'); //jsonファイル操作
 const header = require('gulp-header'); //コメントアウトをファイルの先頭に追記
 
-/// abisu(stylus)コンパイル //////////////////////////////////////////
-// const srcAbisu = {
-//   srcDir: 'html/stylus/abisu.styl',
-//   srcCom: [
-//     'html/stylus/abisu.styl'
-//   ],
-//   dstDir: 'html/css',
-//   minDir: 'html/css/abisu.css'
-// }
 
 const pkg = require('./package.json'); //package.jspnの記述内容をコメントアウトに使用する
 
+// バージョン情報などのコメントアウト自動挿入
 const banner = ['/**',
   ' * @version <%= pkg.version %>',
   ' * @author <%= pkg.author %>',
@@ -48,50 +40,11 @@ const banner = ['/**',
   ''
 ].join('\n');
 
-// function cacheAbisu() {
-//   return src(srcAbisu.srcDir)
-//     .pipe(cache('abisu'))
-// }
-
-// function Abisu() {
-//   return src(srcAbisu.srcCom)
-//     .pipe(sourcemaps.init())
-//     .pipe(progeny())
-//     .pipe(plumber({
-//       errorHandler: notify.onError('Error: <%= error.message %>')
-//     }))
-//     .pipe(stylus({
-//       compress: false
-//     }))
-//     .pipe(postcss([autoprefixer()]))
-//     .pipe(sourcemaps.write('/'))
-//     .pipe(dest(srcAbisu.dstDir))
-//     .pipe(browserSync.reload({
-//       stream: true
-//     }))
-// }
-
-// function AbisuMin() {
-//   return src(srcAbisu.minDir)
-//     .pipe(cleanCss())
-//     .pipe(header(banner, {
-//       pkg: pkg
-//     }))
-//     .pipe(rename({
-//       extname: '.min.css'
-//     }))
-//     .pipe(dest(srcAbisu.dstDir))
-//     .pipe(browserSync.reload({
-//       stream: true
-//     }))
-// }
-
-
 /// base(stylus)コンパイル //////////////////////////////////////////
 const srcBase = {
-  srcDir: 'stylus/base.styl',
+  srcDir: 'html/stylus/base.styl',
   srcCom: [
-    'stylus/base.styl'
+    'html/stylus/base.styl'
   ],
   dstDir: 'html/css',
   minDir: 'html/css/base.css'
@@ -134,9 +87,9 @@ function BaseMin() {
 
 /// base_k(stylus)コンパイル //////////////////////////////////////////
 const srcBaseK = {
-  srcDir: 'stylus/base_k.styl',
+  srcDir: 'html/stylus/base_k.styl',
   srcCom: [
-    'stylus/base_k.styl'
+    'html/stylus/base_k.styl'
   ],
   dstDir: 'html/css',
   minDir: 'html/css/base_k.css'
@@ -180,12 +133,10 @@ function BaseKMin() {
 
 /// components(stylus)コンパイル //////////////////////////////////////////
 const srcComponents = {
-  srcDir: 'stylus/components/*.styl',
+  srcDir: 'html/stylus/components/*.styl',
   srcCom: [
-    'stylus/components.styl',
-    // '!' + 'stylus/**/_*.styl',
+    'html/stylus/components.styl',
   ],
-  // dstBack: 'stylus',
   dstDir: 'html/css'
 }
 
@@ -215,12 +166,10 @@ function Components() {
 
 /// contents(stylus)コンパイル //////////////////////////////////////////
 const srcContents = {
-  srcDir: 'stylus/contents/*.styl',
+  srcDir: 'html/stylus/contents/*.styl',
   srcCom: [
-    'stylus/style.styl',
-    // '!' + 'stylus/**/_*.styl',
+    'html/stylus/style.styl',
   ],
-  // dstBack: 'stylus',
   dstDir: 'html/css'
 }
 
@@ -249,12 +198,10 @@ function Contents() {
 
 /// import(stylus)コンパイル //////////////////////////////////////////
 const srcImport = {
-  srcDir: 'stylus/import/*.styl',
+  srcDir: 'html/stylus/import/*.styl',
   srcCom: [
-    'stylus/style.styl',
-    // '!' + 'stylus/**/_*.styl',
+    'html/stylus/style.styl',
   ],
-  // dstBack: 'stylus',
   dstDir: 'html/css'
 }
 
@@ -310,10 +257,10 @@ function JS() {
 
 /// ejs監視 ////////////////////////////////////////////
 var srcEjs = {
-  watchDir: 'ejs/**/*.ejs',
+  watchDir: 'html/**/*.ejs',
   srcDir: [
-    'ejs/**/*.ejs',
-    "!" + "ejs/**/_*.ejs"
+    'html/**/*.ejs',
+    "!" + "html/**/_*.ejs"
   ],
   jsonDir: 'data/site.json',
   dstDir: 'html'
@@ -514,7 +461,6 @@ function imageToWebp() {
 
 /// 監視ファイル ////////////////////////////////////////////
 function watchFile() {
-  // watch(srcAbisu.srcDir, series(cacheAbisu, Abisu, AbisuMin))
   watch(srcBase.srcDir, series(cacheBase, Base, BaseMin))
   watch(srcBaseK.srcDir, series(cacheBaseK, BaseK, BaseKMin))
   watch(srcComponents.srcDir, series(cacheComponents, Components))
