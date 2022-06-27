@@ -130,6 +130,38 @@ function BaseKMin() {
     }))
 }
 
+/// style.stylコンパイル //////////////////////////////////////////
+const srcStyles = {
+  srcDir: 'html/stylus/style.styl',
+  srcCom: [
+    'html/stylus/style.styl',
+  ],
+  dstDir: 'html/css'
+}
+
+function cacheStyles() {
+  return src(srcStyles.srcDir)
+    .pipe(cache('style'))
+}
+
+function Styles() {
+  return src(srcStyles.srcCom)
+    .pipe(sourcemaps.init())
+    .pipe(progeny())
+    .pipe(plumber({
+      errorHandler: notify.onError('Error: <%= error.message %>')
+    }))
+    .pipe(stylus({
+      compress: false
+    }))
+    .pipe(postcss([autoprefixer()]))
+    .pipe(sourcemaps.write('/'))
+    .pipe(dest(srcStyles.dstDir))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+}
+
 
 /// components(stylus)コンパイル //////////////////////////////////////////
 const srcComponents = {
@@ -463,6 +495,7 @@ function imageToWebp() {
 function watchFile() {
   watch(srcBase.srcDir, series(cacheBase, Base, BaseMin))
   watch(srcBaseK.srcDir, series(cacheBaseK, BaseK, BaseKMin))
+  watch(srcStyles.srcDir, series(cacheStyles, Styles))
   watch(srcComponents.srcDir, series(cacheComponents, Components))
   watch(srcContents.srcDir, series(cacheContents, Contents))
   watch(srcImport.srcDir, series(cacheImport, Import))
