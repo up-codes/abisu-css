@@ -27,6 +27,7 @@ const ejs = require('gulp-ejs'); //ejsファイル
 const htmlbeautify = require('gulp-html-beautify'); //コード整形
 const fs = require('fs'); //jsonファイル操作
 const header = require('gulp-header'); //コメントアウトをファイルの先頭に追記
+const sass = require('gulp-sass')(require('sass')); //sassコンパイル
 
 
 const pkg = require('./package.json'); //package.jspnの記述内容をコメントアウトに使用する
@@ -255,6 +256,70 @@ function Import() {
     .pipe(postcss([autoprefixer()]))
     .pipe(sourcemaps.write('/'))
     .pipe(dest(srcImport.dstDir))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+}
+
+/// style.scssコンパイル //////////////////////////////////////////
+const srcSassStyles = {
+  srcDir: 'html/sass/style.scss',
+  srcCom: [
+    'html/sass/style.scss',
+  ],
+  dstDir: 'html/css'
+}
+
+function cacheSassStyles() {
+  return src(srcSassStyles.srcDir)
+    .pipe(cache('style'))
+}
+
+function SassStyles() {
+  return src(srcSassStyles.srcCom)
+    .pipe(sourcemaps.init())
+    .pipe(progeny())
+    .pipe(plumber({
+      errorHandler: notify.onError('Error: <%= error.message %>')
+    }))
+    .pipe(sass({
+      outputStyle: "expanded"
+    }))
+    .pipe(postcss([autoprefixer()]))
+    .pipe(sourcemaps.write('/'))
+    .pipe(dest(srcSassStyles.dstDir))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+}
+
+/// import(sass)コンパイル //////////////////////////////////////////
+const srcSassImport = {
+  srcDir: 'html/sass/_*.scss',
+  srcCom: [
+    'html/sass/style.scss'
+  ],
+  dstDir: 'html/css'
+}
+
+function cacheSassImport() {
+  return src(srcSassImport.srcDir)
+    .pipe(cache('_'))
+}
+
+function SassImport() {
+  return src(srcSassImport.srcCom)
+    .pipe(sourcemaps.init())
+    .pipe(progeny())
+    .pipe(plumber({
+      errorHandler: notify.onError('Error: <%= error.message %>')
+    }))
+    .pipe(sass({
+      outputStyle: "expanded"
+    }))
+    .pipe(postcss([autoprefixer()]))
+    .pipe(sourcemaps.write('/'))
+    .pipe(dest(srcSassImport.dstDir))
     .pipe(browserSync.reload({
       stream: true
     }))
@@ -496,9 +561,11 @@ function watchFile() {
   watch(srcBase.srcDir, series(cacheBase, Base, BaseMin))
   watch(srcBaseK.srcDir, series(cacheBaseK, BaseK, BaseKMin))
   watch(srcStyles.srcDir, series(cacheStyles, Styles))
+  watch(srcSassStyles.srcDir, series(cacheSassStyles, SassStyles))
   watch(srcComponents.srcDir, series(cacheComponents, Components))
   watch(srcContents.srcDir, series(cacheContents, Contents))
   watch(srcImport.srcDir, series(cacheImport, Import))
+  watch(srcSassImport.srcDir, series(cacheSassImport, SassImport))
   watch(srcHTML.srcDir, HTML)
   watch(srcJS.srcDir, JS)
   watch(srcEjs.watchDir, ejsToHTML)
