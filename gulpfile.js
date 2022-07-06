@@ -358,13 +358,41 @@ var srcEjs = {
     'html/**/*.ejs',
     "!" + "html/**/_*.ejs"
   ],
+  incDir: "html/**/_*.ejs",
   jsonDir: 'data/site.json',
   dstDir: 'html'
 }
 
+// 変更のあったファイルのみ変換
 function ejsToHTML() {
   return src(srcEjs.srcDir)
     .pipe(cache('ejs'))
+    .pipe(plumber())
+    .pipe(ejs({
+      jsonData: JSON.parse(fs.readFileSync(srcEjs.jsonDir))
+    }))
+    .pipe(
+      htmlbeautify({
+        indent_size: 2,
+        indent_char: " ",
+        max_preserve_newlines: 0,
+        preserve_newlines: false,
+        indent_inner_html: false,
+        extra_liners: [],
+      })
+    )
+    .pipe(rename({
+      extname: '.html'
+    }))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+    .pipe(dest(srcEjs.dstDir));
+}
+
+// 全てのファイルを変換
+function allToHTML() {
+  return src(srcEjs.srcDir)
     .pipe(plumber())
     .pipe(ejs({
       jsonData: JSON.parse(fs.readFileSync(srcEjs.jsonDir))
@@ -569,7 +597,8 @@ function watchFile() {
   watch(srcHTML.srcDir, HTML)
   watch(srcJS.srcDir, JS)
   watch(srcEjs.watchDir, ejsToHTML)
-  watch(srcEjs.jsonDir, ejsToHTML)
+  watch(srcEjs.incDir, allToHTML)
+  watch(srcEjs.jsonDir, allToHTML)
   watch(srcImage.comDir, imageMinCom)
   watch(srcImage.resize2000Dir, imageResize2000)
   watch(srcImage.resize1500Dir, imageResize1500)
