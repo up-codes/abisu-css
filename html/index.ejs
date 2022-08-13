@@ -2,61 +2,387 @@
 <%- include('./_header', {path: path}) %>
 
 <!-- メインコンテンツ -->
-<main id="main" class="main">
-  <div class="homevisual">
-    <div class="img"><img src="https://placehold.jp/500x500.png" alt=""></div>
-    <div class="inner head">メインビジュアル</div>
-  </div>
-
-  <section class="home01 area">
-    <div class="inner">
-      <img src="https://placehold.jp/30/bcc6d6/ffffff/1000x500.png?text=%E3%83%A1%E3%82%A4%E3%83%B3%E3%82%B3%E3%83%B3%E3%83%86%E3%83%B3%E3%83%84" alt="">
+<main id="main">
+  <section class="top00box">
+    <div class="top-mv-box">
+      <div class="slider">
+        <div class="uk-slidenav-position" data-uk-slideshow='{animation: "fade";, autoplay: true, autoplayInterval: "7000";}'>
+          <ul class="uk-slideshow" style="height: 761px;">
+            <li aria-hidden="false" class="uk-active" style="height: 761px;">
+              <div class="uk-flex uk-flex-middle uk-flex-center" style="overflow: hidden;"><img src="images/dummy.png" style="width: 100%;"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="top-news-box up-d-flex up-fxw-wrap fead-up">
+        <h2 class="ttl">
+          <span class="en up-ff-mincho up-fz-20">News</span>
+          <span class="ja up-fz-12">お知らせ</span>
+        </h2>
+        <ul class="up-as-c">
+          <li><a href="news_detail.html">
+              <dl class="up-d-flex up-fxw-wrap up-ai-c up-jc-sb">
+                <dt>2022/00/00</dt>
+                <dd class="up-reader1">タイトルが入ります</dd>
+              </dl>
+            </a></li>
+        </ul>
+        <div class="btn up-as-fe">
+          <div class="btn-cmn01 up-ml-auto@sp"><a href="news.html">VIEW ALL</a></div>
+        </div>
+      </div>
     </div>
   </section>
-
-  <section class="home02 area">
-    <div class="inner">
-      <ul class="slick01">
-        <li class="item up-adb up-mx-10 up-mx-5@sp">
-          <a href="#">
-            <div class="img"><span class="up-ofi-130"><img src="../images/dummy.png" alt=""></span></div>
-            <div class="head"><a href="#">タイトル</a></div>
-            <div class="txt">テキストが入ります</div>
+  <section class="top01box up-mt-100 up-mt-0@tb">
+    <div class="up-pos-rel area">
+      <div class="bg01 up-ofi">
+        <img src="images/600x420.jpg.webp" alt="">
+      </div>
+      <div class="inner fead-up up-pos-rel">
+        <h2 class="heading01 up-ta-c text-shadow01 up-mb-80 up-mb-60@tb up-mb-40@sp">
+          <span class="en">Concept</span>
+          <span class="ja">コンセプト</span>
+        </h2>
+        <div class="txt up-ta-c up-fz-24 up-fz-22@tb up-fz-18@sp up-ff-mincho text-shadow01">小見出しが入ります小見出しが入ります<br>小見出しが入ります</div>
+        <div class="txt up-ta-c up-ta-l@sp up-mt-20 text-shadow01">
+          テキストが入りますテキストが入ります<br>
+          テキストが入りますテキストが入ります<br>
+          テキストが入りますテキストが入ります
+        </div>
+        <div class="top01 up-my-80 up-my-60@tb up-my-40@sp">
+          <ul class="up-col-3 up-gapx-20 up-gapx-10@sp up-rgap-20@tb up-rgap-10@sp up-col-2@tb up-jc-c up-adb">
+            <li>
+              <a href="">
+                <div class="bg up-pa-100 up-ofi-100">
+                  <img src="images/600x600.jpg" alt="">
+                </div>
+                <div class="tbox">
+                  <div class="ttl en up-fz-30 up-fz-28@tb up-fz-24@sp up-ff-mincho up-ta-c">
+                    Counseling
+                  </div>
+                  <div class="txt up-ta-c">テキストが入ります<br>テキストが入ります</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <div class="bg up-pa-100 up-ofi-100">
+                  <img src="images/600x600.jpg" alt="">
+                </div>
+                <div class="tbox">
+                  <div class="ttl en up-fz-30 up-fz-28@tb up-fz-24@sp up-ff-mincho up-ta-c">
+                    Staff<br>Education
+                  </div>
+                  <div class="txt up-ta-c">テキストが入ります</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <div class="bg up-pa-100 up-ofi-100">
+                  <img src="images/600x600.jpg" alt="">
+                </div>
+                <div class="tbox">
+                  <div class="ttl en up-fz-30 up-fz-28@tb up-fz-24@sp up-ff-mincho up-ta-c">
+                    Space<br>Production
+                  </div>
+                  <div class="txt up-ta-c">テキストが入ります</div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="btn-cmn02 up-mx-auto">
+          <a href="">VIEW MORE</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="top02box area">
+    <div class="inner fead-up">
+      <h2 class="heading01 up-ta-c up-mb-80 up-mb-60@tb up-mb-40@sp">
+        <span class="en">Hair catalog</span>
+        <span class="ja">ヘアーカタログ</span>
+      </h2>
+      <ul class="up-col-3 up-gapx-10 up-rgap-10 up-col-2@sp up-adb">
+        <li class="altlist">
+          <a href="">
+            <div class="pic up-ofi-100">
+              <img src="images/600x600.jpg" alt="">
+            </div>
+            <div class="ttl alt up-d-none">タイトル</div>
           </a>
         </li>
-        <li class="item up-adb up-mx-10 up-mx-5@sp">
-          <a href="#">
-            <div class="img"><span class="up-ofi-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
-            <div class="head"><a href="#">タイトル</a></div>
-            <div class="txt">テキストが入ります</div>
+        <li class="altlist">
+          <a href="">
+            <div class="pic up-ofi-100">
+              <img src="images/600x600.jpg" alt="">
+            </div>
+            <div class="ttl alt up-d-none">タイトル</div>
           </a>
         </li>
-        <li class="item up-adb up-mx-10 up-mx-5@sp">
-          <a href="#">
-            <div class="img"><span class="up-ofi-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
-            <div class="head"><a href="#">タイトル</a></div>
-            <div class="txt">テキストが入ります</div>
+        <li class="altlist">
+          <a href="">
+            <div class="pic up-ofi-100">
+              <img src="images/600x600.jpg" alt="">
+            </div>
+            <div class="ttl alt up-d-none">タイトル</div>
           </a>
         </li>
-        <li class="item up-adb up-mx-10 up-mx-5@sp">
-          <a href="#">
-            <div class="img"><span class="up-ofi-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
-            <div class="head"><a href="#">タイトル</a></div>
-            <div class="txt">テキストが入ります</div>
+        <li class="altlist">
+          <a href="">
+            <div class="pic up-ofi-100">
+              <img src="images/600x600.jpg" alt="">
+            </div>
+            <div class="ttl alt up-d-none">タイトル</div>
           </a>
         </li>
-        <li class="item up-adb up-mx-10 up-mx-5@sp">
-          <a href="#">
-            <div class="img"><span class="up-ofi-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
-            <div class="head"><a href="#">タイトル</a></div>
-            <div class="txt">テキストが入ります</div>
+        <li class="altlist">
+          <a href="">
+            <div class="pic up-ofi-100">
+              <img src="images/600x600.jpg" alt="">
+            </div>
+            <div class="ttl alt up-d-none">タイトル</div>
           </a>
         </li>
-        <li class="item up-adb up-mx-10 up-mx-5@sp">
-          <a href="#">
-            <div class="img"><span class="up-ofi-130"><img src="https://placehold.jp/500x500.png" alt=""></span></div>
-            <div class="head"><a href="#">タイトル</a></div>
-            <div class="txt">テキストが入ります</div>
+        <li class="altlist">
+          <a href="">
+            <div class="pic up-ofi-100">
+              <img src="images/600x600.jpg" alt="">
+            </div>
+            <div class="ttl alt up-d-none">タイトル</div>
+          </a>
+        </li>
+      </ul>
+      <div class="btn-cmn02 up-mx-auto up-mt-80 up-mt-60@tb up-mt-40@sp">
+        <a href="">VIEW MORE</a>
+      </div>
+    </div>
+  </section>
+  <section class="top03box area">
+    <div class="inner fead-up">
+      <h2 class="heading01 up-ta-c up-mb-80 up-mb-60@tb up-mb-40@sp">
+        <span class="en">Blog</span>
+        <span class="ja">ブログ</span>
+      </h2>
+      <ul class="top-blog-list up-col-3 up-gapx-20 up-gapx-10@sp up-rgap-40 up-col-2@sp up-jc-c@sp up-adb">
+        <li class="altlist">
+          <a href="blog_detail.html">
+            <div class="pic border01">
+              <span class="up-ofi-75">
+                <img src="images/dummy.png" alt="">
+              </span>
+            </div>
+            <div class="date up-fz-14">2022/00/00</div>
+            <div class="ttl alt up-reader1 up-fw-bold">タイトルが入りますタイトルが入りますタイトルが入ります</div>
+            <div class="btn-cmn01 up-ml-auto up-mt-30">
+              <span>VIEW MORE</span>
+            </div>
+          </a>
+        </li>
+        <li class="altlist">
+          <a href="blog_detail.html">
+            <div class="pic border01">
+              <span class="up-ofi-75">
+                <img src="images/dummy.png" alt="">
+              </span>
+            </div>
+            <div class="date up-fz-14">2022/00/00</div>
+            <div class="ttl alt up-reader1 up-fw-bold">タイトルが入りますタイトルが入りますタイトルが入ります</div>
+            <div class="btn-cmn01 up-ml-auto up-mt-30">
+              <span>VIEW MORE</span>
+            </div>
+          </a>
+        </li>
+        <li class="altlist">
+          <a href="blog_detail.html">
+            <div class="pic border01">
+              <span class="up-ofi-75">
+                <img src="images/dummy.png" alt="">
+              </span>
+            </div>
+            <div class="date up-fz-14">2022/00/00</div>
+            <div class="ttl alt up-reader1 up-fw-bold">タイトルが入りますタイトルが入りますタイトルが入ります</div>
+            <div class="btn-cmn01 up-ml-auto up-mt-30">
+              <span>VIEW MORE</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <div class="btn-cmn02 up-mx-auto up-mt-80 up-mt-60@tb up-mt-40@sp">
+        <a href="">VIEW MORE</a>
+      </div>
+    </div>
+  </section>
+  <section class="top04box area bgc01">
+    <div class="inner fead-up">
+      <h2 class="heading01 up-ta-c up-mb-80 up-mb-60@tb up-mb-40@sp">
+        <span class="en">Staff</span>
+        <span class="ja">スタッフ</span>
+      </h2>
+      <ul class="top-staff-list up-col-2 up-gapx-80 up-gapx-40@tb up-gapx-10@sp up-rgap-30 up-col-1@sp up-adb">
+        <li class="altlist">
+          <a href="">
+            <div class="up-d-flex up-jc-sb">
+              <div class="pic up-w-40%">
+                <span class="up-ofi-150">
+                  <img src="images/dummy.png" alt="">
+                </span>
+              </div>
+              <div class="tbox up-w-50%">
+                <div class="role">スタイリスト</div>
+                <div class="name first-letter01">YUKA</div>
+                <div class="txt">テキストが入りますテキストが入りますテキストが入ります</div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="altlist">
+          <a href="">
+            <div class="up-d-flex up-jc-sb">
+              <div class="pic up-w-40%">
+                <span class="up-ofi-150">
+                  <img src="images/dummy.png" alt="">
+                </span>
+              </div>
+              <div class="tbox up-w-50%">
+                <div class="role">スタイリスト</div>
+                <div class="name first-letter01">MARIKO</div>
+                <div class="txt">テキストが入りますテキストが入りますテキストが入ります</div>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <div class="btn-cmn02 up-mx-auto up-mt-80 up-mt-60@tb up-mt-40@sp">
+        <a href="">VIEW MORE</a>
+      </div>
+    </div>
+  </section>
+  <section class="top05box area up-pos-rel">
+    <div class="bg02 up-pa-100 up-ofi">
+      <img src="images/600x420.jpg.webp" alt="">
+    </div>
+    <div class="inner fead-up up-pos-rel">
+      <div class="balloon01 up-fz-18 up-ta-c">
+        <span>吹き出しのテキストが入ります</span>
+      </div>
+      <h2 class="heading01 up-ta-c">
+        <span class="en">Recruit</span>
+      </h2>
+      <div class="up-fz-30 up-fz-28@tb up-fz-24@sp up-ta-c up-ff-mincho up-my-30 up-my-20@sp">一緒に働く仲間を探しています</div>
+      <div class="txt up-ta-c up-ta-l@sp">テキストが入りますテキストが入りますテキストが入ります<br>テキストが入りますテキストが入りますテキストが入ります</div>
+      <div class="btn-cmn02 __brown up-mx-auto up-mt-40 up-mt-30@tb up-mt-20@sp">
+        <a href="">VIEW MORE</a>
+      </div>
+    </div>
+  </section>
+  <section class="top06box area">
+    <div class="inner fead-up">
+      <div class="up-col-2 up-gapx-80 up-gapx-40@tb up-gapx-10@sp up-rgap-60 up-col-1@sp">
+        <div>
+          <div class="tbox">
+            <div class="logo-box up-w-fit up-adb up-mb-40 up-mb-30@tb up-mb-20@sp up-mx-auto@sp">
+              <a href="">
+                <img src="images/logo_dummy.png" alt="">
+              </a>
+            </div>
+            <div class="address">〒000-0000 住所が入ります</div>
+            <dl class="up-d-flex up-fxw-wrap up-jc-sb up-my-15">
+              <dt class="up-w-80">OPEN：</dt>
+              <dd class="up-w-10% up-fxg-1">テキストが入ります</dd>
+            </dl>
+            <dl class="up-d-flex up-fxw-wrap up-jc-sb up-my-15">
+              <dt class="up-w-80">CLOSED：</dt>
+              <dd class="up-w-10% up-fxg-1">テキストが入ります</dd>
+            </dl>
+            <div class="btn-cmn02 __brown up-mt-40 up-mt-30@tb up-mt-20@sp up-fz-20 tel up-mx-auto@sp">
+              000-000-0000
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="mbox">
+            <div class="iframe up-h-350">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12963.312118305756!2d139.7671248!3d35.6812362!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x277c49ba34ed38!2z5p2x5Lqs6aeF!5e0!3m2!1sja!2sjp!4v1658394292704!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="top07box area">
+    <div class="inner fead-up">
+      <h2 class="heading02 up-mb-80 up-mb-60@tb up-mb-40@sp"><span>Instagram</span></h2>
+      <ul class="up-col-5 up-adb">
+        <li>
+          <a href="">
+            <div class="pic up-ofi-100">
+              <img src="images/600x600.jpg" alt="">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <div class="pic up-ofi-100">
+              <img src="images/600x600.jpg" alt="">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <div class="pic up-ofi-100">
+              <img src="images/600x600.jpg" alt="">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <div class="pic up-ofi-100">
+              <img src="images/600x600.jpg" alt="">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <div class="pic up-ofi-100">
+              <img src="images/600x600.jpg" alt="">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <div class="pic up-ofi-100">
+              <img src="images/600x600.jpg" alt="">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <div class="pic up-ofi-100">
+              <img src="images/600x600.jpg" alt="">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <div class="pic up-ofi-100">
+              <img src="images/600x600.jpg" alt="">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <div class="pic up-ofi-100">
+              <img src="images/600x600.jpg" alt="">
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <div class="pic up-ofi-100">
+              <img src="images/600x600.jpg" alt="">
+            </div>
           </a>
         </li>
       </ul>

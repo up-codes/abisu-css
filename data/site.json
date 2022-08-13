@@ -1,58 +1,118 @@
 {
   "siteInfo": {
-    "baseTitle": "大阪市阿倍野でホームページ制作なら天王寺駅徒歩1分の株式会社ユニソンプラネット",
-    "baseH1": "大阪市阿倍野でホームページ制作なら天王寺駅徒歩1分の株式会社ユニソンプラネット"
+    "baseTitle": "ページタイトルが入ります",
+    "baseH1": "h１が入ります"
   },
   "pages": {
     "index": {
-      "title": "TOPページ",
+      "title": "Home",
       "description": "ディスクリプション",
       "keywords": "キーワード"
     },
-    "article": {
-      "title": "記事一覧ページ",
+    "concept": {
+      "title": "Concept",
       "description": "ディスクリプション",
-      "keywords": "キーワード"
+      "keywords": "キーワード,Concept"
     },
-    "article_detail": {
-      "title": "記事詳細ページ",
+    "salon_info": {
+      "title": "Salon Info",
       "description": "ディスクリプション",
-      "keywords": "キーワード"
+      "keywords": "キーワード,Salon Info"
     },
-    "form": {
-      "title": "フォーム",
+    "menu": {
+      "title": "Menu",
       "description": "ディスクリプション",
-      "keywords": "キーワード"
+      "keywords": "キーワード,Menu"
     },
-    "gallery": {
-      "title": "ギャラリー",
+    "coupon": {
+      "title": "Coupon",
       "description": "ディスクリプション",
-      "keywords": "キーワード"
+      "keywords": "キーワード,Coupon"
     },
-    "gallery_detail": {
-      "title": "ギャラリー詳細ページ",
+    "staff": {
+      "title": "Staff",
       "description": "ディスクリプション",
-      "keywords": "キーワード"
+      "keywords": "キーワード,Staff"
     },
-    "component": {
-      "title": "コンポーネント",
+    "catalog": {
+      "title": "Hair Catalog",
       "description": "ディスクリプション",
-      "keywords": "キーワード"
+      "keywords": "キーワード,Hair Catalog"
     },
-    "component2": {
-      "title": "コンポーネント2",
+    "special": {
+      "title": "Special Care",
       "description": "ディスクリプション",
-      "keywords": "キーワード"
+      "keywords": "キーワード,Special Care"
     },
-    "component3": {
-      "title": "コンポーネント3",
+    "aesthetic": {
+      "title": "Special Hair aesthetic",
       "description": "ディスクリプション",
-      "keywords": "キーワード"
+      "keywords": "キーワード,Special Hair aesthetic"
     },
-    "component4": {
-      "title": "コンポーネント4",
+    "product": {
+      "title": "Product",
       "description": "ディスクリプション",
-      "keywords": "キーワード"
+      "keywords": "キーワード,Product"
+    },
+    "voice": {
+      "title": "Voice",
+      "description": "ディスクリプション",
+      "keywords": "キーワード,Voice"
+    },
+    "recruit": {
+      "title": "Recruit",
+      "description": "ディスクリプション",
+      "keywords": "キーワード,Recruit"
+    },
+    "faq": {
+      "title": "Q&A",
+      "description": "ディスクリプション",
+      "keywords": "キーワード,Q&A"
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "ディスクリプション",
+      "keywords": "キーワード,Blog"
+    },
+    "news": {
+      "title": "News",
+      "description": "ディスクリプション",
+      "keywords": "キーワード,News"
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "ディスクリプション",
+      "keywords": "キーワード,Contact"
+    },
+    "blog_detail": {
+      "title": "Blog詳細ページ",
+      "description": "ディスクリプション",
+      "keywords": "キーワード,Blog詳細ページ"
+    },
+    "news_detail": {
+      "title": "News詳細ページ",
+      "description": "ディスクリプション",
+      "keywords": "キーワード,News詳細ページ"
+    },
+    "product_detail": {
+      "title": "Product詳細ページ",
+      "description": "ディスクリプション",
+      "keywords": "キーワード,Product詳細ページ"
+    },
+    "voice_detail": {
+      "title": "Voice詳細ページ",
+      "description": "ディスクリプション",
+      "keywords": "キーワード,Voice詳細ページ"
+    },
+    "staff_detail": {
+      "title": "Staff詳細ページ",
+      "description": "ディスクリプション",
+      "keywords": "キーワード,Staff詳細ページ"
+    },
+    "catalog_detail": {
+      "title": "catalog詳細ページ",
+      "description": "ディスクリプション",
+      "keywords": "キーワード,catalog詳細ページ"
     }
   }
 }

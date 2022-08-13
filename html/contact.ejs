@@ -1,0 +1,93 @@
+<% let path = 'contact'; %>
+<%- include('./_header', {path: path}) %>
+
+<!-- メインコンテンツ -->
+<main id="main">
+  <section class="under00box">
+    <div class="under-mv-box up-ofi-30">
+      <img src="images/dummy.png" alt="">
+    </div>
+  </section>
+  <section class="con01box area">
+    <div class="inner fead-up">
+      <h2 class="heading01 up-ta-c up-mb-80 up-mb-60@tb up-mb-40@sp">
+        <span class="en">Contact</span>
+        <span class="ja">お問い合わせ</span>
+      </h2>
+    </div>
+    <div class="inner800 fead-up">
+      <div class="ttl up-ff-mincho up-fw-bold up-p-40 up-p-30@tb up-p-20@sp border07 up-ta-c">
+        <span class="up-fz-24 up-fz-22@sp">お電話でのお問い合わせ</span>
+      </div>
+      <div class="sub up-fw-bold up-p-20 border06 up-ta-c">≪ お気軽にお問い合わせください ≫</div>
+      <div class="text up-p-40 up-p-30@tb up-p-20@sp border07 up-ta-c">
+        <span class="tel up-fz-30 up-fz-28@tb up-fz-24@sp up-fw-600">000-0000-0000</span>
+      </div>
+    </div>
+  </section>
+  <section class="con02box area">
+    <div class="inner800 fead-up up-mt-80 up-mt-60@tb up-mt-40@sp">
+      <h2 class="heading01 up-ta-c up-mb-80 up-mb-60@tb up-mb-40@sp">
+        <span class="en">Contact Form</span>
+        <span class="ja">メールでお問い合わせ</span>
+      </h2>
+      <div class="contact-form">
+        <dl class="border06 up-p-30 up-p-20@sp up-d-flex up-fxw-wrap up-jc-sb up-ai-c">
+          <dt class="up-w-200 up-w-100%@sp up-fw-bold up-mr-10"> お名前<span class="require">*</span> </dt>
+          <dd class="up-w-10% up-fxg-1 up-w-100%@sp up-mt-10@sp">
+            <input type="text">
+          </dd>
+        </dl>
+        <dl class="border06 up-p-30 up-p-20@sp up-d-flex up-fxw-wrap up-jc-sb up-ai-c">
+          <dt class="up-w-200 up-w-100%@sp up-fw-bold up-mr-10"> フリガナ<span class="require">*</span> </dt>
+          <dd class="up-w-10% up-fxg-1 up-w-100%@sp up-mt-10@sp">
+            <input type="text">
+          </dd>
+        </dl>
+        <dl class="border06 up-p-30 up-p-20@sp up-d-flex up-fxw-wrap up-jc-sb up-ai-c">
+          <dt class="up-w-200 up-w-100%@sp up-fw-bold up-mr-10"> メールアドレス<span class="require">*</span> </dt>
+          <dd class="up-w-10% up-fxg-1 up-w-100%@sp up-mt-10@sp">
+            <input type="text">
+          </dd>
+        </dl>
+        <dl class="border06 up-p-30 up-p-20@sp up-d-flex up-fxw-wrap up-jc-sb up-ai-c">
+          <dt class="up-w-200 up-w-100%@sp up-fw-bold up-mr-10"> 電話番号 </dt>
+          <dd class="up-w-10% up-fxg-1 up-w-100%@sp up-mt-10@sp">
+            <input type="text">
+          </dd>
+        </dl>
+        <dl class="border06 up-p-30 up-p-20@sp up-d-flex up-fxw-wrap up-jc-sb up-ai-c">
+          <dt class="up-w-200 up-w-100%@sp up-fw-bold up-mr-10"> お問い合わせ種別<span class="require">*</span> </dt>
+          <dd class="up-w-10% up-fxg-1 up-w-100%@sp up-mt-10@sp">
+            <input type="radio"><label for="">お問い合わせ</label>
+            <input type="radio"><label for="">求人</label>
+            <input type="radio"><label for="">その他</label>
+          </dd>
+        </dl>
+        <dl class="border06 up-p-30 up-p-20@sp up-d-flex up-fxw-wrap up-jc-sb up-ai-c">
+          <dt class="up-w-200 up-w-100%@sp up-fw-bold up-mr-10"> お問い合わせ内容<span class="require">*</span> </dt>
+          <dd class="up-w-10% up-fxg-1 up-w-100%@sp up-mt-10@sp">
+            <textarea></textarea>
+          </dd>
+        </dl>
+        <div class="btn-cmn03 up-mx-auto up-mt-60 up-mt-50@tb up-mt-30@sp">
+          <button>確認</button>
+        </div>
+        <ul class="up-d-flex up-jc-se up-mt-60 up-mt-50@tb up-mt-30@sp">
+          <li>
+            <div class="btn-cmn03 up-mx-auto">
+              <button>戻る</button>
+            </div>
+          </li>
+          <li>
+            <div class="btn-cmn03 up-mx-auto">
+              <button>送信</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('./_footer', {path: path}) %>

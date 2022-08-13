@@ -1,0 +1,64 @@
+<% let path = 'product_detail'; %>
+<%- include('./_header', {path: path}) %>
+
+<!-- メインコンテンツ -->
+<main id="main">
+  <section class="under00box">
+    <div class="under-mv-box up-ofi-30">
+      <img src="images/dummy.png" alt="">
+    </div>
+  </section>
+  <section class="product01box area">
+    <div class="inner fead-up">
+      <h2 class="heading01 up-ta-c up-mb-80 up-mb-60@tb up-mb-40@sp">
+        <span class="en">Product</span>
+        <span class="ja">商品紹介</span>
+      </h2>
+      <div class="product-detail up-d-flex up-fxw-wrap up-jc-sb up-ai-c altlist">
+        <div class="up-w-48% up-w-100%@sp">
+          <div class="pic js-mainimg">
+            <span class="up-ofi-100 up-obf-contain">
+              <img src="images/600x600.jpg" alt="">
+            </span>
+          </div>
+          <ul class="js-thumb up-col-3 up-gapx-10 up-mt-10">
+            <li>
+              <div class="pic up-ofi-100 up-obf-contain">
+                <img src="images/600x600.jpg" alt="">
+              </div>
+            </li>
+            <li>
+              <div class="pic up-ofi-100 up-obf-contain">
+                <img src="images/600x600.jpg" alt="">
+              </div>
+            </li>
+            <li>
+              <div class="pic up-ofi-100 up-obf-contain">
+                <img src="images/600x600.jpg" alt="">
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="up-w-48% up-w-100%@sp up-mt-20@sp">
+          <div class="brand up-mt-10 up-fw-bold up-ff-mincho">
+            BRAND
+          </div>
+          <div class="name up-mt-5 up-fw-bold up-ff-mincho alt">
+            商品名が入ります
+          </div>
+          <dl class="up-mt-30 up-mt-20@sp up-d-flex up-jc-sb up-ai-c">
+            <dt class="capacity up-fw-bold up-ff-mincho">50g</dt>
+            <dd class="price up-fw-bold up-ff-mincho">2,000円（税抜）</dd>
+          </dl>
+          <div class="ttl border03 up-mt-50 up-mt-40@tb up-mt-30@sp up-fw-bold up-ff-mincho up-pb-5">商品説明</div>
+          <div class="txt up-ff-mincho up-mt-40 up-mt-30@tb up-mt-20@sp">テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。</div>
+        </div>
+      </div>
+      <div class="btn-cmn03 up-mt-80 up-mt-60@tb up-mt-40@sp">
+        <a href="product.html">一覧に戻る</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('./_footer', {path: path}) %>

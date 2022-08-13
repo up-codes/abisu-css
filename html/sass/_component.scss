@@ -1,0 +1,583 @@
+:root {
+  --color01: #33120d;
+  --color02: #e8dace;
+  --color03: #fa227e;
+  --color04: #cccccc;
+  --color05: #dacda0;
+  --color06: #eeeeee;
+  --color07: #5c413d;
+  --color08: ;
+  --color09: ;
+  --color10: ;
+  --color11: ;
+  --color12: ;
+  --color13: ;
+  --ff-mincho: "游明朝",
+    "YuMincho",
+    "ヒラギノ明朝 ProN W3",
+    "Hiragino Mincho ProN",
+    "HG明朝",
+    "Sawarabi Mincho",
+    serif;
+  --ff-goshic: "游ゴシック",
+    YuGothic,
+    Hiragino Sans,
+    "ヒラギノ角ゴ ProN W3",
+    "Hiragino Kaku Gothic Pro",
+    Hiragino Kaku Gothic ProN,
+    "メイリオ",
+    Meiryo,
+    "ＭＳ Ｐゴシック",
+    sans-serif;
+}
+
+html {
+  color: #33120d;
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+.txt {
+  line-height: 2;
+}
+
+.h100-cmn {
+  height: 100%;
+}
+
+.js-thumb img {
+  cursor: pointer;
+}
+
+.up-fxd-even2>*:nth-child(even) .up-d-flex,
+.up-fxd-odd2>*:nth-child(odd) .up-d-flex {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  flex-direction: row-reverse;
+}
+
+/* 片方のみブラウザ幅いっぱい（1000px基準） */
+
+.up-left-1000 {
+  margin-left: calc(50% - 500px);
+}
+
+.up-right-1000 {
+  margin-right: calc(50% - 500px);
+}
+
+[class*=up-fxd-even]>.up-left-1000:nth-child(even),
+[class*=up-fxd-odd]>.up-left-1000:nth-child(odd) {
+  margin-left: 0;
+  margin-right: calc(50% - 500px);
+}
+
+[class*=up-fxd-even]>.up-right-1000:nth-child(even),
+[class*=up-fxd-odd]>.up-right-1000:nth-child(odd) {
+  margin-right: 0;
+  margin-left: calc(50% - 500px);
+}
+
+@media only screen and (max-width: 1024px) {
+  .up-left-1000 {
+    margin-left: 2%;
+  }
+
+  .up-right-1000 {
+    margin-right: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-left-1000:nth-child(even),
+  [class*=up-fxd-odd]>.up-left-1000:nth-child(odd) {
+    margin-left: 0;
+    margin-right: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-right-1000:nth-child(even),
+  [class*=up-fxd-odd]>.up-right-1000:nth-child(odd) {
+    margin-right: 0;
+    margin-left: 2%;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .up-left-1000 {
+    margin-right: 2%;
+  }
+
+  .up-right-1000 {
+    margin-left: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-left-1000:nth-child(even),
+  [class*=up-fxd-odd]>.up-left-1000:nth-child(odd) {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  [class*=up-fxd-even]>.up-right-1000:nth-child(even),
+  [class*=up-fxd-odd]>.up-right-1000:nth-child(odd) {
+    margin-right: 2%;
+    margin-left: 2%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contents-cmn\@tb {
+    display: contents;
+  }
+}
+
+@media (max-width: 599px) {
+  .contents-cmn\@sp {
+    display: contents;
+  }
+}
+
+/* ---------------------------
+カラー
+----------------------------- */
+
+.color01 {
+  color: var(--color01);
+}
+
+.color02 {
+  color: var(--color02);
+}
+
+.color03 {
+  color: var(--color03);
+}
+
+.color04 {
+  color: var(--color04);
+}
+
+.color05 {
+  color: var(--color05);
+}
+
+.color06 {
+  color: var(--color06);
+}
+
+.color07 {
+  color: var(--color07);
+}
+
+.color08 {
+  color: var(--color08);
+}
+
+.color09 {
+  color: var(--color09);
+}
+
+.color10 {
+  color: var(--color10);
+}
+
+.color11 {
+  color: var(--color11);
+}
+
+.color12 {
+  color: var(--color12);
+}
+
+.color13 {
+  color: var(--color13);
+}
+
+/* ---------------------------
+背景画像
+----------------------------- */
+
+.bgc01 {
+  background-color: var(--color02);
+}
+
+.bgc02 {
+  background-color: var(--color01);
+}
+
+.bgc03 {
+  background-color: var(--color05);
+}
+
+.bgc04 {
+  background-color: #fff;
+
+  img {
+    opacity: 0.3;
+  }
+}
+
+.bgc05 {
+  background-color: var(--color06);
+}
+
+.bgc06 {
+  background-color: var(--color01);
+
+  img {
+    opacity: 0.6;
+  }
+}
+
+.bgc07 {
+  background-color: #000;
+
+  img {
+    opacity: 0.75;
+  }
+}
+
+.bgc08 {
+  background-color: #5c413d;
+}
+
+/* ---------------------------
+セクション余白
+----------------------------- */
+
+.area {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+@media (max-width: 1024px) {
+  .area {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 599px) {
+  .area {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+/* ---------------------------
+その他
+----------------------------- */
+
+.text-shadow01 {
+  text-shadow: #fff 1px 1px 0,
+    #fff -1px -1px 0,
+    #fff -1px 1px 0,
+    #fff 1px -1px 0,
+    #fff 0px 1px 0,
+    #fff 0-1px 0,
+    #fff -1px 0 0,
+    #fff 1px 0 0;
+}
+
+.text-shadow02 {
+  text-shadow: 0px 0px 3px #000,
+    0px 0px 3px #000,
+    0px 0px 3px #000,
+    0 0 10px #000;
+}
+
+.border01 {
+  border: 1px solid;
+}
+
+.border02 {
+  border-top: 1px solid;
+}
+
+.border03 {
+  border-bottom: 1px solid #bfbfbf;
+}
+
+.border04 {
+  border-bottom: 1px solid #eee;
+}
+
+.border05 {
+  border: 5px solid #cfa972;
+}
+
+.border06 {
+  border-bottom: 1px solid;
+}
+
+.border07 {
+  border-bottom: 2px solid;
+}
+
+.dotted01 {
+  border-top: dotted 3px;
+}
+
+.first-letter01 {
+  &:first-letter {
+    font-size: 250%;
+  }
+}
+
+.first-letter02 {
+  &:first-letter {
+    font-size: 150%;
+  }
+}
+
+.checklist01 {
+  li {
+    padding-left: 1.5em;
+    position: relative;
+    margin: 1em 0;
+
+    &:before {
+      content: "\f00c";
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 100%;
+    }
+  }
+}
+
+/* ---------------------------
+ボタン
+----------------------------- */
+
+.btn-cmn01 {
+  width: fit-content;
+  font-weight: bold;
+  font-size: 14px;
+
+  a,
+  span {
+    display: block;
+    border-bottom: 1px solid;
+  }
+}
+
+.btn-cmn02 {
+  width: fit-content;
+  min-width: 400px;
+  max-width: 100%;
+  font-weight: 600;
+
+  a,
+  button {
+    display: block;
+    border: 2px solid var(--color01);
+    padding: 15px;
+    text-align: center;
+    background-color: #fff;
+  }
+
+  &.__brown {
+    color: #fff;
+
+    a,
+    button {
+      background-color: var(--color01);
+    }
+  }
+
+  &.__small {
+
+    a,
+    button {
+      padding: 10px;
+    }
+
+    min-width: 200px;
+  }
+}
+
+.btn-cmn03 {
+  width: fit-content;
+  min-width: 200px;
+  max-width: 100%;
+  font-weight: bold;
+
+  a,
+  button {
+    display: block;
+    border: 2px solid;
+    padding: 0.5em;
+    text-align: center;
+    width: 100%;
+    background-color: inherit;
+  }
+}
+
+/* ---------------------------
+見出し
+----------------------------- */
+
+.heading01 {
+  span {
+    display: block;
+  }
+
+  .en {
+    font-family: var(--ff-mincho);
+    font-size: 32px;
+  }
+
+  .ja {
+    font-size: 14px;
+  }
+}
+
+.heading02 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:before {
+    content: "\f16d";
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 900;
+    margin-right: 30px;
+    font-size: 27px;
+  }
+
+  span {
+    font-size: 32px;
+    font-family: var(--ff-mincho);
+  }
+
+  &:after {
+    content: "";
+    width: 10%;
+    flex-grow: 1;
+    border-bottom: 1px solid;
+    margin-left: 30px;
+  }
+}
+
+.heading03 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .en {
+    font-family: var(--ff-mincho);
+    padding: 0 1em;
+  }
+
+  &:after {
+    content: "";
+    width: 10%;
+    flex-grow: 1;
+    border-bottom: 1px solid;
+  }
+
+  &.__center {
+    &:before {
+      content: "";
+      width: 10%;
+      flex-grow: 1;
+      border-bottom: 1px solid;
+    }
+  }
+}
+
+.title01 {
+  text-indent: -1em;
+  padding-left: 1em;
+}
+
+.title02 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:after {
+    content: "";
+    border-bottom: 1px solid;
+    width: 10%;
+    flex-grow: 1;
+  }
+}
+
+.title03 {
+  padding-left: 2.5em;
+  padding-bottom: 0.5em;
+  position: relative;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+
+  &:before {
+    content: "\f00c";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0.5em;
+  }
+}
+
+.title04 {
+  background: var(--color01);
+  color: #fff;
+  padding: 0.5em 1em;
+  font-family: var(--ff-mincho);
+}
+
+@media (max-width: 1024px) {
+  .btn-cmn02 {
+    min-width: 300px;
+
+    a,
+    button {
+      padding: 10px;
+    }
+  }
+}
+
+@media (max-width: 599px) {
+  .btn-cmn01 {
+    font-size: 12px;
+  }
+
+  .heading01 .en {
+    font-size: 24px;
+  }
+
+  .heading01 .ja {
+    font-size: 12px;
+  }
+
+  .btn-cmn02 {
+    min-width: 200px;
+
+    a,
+    button {
+      padding: 8px;
+    }
+  }
+
+  .btn-cmn03 {
+    min-width: 150px;
+  }
+
+  .heading02:before {
+    margin-right: 15px;
+    font-size: 24px;
+  }
+
+  .heading02 span {
+    font-size: 24px;
+  }
+
+  .heading02:after {
+    margin-left: 15px;
+  }
+}
