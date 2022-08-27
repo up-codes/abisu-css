@@ -1,4 +1,4 @@
-/* version 1.1.4 */
+/* version 1.1.5 */
 // JavaScript Document
 
 // 見たまま編集画面判定用
@@ -7,7 +7,7 @@ var edit_design_check = pathname.search(/\/admin\/pages\/.*\/edit_design/);
 
 
 // fead系
-$(function () {
+$(window).on('load scroll', function () {
   if (edit_design_check == -1) {
 
     $("[class*='fead-']").each(function () {

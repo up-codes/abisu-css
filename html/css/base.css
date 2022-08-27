@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* version 1.1.4 */
+/* version 1.1.5 */
 html {
   color: #000;
   font-weight: normal;
@@ -375,6 +375,18 @@ button[href*="tel"] {
           transform: translateY(0);
   -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
+}
+.fead-scale {
+  opacity: 0;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+.fead-scale.mv {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: 0.8s ease-out;
+  transition: 0.8s ease-out;
 }
 /* clear */
 .up-clear {
@@ -1708,6 +1720,9 @@ button[href*="tel"] {
 }
 .up-h-1000 {
   height: 1000px;
+}
+.up-h-100\% {
+  height: 100%;
 }
 /* margin */
 .up-m-auto {
@@ -4105,6 +4120,9 @@ button[href*="tel"] {
   }
   .up-h-1000\@tb {
     height: 1000px;
+  }
+  .up-h-100\%\@tb {
+    height: 100%;
   }
   .up-m-auto\@tb {
     margin: auto;
@@ -6524,6 +6542,9 @@ button[href*="tel"] {
   .up-h-1000\@sp {
     height: 1000px;
   }
+  .up-h-100\%\@sp {
+    height: 100%;
+  }
   .up-m-auto\@sp {
     margin: auto;
   }
@@ -7979,6 +8000,11 @@ button[href*="tel"] {
   -webkit-transform: none;
           transform: none;
 }
+[data-element-id] .fead-scale {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
 [data-element-id] .imgalt {
   position: relative;
   z-index: 50;
@@ -8838,7 +8864,7 @@ a[data-href*="."]:hover:before {
 /* 表示・非表示 */
 [data-element-id] .show {
   display: block;
-  border: solid 4px #008000;
+  border: solid 2px #008000;
   position: relative;
 }
 [data-element-id] .show:after {
@@ -8847,12 +8873,12 @@ a[data-href*="."]:hover:before {
   color: #fff;
   font-weight: 700;
   background: #008000;
-  padding: 5px;
   text-align: center;
+  font-size: 12px;
 }
 [data-element-id] .show\@tb {
   display: block;
-  border: solid 4px #008000;
+  border: solid 2px #008000;
   position: relative;
 }
 [data-element-id] .show\@tb:after {
@@ -8861,12 +8887,12 @@ a[data-href*="."]:hover:before {
   color: #fff;
   font-weight: 700;
   background: #008000;
-  padding: 5px;
   text-align: center;
+  font-size: 12px;
 }
 [data-element-id] .show\@sp {
   display: block;
-  border: solid 4px #008000;
+  border: solid 2px #008000;
   position: relative;
 }
 [data-element-id] .show\@sp:after {
@@ -8875,8 +8901,8 @@ a[data-href*="."]:hover:before {
   color: #fff;
   font-weight: 700;
   background: #008000;
-  padding: 5px;
   text-align: center;
+  font-size: 12px;
 }
 
 /*# sourceMappingURL=base.css.map */

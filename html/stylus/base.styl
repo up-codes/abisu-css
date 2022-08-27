@@ -1,5 +1,5 @@
 @charset "utf-8"
-/* version 1.1.4 */
+/* version 1.1.5 */
 
 html
   color #000
@@ -319,6 +319,13 @@ button
     opacity 1
     transform translateY(0)
     transition 0.5s ease-out
+.fead-scale
+  opacity 0
+  transform scale(1.05)
+  &.mv
+    opacity 1
+    transform scale(1)
+    transition 0.8s ease-out
 
 /* clear */
 .up-clear
@@ -761,6 +768,8 @@ for max-width-px in range(50,1000,50)
 for height-px in range(50,1000,50)
   .up-h-{height-px}
     height (height-px)px
+.up-h-100\\\%
+  height 100%
 
 
 /* margin */
@@ -1260,6 +1269,8 @@ for image in range(10,170,5)
   for height-px in range(50,1000,50)
     .up-h-{height-px}\\\@tb
       height (height-px)px
+  .up-h-100\\\%\\\@tb
+    height 100%
 
 
   /* margin */
@@ -1752,6 +1763,8 @@ for image in range(10,170,5)
   for height-px in range(50,1000,50)
     .up-h-{height-px}\\\@sp
       height (height-px)px
+  .up-h-100\\\%\\\@sp
+    height 100%
 
 
   /* margin */
@@ -1995,6 +2008,9 @@ for image in range(10,170,5)
   & > *
     opacity 1
     transform none
+[data-element-id] .fead-scale
+  opacity 1
+  transform translateX(0)
 
 [data-element-id] .imgalt
   position relative
@@ -2427,7 +2443,7 @@ for gapx-px in range(0,100,10)
 /* 表示・非表示 */
 [data-element-id] .show
   display block
-  border solid 4px green
+  border solid 2px green
   position relative
   &:after
     display block
@@ -2435,12 +2451,12 @@ for gapx-px in range(0,100,10)
     color #fff
     font-weight 700
     background green
-    padding 5px
     text-align center
+    font-size 12px
 
 [data-element-id] .show\\\@tb
   display block
-  border solid 4px green
+  border solid 2px green
   position relative
   &:after
     display block
@@ -2448,12 +2464,12 @@ for gapx-px in range(0,100,10)
     color #fff
     font-weight 700
     background green
-    padding 5px
     text-align center
+    font-size 12px
 
 [data-element-id] .show\\\@sp
   display block
-  border solid 4px green
+  border solid 2px green
   position relative
   &:after
     display block
@@ -2461,5 +2477,5 @@ for gapx-px in range(0,100,10)
     color #fff
     font-weight 700
     background green
-    padding 5px
     text-align center
+    font-size 12px

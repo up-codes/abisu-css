@@ -87,49 +87,49 @@ function BaseMin() {
 }
 
 /// base_k(stylus)コンパイル //////////////////////////////////////////
-const srcBaseK = {
-  srcDir: 'html/stylus/base_k.styl',
-  srcCom: [
-    'html/stylus/base_k.styl'
-  ],
-  dstDir: 'html/css',
-  minDir: 'html/css/base_k.css'
-}
+// const srcBaseK = {
+//   srcDir: 'html/stylus/base_k.styl',
+//   srcCom: [
+//     'html/stylus/base_k.styl'
+//   ],
+//   dstDir: 'html/css',
+//   minDir: 'html/css/base_k.css'
+// }
 
-function cacheBaseK() {
-  return src(srcBaseK.srcDir)
-    .pipe(cache('base_k'))
-}
+// function cacheBaseK() {
+//   return src(srcBaseK.srcDir)
+//     .pipe(cache('base_k'))
+// }
 
-function BaseK() {
-  return src(srcBaseK.srcCom)
-    .pipe(sourcemaps.init())
-    .pipe(progeny())
-    .pipe(plumber({
-      errorHandler: notify.onError('Error: <%= error.message %>')
-    }))
-    .pipe(stylus({
-      compress: false
-    }))
-    .pipe(postcss([autoprefixer()]))
-    .pipe(sourcemaps.write('/'))
-    .pipe(dest(srcBaseK.dstDir))
-}
+// function BaseK() {
+//   return src(srcBaseK.srcCom)
+//     .pipe(sourcemaps.init())
+//     .pipe(progeny())
+//     .pipe(plumber({
+//       errorHandler: notify.onError('Error: <%= error.message %>')
+//     }))
+//     .pipe(stylus({
+//       compress: false
+//     }))
+//     .pipe(postcss([autoprefixer()]))
+//     .pipe(sourcemaps.write('/'))
+//     .pipe(dest(srcBaseK.dstDir))
+// }
 
-function BaseKMin() {
-  return src(srcBaseK.minDir)
-    .pipe(cleanCss())
-    .pipe(header(banner, {
-      pkg: pkg
-    }))
-    .pipe(rename({
-      extname: '.min.css'
-    }))
-    .pipe(dest(srcBaseK.dstDir))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-}
+// function BaseKMin() {
+//   return src(srcBaseK.minDir)
+//     .pipe(cleanCss())
+//     .pipe(header(banner, {
+//       pkg: pkg
+//     }))
+//     .pipe(rename({
+//       extname: '.min.css'
+//     }))
+//     .pipe(dest(srcBaseK.dstDir))
+//     .pipe(browserSync.reload({
+//       stream: true
+//     }))
+// }
 
 /// style.stylコンパイル //////////////////////////////////////////
 const srcStyles = {
@@ -587,7 +587,7 @@ function imageToWebp() {
 /// 監視ファイル ////////////////////////////////////////////
 function watchFile() {
   watch(srcBase.srcDir, series(cacheBase, Base, BaseMin))
-  watch(srcBaseK.srcDir, series(cacheBaseK, BaseK, BaseKMin))
+  // watch(srcBaseK.srcDir, series(cacheBaseK, BaseK, BaseKMin))
   watch(srcStyles.srcDir, series(cacheStyles, Styles))
   watch(srcSassStyles.srcDir, series(cacheSassStyles, SassStyles))
   watch(srcComponents.srcDir, series(cacheComponents, Components))
