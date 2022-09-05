@@ -1,0 +1,275 @@
+<% let path = 'info'; %>
+<%- include('./_header', {path: path}) %>
+
+<div class="under-main-visual">
+  <div class="pic up-ofi-35">
+    <img src="images/dummy.png" alt="">
+  </div>
+  <div class="tbox">
+    <div class="ttl"><%= jsonData.pages[path].title %></div>
+  </div>
+</div>
+
+<%- include('./_nav') %>
+<div class="bread-box bgc01">
+  <div class="inner fead-up">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><%= jsonData.pages[path].title %></li>
+    </ul>
+  </div>
+</div>
+
+<!-- メインコンテンツ -->
+<main class="main" id="main">
+  <section class="info01box area">
+    <div class="inner fead-up">
+      <div class="tooth up-ta-c up-mb-50 up-mb-40@tb up-mb-30@sp">
+        <img src="images/tooth_icon.png" alt="" class="tooth-icon">
+      </div>
+      <h2 class="up-ta-c up-fw-bold up-fz-28 up-fz-24@sp border03 up-mb-60 up-mb-50@tb up-mb-30@sp">見出しが入ります</h2>
+      <div class="txt up-ta-c up-ta-l@sp">
+        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。<br>
+        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。<br>
+        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。<br>
+        テキストが入ります。テキストが入ります。テキストが入ります。
+      </div>
+    </div>
+  </section>
+  <section class="info02box area bgc01">
+    <div class="inner fead-up">
+      <div class="sub up-ta-c up-fz-24 up-fz-20@sp up-fw-bold">
+        株式会社〇〇にお任せください
+      </div>
+      <h2 class="heading up-fz-38 up-fz-30@tb up-fz-24@sp up-mx-auto up-fw-bold up-w-fit up-mb-50 up-mb-40@tb up-mb-30@sp">
+        当院の<span class="color03 up-fz-130%">3</span>つのポイント
+      </h2>
+      <ul class="up-col-3 up-gapx-40 up-gapx-20@tb up-gapx-10@sp up-rgap-40@sp up-col-2@sp up-adb up-jc-c">
+        <li>
+          <div class="box">
+            <div class="pic">
+              <span class="up-ofi-100">
+                <img src="images/600x600.jpg" alt="">
+              </span>
+            </div>
+            <div class="ttl up-my-20 up-ta-c color03 up-fw-bold up-fz-24 up-fz-22@tb up-fz-20@sp" data-mh>
+              タイトルが入ります
+            </div>
+            <div class="text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</div>
+          </div>
+        </li>
+        <li>
+          <div class="box">
+            <div class="pic">
+              <span class="up-ofi-100">
+                <img src="images/600x600.jpg" alt="">
+              </span>
+            </div>
+            <div class="ttl up-my-20 up-ta-c color03 up-fw-bold up-fz-24 up-fz-22@tb up-fz-20@sp" data-mh>
+              タイトルが入ります
+            </div>
+            <div class="text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</div>
+          </div>
+        </li>
+        <li>
+          <div class="box">
+            <div class="pic">
+              <span class="up-ofi-100">
+                <img src="images/600x600.jpg" alt="">
+              </span>
+            </div>
+            <div class="ttl up-my-20 up-ta-c color03 up-fw-bold up-fz-24 up-fz-22@tb up-fz-20@sp" data-mh>
+              タイトルが入ります
+            </div>
+            <div class="text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="info03box area">
+    <div class="inner fead-up">
+      <h2 class="heading wave01 up-ta-c up-fz-30 up-fz-28@tb up-fz-24@sp up-fw-bold up-mb-80 up-mb-60@tb up-mb-40@sp">院長のご紹介</h2>
+      <div class="up-d-flex up-fxw-wrap up-jc-sb up-ai-fe">
+        <div class="up-w-30% up-w-100%@tb">
+          <div class="pic up-maxw-300 up-mx-auto">
+            <span class="up-ofi-140">
+              <img src="images/dummy.png" alt="">
+            </span>
+          </div>
+        </div>
+        <div class="up-w-65% up-w-100%@tb up-mt-30@tb">
+          <div class="up-d-flex up-fxw-wrap up-jc-sb">
+            <div class="up-w-35% up-w-100%@sp">
+              <div class="ttl up-fz-18 color03 up-fw-bold up-mb-10">院長</div>
+              <dl class="up-d-flex up-ai-fe up-mb-20">
+                <dt class="up-fw-bold up-fz-20 up-fz-18@sp">名前 名前</dt>
+                <dd class="up-ml-20 color12">NAME NAME</dd>
+              </dl>
+              <div class="up-fw-bold">〇〇認定医</div>
+            </div>
+            <div class="up-w-60% up-w-100%@sp up-mt-20@sp">
+              <div class="ttl up-fz-18 color03 up-fw-bold up-mb-10">経歴</div>
+              <dl class="up-d-flex up-py-10 border04 up-fw-bold">
+                <dt class="up-w-90">平成17年</dt>
+                <dd class="up-w-10% up-fxg-1">経歴が入ります</dd>
+              </dl>
+              <dl class="up-d-flex up-py-10 border04 up-fw-bold">
+                <dt class="up-w-90">平成17年</dt>
+                <dd class="up-w-10% up-fxg-1">経歴が入ります</dd>
+              </dl>
+              <dl class="up-d-flex up-py-10 border04 up-fw-bold">
+                <dt class="up-w-90">平成17年</dt>
+                <dd class="up-w-10% up-fxg-1">経歴が入ります</dd>
+              </dl>
+              <dl class="up-d-flex up-py-10 border04 up-fw-bold">
+                <dt class="up-w-90">平成17年</dt>
+                <dd class="up-w-10% up-fxg-1">経歴が入ります</dd>
+              </dl>
+            </div>
+          </div>
+          <div class="info01 border05 up-p-30 up-p-20@sp icon01 up-mt-40 up-mt-30@tb up-mt-20@sp">
+            <div class="up-d-flex up-ai-c">
+              <img src="images/tooth_icon.png" alt="" class="tooth-icon">
+              <span class="up-fw-bold up-fz-18 up-ml-10">院長挨拶</span>
+            </div>
+            <div class="text up-mt-20 up-px-20 up-px-0@sp">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="info04box area bgc01">
+    <div class="inner fead-up">
+      <h2 class="heading up-ta-c up-fw-bold up-fz-30 up-fz-28@tb up-fz-24@sp up-mb-60 up-mb-50@tb up-mb-30@sp">アクセス</h2>
+      <div class="up-d-flex up-fxw-wrap up-jc-sb">
+        <div class="up-w-48% up-w-100%@tb">
+          <div class="up-d-flex up-ai-c up-mb-30">
+            <img src="images/icon_time.png" alt="">
+            <span class="up-fw-bold up-fz-20 up-ml-10">開院時間</span>
+          </div>
+          <div class="footer-table">
+            <table class="up-bgc-white">
+              <thead>
+                <tr>
+                  <th>診療時間</th>
+                  <th>月</th>
+                  <th>火</th>
+                  <th>水</th>
+                  <th>木</th>
+                  <th>金</th>
+                  <th>土</th>
+                  <th>日</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>9：00〜13：00</th>
+                  <td class="or">●</td>
+                  <td class="or">●</td>
+                  <td class="or">●</td>
+                  <td class="or">●</td>
+                  <td class="or">●</td>
+                  <td class="or">●</td>
+                  <td>✕</td>
+                </tr>
+                <tr>
+                  <th>14：00〜19：00</th>
+                  <td class="or">●</td>
+                  <td class="or">●</td>
+                  <td class="or">●</td>
+                  <td class="or">●</td>
+                  <td class="or">●</td>
+                  <td>✕</td>
+                  <td>✕</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="up-mt-10">
+            休診日　土曜午後・日曜・祝日
+            <br>
+            ※時間外診療はご相談に応じます。
+          </div>
+        </div>
+        <div class="up-w-48% up-w-100%@tb up-mt-40@tb up-mt-30@sp">
+          <div class="up-d-flex up-ai-c up-mb-30">
+            <img src="images/icon_pin.png" alt="">
+            <span class="up-fw-bold up-fz-20 up-ml-10">アクセス</span>
+          </div>
+          <div class="iframe up-h-250">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13129.33058465498!2d135.5133309!3d34.6463012!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5e013bca896fad0b!2z5qCq5byP5Lya56S-44Om44OL44K944Oz44OX44Op44ON44OD44OI!5e0!3m2!1sja!2sjp!4v1661761372377!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <div class="up-mt-10">
+            〒000-0000 住所が入ります
+            <br>
+            TEL:00-0000-0000
+          </div>
+          <ul class="up-lst-disc up-mt-10 up-fw-bold">
+            <li>〇〇駅から徒歩5分</li>
+            <li>〇〇駅から徒歩5分</li>
+            <li>〇〇駅から徒歩5分</li>
+            <li>〇〇駅から徒歩5分</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="info05box area">
+    <div class="inner fead-up">
+      <h2 class="heading wave01 up-ta-c up-fz-30 up-fz-28@tb up-fz-24@sp up-fw-bold up-mb-80 up-mb-60@tb up-mb-40@sp">院内紹介</h2>
+    </div>
+    <ul class="info-slider" id="info-slider">
+      <li>
+        <dl>
+          <dd>
+            <span class="up-ofi-55">
+              <img src="images/600x420.jpg.webp" alt="">
+            </span>
+          </dd>
+          <dd class="up-fz-20 up-fz-18@sp up-ta-c up-fw-bold up-mt-30 up-mt-20@sp">
+            <span class="border06">準備中</span>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dd>
+            <span class="up-ofi-55">
+              <img src="images/600x420.jpg.webp" alt="">
+            </span>
+          </dd>
+          <dd class="up-fz-20 up-fz-18@sp up-ta-c up-fw-bold up-mt-30 up-mt-20@sp">
+            <span class="border06">準備中</span>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dd>
+            <span class="up-ofi-55">
+              <img src="images/600x420.jpg.webp" alt="">
+            </span>
+          </dd>
+          <dd class="up-fz-20 up-fz-18@sp up-ta-c up-fw-bold up-mt-30 up-mt-20@sp">
+            <span class="border06">準備中</span>
+          </dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dd>
+            <span class="up-ofi-55">
+              <img src="images/600x420.jpg.webp" alt="">
+            </span>
+          </dd>
+          <dd class="up-fz-20 up-fz-18@sp up-ta-c up-fw-bold up-mt-30 up-mt-20@sp">
+            <span class="border06">準備中</span>
+          </dd>
+        </dl>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<%- include('./_footer', {path: path}) %>

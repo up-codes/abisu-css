@@ -1,58 +1,73 @@
 {
   "siteInfo": {
-    "baseTitle": "大阪市阿倍野でホームページ制作なら天王寺駅徒歩1分の株式会社ユニソンプラネット",
-    "baseH1": "大阪市阿倍野でホームページ制作なら天王寺駅徒歩1分の株式会社ユニソンプラネット"
+    "baseTitle": "〇〇の〇〇歯科医院",
+    "baseH1": "〇〇の〇〇歯科医院"
   },
   "pages": {
     "index": {
-      "title": "TOPページ",
+      "title": "HOME",
       "description": "ディスクリプション",
       "keywords": "キーワード"
     },
-    "article": {
-      "title": "記事一覧ページ",
+    "info": {
+      "title": "当院について",
       "description": "ディスクリプション",
-      "keywords": "キーワード"
+      "keywords": "キーワード,当院について"
     },
-    "article_detail": {
-      "title": "記事詳細ページ",
+    "first": {
+      "title": "はじめての方へ",
       "description": "ディスクリプション",
-      "keywords": "キーワード"
+      "keywords": "キーワード,はじめての方へ"
     },
-    "form": {
-      "title": "フォーム",
+    "faq": {
+      "title": "よくある質問",
       "description": "ディスクリプション",
-      "keywords": "キーワード"
+      "keywords": "キーワード,よくある質問"
     },
-    "gallery": {
-      "title": "ギャラリー",
+    "news": {
+      "title": "新着情報",
       "description": "ディスクリプション",
-      "keywords": "キーワード"
+      "keywords": "キーワード,新着情報"
     },
-    "gallery_detail": {
-      "title": "ギャラリー詳細ページ",
+    "blog": {
+      "title": "ブログ",
       "description": "ディスクリプション",
-      "keywords": "キーワード"
+      "keywords": "キーワード,ブログ"
     },
-    "component": {
-      "title": "コンポーネント",
+    "contact": {
+      "title": "お問い合わせ",
       "description": "ディスクリプション",
-      "keywords": "キーワード"
+      "keywords": "キーワード,お問い合わせ"
     },
-    "component2": {
-      "title": "コンポーネント2",
+    "recruit": {
+      "title": "求人情報",
       "description": "ディスクリプション",
-      "keywords": "キーワード"
+      "keywords": "キーワード,求人情報"
     },
-    "component3": {
-      "title": "コンポーネント3",
+    "nayami": {
+      "title": "こんなお悩みありませんか",
       "description": "ディスクリプション",
-      "keywords": "キーワード"
+      "keywords": "キーワード,こんなお悩みありませんか"
     },
-    "component4": {
-      "title": "コンポーネント4",
+    "template": {
+      "title": "テンプレート",
       "description": "ディスクリプション",
-      "keywords": "キーワード"
+      "keywords": "キーワード,テンプレート"
+    },
+    "price": {
+      "title": "料金表",
+      "description": "ディスクリプション",
+      "keywords": "キーワード,料金表"
+    },
+    "news_detail": {
+      "title": "「新着情報」詳細ページ",
+      "description": "ディスクリプション",
+      "keywords": "キーワード,「新着情報」詳細ページ"
+    },
+    "blog_detail": {
+      "title": "「ブログ」詳細ページ",
+      "description": "ディスクリプション",
+      "keywords": "キーワード,「ブログ」詳細ページ"
     }
   }
 }

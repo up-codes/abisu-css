@@ -22,7 +22,7 @@
   <% if( path === 'form' ){ %>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css" integrity="sha512-bYPO5jmStZ9WI2602V2zaivdAnbAhtfzmxnEGh9RwtlI00I9s8ulGe4oBa5XxiC6tCITJH/QG70jswBhbLkxPw==" crossorigin="anonymous" />
   <% } %>
-  <% if(path === 'component4'){ %>
+  <% if(path === 'price'){ %>
   <link rel="stylesheet" href="https://unpkg.com/scroll-hint@1.1.10/css/scroll-hint.css">
   <% } %>
   <link rel="stylesheet" href="css/style.css">
@@ -38,7 +38,7 @@
   <% if(path === 'component' || path === 'component3'| path === 'component4'){ %>
   <script src="js/components.js"></script>
   <% } %>
-  <% if(path === 'component4'){ %>
+  <% if(path === 'price'){ %>
   <script src="https://unpkg.com/scroll-hint@1.1.10/js/scroll-hint.js"></script>
   <script src="js/scroll-hint_option.js"></script>
   <% } %>
@@ -46,52 +46,18 @@
 </head>
 
 <body>
-  <div id="wrapper" class="wrapper home <%= path %>">
+  <div id="wrapper" class="wrapper <%= path %>">
 
-    <h1 class="pagettl"><%= jsonData.pages[path].title %>｜<%= jsonData.siteInfo.baseH1 %></h1>
     <!-- ヘッダー -->
-    <header id="header" class="header">
-      <div class="contents inner">
-        <div class="left">
-          <div class="logo">
-            <a href="index.html"><img src="https://placehold.jp/3d4070/ffffff/200x80.png?text=LOGO" alt="ロゴ"></a>
+    <header class="header" id="header">
+      <div class="header-inner">
+        <h1 class="pagettl"><%= jsonData.pages[path].title %>｜<%= jsonData.siteInfo.baseH1 %></h1>
+        <div class="header-common show up-hide@tb">
+          <div class="header-logo">
+            <a href="index.html">
+              <img src="images/logo_dummy.png" alt="">
+            </a>
           </div>
         </div>
-        <div class="right">
-          <div class="address up-fz-12 up-ta-r up-w-100% up-mb-10">大阪府大阪市阿倍野区阿倍野筋1-1-43</div>
-          <div class="txt">ご予約＆<span class="txtin">お問い合わせ</span></div>
-          <div class="tel">0000-00-0000</div>
-        </div>
       </div>
-      <nav id="gnav" class="gnav">
-        <div class="wrap inner">
-          <div class="navlogo"><a href="index.html"><img src="https://placehold.jp/3d4070/ffffff/200x80.png?text=LOGO" alt="ロゴ"></a></div>
-          <ul class="list01">
-            <li class="item01"><a href="index.html">TOP</a></li>
-            <li class="item01"><a href="article.html">記事一覧</a></li>
-            <li class="item01"><a href="article_detail.html">記事詳細</a></li>
-            <li class="item01"><a href="form.html">フォーム</a></li>
-            <li class="item01 "><a href="gallery.html">ギャラリー</a></li>
-            <li class="item01"><a href="gallery_detail.html">ギャラリー詳細</a></li>
-            <li class="item01 -parent">
-              <span class="itemin">ドロップダウン</span>
-              <ul class="list02">
-                <li class="item02"><a href="component2.html">base.css使用例１</a></li>
-                <li class="item02"><a href="component4.html">base.css使用例２</a></li>
-                <li class="item02"><a href="component.html">コンポーネント１</a></li>
-                <li class="item02"><a href="component3.html">コンポーネント２</a></li>
-              </ul>
-            </li>
-            <li class="item01 up-d-none up-d-block@tb"><a href="#">アイテム</a></li>
-            <li class="item01 up-d-none up-d-block@tb"><a href="#">アイテム</a></li>
-            <li class="item01 up-d-none up-d-block@tb"><a href="#">アイテム</a></li>
-          </ul>
-        </div>
-      </nav>
-      <div class="fix-bottom">
-        <div class="item tel">000-0000-0000</div>
-        <div class="item contact"><a href="#">CONTACT</a></div>
-      </div>
-      <div class="toggle"><span class="bar accordion-toggle"></span></div>
-      <div class="totop"></div>
     </header>

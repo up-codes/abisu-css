@@ -1,11 +1,15 @@
 $(function () {
-  $(".slick01").slick({
-    slidesToShow: 5,
-    dots: true,
-    prevArrow: '<i class="btn-slick btn-back fas fa-chevron-left"></i>',
-    nextArrow: '<i class="btn-slick btn-next fas fa-chevron-right"></i>',
-    responsive: [
-      {
+  $("#footer-slider").slick({
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed: 3000,
+    cssEase: "linear",
+    slidesToShow: 6,
+    swipe: false,
+    arrows: false,
+    pauseOnFocus: false,
+    pauseOnHover: false,
+    responsive: [{
         breakpoint: 1024,
         settings: {
           slidesToShow: 4,
@@ -19,44 +23,26 @@ $(function () {
       }
     ]
   });
-  $(".slick02").slick({
-    slidesToShow: 4,
+
+  $("#info-slider").slick({
     autoplay: true,
-    autoplaySpeed: 0,
-    cssEase: 'linear',
-    speed: 8000,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-        }
-      },
-      {
-        breakpoint: 599,
-        settings: {
-          slidesToShow: 3,
-        }
-      }
-    ]
-  });
-  $(".slick03").slick({
-    centerMode: true,
-    centerPadding: '20%',
+    autoplaySpeed: 3000,
+    speed: 1000,
     slidesToShow: 1,
-    arrows: false,
-    responsive: [
-      {
+    centerMode: true,
+    centerPadding: "120px",
+    prevArrow: '<div class="btn-slick btn-back"></div>',
+    nextArrow: '<div class="btn-slick btn-next"></div>',
+    responsive: [{
         breakpoint: 1024,
         settings: {
-          centerPadding: '40px',
+          centerPadding: "100px",
         }
       },
       {
         breakpoint: 599,
         settings: {
-          centerPadding: '40px',
+          centerPadding: "0",
         }
       }
     ]

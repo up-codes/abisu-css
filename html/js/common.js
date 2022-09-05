@@ -5,6 +5,27 @@
 var pathname = location.pathname;
 var edit_design_check = pathname.search(/\/admin\/pages\/.*\/edit_design/);
 
+//グローバルナビ固定
+$(window).on("load", function () {
+  if (edit_design_check == -1) {
+    if ($(".gnav").length) {
+      var w = window.innerWidth;
+      var obj = $(".gnav").offset().top;
+      var h = $(".gnav").outerHeight();
+      $(window).on("load scroll resize", function () {
+        if ($(this).scrollTop() > obj && w > 1024) {
+          $(".gnav").addClass("fixed");
+          $(".wrapper").css("padding-top", h);
+          $(".fixed_area").addClass("size");
+        } else {
+          $(".gnav").removeClass("fixed");
+          $(".wrapper").css("padding-top", 0);
+          $(".fixed_area").removeClass("size");
+        }
+      });
+    }
+  }
+});
 
 // fead系
 $(window).on('load scroll', function () {
@@ -105,27 +126,6 @@ $(function () {
     var telnum = teltext.replace(/[^0-9]/g, '');
     tel.html($('<a>').attr('href', 'tel:' + telnum).append(html));
   });
-});
-
-
-//グローバルナビ固定
-$(window).on("load", function () {
-  if (edit_design_check == -1) {
-    if ($(".gnav").length) {
-      var w = window.innerWidth;
-      var obj = $(".gnav").offset().top;
-      var h = $(".gnav").outerHeight();
-      $(window).on("load scroll resize", function () {
-        if ($(this).scrollTop() > obj && w > 1024) {
-          $(".gnav").addClass("fixed");
-          $(".wrapper").css("padding-top", h);
-        } else {
-          $(".gnav").removeClass("fixed");
-          $(".wrapper").css("padding-top", 0);
-        }
-      });
-    }
-  }
 });
 
 
@@ -294,29 +294,64 @@ $(function () {
 
 
 //見たまま編集バリデーション
-$(window).load(function () {
-  $("[data-element-id]").each(function () {
-    var txt = $(this).text();
-    if (txt.indexOf("準備中です") !== -1) {
-      alert("準備中の箇所があります。");
-      return false;
+// $(window).load(function () {
+//   $("[data-element-id]").each(function () {
+//     var txt = $(this).text();
+//     if (txt.indexOf("準備中です") !== -1) {
+//       alert("準備中の箇所があります。");
+//       return false;
+//     }
+//   });
+//   $("[data-element-id]").each(function () {
+//     var href = $(this).attr("data-href");
+//     if (href == '#') {
+//       alert("リンク未設定箇所があります。");
+//       return false;
+//     }
+//   });
+//   $("[data-element-id] img").each(function () {
+//     var alt = $(this).attr("alt");
+//     if (alt == undefined) {
+//       $(this).before('<div class="imgalt">Alt：<span class="altcolor">Altタグがありません</span></div>');
+//     } else if (alt == false) {
+//       $(this).before('<div class="imgalt">Alt：<span class="altcolor">設定されていません</span></div>');
+//     } else if (alt) {
+//       $(this).before('<div class="imgalt">Alt：' + alt + '</div>');
+//     }
+//   });
+// });
+
+
+$(function () {
+
+  var shaping = function (ele, outer, inner) {
+
+    for (var e = 0; e < ele.length; e++) {
+      var input = ele.eq(e).find("input");
+      var label = ele.eq(e).find("label");
+      var outEle = $("<" + outer + ">", {
+        class: "list",
+      });
+
+      input.remove();
+      label.remove();
+
+      for (var i = 0; i < input.length; i++) {
+        var innEle = $("<" + inner + ">", {
+          class: "item",
+        });
+        innEle.append(input.eq(i));
+        innEle.append(label.eq(i));
+        outEle.append(innEle);
+      }
+
+      ele.eq(e).append(outEle);
+
     }
-  });
-  $("[data-element-id]").each(function () {
-    var href = $(this).attr("data-href");
-    if (href == '#') {
-      alert("リンク未設定箇所があります。");
-      return false;
-    }
-  });
-  $("[data-element-id] img").each(function () {
-    var alt = $(this).attr("alt");
-    if (alt == undefined) {
-      $(this).before('<div class="imgalt">Alt：<span class="altcolor">Altタグがありません</span></div>');
-    } else if (alt == false) {
-      $(this).before('<div class="imgalt">Alt：<span class="altcolor">設定されていません</span></div>');
-    } else if (alt) {
-      $(this).before('<div class="imgalt">Alt：' + alt + '</div>');
-    }
-  });
+
+  };
+
+  shaping($(".form-shape"), "ul", "li");
+  //第一引数に整形の対象要素、第二引数に親要素、第三引数に子要素を指定します。
+
 });

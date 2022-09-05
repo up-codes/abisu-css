@@ -1,0 +1,162 @@
+<% let path = 'first'; %>
+<%- include('./_header', {path: path}) %>
+
+<div class="under-main-visual">
+  <div class="pic up-ofi-35">
+    <img src="images/dummy.png" alt="">
+  </div>
+  <div class="tbox">
+    <div class="ttl"><%= jsonData.pages[path].title %></div>
+  </div>
+</div>
+
+<%- include('./_nav') %>
+<div class="bread-box bgc01">
+  <div class="inner fead-up">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><%= jsonData.pages[path].title %></li>
+    </ul>
+  </div>
+</div>
+
+<!-- メインコンテンツ -->
+<main class="main" id="main">
+  <section class="first01box area bgi01">
+    <div class="inner fead-up">
+      <h2 class="heading up-fw-bold up-ta-c up-fz-30 up-fz-28@tb up-fz-24@sp color03 icon02 up-mb-70 up-mb-60@tb up-mb-40@sp">
+        治療について
+      </h2>
+      <div class="txt up-ta-c up-ta-l@sp">
+        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。<br>
+        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。<br>
+        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。<br>
+        テキストが入ります。テキストが入ります。テキストが入ります。
+      </div>
+    </div>
+  </section>
+  <section class="first02box area">
+    <div class="inner fead-up">
+      <h2 class="heading up-fw-bold up-ta-c up-fz-30 up-fz-28@tb up-fz-24@sp color03 up-mb-70 up-mb-60@tb up-mb-40@sp">
+        治療の流れ
+      </h2>
+      <div class="up-d-flex up-fxd-col up-rgap-40">
+        <div class="up-d-flex up-fxw-wrap up-jc-sb">
+          <div class="up-w-60% up-w-100%@sp contents-cmn@sp">
+            <dl class="up-d-flex up-ai-c up-my-10 up-w-100%@sp">
+              <dt class="num02">
+                <img src="images/tooth_icon.png" alt="">
+                <span>1</span>
+              </dt>
+              <dd class="color03 up-fw-bold up-fz-20 up-fz-18@sp">予約</dd>
+            </dl>
+            <div class="up-pl-60 up-pl-0@sp up-my-10 up-w-100% up-order-3@sp">
+              <div class="text">テキストが入ります</div>
+              <div class="up-d-flex up-fxw-wrap">
+                <div class="btn-cmn03 up-mt-20 up-mr-30">
+                  <a href="">WEBで予約する</a>
+                </div>
+                <div class="btn-cmn03 up-mt-20 __pink">
+                  <a href="">電話で予約する</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="up-w-35% up-w-100%@sp contents-cmn@sp">
+            <div class="pic border07 up-w-100%@sp up-my-10">
+              <span class="up-ofi-55">
+                <img src="images/600x420.jpg.webp" alt="">
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="up-d-flex up-fxw-wrap up-jc-sb">
+          <div class="up-w-60% up-w-100%@sp contents-cmn@sp">
+            <dl class="up-d-flex up-ai-c up-my-10 up-w-100%@sp">
+              <dt class="num02">
+                <img src="images/tooth_icon.png" alt="">
+                <span>2</span>
+              </dt>
+              <dd class="color03 up-fw-bold up-fz-20 up-fz-18@sp">ご来院</dd>
+            </dl>
+            <div class="up-pl-60 up-pl-0@sp up-my-10 up-w-100% up-order-3@sp">
+              <div class="text">テキストが入ります。テキストが入ります。<br>テキストが入ります。テキストが入ります。<br>テキストが入ります。</div>
+            </div>
+          </div>
+          <div class="up-w-35% up-w-100%@sp contents-cmn@sp">
+            <div class="pic border07 up-w-100%@sp up-my-10">
+              <span class="up-ofi-55">
+                <img src="images/600x420.jpg.webp" alt="">
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="up-d-flex up-fxw-wrap up-jc-sb">
+          <div class="up-w-60% up-w-100%@sp contents-cmn@sp">
+            <dl class="up-d-flex up-ai-c up-my-10 up-w-100%@sp">
+              <dt class="num02">
+                <img src="images/tooth_icon.png" alt="">
+                <span>3</span>
+              </dt>
+              <dd class="color03 up-fw-bold up-fz-20 up-fz-18@sp">カウンセリング</dd>
+            </dl>
+            <div class="up-pl-60 up-pl-0@sp up-my-10 up-w-100% up-order-3@sp">
+              <div class="text">テキストが入ります。テキストが入ります。<br>テキストが入ります。テキストが入ります。<br>テキストが入ります。</div>
+            </div>
+          </div>
+          <div class="up-w-35% up-w-100%@sp contents-cmn@sp">
+            <div class="pic border07 up-w-100%@sp up-my-10">
+              <span class="up-ofi-55">
+                <img src="images/600x420.jpg.webp" alt="">
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="up-d-flex up-fxw-wrap up-jc-sb">
+          <div class="up-w-60% up-w-100%@sp contents-cmn@sp">
+            <dl class="up-d-flex up-ai-c up-my-10 up-w-100%@sp">
+              <dt class="num02">
+                <img src="images/tooth_icon.png" alt="">
+                <span>4</span>
+              </dt>
+              <dd class="color03 up-fw-bold up-fz-20 up-fz-18@sp">診断</dd>
+            </dl>
+            <div class="up-pl-60 up-pl-0@sp up-my-10 up-w-100% up-order-3@sp">
+              <div class="text">テキストが入ります。テキストが入ります。<br>テキストが入ります。テキストが入ります。<br>テキストが入ります。</div>
+            </div>
+          </div>
+          <div class="up-w-35% up-w-100%@sp contents-cmn@sp">
+            <div class="pic border07 up-w-100%@sp up-my-10">
+              <span class="up-ofi-55">
+                <img src="images/600x420.jpg.webp" alt="">
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="up-d-flex up-fxw-wrap up-jc-sb">
+          <div class="up-w-60% up-w-100%@sp contents-cmn@sp">
+            <dl class="up-d-flex up-ai-c up-my-10 up-w-100%@sp">
+              <dt class="num02">
+                <img src="images/tooth_icon.png" alt="">
+                <span>5</span>
+              </dt>
+              <dd class="color03 up-fw-bold up-fz-20 up-fz-18@sp">治療</dd>
+            </dl>
+            <div class="up-pl-60 up-pl-0@sp up-my-10 up-w-100% up-order-3@sp">
+              <div class="text">テキストが入ります。テキストが入ります。<br>テキストが入ります。テキストが入ります。<br>テキストが入ります。</div>
+            </div>
+          </div>
+          <div class="up-w-35% up-w-100%@sp contents-cmn@sp">
+            <div class="pic border07 up-w-100%@sp up-my-10">
+              <span class="up-ofi-55">
+                <img src="images/600x420.jpg.webp" alt="">
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('./_footer', {path: path}) %>

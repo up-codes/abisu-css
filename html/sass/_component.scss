@@ -1,0 +1,768 @@
+:root {
+  --color01: #DA8E00;
+  --color02: #413e3e;
+  --color03: #f0b85f;
+  --color04: #e19e86;
+  --color05: #fdf3d2;
+  --color06: #f8c382;
+  --color07: #fce9c0;
+  --color08: #37a8d6;
+  --color09: #46aee0;
+  --color10: #f6ce91;
+  --color11: #fdf4df;
+  --color12: #999999;
+  --color13: #fbe8bf;
+  --ff-mincho: "游明朝",
+    "YuMincho",
+    "ヒラギノ明朝 ProN W3",
+    "Hiragino Mincho ProN",
+    "HG明朝",
+    "Sawarabi Mincho",
+    serif;
+  --ff-goshic: "游ゴシック",
+    YuGothic,
+    Hiragino Sans,
+    "ヒラギノ角ゴ ProN W3",
+    "Hiragino Kaku Gothic Pro",
+    Hiragino Kaku Gothic ProN,
+    "メイリオ",
+    Meiryo,
+    "ＭＳ Ｐゴシック",
+    sans-serif;
+}
+
+html {
+  color: var(--color02);
+}
+
+@media (max-width: 599px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+.txt {
+  line-height: 2.5;
+}
+
+.contents-cmn {
+  display: contents;
+}
+
+@media (max-width: 1024px) {
+  .contents-cmn\@tb {
+    display: contents;
+  }
+}
+
+@media (max-width: 599px) {
+  .contents-cmn\@sp {
+    display: contents;
+  }
+}
+
+/* ---------------------------
+カラー
+----------------------------- */
+
+.color01 {
+  color: var(--color01);
+}
+
+.color02 {
+  color: var(--color02);
+}
+
+.color03 {
+  color: var(--color03);
+}
+
+.color04 {
+  color: var(--color04);
+}
+
+.color05 {
+  color: var(--color05);
+}
+
+.color06 {
+  color: var(--color06);
+}
+
+.color07 {
+  color: var(--color07);
+}
+
+.color08 {
+  color: var(--color08);
+}
+
+.color09 {
+  color: var(--color09);
+}
+
+.color10 {
+  color: var(--color10);
+}
+
+.color11 {
+  color: var(--color11);
+}
+
+.color12 {
+  color: var(--color12);
+}
+
+.color13 {
+  color: var(--color13);
+}
+
+/* ---------------------------
+セクション余白
+----------------------------- */
+
+.area {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.area-small {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.area-big {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+@media (max-width: 1024px) {
+  .area {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .area-small {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .area-big {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+
+@media (max-width: 599px) {
+  .area {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .area-small {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .area-big {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+/* ---------------------------
+その他
+----------------------------- */
+
+.bgc01 {
+  background-color: var(--color11);
+  background-image: radial-gradient(#ffffff 12%, transparent 16%),
+    radial-gradient(#ffffff 12%, transparent 16%);
+  background-position: 0 0,
+    9px 9px;
+  background-size: 16px 16px;
+}
+
+.bgi01 {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 20%;
+    background-image: url(../images/tooth_bg.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 174px;
+    height: 154px;
+  }
+}
+
+.bgi02 {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(../images/tooth_bg.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 174px;
+    height: 154px;
+  }
+}
+
+.border01 {
+  border-bottom: 1px solid #413e3e;
+}
+
+.border02 {
+  border: 10px solid #fff;
+}
+
+.opacity08 {
+  img {
+    opacity: 0.8;
+  }
+}
+
+.border03 {
+  padding-bottom: 20px;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 2px;
+    width: 70px;
+    background: #413e3e;
+  }
+}
+
+.border04 {
+  border-bottom: 1px solid #bfbfbf;
+}
+
+.border05 {
+  border: 2px dashed var(--color03);
+}
+
+.border06 {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    height: 2px;
+    width: 20px;
+    background-color: var(--color03);
+    top: 50%;
+    left: -20px;
+    transform: translate(-100%, -50%);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    height: 2px;
+    width: 20px;
+    background-color: var(--color03);
+    top: 50%;
+    right: -20px;
+    transform: translate(100%, -50%);
+  }
+}
+
+.border07 {
+  border: 7px solid var(--color03);
+  border-left-color: var(--color07);
+  border-top-color: var(--color07);
+}
+
+.border08 {
+  border: 1px solid #7d7d7d;
+}
+
+.border09 {
+  border: 4px dashed var(--color03);
+}
+
+.icon01 {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 37px 37px 0;
+    border-color: transparent var(--color03) transparent transparent;
+  }
+}
+
+.icon03 {
+  background-color: var(--color03);
+  border-radius: 50%;
+  position: relative;
+  width: 250px;
+
+  &:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 170px;
+  }
+}
+
+.list-item01 {
+  padding-left: 20px;
+  position: relative;
+
+  &:before {
+    content: '＊';
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.list-item02 {
+  padding-left: 25px;
+  position: relative;
+
+  &:before {
+    content: '';
+    background: url(../images/check.png) no-repeat center left;
+    background-size: contain;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+
+/* ---------------------------
+ボタン
+----------------------------- */
+
+.btn-cmn01 {
+  width: fit-content;
+  max-width: 100%;
+
+  a,
+  button {
+    border: none;
+    display: flex;
+    align-items: center;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin: 0 10px;
+      border-top: 1px solid #413e3e;
+      border-right: 1px solid #413e3e;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.btn-cmn02 {
+  width: fit-content;
+  color: #fff;
+  min-width: 350px;
+  max-width: 100%;
+
+  a,
+  button {
+    width: 100%;
+    border: 2px solid var(--color06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color06);
+    padding: 20px 25px;
+    border-radius: 1000px;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin: 0 30px 0 0;
+      border-top: 1px solid;
+      border-right: 1px solid;
+      transform: rotate(45deg);
+    }
+
+    &:hover {
+      opacity: 1;
+      background-color: #fff;
+      color: var(--color06);
+    }
+  }
+
+  &.__noarrow {
+
+    a,
+    button {
+      &:before {
+        content: none;
+      }
+    }
+  }
+
+  &.__w100 {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+.btn-cmn03 {
+  width: fit-content;
+  min-width: 180px;
+  max-width: 100%;
+  color: #fff;
+  font-weight: bold;
+
+  a,
+  button {
+    border-radius: 1000px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--color06);
+    background-color: var(--color06);
+    padding: 5px 20px;
+
+    &:hover {
+      opacity: 1;
+      background-color: #fff;
+      color: var(--color06);
+    }
+  }
+
+  &.__pink {
+
+    a,
+    button {
+      background-color: var(--color04);
+      border-color: var(--color04);
+
+      &:hover {
+        background-color: #fff;
+        color: var(--color04);
+      }
+    }
+  }
+}
+
+.btn-cmn04 {
+  width: fit-content;
+  width: 300px;
+  max-width: 100%;
+  color: #fff;
+
+  a,
+  button {
+    border-radius: 1000px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--color06);
+    background-color: var(--color06);
+    padding: 10px 20px;
+
+    &:hover {
+      opacity: 1;
+      background-color: #fff;
+      color: var(--color06);
+    }
+  }
+}
+
+.mail {
+  a:before {
+    content: "\f0e0";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 400;
+    line-height: 1;
+    margin-right: 10px;
+    font-size: 30px;
+  }
+}
+
+.btn-cmn05 {
+  width: fit-content;
+  min-width: 140px;
+  max-width: 100%;
+  color: #fff;
+  font-weight: bold;
+
+  a,
+  button {
+    display: block;
+    background-color: var(--color03);
+    text-align: center;
+    padding: 15px;
+  }
+}
+
+/* ---------------------------
+見出し
+----------------------------- */
+
+.heading01 {
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+
+  img {
+    max-height: 30px;
+    margin-right: 15px;
+  }
+
+  i {
+    margin-right: 15px;
+    color: var(--color03);
+  }
+}
+
+.heading02 {
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  color: var(--color03);
+  background: url(../images/ribon_repe.png) repeat-y center;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  span {
+    writing-mode: tb-rl;
+    font-size: 22px;
+    display: block;
+    line-height: 120%;
+    text-align-last: left;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    background: url(../images/ribon_after.png) bottom center no-repeat;
+    height: 25px;
+    width: 84px;
+    z-index: -1;
+    transform: translateX(-50%);
+  }
+}
+
+.title01 {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+
+  img {
+    max-height: 30px;
+    margin-right: 15px;
+  }
+}
+
+.title02 {
+  position: relative;
+  font-weight: 700;
+  text-align: center;
+  display: block;
+  width: 122px;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../images/mini_fukidashi_orange.png) top center no-repeat;
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    z-index: -1;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    padding-top: 70%;
+  }
+
+  span {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+  }
+
+  &.__gray {
+    &:before {
+      background-image: url(../images/mini_fukidashi_gray.png);
+    }
+  }
+}
+
+.heading03 {
+  padding: 15px 30px;
+  margin-bottom: 30px;
+  background-color: var(--color07);
+  background-image: radial-gradient(#ffffff 12%, transparent 16%),
+    radial-gradient(#ffffff 12%, transparent 16%);
+  background-position: 0 0,
+    9px 9px;
+  background-size: 16px 16px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+
+  img {
+    max-height: 30px;
+    margin-right: 15px;
+  }
+}
+
+.title03 {
+  color: var(--color03);
+  font-weight: bold;
+
+  &:before {
+    content: "ー";
+    margin-right: 5px;
+  }
+
+  &:after {
+    content: "ー";
+    margin-left: 5px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .heading02 {
+    width: 100%;
+    background: url(../images/ribon_repe_sp.png) repeat-x center;
+    padding: 30px 0;
+    justify-content: center;
+
+    span {
+      font-size: 20px;
+    }
+
+    &:after {
+      top: 50%;
+      left: 100%;
+      z-index: 1;
+      background: url(../images/ribon_after_sp.png) bottom right no-repeat;
+      height: 82px;
+      width: 30px;
+      transform: translate(-50%, -50%);
+    }
+
+    span {
+      writing-mode: initial;
+      width: 80%;
+    }
+  }
+
+  .heading03 {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 599px) {
+  .heading01 {
+    font-size: 24px;
+  }
+
+  .heading01 img {
+    max-height: 25px;
+    margin-right: 10px;
+  }
+
+  .btn-cmn02 {
+    min-width: 250px;
+
+  }
+
+  .btn-list {
+    .btn-cmn02 {
+      min-width: auto;
+      width: 100%;
+    }
+  }
+
+
+
+  .btn-cmn02 a,
+  .btn-cmn02 button {
+    padding: 15px;
+  }
+
+  .border07 {
+    border-width: 5px;
+  }
+
+  .icon03 {
+    width: 200px;
+
+    img {
+      width: 120px;
+    }
+  }
+
+  .heading02 {
+    &:after {
+      left: 97%;
+    }
+  }
+
+  .title01 img {
+    margin-right: 10px;
+  }
+
+  .list-item01 {
+    padding-left: 17px;
+  }
+
+  .list-item02:before {
+    height: 17px;
+  }
+}

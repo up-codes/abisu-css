@@ -1,0 +1,84 @@
+<% let path = 'faq'; %>
+<%- include('./_header', {path: path}) %>
+
+<div class="under-main-visual">
+  <div class="pic up-ofi-35">
+    <img src="images/dummy.png" alt="">
+  </div>
+  <div class="tbox">
+    <div class="ttl"><%= jsonData.pages[path].title %></div>
+  </div>
+</div>
+
+<%- include('./_nav') %>
+<div class="bread-box bgc01">
+  <div class="inner fead-up">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><%= jsonData.pages[path].title %></li>
+    </ul>
+  </div>
+</div>
+
+<!-- メインコンテンツ -->
+<main class="main" id="main">
+  <section class="faq01box area">
+    <div class="inner fead-up">
+      <h2 class="heading wave01 up-ta-c up-fz-30 up-fz-28@tb up-fz-24@sp up-fw-bold up-mb-80 up-mb-60@tb up-mb-40@sp">見出しが入ります</h2>
+      <div class="up-d-flex up-fxd-col up-rgap-50 up-rgap-40@sp">
+        <div class="faqlist">
+          <dl class="up-d-flex">
+            <dd class="q">Q</dd>
+            <dt>質問が入ります？</dt>
+          </dl>
+          <dl class="up-d-flex">
+            <dd class="a">A</dd>
+            <dt>回答が入ります。回答が入ります。回答が入ります。<br>回答が入ります。</dt>
+          </dl>
+        </div>
+        <div class="faqlist">
+          <dl class="up-d-flex">
+            <dd class="q">Q</dd>
+            <dt>質問が入ります？</dt>
+          </dl>
+          <dl class="up-d-flex">
+            <dd class="a">A</dd>
+            <dt>回答が入ります。回答が入ります。回答が入ります。<br>回答が入ります。</dt>
+          </dl>
+        </div>
+        <div class="faqlist">
+          <dl class="up-d-flex">
+            <dd class="q">Q</dd>
+            <dt>質問が入ります？</dt>
+          </dl>
+          <dl class="up-d-flex">
+            <dd class="a">A</dd>
+            <dt>回答が入ります。回答が入ります。回答が入ります。<br>回答が入ります。</dt>
+          </dl>
+        </div>
+        <div class="faqlist">
+          <dl class="up-d-flex">
+            <dd class="q">Q</dd>
+            <dt>質問が入ります？</dt>
+          </dl>
+          <dl class="up-d-flex">
+            <dd class="a">A</dd>
+            <dt>回答が入ります。回答が入ります。回答が入ります。<br>回答が入ります。</dt>
+          </dl>
+        </div>
+        <div class="faqlist">
+          <dl class="up-d-flex">
+            <dd class="q">Q</dd>
+            <dt>質問が入ります？</dt>
+          </dl>
+          <dl class="up-d-flex">
+            <dd class="a">A</dd>
+            <dt>回答が入ります。回答が入ります。回答が入ります。<br>回答が入ります。</dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('./_footer', {path: path}) %>

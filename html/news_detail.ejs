@@ -1,0 +1,94 @@
+<% let path = 'news_detail'; %>
+<%- include('./_header', {path: path}) %>
+
+<div class="under-main-visual">
+  <div class="pic up-ofi-35">
+    <img src="images/dummy.png" alt="">
+  </div>
+  <div class="tbox">
+    <div class="ttl"><%= jsonData.pages[path].title %></div>
+  </div>
+</div>
+
+<%- include('./_nav') %>
+<div class="bread-box bgc01">
+  <div class="inner fead-up">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="news.html">お知らせ</a></li>
+      <li>{# タイトル #}</li>
+    </ul>
+  </div>
+</div>
+
+<!-- メインコンテンツ -->
+<main class="main" id="main">
+  <section class="blog01box area">
+    <div class="inner fead-up">
+      <div class="up-d-flex up-fxw-wrap up-jc-sb up-fxd-rowr">
+        <div class="up-w-65% up-w-100%@tb">
+          <div class="blog-detail-box altlist">
+            <div class="ttl alt up-ta-c up-fz-24 up-fz-22@tb up-fz-20@sp color03 up-fw-bold up-mb-50 up-mb-40@tb up-mb-30@sp">
+              ホームページを公開しました
+            </div>
+            <div class="up-d-flex up-fxw-wrap up-pb-10 border04">
+              <div class="up-w-100 up-mr-10">
+                <div class="date up-fw-bold">0000/00/00</div>
+              </div>
+              <div class="up-w-10% up-fxg-1 up-w-100%@sp">
+                院長ブログ
+              </div>
+            </div>
+            <div class="detail-content up-clearfix up-py-80 up-py-60@tb up-py-40@sp border04">
+              <h2>見出し１</h2>
+              <div>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</div>
+              <div><br>
+              </div>
+              <div>
+                <h3>見出し２</h3>
+                <div>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</div>
+              </div>
+              <div><br>
+              </div>
+              <div>
+                <h4>見出し３</h4>
+                <div>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</div>
+              </div>
+            </div>
+            <div class="btn-cmn05 up-my-50">
+              <a href="news.html">一覧に戻る</a>
+            </div>
+          </div>
+        </div>
+        <div class="up-w-25% up-w-100%@tb">
+          <div class="up-col-2@tb up-gapx-30@tb up-gapx-10@sp up-col-1@sp up-gapy-60 up-gapy-40@tb">
+            <div>
+              <div class="category-box">
+                <div class="heading">カテゴリー</div>
+                <ul>
+                  <li><a href="news.html">カテゴリー</a></li>
+                  <li><a href="news.html">カテゴリー</a></li>
+                  <li><a href="news.html">カテゴリー</a></li>
+                  <li><a href="news.html">カテゴリー</a></li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="category-box">
+                <div class="heading">アーカイブ</div>
+                <ul>
+                  <li><a href="news.html">0000/00</a></li>
+                  <li><a href="news.html">0000/00</a></li>
+                  <li><a href="news.html">0000/00</a></li>
+                  <li><a href="news.html">0000/00</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('./_footer', {path: path}) %>
