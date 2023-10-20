@@ -30,7 +30,7 @@ const header = require('gulp-header'); //コメントアウトをファイルの
 const sass = require('gulp-sass')(require('sass')); //sassコンパイル
 
 
-const pkg = require('./package.json'); //package.jspnの記述内容をコメントアウトに使用する
+const pkg = require('./package.json'); //package.jsonの記述内容をコメントアウトに使用する
 
 // バージョン情報などのコメントアウト自動挿入
 const banner = ['/**',
