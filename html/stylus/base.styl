@@ -1,7 +1,6 @@
 @charset 'utf-8'
 /* version 1.2.0　2023/10/12 */
-
-@import _vars
+@import _definition
 
 // ##### reset.css #####
 html
@@ -187,8 +186,8 @@ button
     pointer-events: none
 
   +tb()
-      &[href*='tel']
-        pointer-events: initial !important
+    &[href*='tel']
+      pointer-events: initial !important
 
 .wrapper
   min-width: 375px
@@ -202,16 +201,20 @@ for w in range(500, 2000, 100)
     .inner{w}
       width: 92%
       max-width: w px
+
       innerMargin()
   else if w > innerWidth
     .inner{w}
       width: 98%
       max-width: w px
+
       innerMargin()
   else
     .inner
       width: 92%
+
       innerMargin()
+
       max-width: w px
 
 +tb()
@@ -827,7 +830,6 @@ for order in range(0, 10, 1)
 
         &-48\\\%
           width: 48%
-
       else if unitlist4[i] == 'vw'
         for wid in range(10, 100, 10)
           &-{wid}{unitlist4[i]}
@@ -851,7 +853,6 @@ for order in range(0, 10, 1)
 
         &-48\\\%
           width: 48%
-
       else if unitlist4[i] == 'vw'
         for wid in range(10, 100, 10)
           &-{wid}{unitlist4[i]}
@@ -872,7 +873,6 @@ for order in range(0, 10, 1)
 
         &-48\\\%
           width: 48%
-
       else if unitlist4[i] == 'vw'
         for wid in range(10, 100, 10)
           &-{wid}{unitlist4[i]}
@@ -896,7 +896,6 @@ for order in range(0, 10, 1)
 
         &-48\\\%
           width: 48%
-
       else if unitlist5[i] == 'vw'
         for hei in range(10, 100, 10)
           &-{hei}{unitlist5[i]}
@@ -921,13 +920,12 @@ for order in range(0, 10, 1)
         margin-left: auto
         margin-right: auto
 
-// (5px〜50px)
 spaces(0, 50, 5, 'px')
-spaces(0, 50, 5, 'em')
-spaces(0, 50, 5, '%')
-
-// (60px〜150px)
-spaces(60, 150, 10, 'px')
+spaces_unit_em(1, 4, 1, 'em')
+spaces_unit_em(5, 50, 5, 'em')
+spaces_unit_percent(5, 50, 5, '%')
+spaces(60, 100, 5, 'px')
+spaces_unit_percent(60, 100, 5, '%')
 
 // up-col
 [class*='up-col-']
@@ -2261,396 +2259,159 @@ for image in range(10, 170, 5)
   &-sp
     display: block
 
-/* ここからabisu.cssの内容 */
-[data-element-id] .wrapper
-  padding-top: 0 !important
-  opacity: 1
+/* ##### abisu.css ##### */
+[data-common-area]
+  padding-top: 2em
+  position: relative 
+  &:hover 
+    &::before 
+      content: '共通要素'
+      width: 100%
+      min-width: 200px
+      padding: .5em
+      font-weight: bold
+      font-size: .8em
+      color: #FDC44F
+      text-align: center
+      background: #555
+      position: absolute !important
+      top: 0
+      left: 0
 
-[data-element-id] .js-toggle+*
-  display: block
+[data-collection-list-content] 
+  &:hover 
+    &::before
+      content: 'カスタムコンテンツ（編集不可）'
+      width: 100%
+      display: block
+      clear: both
+      padding: 5px
+      font-weight: bold
+      font-size: 12px
+      color: white
+      text-align: left
+      background: navy
+      position: absolute
+      z-index: 1000
+
+a 
+  [data-href='#']
+    outline: solid red 5px !important
+    opacity: 1
+    &:hover 
+      &::before 
+        content: '未設定リンク'
+        width: fit-content
+        min-width:90px
+        padding: 5px
+        font-weight: bold
+        font-size: 12px
+        color: red
+        background: #9e9e9e
+        transform: translateX(-50%)
+        position: absolute !important
+        bottom: 100%
+        left: 0 
+
+  [data-href*='.']
+    outline: solid #ff7c4d 5px !important
+    opacity: 1
+    &:hover 
+      &::before
+        content: '外部リンク'
+        width: fit-content
+        min-width: 90px
+        padding: 5px
+        font-weight: bold
+        font-size: 12px
+        color: white
+        background: #ff7c4d
+        position: absolute !important
+        bottom: 100%
+        left: 0 
 
 [data-element-id]
-  .up-relative\\\@edit
+  .wrapper
+    opacity: 1
+
+  [class*='fead-']
+    opacity: 1
+    transform: unset
+    transform: translate3d(0, 0, 0)
+
+    &.str
+      opacity: 1
+
+  .fead
+    &-cover
+      &::before
+        content: none
+
+      &>*
+        opacity: 1
+        transform: unset
+
+    &-scale
+      opacity: 1
+      transform: unset
+
+  .up
+    &-none
+      display: inherit
+
+  .imgalt
+    border: 2px solid red
+    padding-top 2em
     position: relative
 
-  .up-absolute\\\@edit
-    position: absolute
-
-  .up-spmark_edit
-    border: solid 1px #000
-
-    &:before
-      content: 'スマホ時のみ表示'
+    &::before
+      content: '見たまま編集バリデーションjsをコメントアウトしてください'
+      width: 100%
       display: block
-      font-size: 12px
-      color: #fff
-      background: #000
-      position: relative
-      z-index: 2
+      padding: .5em
+      font-size: 10px
+      color: white
+      line-height: 1.2
+      text-align: center
+      background-color: red
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 100
 
-[data-element-id] .up-none
-  display: inherit
+  [data-uk-slideshow] 
+    &:hover 
+      &::before
+        content: 'スライドショー'
+        width: 100%
+        display: block
+        clear: both
+        padding: 5px
+        font-weight: bold
+        font-size: 12px
+        color: red
+        text-align: left
+        background: #4c4c4c
+        position: absolute
+        z-index: 1000
 
-[data-element-id] [class*='heightLine']
-  height: auto !important
+  .up-d-flex
+    commonSelectors()
+      width: 100%
+      display: inherit
+      flex-wrap: inherit
+      flex-direction: inherit
+      justify-content: inherit
+      justify-items: inherit
+      justify-self: inherit
+      justify-tracks: inherit
+      align-items: inherit
+      align-content: inherit
+      align-self: inherit
+      align-tracks: inherit
 
-[data-element-id] .fead-mv
-  opacity: 1
 
-[data-element-id] .fead-up
-  opacity: 1
-  transform: translateY(0)
 
-[data-element-id] .fead-left
-  opacity: 1
-  transform: translate3d(0, 0, 0)
-
-[data-element-id] .fead-right
-  opacity: 1
-  transform: translate3d(0, 0, 0)
-
-[data-element-id] .fead-text
-  opacity: 1
-
-  &.str
-    opacity: 1
-
-[data-element-id] .fead-cover
-  &:before
-    content: none
-
-[data-element-id] .fead-cover
-  & > *
-    opacity: 1
-    transform: none
-
-[data-element-id] .fead-scale
-  opacity: 1
-  transform: translateX(0)
-
-[data-element-id] .imgalt
-  max-height: 70px
-  overflow: hidden
-  padding: 2px 4px
-  font-size: 14px
-  color: orange
-  text-align: left
-  background: #333
-  position: relative
-  z-index: 50
-
-[data-element-id] .altcolor
-  color: red
-
-[data-common-area]
-  position: relative
-
-[data-common-area]:hover:before
-  content: '共通要素です。'
-  width: 100%
-  min-width: 200px
-  padding: 5px
-  box-sizing: border-box
-  font-weight: bold
-  font-size: 12px
-  color: #FDC44F
-  text-align: center
-  background: #555
-  transform: translateX(-50%)
-  position: absolute !important
-  bottom: 100%
-  left: 50%
-
-a[data-href='#']
-  display: block
-  outline: solid red 5px !important
-  opacity: 1
-  position: relative !important
-
-a[data-href='#']:hover:before
-  content: '未設定リンク'
-  width: 100%
-  min-width: 200px
-  padding: 5px
-  box-sizing: border-box
-  font-weight: bold
-  font-size: 12px
-  color: red
-  background: #555
-  transform: translateX(-50%)
-  position: absolute !important
-  bottom: 100%
-  left: 50%
-
-a[data-href*='.']
-  display: block
-  outline: solid red 5px !important
-  opacity: 1
-  position: relative !important
-
-a[data-href*='.']:hover:before
-  content: '外部リンク'
-  width: 100%
-  min-width: 200px
-  padding: 5px
-  box-sizing: border-box
-  font-weight: bold
-  font-size: 12px
-  color: red
-  background: #555
-  transform: translateX(-50%)
-  position: absolute !important
-  bottom: 100%
-  left: 50%
-
-[data-element-id][data-uk-slideshow]:hover:before
-  content: 'スライドショー'
-  width: 100%
-  display: block
-  clear: both
-  padding: 5px
-  font-weight: bold
-  font-size: 12px
-  color: red
-  line-height: 1.8
-  letter-spacing: 1px
-  text-align: left
-  background: #4c4c4c
-  position: absolute
-  z-index: 1000
-
-[data-collection-list-content]:hover:before
-  content: 'カスタムコンテンツ（編集不可）'
-  width: 100%
-  display: block
-  clear: both
-  padding: 5px
-  font-weight: bold
-  font-size: 12px
-  color: red
-  line-height: 1.8
-  letter-spacing: 1px
-  text-align: left
-  background: #4c4c4c
-  position: absolute
-  z-index: 1000
-
-[data-element-id] .up-d-flex
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    width: 100%
-    display: flex
-
-[data-element-id] .up-jc-fs
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    justify-content: flex-start
-
-[data-element-id] .up-jc-fe
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    justify-content: flex-end
-
-[data-element-id] .up-jc-c
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    justify-content: center
-
-[data-element-id] .up-jc-sb
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    justify-content: space-between
-
-[data-element-id] .up-jc-sa
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    justify-content: space-around
-
-[data-element-id] .up-jc-se
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    justify-content: space-evenly
-
-[data-element-id] .up-fxd-row
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    flex-direction: row
-
-[data-element-id] .up-fxd-rowr
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    flex-direction: row-reverse
-
-[data-element-id] .up-fxd-col
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    flex-direction: column
-
-[data-element-id] .up-fxd-colr
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    flex-direction: column-reverse
-
-[data-element-id] .up-ai-fs
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    align-items: flex-start
-
-[data-element-id] .up-ai-c
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    align-items: center
-
-[data-element-id] .up-ai-fe
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    align-items: flex-end
-
-[data-element-id] .up-ai-b
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    align-items: baseline
-
-[data-element-id] .up-ai-s
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    align-items: stretch
-
-[data-element-id] .up-ac-fs
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    align-content: flex-start
-
-[data-element-id] .up-ac-c
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    align-content: center
-
-[data-element-id] .up-ac-fe
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    align-content: flex-end
-
-[data-element-id] .up-ac-sb
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    align-content: space-between
-
-[data-element-id] .up-ac-sa
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    align-content: space-around
-
-[data-element-id] .up-fxw-wrap
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    flex-wrap: wrap
-
-[data-element-id] .up-fxw-wrapr
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    flex-wrap: wrap-reverse
-
-[data-element-id] .up-nowrap
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
-    flex-wrap: nowrap
 
 [data-element-id] .up-col-1
   > div[data-collection-list-content]
