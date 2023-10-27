@@ -1,18 +1,22 @@
 @charset 'utf-8'
 /* version 1.2.0　2023/10/12 */
+
+@import _vars
+
+// ##### reset.css #####
 html
-  font-family '游ゴシック', YuGothic, Hiragino Sans, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic Pro', Hiragino Kaku Gothic ProN, 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif
-  font-weight normal
-  font-size 16px
-  color #000
-  line-height 1.5
-  word-break break-word
-  -webkit-text-size-adjust 100%
+  font-family: '游ゴシック', YuGothic, Hiragino Sans, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic Pro', Hiragino Kaku Gothic ProN, 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif
+  font-weight: normal
+  font-size: 16px
+  color: #000
+  line-height: 1.5
+  word-break: break-word
+  -webkit-text-size-adjust: 100%
 
 *
 :after
 :before
-  box-sizing border-box
+  box-sizing: border-box
 
 body
 div
@@ -39,8 +43,8 @@ p
 pre
 a
 time
-  margin 0
-  padding 0
+  margin: 0
+  padding: 0
 
 h1
 h2
@@ -48,20 +52,20 @@ h3
 h4
 h5
 h6
-  font-family inherit
-  font-weight inherit
-  font-size inherit
-  color inherit
-  line-height inherit
+  font-family: inherit
+  font-weight: inherit
+  font-size: inherit
+  color: inherit
+  line-height: inherit
 
 button
 input
 optgroup
 select
 textarea
-  padding 0
-  color inherit
-  line-height inherit
+  padding: 0
+  color: inherit
+  line-height: inherit
 
 svg
 video
@@ -70,905 +74,893 @@ audio
 iframe
 embed
 object
-  display block
+  display: block
 
 button
 input
 optgroup
 select
 textarea
-  margin 0
-  font-family inherit
-  font-size 100%
-  line-height 1.15
+  margin: 0
+  font-family: inherit
+  font-size: 100%
+  line-height: 1.15
 
 img
 video
 iframe
-  max-width 100%
+  max-width: 100%
 
 img
-  max-width 100%
-  height auto
-  vertical-align top
-  border none
-  border-style none
+  max-width: 100%
+  height: auto
+  vertical-align: top
+  border: none
+  border-style: none
 
   &:not([src*='.'])
-    display none
+    display: none
 
 b
 strong
-  font-weight bolder
+  font-weight: bolder
 
 ol
 ul
-  list-style none
+  list-style: none
 
 time
-  display block
+  display: block
 
 button
 [role='button']
-  cursor pointer
+  cursor: pointer
 
 table
-  border-collapse collapse
+  border-collapse: collapse
 
   th
-    font-weight normal
+    font-weight: normal
 
 // ##### default settings #####
 .img
   img
-    width 100%
-    text-align center
+    width: 100%
+    text-align: center
 
 .map
-  overflow hidden
-  padding-top 50%
-  position relative
+  overflow: hidden
+  padding-top: 50%
+  position: relative
 
   iframe
-    width 100%
-    max-width initial
-    height 100%
-    margin auto
-    position absolute
-    top 0
-    left 0
+    width: 100%
+    max-width: initial
+    height: 100%
+    margin: auto
+    position: absolute
+    top: 0
+    left: 0
 
 .youtube
-  overflow hidden
-  padding-top floor((9 / 16 * 100)%, 4)
-  position relative
+  overflow: hidden
+  padding-top: floor((9 / 16 * 100)%, 4)
+  position: relative
 
   &-short
-    padding-top floor((16 / 9 * 100)%, 4)
+    padding-top: floor((16 / 9 * 100)%, 4)
 
   iframe
-    width 100%
-    max-width initial
-    height 100%
-    margin auto
-    position absolute
-    top 0
-    left 0
+    width: 100%
+    max-width: initial
+    height: 100%
+    margin: auto
+    position: absolute
+    top: 0
+    left: 0
 
 .iframe
-  overflow hidden
-  position relative
+  overflow: hidden
+  position: relative
 
   iframe
-    width 100%
-    max-width initial
-    margin auto
-    position absolute
-    top 0
-    left 0
+    width: 100%
+    max-width: initial
+    margin: auto
+    position: absolute
+    top: 0
+    left: 0
 
 a
 button
-  color inherit
-  text-decoration none
-  transition .4s ease
+  color: inherit
+  text-decoration: none
+  transition: .4s ease
 
   &:hover
-    color inherit
-    text-decoration none
-    opacity .6
-    cursor pointer
+    color: inherit
+    text-decoration: none
+    opacity: .6
+    cursor: pointer
 
   &[href*='tel']
-    pointer-events none
+    pointer-events: none
 
-  @media (max-width 1024px)
-    &[href*='tel']
-      pointer-events initial !important
+  +tb()
+      &[href*='tel']
+        pointer-events: initial !important
 
 .wrapper
-  min-width 375px
-  overflow hidden
+  min-width: 375px
+  overflow: hidden
 
 // inner
 for w in range(500, 2000, 100)
   innerWidth = 1000
 
-  innerMargin()
-    margin-left auto
-    margin-right auto
-
   if w < innerWidth
     .inner{w}
-      width 92%
-      max-width w px
-
+      width: 92%
+      max-width: w px
       innerMargin()
   else if w > innerWidth
     .inner{w}
-      width 98%
-      max-width w px
-
+      width: 98%
+      max-width: w px
       innerMargin()
   else
     .inner
-      width 92%
-
+      width: 92%
       innerMargin()
+      max-width: w px
 
-      max-width w px
++tb()
+  for w in range(500, 2000, 100)
+    innerWidth = 1000
 
-@media (max-width 1024px)
-  // .inner500,
-  // .inner600,
-  // .inner700,
-  // .inner800,
-  // .inner900,
-  // .inner,
-  // .inner1100,
-  // .inner1200,
-  // .inner1300,
-  // .inner1400,
-  // .inner1500,
-  // .inner1600,
-  // .inner1700,
-  // .inner1800,
-  // .inner1900,
-  // .inner2000 {
-  // max-width 768px
-  // width 96%
-  // }
+    if w < innerWidth
+      .inner{w}
+        innerProperty()
+    else if w > innerWidth
+      .inner{w}
+        innerProperty()
+        innerMargin()
+    else
+      .inner
+        innerProperty()
 
-for w in range(500, 2000, 100)
-  innerWidth = 1000
-
-  innerProperty()
-    width 96%
-    max-width 768px
-
-  if innerWidth
-    .inner
-      innerProperty()
-  else
-    .inner{w}
-      innerProperty()
-
-// js
+// jsで使用するクラス名
 .js
   &-toggle
-    cursor pointer
+    cursor: pointer
 
 // fead
 [class*='fead']
-  opacity 0
+  opacity: 0
 
   &.mv
-    opacity 1
-    transition .5s ease-out
+    opacity: 1
+    transition: .5s ease-out
 
 .fead
   &-up
-    transform translateY(50px)
+    transform: translateY(50px)
 
     &.mv
-      transform translateY(0)
+      transform: translateY(0)
 
   &-right
-    transition 1s
-    transform translateX(-20%)
+    transition: 1s
+    transform: translateX(-20%)
 
     &.mv
-      transform translateX(0)
+      transform: translateX(0)
 
   &-left
-    transition 1s
-    transform translateX(20%)
+    transition: 1s
+    transform: translateX(20%)
 
     &.mv
-      transform translateX(0)
+      transform: translateX(0)
 
   &-text
     &.mv
-      transition 0s
-      transition-delay 0s
+      transition: 0s
+      transition-delay: 0s
 
     .str
       &.textin
-        transition 1s
+        transition: 1s
 
   &-cover
-    position relative
+    position: relative
 
     &::before
-      content ''
-      width 100%
-      height 100%
-      display block
-      background-color black
-      transition .8s
-      position absolute
-      top 0
-      right 0
-      z-index 15
+      content: ''
+      width: 100%
+      height: 100%
+      display: block
+      background-color: black
+      transition: .8s
+      position: absolute
+      top: 0
+      right: 0
+      z-index: 15
 
     &.mv
       &::before
-        width 0
-        transition-delay .6s
+        width: 0
+        transition-delay: .6s
 
   &-order
     &>*
-      opacity 0
-      transform translateY(50px)
+      opacity: 0
+      transform: translateY(50px)
 
       &.mv
-        transform translateY(0)
+        transform: translateY(0)
 
   &-scale
-    transition .8s ease-out
-    transform scale(1.05)
+    transition: .8s ease-out
+    transform: scale(1.05)
 
     &.mv
-      transform scale(1)
+      transform: scale(1)
 
-// up
+// up系
 .up
   &-clearfix
-    display block
+    display: block
 
     &::before
     &::after
-      content ''
-      display block
-      clear both
+      content: ''
+      display: block
+      clear: both
 
   &-over
     &-hidden
-      overflow hidden
+      overflow: hidden
 
   &-fs
-    font-style italic
+    font-style: italic
 
   &-td
-    text-decoration underline
+    text-decoration: underline
 
   &-lst
     &-disc
-      list-style-type disc
-      padding-left 1em
+      list-style-type: disc
+      padding-left: 1em
 
     &-decimal
-      list-style-type decimal
-      padding-left 1em
-
-  &-fw
-    &-light
-      font-weight lighter
-
-    &-normal
-      font-weight normal
-
-    &-bold
-      font-weight bold
+      list-style-type: decimal
+      padding-left: 1em
 
   &-adb
     a
-      display block
+      display: block
 
   &-reader
     &1
-      overflow hidden
-      text-overflow ellipsis
-      white-space nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
 
     &2
-      max-height 2em
-      display -webkit-box
-      overflow hidden
-      text-overflow ellipsis
-      -webkit-box-orient vertical
-      -webkit-line-clamp 2
+      max-height: 2em
+      display: -webkit-box
+      overflow: hidden
+      text-overflow: ellipsis
+      -webkit-box-orient: vertical
+      -webkit-line-clamp: 2
 
     &3
-      max-height 2em
-      display -webkit-box
-      overflow hidden
-      text-overflow ellipsis
-      -webkit-box-orient vertical
-      -webkit-line-clamp 3
+      max-height: 3em
+      display: -webkit-box
+      overflow: hidden
+      text-overflow: ellipsis
+      -webkit-box-orient: vertical
+      -webkit-line-clamp: 3
 
   &-circle
-    overflow hidden
-    border-radius 100%
+    overflow: hidden
+    border-radius: 100%
 
-// for文使用
-for fw in range(100, 900, 100)
-  .up-fw-{fw}
-    font-weight fw
-
-// ##### @tb　@spが用意されているクラス #####
-// up-ofi
+// ##### ここからは@tb @spが用意されているクラス名 #####
+// up-ofiの基本設定
 [class*='up-ofi']
-  width 100%
-  display block
-  position relative
+  width: 100%
+  display: block
+  position: relative
 
   img
-    width 100%
-    height 100% !important
-    object-fit cover
-    object-position 50% 50%
+    width: 100%
+    height: 100% !important
+    object-fit: cover
+    object-position: 50% 50%
+
+[class*='up-ofi-']
+  &::after
+    content: ''
+    display: block
+
+  img
+    position: absolute
+    top: 0
+    left: 0
+
+// up-ofiで10から200まで5%刻みで指定
+for ofi-percent in range(10, 200, 5)
+  .up
+    &-ofi
+      &-{ofi-percent}
+        &::after
+          padding-top: unit(ofi-percent, '%')
+
+// object-fitのオプション
+.up
+  &-ob
+    &p
+      &-c
+        img
+          object-position: center
+
+      &-t
+        img
+          object-position: top
+
+      &-b
+        img
+          object-position: bottom
+
+      &-l
+        img
+          object-position: left
+
+      &-r
+        img
+          object-position: right
+
+    &f
+      &-cover
+        img
+          object-fit: cover
+
+      &-contain
+        img
+          object-fit: contain
 
 // up
 .up
   &-text
     &-horizontal
-      writing-mode horizontal-tb
+      writing-mode: horizontal-tb
 
     &-vertical
-      writing-mode vertical-rl
+      writing-mode: vertical-rl
 
   &d
     &-block
-      display block
+      display: block
 
     &-iblock
-      display inline-block
+      display: inline-block
 
     &-flex
-      display flex
+      display: flex
 
     &-grid
-      display grid
+      display: grid
 
     &-none
-      display none
+      display: none
 
   &-f
     &-clear
       &-both
-        clear both
+        clear: both
 
       &-left
-        clear left
+        clear: left
 
       &-right
-        clear right
+        clear: right
 
   &-pos
     &-rel
-      position relative
+      position: relative
 
     &-abs
-      position absolute
+      position: absolute
 
     &-fix
-      position fixed
+      position: fixed
 
     &-static
-      position static
+      position: static
 
   &-c
     &-red
-      color red
+      color: red
 
     &-blue
-      color blue
+      color: blue
 
     &-yellow
-      color yellow
+      color: yellow
 
     &-gray
-      color gray
+      color: gray
 
     &-black
-      color black
+      color: black
 
     &-white
-      color white
+      color: white
 
     &-initial
-      color initial
+      color: initial
 
     &-inherit
-      color inherit
+      color: inherit
 
     &-unset
-      color unset
+      color: unset
 
     &-revert
-      color revert
+      color: revert
 
   &-ta
     &-c
-      text-align center
+      text-align: center
 
     &-l
-      text-align left
+      text-align: left
 
     &-r
-      text-align right
+      text-align: right
 
-for z in range(-5, -1, 1)
-  .up-z-n{abs(z)}
-    z-index z
-
+// z-index
 for z in range(0, 5, 1)
-  .up-z-{z}
-    z-index z
+  .up
+    &-z
+      &-{z}
+        z-index: z
 
-for opacity in range(5, 100, 5)
-  .up-opa-{opacity}
-    opacity .01 * opacity
+// opacity
+for opacity in range(0, 1, .25)
+  .up
+    &-op
+      if opacity == 0
+        &-0
+          opacity: 0
+      else if opacity == 1
+        &-1
+          opacity: 1
+      else
+        &-0\\\.{floor(opacity * 100)}
+          opacity: opacity
 
-for letter in range(1, 9, 1)
-  .up-ls-0\\\.0{letter}em
-    letter-spacing .01 * letter em
+// letter spacing(en)
+for ls in range(1, 20, 1)
+  .up
+    &-ls
+      if ls == 10
+        &-1em
+          letter-spacing: unit(1, 'em')
+      else if ls == 20
+        &-2em
+          letter-spacing: unit(2, 'em')
+      else if ls > 10
+        &-1\\\.{ls - 10}em
+          letter-spacing: floor(unit(ls, 'em') * .1, 1)
+      else
+        &-0\\\.{ls}em
+          letter-spacing: floor(unit(ls, 'em') * .1, 1)
 
-.up-ls-0\\\.1em
-  letter-spacing .1em
+// font-size
+.up
+  &-fz
+    for i in range(0, length(unitlist3) - 1)
+      if unitlist3[i] == 'px'
+        for fz in range(10, 20, 1)
+          &-{fz}
+            font-size: unit(fz, unitlist3[i])
 
-for letter in range(11, 19, 1)
-  .up-ls-0\\\.{letter}em
-    letter-spacing .01 * letter em
+        for fz in range(22, 70, 2)
+          &-{fz}
+            font-size: unit(fz, unitlist3[i])
 
-.up-ls-0\\\.2em
-  letter-spacing .2em
+        for fz in range(90, 150, 20)
+          &-{fz}
+            font-size: unit(fz, unitlist3[i])
 
-for fz in range(10, 20, 1)
-  .up-fz-{fz}
-    font-size fz px
+        for fz in range(50, 200, 10)
+          &-{fz}
+            font-size: unit(fz, unitlist3[i])
+      else if unitlist3[i] == '%'
+        for fz in range(50, 200, 10)
+          &-{fz}\\{unitlist3[i]}
+            font-size: unit(fz, unitlist3[i])
+      else if unitlist3[i] == 'em'
+        for fz in range(1, 10, 1)
+          &-{fz}{unitlist3[i]}
+            font-size: unit(fz, unitlist3[i])
 
-for fz in range(22, 70, 2)
-  .up-fz-{fz}
-    font-size fz px
+.up
+  &-fw
+    &-light
+      font-weight: lighter
 
-for fz in range(80, 150, 20)
-  .up-fz-{fz}
-    font-size fz px
+    &-normal
+      font-weight: normal
 
-for fz in range(50, 200, 10)
-  .up-fz-{fz}\\\%
-    font-size fz %
+    &-bold
+      font-weight: bold
 
-for fz in range(1, 9, 1)
-  .up-fz-0\\\.{fz}em
-    font-size (.1 * fz)em
+    for fw in range(100, 900, 100)
+      &-{fw}
+        font-weight: fw
 
-for fz in range(1, 10, 1)
-  .up-fz-{fz}em
-    font-size fz em
-
-.up-lh-1
-  line-height 1
-
-for lh in range(1, 9, 1)
-  .up-lh-1\\\.{lh}
-    line-height 1 + lh / 10
-
-.up-lh-2
-  line-height 2
-
-for lh in range(1, 9, 1)
-  .up-lh-2\\\.{lh}
-    line-height 2 + lh / 10
-
-.up-lh-3
-  line-height 3
+// line-height
+for lh in range(10, 30, 1)
+  .up
+    &-lh
+      if lh == 10
+        &-1
+          line-height: 1
+      else if lh == 20
+        &-2
+          line-height: 2
+      else if lh == 30
+        &-3
+          line-height: 3
+      else if 10 < lh && (lh < 20)
+        &-1\\\.{lh - 10}
+          line-height: floor((lh * .1), 1)
+      else if 20 < lh && (lh < 30)
+        &-2\\\.{lh - 20}
+          line-height: floor((lh * .1), 1)
+      else
+        &-0\\\.{lh}
+          line-height: floor((lh * .1), 1)
 
 // flex
 .up
   &-fxw
     &-wrap
-      flex-wrap wrap
+      flex-wrap: wrap
 
     &-wrapr
-      flex-wrap wrap-reverse
+      flex-wrap: wrap-reverse
 
     &-nowrap
-      flex-wrap nowrap
+      flex-wrap: nowrap
 
   &-fxd
     &-row
-      flex-direction row
+      flex-direction: row
 
     &-rowr
-      flex-direction row-reverse
+      flex-direction: row-reverse
 
     &-col
-      flex-direction column
+      flex-direction: column
 
     &-colr
-      flex-direction column-reverse
+      flex-direction: column-reverse
 
   &-even
     &>*
       &:nth-child(even)
-        flex-direction row-reverse
+        flex-direction: row-reverse
 
   &-odd
     &>*
       &:nth-child(odd)
-        flex-direction row-reverse
+        flex-direction: row-reverse
 
   &-jc
     &-s
-      justify-content start
+      justify-content: start
 
     &-fs
-      justify-content flex-start
+      justify-content: flex-start
 
     &-e
-      justify-content end
+      justify-content: end
 
     &-fe
-      justify-content flex-end
+      justify-content: flex-end
 
     &-c
-      justify-content center
+      justify-content: center
 
     &-sh
-      justify-content stretch
+      justify-content: stretch
 
     &-sb
-      justify-content space-between
+      justify-content: space-between
 
     &-sa
-      justify-content space-around
+      justify-content: space-around
 
     &-se
-      justify-content space-evenly
+      justify-content: space-evenly
 
   &-ai
     &-st
-      align-items start
+      align-items: start
 
     &-fs
-      align-items flex-start
+      align-items: flex-start
 
     &-c
-      align-items center
+      align-items: center
 
     &-e
-      align-items end
+      align-items: end
 
     &-fe
-      align-items flex-end
+      align-items: flex-end
 
     &-b
-      align-items baseline
+      align-items: baseline
 
     &-sh
-      align-items stretch
+      align-items: stretch
 
   &-ac
     &-s
-      align-content start
+      align-content: start
 
     &-fs
-      align-content flex-start
+      align-content: flex-start
 
     &-c
-      align-content center
+      align-content: center
 
     &-e
-      align-content end
+      align-content: end
 
     &-fe
-      align-content flex-end
+      align-content: flex-end
 
     &-sh
-      align-content stretch
+      align-content: stretch
 
     &-sb
-      align-content space-between
+      align-content: space-between
 
     &-sa
-      align-content space-around
+      align-content: space-around
 
     &-se
-      align-content space-evenly
+      align-content: space-evenly
 
   &-as
     &-s
-      align-self start
+      align-self: start
 
     &-fs
-      align-self flex-start
+      align-self: flex-start
 
     &-c
-      align-self center
+      align-self: center
 
     &-sh
-      align-self stretch
+      align-self: stretch
 
     &-fe
-      align-self flex-end
+      align-self: flex-end
 
     &-e
-      align-self end
+      align-self: end
 
     &-auto
-      align-self auto
+      align-self: auto
 
   &-js
     &-s
-      justify-self start
+      justify-self: start
 
     &-e
-      justify-self end
+      justify-self: end
 
     &-c
-      justify-self center
+      justify-self: center
 
     &-sh
-      justify-self stretch
+      justify-self: stretch
 
   &-fxg
     &-0
-      flex-grow 0
+      flex-grow: 0
 
     &-1
-      flex-grow 1
+      flex-grow: 1
 
   &-fxsh
     &-0
-      flex-shrink 0
+      flex-shrink: 0
 
     &-1
-      flex-shrink 1
+      flex-shrink: 1
 
 // order
-.up-order-n1
-  order -1
-
-for o in range(0, 10, 1)
-  .up-order-{o}
-    order o
+for order in range(0, 10, 1)
+  .up-order-{order}
+    order: order
 
 // width
 .up
   &-w
     &-auto
-      width auto
+      width: auto
 
     &-min
-      width min-content
+      width: min-content
 
     &-max
-      width max-content
+      width: max-content
 
     &-fit
-      width fit-content
+      width: fit-content
 
-// width(px)
-for width-px in range(20, 300, 10)
-  .up-w-{width-px}
-    width width-px px
+// width
+.up
+  &-w
+    for i in range(0, length(unitlist4) - 1)
+      if unitlist4[i] == 'px'
+        for wid in range(10, 300, 10)
+          &-{wid}
+            width: unit(wid, unitlist4[i])
 
-for width-px in range(350, 1200, 50)
-  .up-w-{width-px}
-    width width-px px
+        for wid in range(350, 1200, 50)
+          &-{wid}
+            width: unit(wid, unitlist4[i])
+      else if unitlist4[i] == '%'
+        for wid in range(5, 120, 5)
+          &-{wid}\\{unitlist4[i]}
+            width: unit(wid, unitlist4[i])
 
-// width(%)
-.up-w-48\\\%
-  width 48%
+        &-48\\\%
+          width: 48%
 
-for width-p in range(5, 120, 5)
-  .up-w-{width-p}\\\%
-    width width-p %
+      else if unitlist4[i] == 'vw'
+        for wid in range(10, 100, 10)
+          &-{wid}{unitlist4[i]}
+            width: unit(wid, unitlist4[i])
 
 // min-width(px)
-.up-minw-auto
-  min-width auto
+.up
+  &-minw
+    &-auto
+      min-width: auto
 
-for min-width-px in range(20, 300, 10)
-  .up-minw-{min-width-px}
-    min-width min-width-px px
+    for i in range(0, length(unitlist4) - 1)
+      if unitlist4[i] == 'px'
+        for wid in range(20, 500, 10)
+          &-{wid}
+            width: unit(wid, unitlist4[i])
+      else if unitlist4[i] == '%'
+        for wid in range(5, 100, 5)
+          &-{wid}\\{unitlist4[i]}
+            width: unit(wid, unitlist4[i])
+
+        &-48\\\%
+          width: 48%
+
+      else if unitlist4[i] == 'vw'
+        for wid in range(10, 100, 10)
+          &-{wid}{unitlist4[i]}
+            width: unit(wid, unitlist4[i])
 
 // max-width(px)
-for max-width-px in range(50, 1200, 50)
-  .up-maxw-{max-width-px}
-    max-width max-width-px px
+.up
+  &-maxw
+    for i in range(0, length(unitlist4) - 1)
+      if unitlist4[i] == 'px'
+        for wid in range(50, 1200, 50)
+          &-{wid}
+            width: unit(wid, unitlist4[i])
+      else if unitlist4[i] == '%'
+        for wid in range(5, 100, 5)
+          &-{wid}\\{unitlist4[i]}
+            width: unit(wid, unitlist4[i])
+
+        &-48\\\%
+          width: 48%
+
+      else if unitlist4[i] == 'vw'
+        for wid in range(10, 100, 10)
+          &-{wid}{unitlist4[i]}
+            width: unit(wid, unitlist4[i])
 
 // height(px)
-.up-h-auto
-  height auto
+.up
+  &-h
+    &-auto
+      height: auto
 
-for height-px in range(50, 1000, 50)
-  .up-h-{height-px}
-    height height-px px
+    for i in range(0, length(unitlist5) - 1)
+      if unitlist5[i] == 'px'
+        for hei in range(50, 1000, 50)
+          &-{hei}
+            width: unit(hei, unitlist5[i])
+      else if unitlist5[i] == '%'
+        for hei in range(5, 100, 5)
+          &-{hei}\\{unitlist5[i]}
+            width: unit(hei, unitlist5[i])
 
-.up-h-100\\\%
-  height 100%
+        &-48\\\%
+          width: 48%
 
-// margin
+      else if unitlist5[i] == 'vw'
+        for hei in range(10, 100, 10)
+          &-{hei}{unitlist5[i]}
+            width: unit(hei, unitlist5[i])
+
+// margin padding
 .up
   &-m
     &-auto
-      margin auto
+      margin: auto
 
     &l
       &-auto
-        margin-left auto
+        margin-left: auto
 
     &r
       &-auto
-        margin-right auto
+        margin-right: auto
 
     &x
       &-auto
-        margin-left auto
-        margin-right auto
+        margin-left: auto
+        margin-right: auto
 
-// margin(5px〜50px)
-range-margin-px = 5, 50, 5
+// (5px〜50px)
+spaces(0, 50, 5, 'px')
+spaces(0, 50, 5, 'em')
+spaces(0, 50, 5, '%')
 
-for margin-px in range(range-margin-px)
-  .up
-    &-m
-      &-{margin-px}
-        margin margin-px px
-
-      &x-{margin-px}
-        margin-left margin-px px
-        margin-right margin-px px
-
-      &y-{margin-px}
-        margin-top margin-px px
-        margin-bottom margin-px px
-
-      &t-{margin-px}
-        margin-top margin-px px
-
-      &b-{margin-px}
-        margin-bottom margin-px px
-
-      &l-{margin-px}
-        margin-left margin-px px
-
-      &r-{margin-px}
-        margin-right margin-px px
-
-// margin(60px〜150px)
-range-margin-px = 60, 150, 10
-
-for margin-px in range(range-margin-px)
-  .up
-    &-m
-      &-{margin-px}
-        margin margin-px px
-
-      &x-{margin-px}
-        margin-left margin-px px
-        margin-right margin-px px
-
-      &y-{margin-px}
-        margin-top margin-px px
-        margin-bottom margin-px px
-
-      &t-{margin-px}
-        margin-top margin-px px
-
-      &b-{margin-px}
-        margin-bottom margin-px px
-
-      &l-{margin-px}
-        margin-left margin-px px
-
-      &r-{margin-px}
-        margin-right margin-px px
-
-// padding(5px〜50px)
-range-padding-px = 5, 50, 5
-
-for padding-px in range(range-padding-px)
-  .up
-    &-p
-      &-{padding-px}
-        padding padding-px px
-
-      &x-{padding-px}
-        padding-left padding-px px
-        padding-right padding-px px
-
-      &y-{padding-px}
-        padding-top padding-px px
-        padding-bottom padding-px px
-
-      &t-{padding-px}
-        padding-top padding-px px
-
-      &b-{padding-px}
-        padding-bottom padding-px px
-
-      &l-{padding-px}
-        padding-left padding-px px
-
-      &r-{padding-px}
-        padding-right padding-px px
-
-// padding (60px〜150px)
-range-padding-px = 60, 150, 10
-
-for padding-px in range(range-padding-px)
-  .up
-    &-p
-      &-{padding-px}
-        padding padding-px px
-
-      &x-{padding-px}
-        padding-left padding-px px
-        padding-right padding-px px
-
-      &y-{padding-px}
-        padding-top padding-px px
-        padding-bottom padding-px px
-
-      &t-{padding-px}
-        padding-top padding-px px
-
-      &b-{padding-px}
-        padding-bottom padding-px px
-
-      &l-{padding-px}
-        padding-left padding-px px
-
-      &r-{padding-px}
-        padding-right padding-px px
+// (60px〜150px)
+spaces(60, 150, 10, 'px')
 
 // up-col
 [class*='up-col-']
-  display flex
-  flex-wrap wrap
+  display: flex
+  flex-wrap: wrap
 
 for col-num in range(1, 10, 1)
   .up
     &-col
       &-{col-num}
         &>*
-          width ceil((100% / col-num), 3)
+          width: ceil((100% / col-num), 3)
 
 // gapy(px)
 for gapy-px in range(0, 100, 10)
   .up-gapy-{gapy-px}
     &>*
-      padding-bottom gapy-px px
+      padding-bottom: gapy-px px
 
 // gapx(px)
 for gapx-px in range(0, 100, 10)
   .up-gapx-{gapx-px}
-    margin-left -(gapx-px / 2)px
-    margin-right -(gapx-px / 2)px
+    margin-left: -(gapx-px / 2)px
+    margin-right: -(gapx-px / 2)px
 
     &>*
-      padding-left ceil((gapx-px / 2), 3) px
-      padding-right ceil((gapx-px / 2), 3) px
+      padding-left: ceil((gapx-px / 2), 3) px
+      padding-right: ceil((gapx-px / 2), 3) px
 
 // column-gap(px)
 for column-gap in range(0, 100, 5)
   .up-column-gap-{column-gap}
-    column-gap column-gap px
+    column-gap: column-gap px
 
 // column-gap(em)
 // for column-gap in range(0,10,0.1)
@@ -979,1505 +971,1469 @@ for column-gap in range(0, 100, 5)
 // row-gap(px)
 for row-gap in range(0, 100, 5)
   .up-row-gap-{row-gap}
-    row-gap row-gap px
-
-/* 画像比率固定 */
-for image in range(10, 170, 5)
-  .up-ofi-{image}
-    &:after
-      content ''
-      display block
-      padding-top image %
-
-    img
-      position absolute
-      top 0
-      left 0
-
-/* object-position */
-.up-obp-c img
-  object-position center
-
-.up-obp-t img
-  object-position top
-
-.up-obp-r img
-  object-position right
-
-.up-obp-b img
-  object-position bottom
-
-.up-obp-l img
-  object-position left
-
-/* object-fit */
-.up-obf-cover img
-  object-fit cover
-
-.up-obf-contain img
-  object-fit contain
+    row-gap: row-gap px
 
 /* 表示・非表示 */
 .up-show
-  display block
+  display: block
 
 .up-hide
-  display none
+  display: none
 
   /* レスポンシブ改行 */
 
 .break
   &-pc
-    display block
+    display: block
 
     &-tb
-      display block
+      display: block
 
       &-sp
-        display block
+        display: block
 
     &-sp
-      display block
+      display: block
 
   &-tb
-    display none
+    display: none
 
     &-sp
-      display none
+      display: none
 
   &-sp
-    display none
+    display: none
 
-@media (max-width 1024px)
+@media (max-width: 1024px)
   /* writing-mode */
 
 .up-wm-h\\\@tb
-  writing-mode horizontal-tb
+  writing-mode: horizontal-tb
 
 .up-wm-vlr\\\@tb
-  writing-mode vertical-lr
+  writing-mode: vertical-lr
 
 .up-wm-vrl\\\@tb
-  writing-mode vertical-rl
+  writing-mode: vertical-rl
 
 /* white-space */
 .up-ws-no\\\@tb
-  white-space nowrap
+  white-space: nowrap
 
 .up-ws-normal\\\@tb
-  white-space normal
+  white-space: normal
 
 /* display */
 .up-d-block\\\@tb
-  display block
+  display: block
 
 .up-d-iblock\\\@tb
-  display inline-block
+  display: inline-block
 
 .up-d-flex\\\@tb
-  display flex
+  display: flex
 
 .up-d-grid\\\@tb
-  display grid
+  display: grid
 
 .up-d-none\\\@tb
-  display none
+  display: none
 
 /* float */
 .up-f-left\\\@tb
-  float left
+  float: left
 
 .up-f-right\\\@tb
-  float right
+  float: right
 
 /* box-sizing */
 .up-bz-content\\\@tb
-  box-sizing content-box
+  box-sizing: content-box
 
 /* position */
 .up-pos-rel\\\@tb
-  position relative
+  position: relative
 
 .up-pos-abs\\\@tb
-  position absolute
+  position: absolute
 
 .up-pos-fix\\\@tb
-  position fixed
+  position: fixed
 
 /* z-index */
 for z in range(-5, -1, 1)
   .up-z-n{abs(z)}\\\@tb
-    z-index z
+    z-index: z
 
 for z in range(0, 5, 1)
   .up-z-{z}\\\@tb
-    z-index z
+    z-index: z
 
 /* color */
 .up-c-red\\\@tb
-  color red
+  color: red
 
 .up-c-blue\\\@tb
-  color blue
+  color: blue
 
 .up-c-yellow\\\@tb
-  color yellow
+  color: yellow
 
 .up-c-gray\\\@tb
-  color gray
+  color: gray
 
 .up-c-black\\\@tb
-  color black
+  color: black
 
 .up-c-white\\\@tb
-  color white
+  color: white
 
 /* background-color */
 .up-bgc-red\\\@tb
-  background-color red
+  background-color: red
 
 .up-bgc-blue\\\@tb
-  background-color blue
+  background-color: blue
 
 .up-bgc-yellow\\\@tb
-  background-color yellow
+  background-color: yellow
 
 .up-bgc-gray\\\@tb
-  background-color gray
+  background-color: gray
 
 .up-bgc-black\\\@tb
-  background-color black
+  background-color: black
 
 .up-bgc-white\\\@tb
-  background-color white
+  background-color: white
 
 /* text-align */
 .up-ta-c\\\@tb
-  text-align center
+  text-align: center
 
 .up-ta-l\\\@tb
-  text-align left
+  text-align: left
 
 .up-ta-r\\\@tb
-  text-align right
+  text-align: right
 
 /* font-size */
 for fz in range(10, 20, 1)
   .up-fz-{fz}\\\@tb
-    font-size fz px
+    font-size: fz px
 
 for fz in range(22, 70, 2)
   .up-fz-{fz}\\\@tb
-    font-size fz px
+    font-size: fz px
 
 for fz in range(80, 150, 20)
   .up-fz-{fz}\\\@tb
-    font-size fz px
+    font-size: fz px
 
 for fz in range(50, 200, 10)
   .up-fz-{fz}\\\%\\\@tb
-    font-size fz %
+    font-size: fz + '%'
 
 /* line-height */
 .up-lh-1\\\@tb
-  line-height 1
+  line-height: 1
 
 for lh in range(1, 9, 1)
   .up-lh-1\\\.{lh}\\\@tb
-    line-height 1 + lh / 10
+    line-height: 1 + lh / 10
 
 .up-lh-2\\\@tb
-  line-height 2
+  line-height: 2
 
 for lh in range(1, 9, 1)
   .up-lh-2\\\.{lh}\\\@tb
-    line-height 2 + lh / 10
+    line-height: 2 + lh / 10
 
 .up-lh-3\\\@tb
-  line-height 3
+  line-height: 3
 
 /* br */
 .up-br\\\@tb br
-  display inline
+  display: inline
 
 .up-br-none\\\@tb br
-  display none
+  display: none
 
 /* flex-wrap */
 .up-fxw-wrap\\\@tb
-  flex-wrap wrap
+  flex-wrap: wrap
 
 .up-fxw-wrapr\\\@tb
-  flex-wrap wrap-reverse
+  flex-wrap: wrap-reverse
 
 .up-fxw-nowrap\\\@tb
-  flex-wrap nowrap
+  flex-wrap: nowrap
 
 /* flex-direction */
 .up-fxd-row\\\@tb
-  flex-direction row
+  flex-direction: row
 
 .up-fxd-rowr\\\@tb
-  flex-direction row-reverse
+  flex-direction: row-reverse
 
 .up-fxd-col\\\@tb
-  flex-direction column
+  flex-direction: column
 
 .up-fxd-colr\\\@tb
-  flex-direction column-reverse
+  flex-direction: column-reverse
 
 /* justify-content */
 .up-jc-s\\\@tb
-  justify-content start
+  justify-content: start
 
 .up-jc-fs\\\@tb
-  justify-content flex-start
+  justify-content: flex-start
 
 .up-jc-e\\\@tb
-  justify-content end
+  justify-content: end
 
 .up-jc-fe\\\@tb
-  justify-content flex-end
+  justify-content: flex-end
 
 .up-jc-c\\\@tb
-  justify-content center
+  justify-content: center
 
 .up-jc-sh\\\@tb
-  justify-content stretch
+  justify-content: stretch
 
 .up-jc-sb\\\@tb
-  justify-content space-between
+  justify-content: space-between
 
 .up-jc-sa\\\@tb
-  justify-content space-around
+  justify-content: space-around
 
 .up-jc-se\\\@tb
-  justify-content space-evenly
+  justify-content: space-evenly
 
 /* justify-items */
 .up-ji-st\\\@tb
-  justify-items start
+  justify-items: start
 
 .up-ji-e\\\@tb
-  justify-items end
+  justify-items: end
 
 .up-ji-c\\\@tb
-  justify-items center
+  justify-items: center
 
 .up-ji-sh\\\@tb
-  justify-items stretch
+  justify-items: stretch
 
 /* align-items */
 .up-ai-st\\\@tb
-  align-items start
+  align-items: start
 
 .up-ai-fs\\\@tb
-  align-items flex-start
+  align-items: flex-start
 
 .up-ai-c\\\@tb
-  align-items center
+  align-items: center
 
 .up-ai-e\\\@tb
-  align-items end
+  align-items: end
 
 .up-ai-fe\\\@tb
-  align-items flex-end
+  align-items: flex-end
 
 .up-ai-b\\\@tb
-  align-items baseline
+  align-items: baseline
 
 .up-ai-sh\\\@tb
-  align-items stretch
+  align-items: stretch
 
 /* align-content */
 .up-ac-s\\\@tb
-  align-content start
+  align-content: start
 
 .up-ac-fs\\\@tb
-  align-content flex-start
+  align-content: flex-start
 
 .up-ac-c\\\@tb
-  align-content center
+  align-content: center
 
 .up-ac-e\\\@tb
-  align-content end
+  align-content: end
 
 .up-ac-fe\\\@tb
-  align-content flex-end
+  align-content: flex-end
 
 .up-ac-sh\\\@tb
-  align-content stretch
+  align-content: stretch
 
 .up-ac-sb\\\@tb
-  align-content space-between
+  align-content: space-between
 
 .up-ac-sa\\\@tb
-  align-content space-around
+  align-content: space-around
 
 .up-ac-se\\\@tb
-  align-content space-evenly
+  align-content: space-evenly
 
 /* align-self */
 .up-as-s\\\@tb
-  align-self start
+  align-self: start
 
 .up-as-fs\\\@tb
-  align-self flex-start
+  align-self: flex-start
 
 .up-as-c\\\@tb
-  align-self center
+  align-self: center
 
 .up-as-sh\\\@tb
-  align-self stretch
+  align-self: stretch
 
 .up-as-fe\\\@tb
-  align-self flex-end
+  align-self: flex-end
 
 .up-as-e\\\@tb
-  align-self end
+  align-self: end
 
 .up-as-auto\\\@tb
-  align-self auto
+  align-self: auto
 
 /* justify-self */
 .up-js-s\\\@tb
-  justify-self start
+  justify-self: start
 
 .up-js-e\\\@tb
-  justify-self end
+  justify-self: end
 
 .up-js-c\\\@tb
-  justify-self center
+  justify-self: center
 
 .up-js-sh\\\@tb
-  justify-self stretch
+  justify-self: stretch
 
 /* grow, shrink */
 .up-fxg-0\\\@tb
-  flex-grow 0
+  flex-grow: 0
 
 .up-fxg-1\\\@tb
-  flex-grow 1
+  flex-grow: 1
 
 .up-fxsh-0\\\@tb
-  flex-shrink 0
+  flex-shrink: 0
 
 .up-fxsh-1\\\@tb
-  flex-shrink 1
+  flex-shrink: 1
 
 /* order */
 .up-order-n1\\\@tb
-  order -1
+  order: -1
 
 for o in range(0, 10, 1)
   .up-order-{o}\\\@tb
-    order o
+    order: o
 
 /* width(px) */
 .up-w-auto\\\@tb
-  width auto
+  width: auto
 
 .up-w-min\\\@tb
-  width min-content
+  width: min-content
 
 .up-w-max\\\@tb
-  width max-content
+  width: max-content
 
 .up-w-fit\\\@tb
-  width fit-content
+  width: fit-content
 
 for width-px in range(20, 300, 10)
   .up-w-{width-px}\\\@tb
-    width width-px px
+    width: width-px px
 
 for width-px in range(350, 1000, 50)
   .up-w-{width-px}\\\@tb
-    width width-px px
+    width: width-px px
 
 /* width(%) */
 .up-w-48\\\%\\\@tb
-  width 48%
+  width: 48%
 
 for width-p in range(5, 100, 5)
   .up-w-{width-p}\\\%\\\@tb
-    width width-p %
+    width: width-p + '%'
 
 /* min-width(px) */
 .up-minw-auto\\\@tb
-  min-width auto
+  min-width: auto
 
 for min-width-px in range(20, 300, 10)
   .up-minw-{min-width-px}\\\@tb
-    min-width min-width-px px
+    min-width: min-width-px px
 
 /* max-width(px) */
 for max-width-px in range(50, 1000, 50)
   .up-maxw-{max-width-px}\\\@tb
-    max-width max-width-px px
+    max-width: max-width-px px
 
 /* height(px) */
 .up-h-auto\\\@tb
-  height auto
+  height: auto
 
 .up-h-auto-i\\\@tb
-  height auto !important
+  height: auto !important
 
 for height-px in range(50, 1000, 50)
   .up-h-{height-px}\\\@tb
-    height height-px px
+    height: height-px px
 
 .up-h-100\\\%\\\@tb
-  height 100%
+  height: 100%
 
 /* margin */
 .up-m-auto\\\@tb
-  margin auto
+  margin: auto
 
 .up-ml-auto\\\@tb
-  margin-left auto
+  margin-left: auto
 
 .up-mr-auto\\\@tb
-  margin-right auto
+  margin-right: auto
 
 .up-mx-auto\\\@tb
-  margin-left auto
-  margin-right auto
+  margin-left: auto
+  margin-right: auto
 
 /* margin(px 0~50) */
 range-margin-px = 0, 50, 5
 
 for margin-px in range(range-margin-px)
   .up-mx-{margin-px}\\\@tb
-    margin-left margin-px px
-    margin-right margin-px px
+    margin-left: margin-px px
+    margin-right: margin-px px
 
 for margin-px in range(range-margin-px)
   .up-my-{margin-px}\\\@tb
-    margin-top margin-px px
-    margin-bottom margin-px px
+    margin-top: margin-px px
+    margin-bottom: margin-px px
 
 for margin-px in range(range-margin-px)
   .up-mt-{margin-px}\\\@tb
-    margin-top margin-px px
+    margin-top: margin-px px
 
 for margin-px in range(range-margin-px)
   .up-mr-{margin-px}\\\@tb
-    margin-right margin-px px
+    margin-right: margin-px px
 
 for margin-px in range(range-margin-px)
   .up-mb-{margin-px}\\\@tb
-    margin-bottom margin-px px
+    margin-bottom: margin-px px
 
 for margin-px in range(range-margin-px)
   .up-ml-{margin-px}\\\@tb
-    margin-left margin-px px
+    margin-left: margin-px px
 
 /* margin(px 60~150) */
 range-margin-px = 60, 150, 10
 
 for margin-px in range(range-margin-px)
   .up-my-{margin-px}\\\@tb
-    margin-top margin-px px
-    margin-bottom margin-px px
+    margin-top: margin-px px
+    margin-bottom: margin-px px
 
 for margin-px in range(range-margin-px)
   .up-mt-{margin-px}\\\@tb
-    margin-top margin-px px
+    margin-top: margin-px px
 
 for margin-px in range(range-margin-px)
   .up-mb-{margin-px}\\\@tb
-    margin-bottom margin-px px
+    margin-bottom: margin-px px
 
 /* padding all(px 0~150) */
 range-padding-px = 0, 50, 5
 
 for padding-px in range(range-padding-px)
   .up-p-{padding-px}\\\@tb
-    padding padding-px px
+    padding: padding-px px
 
 /* padding all(px 60~150) */
 range-padding-px = 60, 150, 10
 
 for padding-px in range(range-padding-px)
   .up-p-{padding-px}\\\@tb
-    padding padding-px px
+    padding: padding-px px
 
 /* padding (px 0~50) */
 range-padding-px = 0, 50, 5
 
 for padding-px in range(range-padding-px)
   .up-px-{padding-px}\\\@tb
-    padding-left padding-px px
-    padding-right padding-px px
+    padding-left: padding-px px
+    padding-right: padding-px px
 
 for padding-px in range(range-padding-px)
   .up-py-{padding-px}\\\@tb
-    padding-top padding-px px
-    padding-bottom padding-px px
+    padding-top: padding-px px
+    padding-bottom: padding-px px
 
 for padding-px in range(range-padding-px)
   .up-pt-{padding-px}\\\@tb
-    padding-top padding-px px
+    padding-top: padding-px px
 
 for padding-px in range(range-padding-px)
   .up-pr-{padding-px}\\\@tb
-    padding-right padding-px px
+    padding-right: padding-px px
 
 for padding-px in range(range-padding-px)
   .up-pb-{padding-px}\\\@tb
-    padding-bottom padding-px px
+    padding-bottom: padding-px px
 
 for padding-px in range(range-padding-px)
   .up-pl-{padding-px}\\\@tb
-    padding-left padding-px px
+    padding-left: padding-px px
 
 /* padding (px 60~150) */
 range-padding-px = 60, 150, 10
 
 for padding-px in range(range-padding-px)
   .up-px-{padding-px}\\\@tb
-    padding-left padding-px px
-    padding-right padding-px px
+    padding-left: padding-px px
+    padding-right: padding-px px
 
 for padding-px in range(range-padding-px)
   .up-py-{padding-px}\\\@tb
-    padding-top padding-px px
-    padding-bottom padding-px px
+    padding-top: padding-px px
+    padding-bottom: padding-px px
 
 for padding-px in range(range-padding-px)
   .up-pt-{padding-px}\\\@tb
-    padding-top padding-px px
+    padding-top: padding-px px
 
 for padding-px in range(range-padding-px)
   .up-pr-{padding-px}\\\@tb
-    padding-right padding-px px
+    padding-right: padding-px px
 
 for padding-px in range(range-padding-px)
   .up-pb-{padding-px}\\\@tb
-    padding-bottom padding-px px
+    padding-bottom: padding-px px
 
 for padding-px in range(range-padding-px)
   .up-pl-{padding-px}\\\@tb
-    padding-left padding-px px
+    padding-left: padding-px px
 
 /* カラム */
 .up-col-1\\\@tb
-  display flex
-  flex-wrap wrap
+  display: flex
+  flex-wrap: wrap
 
   > *
-    width 100%
+    width: 100%
 
 .up-col-2\\\@tb
-  display flex
-  flex-wrap wrap
+  display: flex
+  flex-wrap: wrap
 
   > *
-    width 50%
+    width: 50%
 
 .up-col-3\\\@tb
-  display flex
-  flex-wrap wrap
+  display: flex
+  flex-wrap: wrap
 
   > *
-    width 33.333%
+    width: 33.333%
 
 .up-col-4\\\@tb
-  display flex
-  flex-wrap wrap
+  display: flex
+  flex-wrap: wrap
 
   > *
-    width 25%
+    width: 25%
 
 .up-col-5\\\@tb
-  display flex
-  flex-wrap wrap
+  display: flex
+  flex-wrap: wrap
 
   > *
-    width 20%
+    width: 20%
 
 .up-col-6\\\@tb
-  display flex
-  flex-wrap wrap
+  display: flex
+  flex-wrap: wrap
 
   > *
-    width 16.666%
+    width: 16.666%
 
 /* gapy(px) */
 for gapy-px in range(0, 100, 10)
   .up-gapy-{gapy-px}\\\@tb
     > *
-      padding-bottom gapy-px px
+      padding-bottom: gapy-px px
 
 /* gapx(px) */
 for gapx-px in range(0, 100, 10)
   .up-gapx-{gapx-px}\\\@tb
-    margin-left -(gapx-px / 2)px
-    margin-right -(gapx-px / 2)px
+    margin-left: -(gapx-px / 2)px
+    margin-right: -(gapx-px / 2)px
 
     > *
-      padding-left ceil((gapx-px / 2), 3) px
-      padding-right ceil((gapx-px / 2), 3) px
+      padding-left: ceil((gapx-px / 2), 3) px
+      padding-right: ceil((gapx-px / 2), 3) px
 
 /* rgap(px) */
 for row-gap in range(0, 150, 10)
   .up-rgap-{row-gap}\\\@tb
-    row-gap row-gap px
+    row-gap: row-gap px
 
 /* 画像比率固定 */
 for image in range(10, 170, 5)
   .up-ofi-{image}\\\@tb
     &:after
-      content ''
-      display block
-      padding-top image %
+      content: ''
+      display: block
+      padding-top: image + '%'
 
     img
-      position absolute
-      top 0
-      left 0
+      position: absolute
+      top: 0
+      left: 0
 
 /* object-position */
 .up-obp-c\\\@tb img
-  object-position center
+  object-position: center
 
 .up-obp-t\\\@tb img
-  object-position top
+  object-position: top
 
 .up-obp-r\\\@tb img
-  object-position right
+  object-position: right
 
 .up-obp-b\\\@tb img
-  object-position bottom
+  object-position: bottom
 
 .up-obp-l\\\@tb img
-  object-position left
+  object-position: left
 
 /* object-fit */
 .up-obf-cover\\\@tb img
-  object-fit cover
+  object-fit: cover
 
 .up-obf-contain\\\@tb img
-  object-fit contain
+  object-fit: contain
 
 /* 表示・非表示 */
 .up-show\\\@tb
-  display block
+  display: block
 
 .up-hide\\\@tb
-  display none
+  display: none
 
 .break
   &-pc
-    display none
+    display: none
 
     &-sp
-      display none
+      display: none
 
   &-tb
-    display block
+    display: block
 
     &-sp
-      display block
+      display: block
 
-@media (max-width 599px)
+@media (max-width: 599px)
   .up-wm-h\\\@sp
-    writing-mode horizontal-tb
+    writing-mode: horizontal-tb
 
   .up-wm-vlr\\\@sp
-    writing-mode vertical-lr
+    writing-mode: vertical-lr
 
   .up-wm-vrl\\\@sp
-    writing-mode vertical-rl
+    writing-mode: vertical-rl
 
   /* white-space */
   .up-ws-no\\\@sp
-    white-space nowrap
+    white-space: nowrap
 
   .up-ws-normal\\\@sp
-    white-space normal
+    white-space: normal
 
   /* display */
   .up-d-block\\\@sp
-    display block
+    display: block
 
   .up-d-iblock\\\@sp
-    display inline-block
+    display: inline-block
 
   .up-d-flex\\\@sp
-    display flex
+    display: flex
 
   .up-d-grid\\\@sp
-    display grid
+    display: grid
 
   .up-d-none\\\@sp
-    display none
+    display: none
 
   /* float */
   .up-f-left\\\@sp
-    float left
+    float: left
 
   .up-f-right\\\@sp
-    float right
+    float: right
 
   /* box-sizing */
   .up-bz-content\\\@sp
-    box-sizing content-box
+    box-sizing: content-box
 
   /* position */
   .up-pos-rel\\\@sp
-    position relative
+    position: relative
 
   .up-pos-abs\\\@sp
-    position absolute
+    position: absolute
 
   .up-pos-fix\\\@sp
-    position fixed
+    position: fixed
 
   /* z-index */
   for z in range(-5, -1, 1)
     .up-z-n{abs(z)}\\\@sp
-      z-index z
+      z-index: z
 
   for z in range(0, 5, 1)
     .up-z-{z}\\\@sp
-      z-index z
+      z-index: z
 
   /* color */
   .up-c-red\\\@sp
-    color red
+    color: red
 
   .up-c-blue\\\@sp
-    color blue
+    color: blue
 
   .up-c-yellow\\\@sp
-    color yellow
+    color: yellow
 
   .up-c-gray\\\@sp
-    color gray
+    color: gray
 
   .up-c-black\\\@sp
-    color black
+    color: black
 
   .up-c-white\\\@sp
-    color white
+    color: white
 
   /* background-color */
   .up-bgc-red\\\@sp
-    background-color red
+    background-color: red
 
   .up-bgc-blue\\\@sp
-    background-color blue
+    background-color: blue
 
   .up-bgc-yellow\\\@sp
-    background-color yellow
+    background-color: yellow
 
   .up-bgc-gray\\\@sp
-    background-color gray
+    background-color: gray
 
   .up-bgc-black\\\@sp
-    background-color black
+    background-color: black
 
   .up-bgc-white\\\@sp
-    background-color white
+    background-color: white
 
   /* text-align */
   .up-ta-c\\\@sp
-    text-align center
+    text-align: center
 
   .up-ta-l\\\@sp
-    text-align left
+    text-align: left
 
   .up-ta-r\\\@sp
-    text-align right
+    text-align: right
 
   /* font-size */
   for fz in range(10, 20, 1)
     .up-fz-{fz}\\\@sp
-      font-size fz px
+      font-size: fz px
 
   for fz in range(22, 70, 2)
     .up-fz-{fz}\\\@sp
-      font-size fz px
+      font-size: fz px
 
   for fz in range(80, 150, 20)
     .up-fz-{fz}\\\@sp
-      font-size fz px
+      font-size: fz px
 
   for fz in range(50, 200, 10)
     .up-fz-{fz}\\\%\\\@sp
-      font-size fz %
+      font-size: fz + '%'
 
   /* line-height */
   .up-lh-1\\\@sp
-    line-height 1
+    line-height: 1
 
   for lh in range(1, 9, 1)
     .up-lh-1\\\.{lh}\\\@sp
-      line-height 1 + lh / 10
+      line-height: 1 + lh / 10
 
   .up-lh-2\\\@sp
-    line-height 2
+    line-height: 2
 
   for lh in range(1, 9, 1)
     .up-lh-2\\\.{lh}\\\@sp
-      line-height 2 + lh / 10
+      line-height: 2 + lh / 10
 
   .up-lh-3\\\@sp
-    line-height 3
+    line-height: 3
 
   /* br */
   .up-br\\\@sp br
-    display inline
+    display: inline
 
   .up-br-none\\\@sp br
-    display none
+    display: none
 
   /* flex-wrap */
   .up-fxw-wrap\\\@sp
-    flex-wrap wrap
+    flex-wrap: wrap
 
   .up-fxw-wrapr\\\@sp
-    flex-wrap wrap-reverse
+    flex-wrap: wrap-reverse
 
   .up-fxw-nowrap\\\@sp
-    flex-wrap nowrap
+    flex-wrap: nowrap
 
   /* flex-direction */
   .up-fxd-row\\\@sp
-    flex-direction row
+    flex-direction: row
 
   .up-fxd-rowr\\\@sp
-    flex-direction row-reverse
+    flex-direction: row-reverse
 
   .up-fxd-col\\\@sp
-    flex-direction column
+    flex-direction: column
 
   .up-fxd-colr\\\@sp
-    flex-direction column-reverse
+    flex-direction: column-reverse
 
   /* justify-content */
   .up-jc-s\\\@sp
-    justify-content start
+    justify-content: start
 
   .up-jc-fs\\\@sp
-    justify-content flex-start
+    justify-content: flex-start
 
   .up-jc-e\\\@sp
-    justify-content end
+    justify-content: end
 
   .up-jc-fe\\\@sp
-    justify-content flex-end
+    justify-content: flex-end
 
   .up-jc-c\\\@sp
-    justify-content center
+    justify-content: center
 
   .up-jc-sh\\\@sp
-    justify-content stretch
+    justify-content: stretch
 
   .up-jc-sb\\\@sp
-    justify-content space-between
+    justify-content: space-between
 
   .up-jc-sa\\\@sp
-    justify-content space-around
+    justify-content: space-around
 
   .up-jc-se\\\@sp
-    justify-content space-evenly
+    justify-content: space-evenly
 
   /* justify-items */
   .up-ji-st\\\@sp
-    justify-items start
+    justify-items: start
 
   .up-ji-e\\\@sp
-    justify-items end
+    justify-items: end
 
   .up-ji-c\\\@sp
-    justify-items center
+    justify-items: center
 
   .up-ji-sh\\\@sp
-    justify-items stretch
+    justify-items: stretch
 
   /* align-items */
   .up-ai-st\\\@sp
-    align-items start
+    align-items: start
 
   .up-ai-fs\\\@sp
-    align-items flex-start
+    align-items: flex-start
 
   .up-ai-c\\\@sp
-    align-items center
+    align-items: center
 
   .up-ai-e\\\@sp
-    align-items end
+    align-items: end
 
   .up-ai-fe\\\@sp
-    align-items flex-end
+    align-items: flex-end
 
   .up-ai-b\\\@sp
-    align-items baseline
+    align-items: baseline
 
   .up-ai-sh\\\@sp
-    align-items stretch
+    align-items: stretch
 
   /* align-content */
   .up-ac-s\\\@sp
-    align-content start
+    align-content: start
 
   .up-ac-fs\\\@sp
-    align-content flex-start
+    align-content: flex-start
 
   .up-ac-c\\\@sp
-    align-content center
+    align-content: center
 
   .up-ac-e\\\@sp
-    align-content end
+    align-content: end
 
   .up-ac-fe\\\@sp
-    align-content flex-end
+    align-content: flex-end
 
   .up-ac-sh\\\@sp
-    align-content stretch
+    align-content: stretch
 
   .up-ac-sb\\\@sp
-    align-content space-between
+    align-content: space-between
 
   .up-ac-sa\\\@sp
-    align-content space-around
+    align-content: space-around
 
   .up-ac-se\\\@sp
-    align-content space-evenly
+    align-content: space-evenly
 
   /* align-self */
   .up-as-s\\\@sp
-    align-self start
+    align-self: start
 
   .up-as-fs\\\@sp
-    align-self flex-start
+    align-self: flex-start
 
   .up-as-c\\\@sp
-    align-self center
+    align-self: center
 
   .up-as-sh\\\@sp
-    align-self stretch
+    align-self: stretch
 
   .up-as-fe\\\@sp
-    align-self flex-end
+    align-self: flex-end
 
   .up-as-e\\\@sp
-    align-self end
+    align-self: end
 
   .up-as-auto\\\@sp
-    align-self auto
+    align-self: auto
 
   /* justify-self */
   .up-js-s\\\@sp
-    justify-self start
+    justify-self: start
 
   .up-js-e\\\@sp
-    justify-self end
+    justify-self: end
 
   .up-js-c\\\@sp
-    justify-self center
+    justify-self: center
 
   .up-js-sh\\\@sp
-    justify-self stretch
+    justify-self: stretch
 
   /* grow, shrink */
   .up-fxg-0\\\@sp
-    flex-grow 0
+    flex-grow: 0
 
   .up-fxg-1\\\@sp
-    flex-grow 1
+    flex-grow: 1
 
   .up-fxsh-0\\\@sp
-    flex-shrink 0
+    flex-shrink: 0
 
   .up-fxsh-1\\\@sp
-    flex-shrink 1
+    flex-shrink: 1
 
   /* order */
   .up-order-n1\\\@sp
-    order -1
+    order: -1
 
   for o in range(0, 10, 1)
     .up-order-{o}\\\@sp
-      order o
+      order: o
 
   /* width(px) */
   .up-w-auto\\\@sp
-    width auto
+    width: auto
 
   .up-w-min\\\@sp
-    width min-content
+    width: min-content
 
   .up-w-max\\\@sp
-    width max-content
+    width: max-content
 
   .up-w-fit\\\@sp
-    width fit-content
+    width: fit-content
 
   for width-px in range(20, 300, 10)
     .up-w-{width-px}\\\@sp
-      width width-px px
+      width: width-px px
 
   for width-px in range(350, 1000, 50)
     .up-w-{width-px}\\\@sp
-      width width-px px
+      width: width-px px
 
   /* width(%) */
   .up-w-48\\\%\\\@sp
-    width 48%
+    width: 48%
 
   for width-p in range(5, 100, 5)
     .up-w-{width-p}\\\%\\\@sp
-      width width-p %
+      width: width-p + '%'
 
   /* min-width(px) */
   .up-minw-auto\\\@sp
-    min-width auto
+    min-width: auto
 
   for min-width-px in range(20, 300, 10)
     .up-minw-{min-width-px}\\\@sp
-      min-width min-width-px px
+      min-width: min-width-px px
 
   /* max-width(px) */
   for max-width-px in range(50, 1000, 50)
     .up-maxw-{max-width-px}\\\@sp
-      max-width max-width-px px
+      max-width: max-width-px px
 
   /* height(px) */
   .up-h-auto\\\@sp
-    height auto
+    height: auto
 
   .up-h-auto-i\\\@sp
-    height auto !important
+    height: auto !important
 
   for height-px in range(50, 1000, 50)
     .up-h-{height-px}\\\@sp
-      height height-px px
+      height: height-px px
 
   .up-h-100\\\%\\\@sp
-    height 100%
+    height: 100%
 
   /* margin */
   .up-m-auto\\\@sp
-    margin auto
+    margin: auto
 
   .up-ml-auto\\\@sp
-    margin-left auto
+    margin-left: auto
 
   .up-mr-auto\\\@sp
-    margin-right auto
+    margin-right: auto
 
   .up-mx-auto\\\@sp
-    margin-left auto
-    margin-right auto
+    margin-left: auto
+    margin-right: auto
 
   /* margin(px 0~50) */
   range-margin-px = 0, 50, 5
 
   for margin-px in range(range-margin-px)
     .up-mx-{margin-px}\\\@sp
-      margin-left margin-px px
-      margin-right margin-px px
+      margin-left: margin-px px
+      margin-right: margin-px px
 
   for margin-px in range(range-margin-px)
     .up-my-{margin-px}\\\@sp
-      margin-top margin-px px
-      margin-bottom margin-px px
+      margin-top: margin-px px
+      margin-bottom: margin-px px
 
   for margin-px in range(range-margin-px)
     .up-mt-{margin-px}\\\@sp
-      margin-top margin-px px
+      margin-top: margin-px px
 
   for margin-px in range(range-margin-px)
     .up-mr-{margin-px}\\\@sp
-      margin-right margin-px px
+      margin-right: margin-px px
 
   for margin-px in range(range-margin-px)
     .up-mb-{margin-px}\\\@sp
-      margin-bottom margin-px px
+      margin-bottom: margin-px px
 
   for margin-px in range(range-margin-px)
     .up-ml-{margin-px}\\\@sp
-      margin-left margin-px px
+      margin-left: margin-px px
 
   /* margin(px 60~150) */
   range-margin-px = 60, 150, 10
 
   for margin-px in range(range-margin-px)
     .up-my-{margin-px}\\\@sp
-      margin-top margin-px px
-      margin-bottom margin-px px
+      margin-top: margin-px px
+      margin-bottom: margin-px px
 
   for margin-px in range(range-margin-px)
     .up-mt-{margin-px}\\\@sp
-      margin-top margin-px px
+      margin-top: margin-px px
 
   for margin-px in range(range-margin-px)
     .up-mb-{margin-px}\\\@sp
-      margin-bottom margin-px px
+      margin-bottom: margin-px px
 
   /* padding all(px 0~150) */
   range-padding-px = 0, 50, 5
 
   for padding-px in range(range-padding-px)
     .up-p-{padding-px}\\\@sp
-      padding padding-px px
+      padding: padding-px px
 
   /* padding all(px 60~150) */
   range-padding-px = 60, 150, 10
 
   for padding-px in range(range-padding-px)
     .up-p-{padding-px}\\\@sp
-      padding padding-px px
+      padding: padding-px px
 
   /* padding (px 0~50) */
   range-padding-px = 0, 50, 5
 
   for padding-px in range(range-padding-px)
     .up-px-{padding-px}\\\@sp
-      padding-left padding-px px
-      padding-right padding-px px
+      padding-left: padding-px px
+      padding-right: padding-px px
 
   for padding-px in range(range-padding-px)
     .up-py-{padding-px}\\\@sp
-      padding-top padding-px px
-      padding-bottom padding-px px
+      padding-top: padding-px px
+      padding-bottom: padding-px px
 
   for padding-px in range(range-padding-px)
     .up-pt-{padding-px}\\\@sp
-      padding-top padding-px px
+      padding-top: padding-px px
 
   for padding-px in range(range-padding-px)
     .up-pr-{padding-px}\\\@sp
-      padding-right padding-px px
+      padding-right: padding-px px
 
   for padding-px in range(range-padding-px)
     .up-pb-{padding-px}\\\@sp
-      padding-bottom padding-px px
+      padding-bottom: padding-px px
 
   for padding-px in range(range-padding-px)
     .up-pl-{padding-px}\\\@sp
-      padding-left padding-px px
+      padding-left: padding-px px
 
   /* padding (px 60~150) */
   range-padding-px = 60, 150, 10
 
   for padding-px in range(range-padding-px)
     .up-px-{padding-px}\\\@sp
-      padding-left padding-px px
-      padding-right padding-px px
+      padding-left: padding-px px
+      padding-right: padding-px px
 
   for padding-px in range(range-padding-px)
     .up-py-{padding-px}\\\@sp
-      padding-top padding-px px
-      padding-bottom padding-px px
+      padding-top: padding-px px
+      padding-bottom: padding-px px
 
   for padding-px in range(range-padding-px)
     .up-pt-{padding-px}\\\@sp
-      padding-top padding-px px
+      padding-top: padding-px px
 
   for padding-px in range(range-padding-px)
     .up-pr-{padding-px}\\\@sp
-      padding-right padding-px px
+      padding-right: padding-px px
 
   for padding-px in range(range-padding-px)
     .up-pb-{padding-px}\\\@sp
-      padding-bottom padding-px px
+      padding-bottom: padding-px px
 
   for padding-px in range(range-padding-px)
     .up-pl-{padding-px}\\\@sp
-      padding-left padding-px px
+      padding-left: padding-px px
 
   /* カラム */
   .up-col-1\\\@sp
-    display flex
-    flex-wrap wrap
+    display: flex
+    flex-wrap: wrap
 
     > *
-      width 100%
+      width: 100%
 
   .up-col-2\\\@sp
-    display flex
-    flex-wrap wrap
+    display: flex
+    flex-wrap: wrap
 
     > *
-      width 50%
+      width: 50%
 
   .up-col-3\\\@sp
-    display flex
-    flex-wrap wrap
+    display: flex
+    flex-wrap: wrap
 
     > *
-      width 33.333%
+      width: 33.333%
 
   .up-col-4\\\@sp
-    display flex
-    flex-wrap wrap
+    display: flex
+    flex-wrap: wrap
 
     > *
-      width 25%
+      width: 25%
 
   .up-col-5\\\@sp
-    display flex
-    flex-wrap wrap
+    display: flex
+    flex-wrap: wrap
 
     > *
-      width 20%
+      width: 20%
 
   .up-col-6\\\@sp
-    display flex
-    flex-wrap wrap
+    display: flex
+    flex-wrap: wrap
 
     > *
-      width 16.666%
+      width: 16.666%
 
   /* gapy(px) */
   for gapy-px in range(0, 100, 10)
     .up-gapy-{gapy-px}\\\@sp
       > *
-        padding-bottom gapy-px px
+        padding-bottom: gapy-px px
 
   /* gapx(px) */
   for gapx-px in range(0, 100, 10)
     .up-gapx-{gapx-px}\\\@sp
-      margin-left -(gapx-px / 2)px
-      margin-right -(gapx-px / 2)px
+      margin-left: -(gapx-px / 2)px
+      margin-right: -(gapx-px / 2)px
 
       > *
-        padding-left ceil((gapx-px / 2), 3) px
-        padding-right ceil((gapx-px / 2), 3) px
+        padding-left: ceil((gapx-px / 2), 3) px
+        padding-right: ceil((gapx-px / 2), 3) px
 
   /* rgap(px) */
   for row-gap in range(0, 150, 10)
     .up-rgap-{row-gap}\\\@sp
-      row-gap row-gap px
+      row-gap: row-gap px
 
   /* 画像比率固定 */
   for image in range(10, 170, 5)
     .up-ofi-{image}\\\@sp
       &:after
-        content ''
-        display block
-        padding-top image %
+        content: ''
+        display: block
+        padding-top: image + '%'
 
       img
-        position absolute
-        top 0
-        left 0
+        position: absolute
+        top: 0
+        left: 0
 
   /* object-position */
   .up-obp-c\\\@sp img
-    object-position center
+    object-position: center
 
   .up-obp-t\\\@sp img
-    object-position top
+    object-position: top
 
   .up-obp-r\\\@sp img
-    object-position right
+    object-position: right
 
   .up-obp-b\\\@sp img
-    object-position bottom
+    object-position: bottom
 
   .up-obp-l\\\@sp img
-    object-position left
+    object-position: left
 
   /* object-fit */
   .up-obf-cover\\\@sp img
-    object-fit cover
+    object-fit: cover
 
   .up-obf-contain\\\@sp img
-    object-fit contain
+    object-fit: contain
 
   /* 表示・非表示 */
   .up-show\\\@sp
-    display block
+    display: block
 
   .up-hide\\\@sp
-    display none
+    display: none
 
 .break
   &-pc
     &-sp
-      display block
+      display: block
 
   &-sp
-    display block
+    display: block
 
 /* ここからabisu.cssの内容 */
 [data-element-id] .wrapper
-  padding-top 0 !important
-  opacity 1
+  padding-top: 0 !important
+  opacity: 1
 
 [data-element-id] .js-toggle+*
-  display block
+  display: block
 
 [data-element-id]
   .up-relative\\\@edit
-    position relative
+    position: relative
 
   .up-absolute\\\@edit
-    position absolute
+    position: absolute
 
   .up-spmark_edit
-    border solid 1px #000
+    border: solid 1px #000
 
     &:before
-      content 'スマホ時のみ表示'
-      display block
-      font-size 12px
-      color #fff
-      background #000
-      position relative
-      z-index 2
+      content: 'スマホ時のみ表示'
+      display: block
+      font-size: 12px
+      color: #fff
+      background: #000
+      position: relative
+      z-index: 2
 
 [data-element-id] .up-none
-  display inherit
+  display: inherit
 
 [data-element-id] [class*='heightLine']
-  height auto !important
+  height: auto !important
 
 [data-element-id] .fead-mv
-  opacity 1
+  opacity: 1
 
 [data-element-id] .fead-up
-  opacity 1
-  transform translateY(0)
+  opacity: 1
+  transform: translateY(0)
 
 [data-element-id] .fead-left
-  opacity 1
-  transform translate3d(0, 0, 0)
+  opacity: 1
+  transform: translate3d(0, 0, 0)
 
 [data-element-id] .fead-right
-  opacity 1
-  transform translate3d(0, 0, 0)
+  opacity: 1
+  transform: translate3d(0, 0, 0)
 
 [data-element-id] .fead-text
-  opacity 1
+  opacity: 1
 
   &.str
-    opacity 1
+    opacity: 1
 
 [data-element-id] .fead-cover
   &:before
-    content none
+    content: none
 
 [data-element-id] .fead-cover
   & > *
-    opacity 1
-    transform none
+    opacity: 1
+    transform: none
 
 [data-element-id] .fead-scale
-  opacity 1
-  transform translateX(0)
+  opacity: 1
+  transform: translateX(0)
 
 [data-element-id] .imgalt
-  max-height 70px
-  overflow hidden
-  padding 2px 4px
-  font-size 14px
-  color orange
-  text-align left
-  background #333
-  position relative
-  z-index 50
+  max-height: 70px
+  overflow: hidden
+  padding: 2px 4px
+  font-size: 14px
+  color: orange
+  text-align: left
+  background: #333
+  position: relative
+  z-index: 50
 
 [data-element-id] .altcolor
-  color red
+  color: red
 
 [data-common-area]
-  position relative
+  position: relative
 
 [data-common-area]:hover:before
-  content '共通要素です。'
-  width 100%
-  min-width 200px
-  padding 5px
-  box-sizing border-box
-  font-weight bold
-  font-size 12px
-  color #FDC44F
-  text-align center
-  background #555
-  transform translateX(-50%)
-  position absolute !important
-  bottom 100%
-  left 50%
+  content: '共通要素です。'
+  width: 100%
+  min-width: 200px
+  padding: 5px
+  box-sizing: border-box
+  font-weight: bold
+  font-size: 12px
+  color: #FDC44F
+  text-align: center
+  background: #555
+  transform: translateX(-50%)
+  position: absolute !important
+  bottom: 100%
+  left: 50%
 
 a[data-href='#']
-  display block
-  outline solid red 5px !important
-  opacity 1
-  position relative !important
+  display: block
+  outline: solid red 5px !important
+  opacity: 1
+  position: relative !important
 
 a[data-href='#']:hover:before
-  content '未設定リンク'
-  width 100%
-  min-width 200px
-  padding 5px
-  box-sizing border-box
-  font-weight bold
-  font-size 12px
-  color red
-  background #555
-  transform translateX(-50%)
-  position absolute !important
-  bottom 100%
-  left 50%
+  content: '未設定リンク'
+  width: 100%
+  min-width: 200px
+  padding: 5px
+  box-sizing: border-box
+  font-weight: bold
+  font-size: 12px
+  color: red
+  background: #555
+  transform: translateX(-50%)
+  position: absolute !important
+  bottom: 100%
+  left: 50%
 
 a[data-href*='.']
-  display block
-  outline solid red 5px !important
-  opacity 1
-  position relative !important
+  display: block
+  outline: solid red 5px !important
+  opacity: 1
+  position: relative !important
 
 a[data-href*='.']:hover:before
-  content '外部リンク'
-  width 100%
-  min-width 200px
-  padding 5px
-  box-sizing border-box
-  font-weight bold
-  font-size 12px
-  color red
-  background #555
-  transform translateX(-50%)
-  position absolute !important
-  bottom 100%
-  left 50%
+  content: '外部リンク'
+  width: 100%
+  min-width: 200px
+  padding: 5px
+  box-sizing: border-box
+  font-weight: bold
+  font-size: 12px
+  color: red
+  background: #555
+  transform: translateX(-50%)
+  position: absolute !important
+  bottom: 100%
+  left: 50%
 
 [data-element-id][data-uk-slideshow]:hover:before
-  content 'スライドショー'
-  width 100%
-  display block
-  clear both
-  padding 5px
-  font-weight bold
-  font-size 12px
-  color red
-  line-height 1.8
-  letter-spacing 1px
-  text-align left
-  background #4c4c4c
-  position absolute
-  z-index 1000
+  content: 'スライドショー'
+  width: 100%
+  display: block
+  clear: both
+  padding: 5px
+  font-weight: bold
+  font-size: 12px
+  color: red
+  line-height: 1.8
+  letter-spacing: 1px
+  text-align: left
+  background: #4c4c4c
+  position: absolute
+  z-index: 1000
 
 [data-collection-list-content]:hover:before
-  content 'カスタムコンテンツ（編集不可）'
-  width 100%
-  display block
-  clear both
-  padding 5px
-  font-weight bold
-  font-size 12px
-  color red
-  line-height 1.8
-  letter-spacing 1px
-  text-align left
-  background #4c4c4c
-  position absolute
-  z-index 1000
+  content: 'カスタムコンテンツ（編集不可）'
+  width: 100%
+  display: block
+  clear: both
+  padding: 5px
+  font-weight: bold
+  font-size: 12px
+  color: red
+  line-height: 1.8
+  letter-spacing: 1px
+  text-align: left
+  background: #4c4c4c
+  position: absolute
+  z-index: 1000
 
 [data-element-id] .up-d-flex
   > div[data-collection-list-content]
@@ -2486,8 +2442,8 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    width 100%
-    display flex
+    width: 100%
+    display: flex
 
 [data-element-id] .up-jc-fs
   > div[data-collection-list-content]
@@ -2496,7 +2452,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    justify-content flex-start
+    justify-content: flex-start
 
 [data-element-id] .up-jc-fe
   > div[data-collection-list-content]
@@ -2505,7 +2461,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    justify-content flex-end
+    justify-content: flex-end
 
 [data-element-id] .up-jc-c
   > div[data-collection-list-content]
@@ -2514,7 +2470,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    justify-content center
+    justify-content: center
 
 [data-element-id] .up-jc-sb
   > div[data-collection-list-content]
@@ -2523,7 +2479,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    justify-content space-between
+    justify-content: space-between
 
 [data-element-id] .up-jc-sa
   > div[data-collection-list-content]
@@ -2532,7 +2488,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    justify-content space-around
+    justify-content: space-around
 
 [data-element-id] .up-jc-se
   > div[data-collection-list-content]
@@ -2541,7 +2497,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    justify-content space-evenly
+    justify-content: space-evenly
 
 [data-element-id] .up-fxd-row
   > div[data-collection-list-content]
@@ -2550,7 +2506,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    flex-direction row
+    flex-direction: row
 
 [data-element-id] .up-fxd-rowr
   > div[data-collection-list-content]
@@ -2559,7 +2515,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    flex-direction row-reverse
+    flex-direction: row-reverse
 
 [data-element-id] .up-fxd-col
   > div[data-collection-list-content]
@@ -2568,7 +2524,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    flex-direction column
+    flex-direction: column
 
 [data-element-id] .up-fxd-colr
   > div[data-collection-list-content]
@@ -2577,7 +2533,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    flex-direction column-reverse
+    flex-direction: column-reverse
 
 [data-element-id] .up-ai-fs
   > div[data-collection-list-content]
@@ -2586,7 +2542,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    align-items flex-start
+    align-items: flex-start
 
 [data-element-id] .up-ai-c
   > div[data-collection-list-content]
@@ -2595,7 +2551,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    align-items center
+    align-items: center
 
 [data-element-id] .up-ai-fe
   > div[data-collection-list-content]
@@ -2604,7 +2560,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    align-items flex-end
+    align-items: flex-end
 
 [data-element-id] .up-ai-b
   > div[data-collection-list-content]
@@ -2613,7 +2569,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    align-items baseline
+    align-items: baseline
 
 [data-element-id] .up-ai-s
   > div[data-collection-list-content]
@@ -2622,7 +2578,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    align-items stretch
+    align-items: stretch
 
 [data-element-id] .up-ac-fs
   > div[data-collection-list-content]
@@ -2631,7 +2587,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    align-content flex-start
+    align-content: flex-start
 
 [data-element-id] .up-ac-c
   > div[data-collection-list-content]
@@ -2640,7 +2596,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    align-content center
+    align-content: center
 
 [data-element-id] .up-ac-fe
   > div[data-collection-list-content]
@@ -2649,7 +2605,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    align-content flex-end
+    align-content: flex-end
 
 [data-element-id] .up-ac-sb
   > div[data-collection-list-content]
@@ -2658,7 +2614,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    align-content space-between
+    align-content: space-between
 
 [data-element-id] .up-ac-sa
   > div[data-collection-list-content]
@@ -2667,7 +2623,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    align-content space-around
+    align-content: space-around
 
 [data-element-id] .up-fxw-wrap
   > div[data-collection-list-content]
@@ -2676,7 +2632,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    flex-wrap wrap
+    flex-wrap: wrap
 
 [data-element-id] .up-fxw-wrapr
   > div[data-collection-list-content]
@@ -2685,7 +2641,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    flex-wrap wrap-reverse
+    flex-wrap: wrap-reverse
 
 [data-element-id] .up-nowrap
   > div[data-collection-list-content]
@@ -2694,7 +2650,7 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    flex-wrap nowrap
+    flex-wrap: nowrap
 
 [data-element-id] .up-col-1
   > div[data-collection-list-content]
@@ -2703,12 +2659,12 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    width 100%
-    display flex
-    flex-wrap wrap
+    width: 100%
+    display: flex
+    flex-wrap: wrap
 
     > *
-      width 100%
+      width: 100%
 
 [data-element-id] .up-col-2
   > div[data-collection-list-content]
@@ -2717,12 +2673,12 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    width 100%
-    display flex
-    flex-wrap wrap
+    width: 100%
+    display: flex
+    flex-wrap: wrap
 
     > *
-      width 50%
+      width: 50%
 
 [data-element-id] .up-col-3
   > div[data-collection-list-content]
@@ -2731,12 +2687,12 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    width 100%
-    display flex
-    flex-wrap wrap
+    width: 100%
+    display: flex
+    flex-wrap: wrap
 
     > *
-      width 33.333%
+      width: 33.333%
 
 [data-element-id] .up-col-4
   > div[data-collection-list-content]
@@ -2745,12 +2701,12 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    width 100%
-    display flex
-    flex-wrap wrap
+    width: 100%
+    display: flex
+    flex-wrap: wrap
 
     > *
-      width 25%
+      width: 25%
 
 [data-element-id] .up-col-5
   > div[data-collection-list-content]
@@ -2759,12 +2715,12 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    width 100%
-    display flex
-    flex-wrap wrap
+    width: 100%
+    display: flex
+    flex-wrap: wrap
 
     > *
-      width 20%
+      width: 20%
 
 [data-element-id] .up-col-6
   > div[data-collection-list-content]
@@ -2773,12 +2729,12 @@ a[data-href*='.']:hover:before
   > div[data-collection-archive-content]
   > div[data-product-list-content]
   > div[data-product-recommend-content]
-    width 100%
-    display flex
-    flex-wrap wrap
+    width: 100%
+    display: flex
+    flex-wrap: wrap
 
     > *
-      width 16.666%
+      width: 16.666%
 
 /* gapy(px) */
 for gapy-px in range(0, 100, 10)
@@ -2789,16 +2745,16 @@ for gapy-px in range(0, 100, 10)
     > div[data-collection-archive-content]
     > div[data-product-list-content]
     > div[data-product-recommend-content]
-      padding-bottom 0
+      padding-bottom: 0
 
       > *
-        padding-bottom gapy-px px
+        padding-bottom: gapy-px px
 
 /* gapx(px) */
 for gapx-px in range(0, 100, 10)
   [data-element-id] .up-gapx-{gapx-px}
-    margin-left 0
-    margin-right 0
+    margin-left: 0
+    margin-right: 0
 
     > div[data-collection-list-content]
     > div[data-recommend-collection-list-content]
@@ -2806,97 +2762,97 @@ for gapx-px in range(0, 100, 10)
     > div[data-collection-archive-content]
     > div[data-product-list-content]
     > div[data-product-recommend-content]
-      margin-left -(gapx-px / 2)px
-      margin-right -(gapx-px / 2)px
+      margin-left: -(gapx-px / 2)px
+      margin-right: -(gapx-px / 2)px
 
       > *
-        padding-left ceil((gapx-px / 2), 3) px
-        padding-right ceil((gapx-px / 2), 3) px
+        padding-left: ceil((gapx-px / 2), 3) px
+        padding-right: ceil((gapx-px / 2), 3) px
 
 /* 表示・非表示 */
 [data-element-id] .show
-  display block
-  border solid 2px green
-  position relative
+  display: block
+  border: solid 2px green
+  position: relative
 
   &:after
-    content 'PC用'
-    display block
-    font-weight 700
-    font-size 12px
-    color #fff
-    text-align center
-    background green
+    content: 'PC用'
+    display: block
+    font-weight: 700
+    font-size: 12px
+    color: #fff
+    text-align: center
+    background: green
 
 [data-element-id] .show\\\@tb
-  display block
-  border solid 2px green
-  position relative
+  display: block
+  border: solid 2px green
+  position: relative
 
   &:after
-    content 'タブレット・スマホのみ表示'
-    display block
-    font-weight 700
-    font-size 12px
-    color #fff
-    text-align center
-    background green
+    content: 'タブレット・スマホのみ表示'
+    display: block
+    font-weight: 700
+    font-size: 12px
+    color: #fff
+    text-align: center
+    background: green
 
 [data-element-id] .show\\\@sp
-  display block
-  border solid 2px green
-  position relative
+  display: block
+  border: solid 2px green
+  position: relative
 
   &:after
-    content 'スマホのみ表示'
-    display block
-    font-weight 700
-    font-size 12px
-    color #fff
-    text-align center
-    background green
+    content: 'スマホのみ表示'
+    display: block
+    font-weight: 700
+    font-size: 12px
+    color: #fff
+    text-align: center
+    background: green
 
 /* 改行 */
 [data-element-id]
   [class*='break']
-    width 1.5em
-    height 1.5em
-    display inline-block
-    padding 0
-    color white
-    position relative
+    width: 1.5em
+    height: 1.5em
+    display: inline-block
+    padding: 0
+    color: white
+    position: relative
 
     &::before
-      width auto
-      display block
-      padding .25em
-      font-size 10px
-      color white
-      line-height 1
-      text-align center
-      white-space pre
+      width: auto
+      display: block
+      padding: .25em
+      font-size: 10px
+      color: white
+      line-height: 1
+      text-align: center
+      white-space: pre
 
   .break
     &-pc
-      background-color red
+      background-color: red
 
       &::before
-        content 'PC\A改行'
+        content: 'PC\A改行'
 
       &-tb
-        background-color darkorange
+        background-color: darkorange
 
         &-sp
-          background-color darkred
+          background-color: darkred
 
       &-sp
-        background-color darkolivegreen
+        background-color: darkolivegreen
 
     &-tb
-      background-color gray
+      background-color: gray
 
       &-sp
-        background-color mediumvioletred
+        background-color: mediumvioletred
 
     &-sp
-      background-color green
+      background-color: green
