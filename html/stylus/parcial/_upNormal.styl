@@ -1,0 +1,35 @@
+// #####　up系で@tb @spが無いクラス #####
+
+// 定義のimport
+@import './_definition'
+
+.up
+  &-clearfix
+    display block
+
+    &::before
+    &::after
+      content ''
+      display block
+      clear both
+
+  &-over
+    &-hidden
+      overflow hidden
+
+  &-fs
+    &-italic
+      font-style italic
+
+  &-text
+    &-underline
+      text-decoration underline
+
+  &-lst
+    &-disc
+      list-style-type disc
+      padding-left 1em
+
+    &-decimal
+      list-style-type decimal
+      padding-left 1em

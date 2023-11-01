@@ -1,0 +1,74 @@
+// #####　width #####
+
+// 定義のimport
+@import './_definition'
+
+// width
+.up
+  &-w
+    &-auto
+      width: auto
+    &-min
+      width: min-content
+    &-max
+      width: max-content
+    &-fit
+      width fit-content
+    for i in range(0, length(unitlist4) - 1)
+      if unitlist4[i] == 'px'
+        for wid in range(10, 300, 10)
+          &-{wid}
+            width: unit(wid, unitlist4[i])
+        for wid in range(350, 1200, 50)
+          &-{wid}
+            width: unit(wid, unitlist4[i])
+      else if unitlist4[i] == '%'
+        for wid in range(5, 120, 5)
+          &-{wid}\\{unitlist4[i]}
+            width: unit(wid, unitlist4[i])
+        &-48\\\%
+          width: 48%
+      else if unitlist4[i] == 'vw'
+        for wid in range(10, 100, 10)
+          &-{wid}{unitlist4[i]}
+            width: unit(wid, unitlist4[i])
+
+// min-width(px)
+.up
+  &-minw
+    &-auto
+      min-width auto
+    for i in range(0, length(unitlist4) - 1)
+      if unitlist4[i] == 'px'
+        for wid in range(20, 500, 10)
+          &-{wid}
+            width: unit(wid, unitlist4[i])
+      else if unitlist4[i] == '%'
+        for wid in range(5, 100, 5)
+          &-{wid}\\{unitlist4[i]}
+            width: unit(wid, unitlist4[i])
+        &-48\\\%
+          width: 48%
+      else if unitlist4[i] == 'vw'
+        for wid in range(10, 100, 10)
+          &-{wid}{unitlist4[i]}
+            width: unit(wid, unitlist4[i])
+
+// max-width(px)
+.up
+  &-maxw
+    for i in range(0, length(unitlist4) - 1)
+      if unitlist4[i] == 'px'
+        for wid in range(50, 1200, 50)
+          &-{wid}
+            width: unit(wid, unitlist4[i])
+      else if unitlist4[i] == '%'
+        for wid in range(5, 100, 5)
+          &-{wid}\\{unitlist4[i]}
+            width: unit(wid, unitlist4[i])
+        &-48\\\%
+          width: 48%
+      else if unitlist4[i] == 'vw'
+        for wid in range(10, 100, 10)
+          &-{wid}{unitlist4[i]}
+            width: unit(wid, unitlist4[i])

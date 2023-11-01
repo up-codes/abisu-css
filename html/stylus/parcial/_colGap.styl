@@ -1,0 +1,43 @@
+// #####　up-col、gap #####
+
+// 定義のimport
+@import './_definition'
+
+// up-col
+[class*='up-col-']
+  display flex
+  flex-wrap wrap
+
+for col-num in range(1, 10, 1)
+  .up
+    &-col
+      &-{col-num}
+        &>*
+          width ceil((100% / col-num), 3)
+
+// gapx gapy(margin padding)(px)
+for gap_px in range(0, 100, 10)
+  .up
+    &-gap
+      &x-{gap_px}
+        margin-left unit((-(gap_px / 2)), 'px')
+        margin-right unit((-(gap_px / 2)), 'px')
+        &>*
+          padding-left unit(ceil((gap_px / 2), 3), 'px')
+          padding-right unit(ceil((gap_px / 2), 3), 'px')
+      &y-{gap_px}
+        &>*
+          padding-bottom gapy-px px
+
+// gap(column-gap row-gap)(px)
+for gap_gap in range(0, 100, 5)
+  .up
+    &-gap
+      &-{gap_gap}
+        gap unit(gap_gap, 'px')
+      &-col
+        &-{gap_gap}
+          column-gap unit(gap_gap, 'px')
+      &-row
+        &-{gap_gap}
+          row-gap unit(gap_gap, 'px')

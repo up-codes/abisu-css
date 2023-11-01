@@ -1,0 +1,167 @@
+// #####　テキスト、display、float、position、color、text-align、z-index、opacity、、表示・非表示、改行 #####
+
+// 定義のimport
+@import './_definition'
+
+.up
+    &-adb
+    a
+      display block
+
+  &-reader
+    &1
+      overflow hidden
+      text-overflow ellipsis
+      white-space nowrap
+
+    &2
+      textEllipsis(2em, 2)
+
+    &3
+      textEllipsis(3em, 3)
+
+  &-circle
+    overflow hidden
+    border-radius 100%
+    
+  &-text
+    &-horizontal
+      writing-mode horizontal-tb
+
+    &-vertical
+      writing-mode vertical-rl
+
+  &d
+    &-block
+      display block
+
+    &-iblock
+      display inline-block
+
+    &-static
+      display static
+
+    &-inherit
+      display inherit
+
+    &-initial
+      display initial
+
+    &-flex
+      display flex
+
+    &-grid
+      display grid
+
+    &-none
+      display none
+
+  &-f
+    &-clear
+      &-both
+        clear both
+
+      &-left
+        clear left
+
+      &-right
+        clear right
+
+  &-pos
+    &-rel
+      position relative
+
+    &-abs
+      position absolute
+
+    &-fix
+      position fixed
+
+    &-static
+      position static
+
+  &-c
+    &-red
+      color red
+
+    &-blue
+      color blue
+
+    &-yellow
+      color yellow
+
+    &-gray
+      color gray
+
+    &-black
+      color black
+
+    &-white
+      color white
+
+    &-initial
+      color initial
+
+    &-inherit
+      color inherit
+
+    &-unset
+      color unset
+
+    &-revert
+      color revert
+
+  &-ta
+    &-c
+      text-align center
+
+    &-l
+      text-align left
+
+    &-r
+      text-align right
+
+// z-index
+for z in range(0, 5, 1)
+  .up
+    &-z
+      &-{z}
+        z-index z
+
+// opacity
+for opacity in range(0, 1, .25)
+  .up
+    &-op
+      if opacity == 0
+        &-0
+          opacity 0
+      else if opacity == 1
+        &-1
+          opacity 1
+      else
+        &-0\\\.{floor(opacity * 100)}
+          opacity opacity
+
+// 表示・非表示
+.up
+  &-show
+    display block
+  &-hide
+    display none
+
+  // レスポンシブ改行
+.break
+  &-pc
+    display block
+    &-tb
+      display block
+      &-sp
+        display block
+    &-sp
+      display block
+  &-tb
+    display none
+    &-sp
+      display none
+  &-sp
+    display none

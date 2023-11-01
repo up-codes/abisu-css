@@ -1,0 +1,27 @@
+// #####　inner #####
+
+// 定義のimport
+@import './_definition'
+
+for w in range(500, 2000, 100)
+  innerWidth = 1000
+
+  if w < innerWidth
+    .inner{w}
+      width 92%
+      max-width unit(w, 'px')
+
+      innerMargin()
+  else if w > innerWidth
+    .inner{w}
+      width 98%
+      max-width unit(w, 'px')
+
+      innerMargin()
+  else
+    .inner
+      width 92%
+
+      innerMargin()
+
+      max-width unit(w, 'px')

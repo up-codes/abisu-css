@@ -3,142 +3,142 @@
 @import _definition
 
 [data-common-area]
-  padding-top 2em
-  position relative
+  padding-top: 2em
+  position: relative
 
   &:hover
     &::before
-      content '共通要素'
-      width 100%
-      min-width 200px
-      padding .5em
-      font-weight bold
-      font-size .8em
-      color #FDC44F
-      text-align center
-      background #555
-      position absolute !important
-      top 0
-      left 0
+      content: '共通要素'
+      width: 100%
+      min-width: 200px
+      padding: .5em
+      font-weight: bold
+      font-size: .8em
+      color: #FDC44F
+      text-align: center
+      background: #555
+      position: absolute !important
+      top: 0
+      left: 0
 
 [data-collection-list-content]
   &:hover
     &::before
-      content 'カスタムコンテンツ（編集不可）'
-      width 100%
-      display block
-      clear both
-      padding 5px
-      font-weight bold
-      font-size 12px
-      color white
-      text-align left
-      background navy
-      position absolute
-      z-index 1000
+      content: 'カスタムコンテンツ（編集不可）'
+      width: 100%
+      display: block
+      clear: both
+      padding: 5px
+      font-weight: bold
+      font-size: 12px
+      color: white
+      text-align: left
+      background: navy
+      position: absolute
+      z-index: 1000
 
 a
   [data-href='#']
-    outline solid red 5px !important
-    opacity 1
+    outline: solid red 5px !important
+    opacity: 1
 
     &:hover
       &::before
-        content '未設定リンク'
-        width fit-content
-        min-width 90px
-        padding 5px
-        font-weight bold
-        font-size 12px
-        color red
-        background #9e9e9e
-        transform translateX(-50%)
-        position absolute !important
-        bottom 100%
-        left 0
+        content: '未設定リンク'
+        width: fit-content
+        min-width: 90px
+        padding: 5px
+        font-weight: bold
+        font-size: 12px
+        color: red
+        background: #9e9e9e
+        transform: translateX(-50%)
+        position: absolute !important
+        bottom: 100%
+        left: 0
 
   [data-href*='.']
-    outline solid #ff7c4d 5px !important
-    opacity 1
+    outline: solid #ff7c4d 5px !important
+    opacity: 1
 
     &:hover
       &::before
-        content '外部リンク'
-        width fit-content
-        min-width 90px
-        padding 5px
-        font-weight bold
-        font-size 12px
-        color white
-        background #ff7c4d
-        position absolute !important
-        bottom 100%
-        left 0
+        content: '外部リンク'
+        width: fit-content
+        min-width: 90px
+        padding: 5px
+        font-weight: bold
+        font-size: 12px
+        color: white
+        background: #ff7c4d
+        position: absolute !important
+        bottom: 100%
+        left: 0
 
 [data-element-id]
   .wrapper
-    opacity 1
+    opacity: 1
 
   [class*='fead-']
-    opacity 1
-    transform unset
-    transform translate3d(0, 0, 0)
+    opacity: 1
+    transform: unset
+    transform: translate3d(0, 0, 0)
 
     &.str
-      opacity 1
+      opacity: 1
 
   .fead
     &-cover
       &::before
-        content none
+        content: none
 
       &>*
-        opacity 1
-        transform unset
+        opacity: 1
+        transform: unset
 
     &-scale
-      opacity 1
-      transform unset
+      opacity: 1
+      transform: unset
 
   .up
     &-none
-      display inherit
+      display: inherit
 
   .imgalt
-    padding-top 2em
-    border 2px solid red
-    position relative
+    padding-top: 2em
+    border: 2px solid red
+    position: relative
 
     &::before
-      content '見たまま編集バリデーションjsをコメントアウトしてください'
-      width 100%
-      display block
-      padding .5em
-      font-size 10px
-      color white
-      line-height 1.2
-      text-align center
-      background-color red
-      position absolute
-      top 0
-      left 0
-      z-index 100
+      content: '見たまま編集バリデーションjsをコメントアウトしてください'
+      width: 100%
+      display: block
+      padding: .5em
+      font-size: 10px
+      color: white
+      line-height: 1.2
+      text-align: center
+      background-color: red
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 100
 
   [data-uk-slideshow]
     &:hover
       &::before
-        content 'スライドショー'
-        width 100%
-        display block
-        clear both
-        padding 5px
-        font-weight bold
-        font-size 12px
-        color red
-        text-align left
-        background #4c4c4c
-        position absolute
-        z-index 1000
+        content: 'スライドショー'
+        width: 100%
+        display: block
+        clear: both
+        padding: 5px
+        font-weight: bold
+        font-size: 12px
+        color: red
+        text-align: left
+        background: #4c4c4c
+        position: absolute
+        z-index: 1000
 
   .up
     &-d
@@ -155,10 +155,10 @@ a
       &-col
         &-{col-num}
           {commonSelectors}
-            width 100%
+            width: 100%
 
             > *
-              width ceil((100% / col-num), 3)
+              width: ceil((100% / col-num), 3)
 
 /* gapy(px) */
 for gapy-px in range(0, 100, 10)
@@ -169,16 +169,16 @@ for gapy-px in range(0, 100, 10)
     > div[data-collection-archive-content]
     > div[data-product-list-content]
     > div[data-product-recommend-content]
-      padding-bottom 0
+      padding-bottom: 0
 
       > *
-        padding-bottom gapy-px px
+        padding-bottom: gapy-px px
 
 /* gapx(px) */
 for gapx-px in range(0, 100, 10)
   [data-element-id] .up-gapx-{gapx-px}
-    margin-left 0
-    margin-right 0
+    margin-left: 0
+    margin-right: 0
 
     > div[data-collection-list-content]
     > div[data-recommend-collection-list-content]
@@ -186,97 +186,97 @@ for gapx-px in range(0, 100, 10)
     > div[data-collection-archive-content]
     > div[data-product-list-content]
     > div[data-product-recommend-content]
-      margin-left -(gapx-px / 2)px
-      margin-right -(gapx-px / 2)px
+      margin-left: -(gapx-px / 2)px
+      margin-right: -(gapx-px / 2)px
 
       > *
-        padding-left ceil((gapx-px / 2), 3) px
-        padding-right ceil((gapx-px / 2), 3) px
+        padding-left: ceil((gapx-px / 2), 3) px
+        padding-right: ceil((gapx-px / 2), 3) px
 
 /* 表示・非表示 */
 [data-element-id] .show
-  display block
-  border solid 2px green
-  position relative
+  display: block
+  border: solid 2px green
+  position: relative
 
   &:after
-    content 'PC用'
-    display block
-    font-weight 700
-    font-size 12px
-    color #fff
-    text-align center
-    background green
+    content: 'PC用'
+    display: block
+    font-weight: 700
+    font-size: 12px
+    color: #fff
+    text-align: center
+    background: green
 
 [data-element-id] .show\\\@tb
-  display block
-  border solid 2px green
-  position relative
+  display: block
+  border: solid 2px green
+  position: relative
 
   &:after
-    content 'タブレット・スマホのみ表示'
-    display block
-    font-weight 700
-    font-size 12px
-    color #fff
-    text-align center
-    background green
+    content: 'タブレット・スマホのみ表示'
+    display: block
+    font-weight: 700
+    font-size: 12px
+    color: #fff
+    text-align: center
+    background: green
 
 [data-element-id] .show\\\@sp
-  display block
-  border solid 2px green
-  position relative
+  display: block
+  border: solid 2px green
+  position: relative
 
   &:after
-    content 'スマホのみ表示'
-    display block
-    font-weight 700
-    font-size 12px
-    color #fff
-    text-align center
-    background green
+    content: 'スマホのみ表示'
+    display: block
+    font-weight: 700
+    font-size: 12px
+    color: #fff
+    text-align: center
+    background: green
 
 /* 改行 */
 [data-element-id]
   [class*='break']
-    width 1.5em
-    height 1.5em
-    display inline-block
-    padding 0
-    color white
-    position relative
+    width: 1.5em
+    height: 1.5em
+    display: inline-block
+    padding: 0
+    color: white
+    position: relative
 
     &::before
-      width auto
-      display block
-      padding .25em
-      font-size 10px
-      color white
-      line-height 1
-      text-align center
-      white-space pre
+      width: auto
+      display: block
+      padding: .25em
+      font-size: 10px
+      color: white
+      line-height: 1
+      text-align: center
+      white-space: pre
 
   .break
     &-pc
-      background-color red
+      background-color: red
 
       &::before
-        content 'PC\A改行'
+        content: 'PC\A改行'
 
       &-tb
-        background-color darkorange
+        background-color: darkorange
 
         &-sp
-          background-color darkred
+          background-color: darkred
 
       &-sp
-        background-color darkolivegreen
+        background-color: darkolivegreen
 
     &-tb
-      background-color gray
+      background-color: gray
 
       &-sp
-        background-color mediumvioletred
+        background-color: mediumvioletred
 
     &-sp
-      background-color green
+      background-color: green

@@ -1,0 +1,81 @@
+// #####　jsで使用するクラス #####
+
+// 定義のimport
+@import './_definition'
+
+.js
+  &-toggle
+    cursor pointer
+
+// fead
+[class*='fead']
+  opacity 0
+
+  &.mv
+    opacity 1
+    transition .5s ease-out
+
+.fead
+  &-up
+    transform translateY(50px)
+
+    &.mv
+      transform translateY(0)
+
+  &-right
+    transition 1s
+    transform translateX(-20%)
+
+    &.mv
+      transform translateX(0)
+
+  &-left
+    transition 1s
+    transform translateX(20%)
+
+    &.mv
+      transform translateX(0)
+
+  &-text
+    &.mv
+      transition 0s
+      transition-delay 0s
+
+    .str
+      &.textin
+        transition 1s
+
+  &-cover
+    position relative
+
+    &::before
+      content ''
+      width 100%
+      height 100%
+      display block
+      background-color black
+      transition .8s
+      position absolute
+      top 0
+      right 0
+      z-index 15
+
+    &.mv
+      &::before
+        width 0
+        transition-delay .6s
+
+  &-order
+    &>*
+      opacity 0
+      transform translateY(50px)
+
+      &.mv
+        transform translateY(0)
+
+  &-scale
+    transition .8s ease-out
+    transform scale(1.05)
+
+    &.mv
+      transform scale(1)

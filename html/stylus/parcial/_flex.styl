@@ -1,0 +1,126 @@
+// #####　flex #####
+
+// 定義のimport
+@import './_definition'
+
+// flex
+.up
+  &-fx 
+    &w
+      &-wrap
+        flex-wrap wrap
+      &-wrapr
+        flex-wrap wrap-reverse
+      &-nowrap
+        flex-wrap nowrap
+    &d
+      &-row
+        flex-direction row
+      &-rowr
+        flex-direction row-reverse
+      &-col
+        flex-direction column
+      &-colr
+        flex-direction column-reverse
+      &-even
+        &>*
+          &:nth-child(even)
+            flex-direction row-reverse
+      &-odd
+        &>*
+          &:nth-child(odd)
+            flex-direction row-reverse
+    &g
+      &-0
+        flex-grow 0
+      &-1
+        flex-grow 1
+    &sh
+      &-0
+        flex-shrink 0
+      &-1
+        flex-shrink 1
+  &-jc
+    &-s
+      justify-content start
+    &-fs
+      justify-content flex-start
+    &-e
+      justify-content end
+    &-fe
+      justify-content flex-end
+    &-c
+      justify-content center
+    &-sh
+      justify-content stretch
+    &-sb
+      justify-content space-between
+    &-sa
+      justify-content space-around
+    &-se
+      justify-content space-evenly
+  &-ai
+    &-st
+      align-items start
+    &-fs
+      align-items flex-start
+    &-c
+      align-items center
+    &-e
+      align-items end
+    &-fe
+      align-items flex-end
+    &-b
+      align-items baseline
+    &-sh
+      align-items stretch
+  &-ac
+    &-s
+      align-content start
+    &-fs
+      align-content flex-start
+    &-c
+      align-content center
+    &-e
+      align-content end
+    &-fe
+      align-content flex-end
+    &-sh
+      align-content stretch
+    &-sb
+      align-content space-between
+    &-sa
+      align-content space-around
+    &-se
+      align-content space-evenly
+  &-as
+    &-s
+      align-self start
+    &-fs
+      align-self flex-start
+    &-c
+      align-self center
+    &-sh
+      align-self stretch
+    &-fe
+      align-self flex-end
+    &-e
+      align-self end
+    &-auto
+      align-self auto
+  &-js
+    &-s
+      justify-self start
+    &-e
+      justify-self end
+    &-c
+      justify-self center
+    &-sh
+      justify-self stretch
+
+// order
+for order in range(0, 10, 1)
+  .up
+    &-order
+      &-{order}
+        order order

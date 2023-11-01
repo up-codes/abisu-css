@@ -1,0 +1,66 @@
+// #####　object-fit #####
+
+// 定義のimport
+@import './_definition'
+
+// up-ofiの基本設定
+[class*='up-ofi']
+  width 100%
+  display block
+  position relative
+
+  img
+    width 100%
+    height 100% !important
+    object-fit cover
+    object-position 50% 50%
+
+[class*='up-ofi-']
+  &::after
+    content ''
+    display block
+
+  img
+    position absolute
+    top 0
+    left 0
+
+for ofi-percent in range(10, 200, 5)
+  .up
+    &-ofi
+      &-{ofi-percent}
+        &::after
+          padding-top unit(ofi-percent, '%')
+
+// object-fitのオプション
+.up
+  &-ob
+    &p
+      &-c
+        img
+          object-position center
+
+      &-t
+        img
+          object-position top
+
+      &-b
+        img
+          object-position bottom
+
+      &-l
+        img
+          object-position left
+
+      &-r
+        img
+          object-position right
+
+    &f
+      &-cover
+        img
+          object-fit cover
+
+      &-contain
+        img
+          object-fit contain

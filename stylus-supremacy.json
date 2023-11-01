@@ -1,5 +1,5 @@
 {
-    "stylusSupremacy.insertColons": false,
+    "stylusSupremacy.insertColons": true,
     "stylusSupremacy.insertSemicolons": false,
     "stylusSupremacy.insertBraces": false,
     "stylusSupremacy.insertNewLineAroundImports": true,
