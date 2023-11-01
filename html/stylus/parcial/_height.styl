@@ -1,29 +1,30 @@
 // #####　height #####
 
-// 定義のimport
-@import './_definition'
+// heightのmixin設定
+upHeightMixin(device)
+  .up
+    &-h
+      &-auto{device}
+        height auto
 
-// height(px)
-.up
-  &-h
-    &-auto
-      height auto
-
-    for i in range(0, length(unitlist5) - 1)
-      if unitlist5[i] == 'px'
-        for hei in range(50, 1000, 50)
-          &-{hei}
-            height: unit(hei, unitlist5[i])
+      for i in range(0, length(unitlist5) - 1)
+        if unitlist5[i] == 'px'
+          for hei in range(50, 1000, 50)
+            &-{hei}{device}
+              height: unit(hei, unitlist5[i])
+              
+        else if unitlist5[i] == '%'
+          for hei in range(5, 120, 5)
+            &-{hei}\\{unitlist5[i]}{device}
+              height: unit(hei, unitlist5[i])
             
-      else if unitlist5[i] == '%'
-        for hei in range(5, 100, 5)
-          &-{hei}\\{unitlist5[i]}
-            height: unit(hei, unitlist5[i])
+        else if unitlist5[i] == 'vw'
+          for hei in range(10, 120, 10)
+            &-{hei}{unitlist5[i]}{device}
+              height: unit(hei, unitlist5[i])
 
-        &-48\\\%
-          width 48%
-          
-      else if unitlist5[i] == 'vw'
-        for hei in range(10, 100, 10)
-          &-{hei}{unitlist5[i]}
-            height: unit(hei, unitlist5[i])
+upHeightMixin('')
++tb()
+  upHeightMixin('\@tb')
++sp()
+  upHeightMixin('\@sp')

@@ -1,23 +1,27 @@
 // #####　margin padding #####
 
-// 定義のimport
-@import './_definition'
-
 // margin padding
-.up
-  &-m
-    &-auto
-      margin auto
-    &l
-      &-auto
-        margin-left auto
-    &r
-      &-auto
-        margin-right auto
-    &x
-      &-auto
-        margin-left auto
-        margin-right auto
+upMarginPaddingAutoMixin(device)
+  .up
+    &-m
+      &-auto{device}
+        margin auto
+      &l
+        &-auto{device}
+          margin-left auto
+      &r
+        &-auto{device}
+          margin-right auto
+      &x
+        &-auto{device}
+          margin-left auto
+          margin-right auto
+
+upMarginPaddingAutoMixin('')
++tb()
+  upMarginPaddingAutoMixin('\@tb')
++sp()
+  upMarginPaddingAutoMixin('\@sp')
 
 spaces(0, 50, 5, 'px')
 spaces_unit_em(1, 4, 1, 'em')

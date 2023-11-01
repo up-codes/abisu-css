@@ -1,18 +1,13 @@
 tb_max = 1024px
-
 tb()
   @media (max-width: tb_max)
     {block}
 
 // スマホのメディアクエリ
 sp_max = 599px
-
 sp()
   @media (max-width: sp_max)
     {block}
-
-tb = '\\\@tb'
-sp = '\\\@sp'
 
 // innerの左右マージン
 innerMargin()
@@ -117,7 +112,12 @@ spaces_unit_percent($min = 0, $max = 100, $step = 1, $unit = '%')
 
 // 見たまま編集画面用　セレクタを変数として定義
 commonSelectors = '
-  > div[data-collection-list-content],> div[data-recommend-collection-list-content],> div[data-collection-filtered-content],> div[data-collection-archive-content],> div[data-product-list-content],> div[data-product-recommend-content]
+  > div[data-collection-list-content],
+> div[data-recommend-collection-list-content],
+> div[data-collection-filtered-content],
+> div[data-collection-archive-content],
+> div[data-product-list-content],
+> div[data-product-recommend-content]
 '
 
 inherit01()

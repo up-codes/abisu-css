@@ -1,43 +1,61 @@
 // #####　up-col、gap #####
 
-// 定義のimport
-@import './_definition'
-
 // up-col
 [class*='up-col-']
   display flex
   flex-wrap wrap
 
-for col-num in range(1, 10, 1)
-  .up
-    &-col
-      &-{col-num}
-        &>*
-          width ceil((100% / col-num), 3)
+upColMixin(device)
+  for col-num in range(1, 10, 1)
+    .up
+      &-col
+        &-{col-num}{device}
+          &>*
+            width ceil((100% / col-num), 3)
+
+upColMixin('')
++tb()
+  upColMixin('\@tb')
++sp()
+  upColMixin('\@sp')
 
 // gapx gapy(margin padding)(px)
-for gap_px in range(0, 100, 10)
-  .up
-    &-gap
-      &x-{gap_px}
-        margin-left unit((-(gap_px / 2)), 'px')
-        margin-right unit((-(gap_px / 2)), 'px')
-        &>*
-          padding-left unit(ceil((gap_px / 2), 3), 'px')
-          padding-right unit(ceil((gap_px / 2), 3), 'px')
-      &y-{gap_px}
-        &>*
-          padding-bottom gapy-px px
+upGapPxMixin(device)
+  for gap_px in range(0, 100, 10)
+    .up
+      &-gap
+        &x-{gap_px}{device}
+          margin-left unit((-(gap_px / 2)), 'px')
+          margin-right unit((-(gap_px / 2)), 'px')
+          &>*
+            padding-left unit(ceil((gap_px / 2), 3), 'px')
+            padding-right unit(ceil((gap_px / 2), 3), 'px')
+        &y-{gap_px}{device}
+          &>*
+            padding-bottom unit(gap_px, 'px')
+
+upGapPxMixin('')
++tb()
+  upGapPxMixin('\@tb')
++sp()
+  upGapPxMixin('\@sp')
 
 // gap(column-gap row-gap)(px)
-for gap_gap in range(0, 100, 5)
-  .up
-    &-gap
-      &-{gap_gap}
-        gap unit(gap_gap, 'px')
-      &-col
-        &-{gap_gap}
-          column-gap unit(gap_gap, 'px')
-      &-row
-        &-{gap_gap}
-          row-gap unit(gap_gap, 'px')
+upGapGapMixin(device)
+  for gap_gap in range(0, 100, 5)
+    .up
+      &-gap
+        &-{gap_gap}{device}
+          gap unit(gap_gap, 'px')
+        &-col
+          &-{gap_gap}{device}
+            column-gap unit(gap_gap, 'px')
+        &-row
+          &-{gap_gap}{device}
+            row-gap unit(gap_gap, 'px')
+
+upGapGapMixin('')
++tb()
+  upGapGapMixin('\@tb')
++sp()
+  upGapGapMixin('\@sp')

@@ -1,81 +1,108 @@
 // #####　フォント #####
 
-// 定義のimport
-@import './_definition'
-
 // letter spacing(em)
-for ls in range(1, 20, 1)
-  .up
-    &-ls
-      if ls == 10
-        &-1em
-          letter-spacing: unit(1, 'em')
-      else if ls == 20
-        &-2em
-          letter-spacing: unit(2, 'em')
-      else if ls > 10
-        &-1\\\.{ls - 10}em
-          letter-spacing: floor(unit(ls, 'em') * .1, 1)
-      else
-        &-0\\\.{ls}em
-          letter-spacing: floor(unit(ls, 'em') * .1, 1)
+upLetterSpacingMixin(device)
+  for ls in range(1, 20, 1)
+    .up
+      &-ls
+        if ls == 10
+          &-1em{device}
+            letter-spacing: unit(1, 'em')
+        else if ls == 20
+          &-2em{device}
+            letter-spacing: unit(2, 'em')
+        else if ls > 10
+          &-1\\\.{ls - 10}em{device}
+            letter-spacing: floor(unit(ls, 'em') * .1, 1)
+        else
+          &-0\\\.{ls}em{device}
+            letter-spacing: floor(unit(ls, 'em') * .1, 1)
+
+upLetterSpacingMixin('')
++tb()
+  upLetterSpacingMixin('\@tb')
++sp()
+  upLetterSpacingMixin('\@sp')
 
 // font-size
-.up
-  &-fz
-    for i in range(0, length(unitlist3) - 1)
-      if unitlist3[i] == 'px'
-        for fz in range(10, 20, 1)
-          &-{fz}
-            font-size: unit(fz, unitlist3[i])
-        for fz in range(22, 70, 2)
-          &-{fz}
-            font-size: unit(fz, unitlist3[i])
-        for fz in range(90, 150, 20)
-          &-{fz}
-            font-size: unit(fz, unitlist3[i])
-        for fz in range(50, 200, 10)
-          &-{fz}
-            font-size: unit(fz, unitlist3[i])
-      else if unitlist3[i] == '%'
-        for fz in range(50, 200, 10)
-          &-{fz}\\{unitlist3[i]}
-            font-size: unit(fz, unitlist3[i])
-      else if unitlist3[i] == 'em'
-        for fz in range(1, 10, 1)
-          &-{fz}{unitlist3[i]}
-            font-size: unit(fz, unitlist3[i])
-.up
-  &-fw
-    &-light
-      font-weight lighter
-    &-normal
-      font-weight normal
-    &-bold
-      font-weight bold
-    for fw in range(100, 900, 100)
-      &-{fw}
-        font-weight fw
+upFontSizeMixin(device)
+  .up
+    &-fz
+      for i in range(0, length(unitlist3) - 1)
+        if unitlist3[i] == 'px'
+          for fz in range(10, 20, 1)
+            &-{fz}{device}
+              font-size: unit(fz, unitlist3[i])
+          for fz in range(22, 70, 2)
+            &-{fz}{device}
+              font-size: unit(fz, unitlist3[i])
+          for fz in range(90, 150, 20)
+            &-{fz}{device}
+              font-size: unit(fz, unitlist3[i])
+          for fz in range(50, 200, 10)
+            &-{fz}{device}
+              font-size: unit(fz, unitlist3[i])
+        else if unitlist3[i] == '%'
+          for fz in range(50, 200, 10)
+            &-{fz}\\{unitlist3[i]}{device}
+              font-size: unit(fz, unitlist3[i])
+        else if unitlist3[i] == 'em'
+          for fz in range(1, 10, 1)
+            &-{fz}{unitlist3[i]}{device}
+              font-size: unit(fz, unitlist3[i])
+
+upFontSizeMixin('')
++tb()
+  upFontSizeMixin('\@tb')
++sp()
+  upFontSizeMixin('\@sp')
+
+// font-weight
+upFontWeightMixin(device)
+  .up
+    &-fw
+      &-light{device}
+        font-weight lighter
+      &-normal{device}
+        font-weight normal
+      &-bold{device}
+        font-weight bold
+      for fw in range(100, 900, 100)
+        &-{fw}{device}
+          font-weight fw
+
+upFontWeightMixin('')
++tb()
+  upFontWeightMixin('\@tb')
++sp()
+  upFontWeightMixin('\@sp')
 
 // line-height
-for lh in range(10, 30, 1)
-  .up
-    &-lh
-      if lh == 10
-        &-1
-          line-height 1
-      else if lh == 20
-        &-2
-          line-height 2
-      else if lh == 30
-        &-3
-          line-height 3
-      else if 10 < lh && (lh < 20)
-        &-1\\\.{lh - 10}
-          line-height: floor((lh * .1), 1)
-      else if 20 < lh && (lh < 30)
-        &-2\\\.{lh - 20}
-          line-height: floor((lh * .1), 1)
-      else
-        &-0\\\.{lh}
-          line-height: floor((lh * .1), 1)
+upLineHeightMixin(device)
+  for lh in range(10, 30, 1)
+    .up
+      &-lh
+        if lh == 10
+          &-1{device}
+            line-height 1
+        else if lh == 20
+          &-2{device}
+            line-height 2
+        else if lh == 30
+          &-3{device}
+            line-height 3
+        else if 10 < lh && (lh < 20)
+          &-1\\\.{lh - 10}{device}
+            line-height: floor((lh * .1), 1)
+        else if 20 < lh && (lh < 30)
+          &-2\\\.{lh - 20}{device}
+            line-height: floor((lh * .1), 1)
+        else
+          &-0\\\.{lh}{device}
+            line-height: floor((lh * .1), 1)
+
+upLineHeightMixin('')
++tb()
+  upLineHeightMixin('\@tb')
++sp()
+  upLineHeightMixin('\@sp')

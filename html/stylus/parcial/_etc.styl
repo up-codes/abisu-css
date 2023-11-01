@@ -1,125 +1,122 @@
 // #####　テキスト、display、float、position、color、text-align、z-index、opacity、、表示・非表示、改行 #####
 
-// 定義のimport
-@import './_definition'
-
 .up
     &-adb
     a
       display block
 
-  &-reader
-    &1
+    &-reader
+      &1
+        overflow hidden
+        text-overflow ellipsis
+        white-space nowrap
+
+      &2
+        textEllipsis(2em, 2)
+
+      &3
+        textEllipsis(3em, 3)
+
+    &-circle
       overflow hidden
-      text-overflow ellipsis
-      white-space nowrap
+      border-radius 100%
+      
+    &-text
+      &-horizontal
+        writing-mode horizontal-tb
 
-    &2
-      textEllipsis(2em, 2)
+      &-vertical
+        writing-mode vertical-rl
 
-    &3
-      textEllipsis(3em, 3)
+    &d
+      &-block
+        display block
 
-  &-circle
-    overflow hidden
-    border-radius 100%
-    
-  &-text
-    &-horizontal
-      writing-mode horizontal-tb
+      &-iblock
+        display inline-block
 
-    &-vertical
-      writing-mode vertical-rl
+      &-static
+        display static
 
-  &d
-    &-block
-      display block
+      &-inherit
+        display inherit
 
-    &-iblock
-      display inline-block
+      &-initial
+        display initial
 
-    &-static
-      display static
+      &-flex
+        display flex
 
-    &-inherit
-      display inherit
+      &-grid
+        display grid
 
-    &-initial
-      display initial
+      &-none
+        display none
 
-    &-flex
-      display flex
+    &-f
+      &-clear
+        &-both
+          clear both
 
-    &-grid
-      display grid
+        &-left
+          clear left
 
-    &-none
-      display none
+        &-right
+          clear right
 
-  &-f
-    &-clear
-      &-both
-        clear both
+    &-pos
+      &-rel
+        position relative
 
-      &-left
-        clear left
+      &-abs
+        position absolute
 
-      &-right
-        clear right
+      &-fix
+        position fixed
 
-  &-pos
-    &-rel
-      position relative
+      &-static
+        position static
 
-    &-abs
-      position absolute
-
-    &-fix
-      position fixed
-
-    &-static
-      position static
-
-  &-c
-    &-red
-      color red
-
-    &-blue
-      color blue
-
-    &-yellow
-      color yellow
-
-    &-gray
-      color gray
-
-    &-black
-      color black
-
-    &-white
-      color white
-
-    &-initial
-      color initial
-
-    &-inherit
-      color inherit
-
-    &-unset
-      color unset
-
-    &-revert
-      color revert
-
-  &-ta
     &-c
-      text-align center
+      &-red
+        color red
 
-    &-l
-      text-align left
+      &-blue
+        color blue
 
-    &-r
-      text-align right
+      &-yellow
+        color yellow
+
+      &-gray
+        color gray
+
+      &-black
+        color black
+
+      &-white
+        color white
+
+      &-initial
+        color initial
+
+      &-inherit
+        color inherit
+
+      &-unset
+        color unset
+
+      &-revert
+        color revert
+
+    &-ta
+      &-c
+        text-align center
+
+      &-l
+        text-align left
+
+      &-r
+        text-align right
 
 // z-index
 for z in range(0, 5, 1)

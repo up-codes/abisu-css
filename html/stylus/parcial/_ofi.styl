@@ -1,8 +1,5 @@
 // #####　object-fit #####
 
-// 定義のimport
-@import './_definition'
-
 // up-ofiの基本設定
 [class*='up-ofi']
   width 100%
@@ -25,42 +22,56 @@
     top 0
     left 0
 
-for ofi-percent in range(10, 200, 5)
-  .up
-    &-ofi
-      &-{ofi-percent}
-        &::after
-          padding-top unit(ofi-percent, '%')
+upOfiMixin(device)
+  for ofi-percent in range(10, 200, 5)
+    .up
+      &-ofi
+        &-{ofi-percent}{device}
+          &::after
+            padding-top unit(ofi-percent, '%')
+
+upOfiMixin('')
++tb()
+  upOfiMixin('\@tb')
++sp()
+  upOfiMixin('\@sp')
 
 // object-fitのオプション
-.up
-  &-ob
-    &p
-      &-c
-        img
-          object-position center
+upOfiOptionMixin(device)
+  .up
+    &-ob
+      &p
+        &-c{device}
+          img
+            object-position center
 
-      &-t
-        img
-          object-position top
+        &-t{device}
+          img
+            object-position top
 
-      &-b
-        img
-          object-position bottom
+        &-b{device}
+          img
+            object-position bottom
 
-      &-l
-        img
-          object-position left
+        &-l{device}
+          img
+            object-position left
 
-      &-r
-        img
-          object-position right
+        &-r{device}
+          img
+            object-position right
 
-    &f
-      &-cover
-        img
-          object-fit cover
+      &f
+        &-cover{device}
+          img
+            object-fit cover
 
-      &-contain
-        img
-          object-fit contain
+        &-contain{device}
+          img
+            object-fit contain
+
+upOfiOptionMixin('')
++tb()
+  upOfiOptionMixin('\@tb')
++sp()
+  upOfiOptionMixin('\@sp')
