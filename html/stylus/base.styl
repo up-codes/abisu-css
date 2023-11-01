@@ -96,7 +96,6 @@ img
   vertical-align top
   border 0
   border-style none
-
   &:not([src*='.'])
     display none
 
@@ -175,16 +174,13 @@ button
   color inherit
   text-decoration none
   transition .4s ease
-
   &:hover
     color inherit
     text-decoration none
     opacity .6
     cursor pointer
-
   &[href*='tel']
     pointer-events none
-
 +tb()
   &[href*='tel']
     pointer-events initial !important
@@ -196,31 +192,25 @@ button
 // inner
 for w in range(500, 2000, 100)
   innerWidth = 1000
-
   if w < innerWidth
     .inner{w}
       width 92%
       max-width unit(w, 'px')
-
       innerMargin()
   else if w > innerWidth
     .inner{w}
       width 98%
       max-width unit(w, 'px')
-
       innerMargin()
   else
     .inner
       width 92%
-
       innerMargin()
-
       max-width unit(w, 'px')
 
 +tb()
   for w in range(500, 2000, 100)
     innerWidth = 1000
-
     if w < innerWidth
       .inner{w}
         innerProperty()
@@ -240,7 +230,6 @@ for w in range(500, 2000, 100)
 // fead
 [class*='fead']
   opacity 0
-
   &.mv
     opacity 1
     transition .5s ease-out
@@ -248,36 +237,27 @@ for w in range(500, 2000, 100)
 .fead
   &-up
     transform translateY(50px)
-
     &.mv
       transform translateY(0)
-
   &-right
     transition 1s
     transform translateX(-20%)
-
     &.mv
       transform translateX(0)
-
   &-left
     transition 1s
     transform translateX(20%)
-
     &.mv
       transform translateX(0)
-
   &-text
     &.mv
       transition 0s
       transition-delay 0s
-
     .str
       &.textin
         transition 1s
-
   &-cover
     position relative
-
     &::before
       content ''
       width 100%
@@ -289,24 +269,19 @@ for w in range(500, 2000, 100)
       top 0
       right 0
       z-index 15
-
     &.mv
       &::before
         width 0
         transition-delay .6s
-
   &-order
     &>*
       opacity 0
       transform translateY(50px)
-
       &.mv
         transform translateY(0)
-
   &-scale
     transition .8s ease-out
     transform scale(1.05)
-
     &.mv
       transform scale(1)
 
@@ -314,50 +289,39 @@ for w in range(500, 2000, 100)
 .up
   &-clearfix
     display block
-
     &::before
     &::after
       content ''
       display block
       clear both
-
   &-over
     &-hidden
       overflow hidden
-
   &-fs
     &-italic
       font-style italic
-
   &-td
     &-underline
       text-decoration underline
-
   &-lst
     &-disc
       list-style-type disc
       padding-left 1em
-
     &-decimal
       list-style-type decimal
       padding-left 1em
-
   &-adb
     a
       display block
-
   &-reader
     &1
       overflow hidden
       text-overflow ellipsis
       white-space nowrap
-
     &2
       textEllipsis(2em, 2)
-
     &3
       textEllipsis(3em, 3)
-
   &-circle
     overflow hidden
     border-radius 100%
@@ -379,7 +343,6 @@ for w in range(500, 2000, 100)
   &::after
     content ''
     display block
-
   img
     position absolute
     top 0
@@ -399,28 +362,22 @@ for ofi-percent in range(10, 200, 5)
       &-c
         img
           object-position center
-
       &-t
         img
           object-position top
-
       &-b
         img
           object-position bottom
-
       &-l
         img
           object-position left
-
       &-r
         img
           object-position right
-
     &f
       &-cover
         img
           object-fit cover
-
       &-contain
         img
           object-fit contain
@@ -430,88 +387,68 @@ for ofi-percent in range(10, 200, 5)
   &-text
     &-horizontal
       writing-mode horizontal-tb
-
     &-vertical
       writing-mode vertical-rl
-
   &d
     &-block
       display block
-
     &-iblock
       display inline-block
-
+    &-static 
+      display static
+    &-inherit 
+      display inherit
+    &-initial 
+      display initial
     &-flex
       display flex
-
     &-grid
       display grid
-
     &-none
       display none
-
   &-f
     &-clear
       &-both
         clear both
-
       &-left
         clear left
-
       &-right
         clear right
-
   &-pos
     &-rel
       position relative
-
     &-abs
       position absolute
-
     &-fix
       position fixed
-
     &-static
       position static
-
   &-c
     &-red
       color red
-
     &-blue
       color blue
-
     &-yellow
       color yellow
-
     &-gray
       color gray
-
     &-black
       color black
-
     &-white
       color white
-
     &-initial
       color initial
-
     &-inherit
       color inherit
-
     &-unset
       color unset
-
     &-revert
       color revert
-
   &-ta
     &-c
       text-align center
-
     &-l
       text-align left
-
     &-r
       text-align right
 
@@ -561,15 +498,12 @@ for ls in range(1, 20, 1)
         for fz in range(10, 20, 1)
           &-{fz}
             font-size unit(fz, unitlist3[i])
-
         for fz in range(22, 70, 2)
           &-{fz}
             font-size unit(fz, unitlist3[i])
-
         for fz in range(90, 150, 20)
           &-{fz}
             font-size unit(fz, unitlist3[i])
-
         for fz in range(50, 200, 10)
           &-{fz}
             font-size unit(fz, unitlist3[i])
@@ -586,13 +520,10 @@ for ls in range(1, 20, 1)
   &-fw
     &-light
       font-weight lighter
-
     &-normal
       font-weight normal
-
     &-bold
       font-weight bold
-
     for fw in range(100, 900, 100)
       &-{fw}
         font-weight fw
@@ -622,165 +553,118 @@ for lh in range(10, 30, 1)
 
 // flex
 .up
-  &-fxw
-    &-wrap
-      flex-wrap wrap
-
-    &-wrapr
-      flex-wrap wrap-reverse
-
-    &-nowrap
-      flex-wrap nowrap
-
-  &-fxd
-    &-row
-      flex-direction row
-
-    &-rowr
-      flex-direction row-reverse
-
-    &-col
-      flex-direction column
-
-    &-colr
-      flex-direction column-reverse
-
-  &-even
-    &>*
-      &:nth-child(even)
+  &-fx 
+    &w
+      &-wrap
+        flex-wrap wrap
+      &-wrapr
+        flex-wrap wrap-reverse
+      &-nowrap
+        flex-wrap nowrap
+    &d
+      &-row
+        flex-direction row
+      &-rowr
         flex-direction row-reverse
-
-  &-odd
-    &>*
-      &:nth-child(odd)
-        flex-direction row-reverse
-
+      &-col
+        flex-direction column
+      &-colr
+        flex-direction column-reverse
+      &-even
+        &>*
+          &:nth-child(even)
+            flex-direction row-reverse
+      &-odd
+        &>*
+          &:nth-child(odd)
+            flex-direction row-reverse
+    &g
+      &-0
+        flex-grow 0
+      &-1
+        flex-grow 1
+    &sh
+      &-0
+        flex-shrink 0
+      &-1
+        flex-shrink 1
   &-jc
     &-s
       justify-content start
-
     &-fs
       justify-content flex-start
-
     &-e
       justify-content end
-
     &-fe
       justify-content flex-end
-
     &-c
       justify-content center
-
     &-sh
       justify-content stretch
-
     &-sb
       justify-content space-between
-
     &-sa
       justify-content space-around
-
     &-se
       justify-content space-evenly
-
   &-ai
     &-st
       align-items start
-
     &-fs
       align-items flex-start
-
     &-c
       align-items center
-
     &-e
       align-items end
-
     &-fe
       align-items flex-end
-
     &-b
       align-items baseline
-
     &-sh
       align-items stretch
-
   &-ac
     &-s
       align-content start
-
     &-fs
       align-content flex-start
-
     &-c
       align-content center
-
     &-e
       align-content end
-
     &-fe
       align-content flex-end
-
     &-sh
       align-content stretch
-
     &-sb
       align-content space-between
-
     &-sa
       align-content space-around
-
     &-se
       align-content space-evenly
-
   &-as
     &-s
       align-self start
-
     &-fs
       align-self flex-start
-
     &-c
       align-self center
-
     &-sh
       align-self stretch
-
     &-fe
       align-self flex-end
-
     &-e
       align-self end
-
     &-auto
       align-self auto
-
   &-js
     &-s
       justify-self start
-
     &-e
       justify-self end
-
     &-c
       justify-self center
-
     &-sh
       justify-self stretch
-
-  &-fxg
-    &-0
-      flex-grow 0
-
-    &-1
-      flex-grow 1
-
-  &-fxsh
-    &-0
-      flex-shrink 0
-
-    &-1
-      flex-shrink 1
 
 // order
 for order in range(0, 10, 1)
@@ -794,22 +678,17 @@ for order in range(0, 10, 1)
   &-w
     &-auto
       width auto
-
     &-min
       width min-content
-
     &-max
       width max-content
-
     &-fit
       width fit-content
-
     for i in range(0, length(unitlist4) - 1)
       if unitlist4[i] == 'px'
         for wid in range(10, 300, 10)
           &-{wid}
             width unit(wid, unitlist4[i])
-
         for wid in range(350, 1200, 50)
           &-{wid}
             width unit(wid, unitlist4[i])
@@ -817,7 +696,6 @@ for order in range(0, 10, 1)
         for wid in range(5, 120, 5)
           &-{wid}\\{unitlist4[i]}
             width unit(wid, unitlist4[i])
-
         &-48\\\%
           width 48%
       else if unitlist4[i] == 'vw'
@@ -830,7 +708,6 @@ for order in range(0, 10, 1)
   &-minw
     &-auto
       min-width auto
-
     for i in range(0, length(unitlist4) - 1)
       if unitlist4[i] == 'px'
         for wid in range(20, 500, 10)
@@ -840,7 +717,6 @@ for order in range(0, 10, 1)
         for wid in range(5, 100, 5)
           &-{wid}\\{unitlist4[i]}
             width unit(wid, unitlist4[i])
-
         &-48\\\%
           width 48%
       else if unitlist4[i] == 'vw'
@@ -860,7 +736,6 @@ for order in range(0, 10, 1)
         for wid in range(5, 100, 5)
           &-{wid}\\{unitlist4[i]}
             width unit(wid, unitlist4[i])
-
         &-48\\\%
           width 48%
       else if unitlist4[i] == 'vw'
@@ -873,7 +748,6 @@ for order in range(0, 10, 1)
   &-h
     &-auto
       height auto
-
     for i in range(0, length(unitlist5) - 1)
       if unitlist5[i] == 'px'
         for hei in range(50, 1000, 50)
@@ -883,7 +757,6 @@ for order in range(0, 10, 1)
         for hei in range(5, 100, 5)
           &-{hei}\\{unitlist5[i]}
             width unit(hei, unitlist5[i])
-
         &-48\\\%
           width 48%
       else if unitlist5[i] == 'vw'
@@ -896,15 +769,12 @@ for order in range(0, 10, 1)
   &-m
     &-auto
       margin auto
-
     &l
       &-auto
         margin-left auto
-
     &r
       &-auto
         margin-right auto
-
     &x
       &-auto
         margin-left auto
@@ -936,11 +806,9 @@ for gap_px in range(0, 100, 10)
       &x-{gap_px}
         margin-left unit((-(gap_px / 2)), 'px')
         margin-right unit((-(gap_px / 2)), 'px')
-
         &>*
           padding-left unit(ceil((gap_px / 2), 3), 'px')
           padding-right unit(ceil((gap_px / 2), 3), 'px')
-
       &y-{gap_px}
         &>*
           padding-bottom gapy-px px
@@ -951,11 +819,9 @@ for gap_gap in range(0, 100, 5)
     &-gap
       &-{gap_gap}
         gap unit(gap_gap, 'px')
-
       &-col
         &-{gap_gap}
           column-gap unit(gap_gap, 'px')
-
       &-row
         &-{gap_gap}
           row-gap unit(gap_gap, 'px')
@@ -964,7 +830,6 @@ for gap_gap in range(0, 100, 5)
 .up
   &-show
     display block
-
   &-hide
     display none
 
@@ -973,58 +838,15 @@ for gap_gap in range(0, 100, 5)
 .break
   &-pc
     display block
-
     &-tb
       display block
-
       &-sp
         display block
-
     &-sp
       display block
-
   &-tb
     display none
-
     &-sp
       display none
-
   &-sp
     display none
-
-+tb()
-  /* 表示・非表示 */
-  .up-show{tb}
-    display block
-
-  .up-hide\\\@tb
-    display none
-
-  .break
-    &-pc
-      display none
-
-      &-sp
-        display none
-
-    &-tb
-      display block
-
-      &-sp
-        display block
-
-+sp()
-  /* 表示・非表示 */
-  .up-show\\\@sp
-    display block
-
-  .up-hide\\\@sp
-    display none
-
-  .break
-  &-pc
-    &-sp
-      display block
-
-  &-sp
-    display block

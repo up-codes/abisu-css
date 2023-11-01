@@ -5,8 +5,7 @@
   "scripts": {
     "gulp": "gulp",
     "supremacy": "stylus-supremacy format ./html/stylus/*.styl --compare --replace --options ./stylus-supremacy.json",
-    "lint": "stylint ./html/stylus/*.styl",
-    "lintbase": "stylint ./html/stylus/base.styl"
+    "lint": "stylint ./html/stylus/*.styl"
   },
   "keywords": [],
   "author": "h.tanaka",
