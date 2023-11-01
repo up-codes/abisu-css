@@ -36,7 +36,7 @@ unitlist4 = px \% vw
 unitlist5 = px \% vh
 
 // marginとpadding（クラス名に単位なし）
-spaces($min = 0, $max = 100, $step = 1, $unit = 'px')
+spaces($min = 0, $max = 100, $step = 1, $unit = 'px', $device = '')
   $props = {
     m: 'margin',
     p: 'padding'
@@ -53,15 +53,15 @@ spaces($min = 0, $max = 100, $step = 1, $unit = 'px')
       $num = $i * $step
       $value = $i == 0 ? $num : unit($num, $unit)
 
-      .up-{$pKey}-{$num}
+      .up-{$pKey}-{$num}{$device}
         {$pVal}: $value
 
       for $key, $val in $spaces
-        .up-{$pKey}{$key}-{$num}
+        .up-{$pKey}{$key}-{$num}{$device}
           {$pVal}-{$val}: $value
 
 // marginとpadding（クラス名にem）
-spaces_unit_em($min = 0, $max = 100, $step = 1, $unit = 'em')
+spaces_unit_em($min = 0, $max = 100, $step = 1, $unit = 'em', $device = '')
   $props = {
     m: 'margin',
     p: 'padding'
@@ -78,15 +78,15 @@ spaces_unit_em($min = 0, $max = 100, $step = 1, $unit = 'em')
       $num = $i * $step
       $value = $i == 0 ? $num : unit($num, $unit)
 
-      .up-{$pKey}-{$num}{$unit}
+      .up-{$pKey}-{$num}{$unit}{$device}
         {$pVal}: $value
 
       for $key, $val in $spaces
-        .up-{$pKey}{$key}-{$num}{$unit}
+        .up-{$pKey}{$key}-{$num}{$unit}{$device}
           {$pVal}-{$val}: $value
 
 // marginとpadding（クラス名に%）
-spaces_unit_percent($min = 0, $max = 100, $step = 1, $unit = '%')
+spaces_unit_percent($min = 0, $max = 100, $step = 1, $unit = '%', $device = '')
   $props = {
     m: 'margin',
     p: 'padding'
@@ -103,11 +103,11 @@ spaces_unit_percent($min = 0, $max = 100, $step = 1, $unit = '%')
       $num = $i * $step
       $value = $i == 0 ? $num : unit($num, $unit)
 
-      .up-{$pKey}-{$num}\\{$unit}
+      .up-{$pKey}-{$num}\\{$unit}{$device}
         {$pVal}: $value
 
       for $key, $val in $spaces
-        .up-{$pKey}{$key}-{$num}\\{$unit}
+        .up-{$pKey}{$key}-{$num}\\{$unit}{$device}
           {$pVal}-{$val}: $value
 
 // 見たまま編集画面用　セレクタを変数として定義
