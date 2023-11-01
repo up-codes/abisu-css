@@ -86,6 +86,51 @@ function BaseMin() {
     }))
 }
 
+/// abisu(stylus)コンパイル //////////////////////////////////////////
+const srcAbisu = {
+  srcDir: 'html/stylus/abisu.styl',
+  srcCom: [
+    'html/stylus/abisu.styl'
+  ],
+  dstDir: 'html/css',
+  minDir: 'html/css/abisu.css'
+}
+
+function cacheAbisu() {
+  return src(srcAbisu.srcDir)
+    .pipe(cache('abisu'))
+}
+
+function Abisu() {
+  return src(srcAbisu.srcCom)
+    .pipe(sourcemaps.init())
+    .pipe(progeny())
+    .pipe(plumber({
+      errorHandler: notify.onError('Error: <%= error.message %>')
+    }))
+    .pipe(stylus({
+      compress: false
+    }))
+    .pipe(postcss([autoprefixer()]))
+    .pipe(sourcemaps.write('/'))
+    .pipe(dest(srcAbisu.dstDir))
+}
+
+function AbisuMin() {
+  return src(srcAbisu.minDir)
+    .pipe(cleanCss())
+    .pipe(header(banner, {
+      pkg: pkg
+    }))
+    .pipe(rename({
+      extname: '.min.css'
+    }))
+    .pipe(dest(srcAbisu.dstDir))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+}
+
 /// base_k(stylus)コンパイル //////////////////////////////////////////
 // const srcBaseK = {
 //   srcDir: 'html/stylus/base_k.styl',
@@ -587,6 +632,7 @@ function imageToWebp() {
 /// 監視ファイル ////////////////////////////////////////////
 function watchFile() {
   watch(srcBase.srcDir, series(cacheBase, Base, BaseMin))
+  watch(srcAbisu.srcDir, series(cacheAbisu, Abisu, AbisuMin))
   // watch(srcBaseK.srcDir, series(cacheBaseK, BaseK, BaseKMin))
   watch(srcStyles.srcDir, series(cacheStyles, Styles))
   watch(srcSassStyles.srcDir, series(cacheSassStyles, SassStyles))

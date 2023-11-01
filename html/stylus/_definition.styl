@@ -1,25 +1,37 @@
 tb_max = 1024px
 
 tb()
-  @media (max-width: tb_max)
+  @media (max-width tb_max)
     {block}
 
 // スマホのメディアクエリ
 sp_max = 599px
 
 sp()
-  @media (max-width: sp_max)
+  @media (max-width sp_max)
     {block}
+
+tb = '\\\@tb'
+sp = '\\\@sp'
 
 // innerの左右マージン
 innerMargin()
-  margin-left: auto
-  margin-right: auto
+  margin-left auto
+  margin-right auto
 
 // innerのプロパティ
 innerProperty()
-  width: 96%
-  max-width: 768px
+  width 96%
+  max-width 768px
+
+// テキスト省略
+textEllipsis(maxHeight, line_num)
+  max-height maxHeight
+  display -webkit-box
+  overflow hidden
+  text-overflow ellipsis
+  -webkit-box-orient vertical
+  -webkit-line-clamp line_num
 
 // 単位
 unitlist1 = px \%
@@ -47,11 +59,11 @@ spaces($min = 0, $max = 100, $step = 1, $unit = 'px')
       $value = $i == 0 ? $num : unit($num, $unit)
 
       .up-{$pKey}-{$num}
-        {$pVal}: $value
+        {$pVal} $value
 
       for $key, $val in $spaces
         .up-{$pKey}{$key}-{$num}
-          {$pVal}-{$val}: $value
+          {$pVal}-{$val} $value
 
 // marginとpadding（クラス名にem）
 spaces_unit_em($min = 0, $max = 100, $step = 1, $unit = 'em')
@@ -72,11 +84,11 @@ spaces_unit_em($min = 0, $max = 100, $step = 1, $unit = 'em')
       $value = $i == 0 ? $num : unit($num, $unit)
 
       .up-{$pKey}-{$num}{$unit}
-        {$pVal}: $value
+        {$pVal} $value
 
       for $key, $val in $spaces
         .up-{$pKey}{$key}-{$num}{$unit}
-          {$pVal}-{$val}: $value
+          {$pVal}-{$val} $value
 
 // marginとpadding（クラス名に%）
 spaces_unit_percent($min = 0, $max = 100, $step = 1, $unit = '%')
@@ -97,17 +109,26 @@ spaces_unit_percent($min = 0, $max = 100, $step = 1, $unit = '%')
       $value = $i == 0 ? $num : unit($num, $unit)
 
       .up-{$pKey}-{$num}\\{$unit}
-        {$pVal}: $value
+        {$pVal} $value
 
       for $key, $val in $spaces
         .up-{$pKey}{$key}-{$num}\\{$unit}
-          {$pVal}-{$val}: $value
+          {$pVal}-{$val} $value
 
-// 見たまま編集画面用　セレクタのmixin
-commonSelectors()
-  > div[data-collection-list-content]
-  > div[data-recommend-collection-list-content]
-  > div[data-collection-filtered-content]
-  > div[data-collection-archive-content]
-  > div[data-product-list-content]
-  > div[data-product-recommend-content]
+// 見たまま編集画面用　セレクタを変数として定義
+commonSelectors = '
+  > div[data-collection-list-content],> div[data-recommend-collection-list-content],> div[data-collection-filtered-content],> div[data-collection-archive-content],> div[data-product-list-content],> div[data-product-recommend-content]
+'
+
+inherit01()
+  width 100%
+  display inherit
+  flex-wrap inherit
+  flex-direction inherit
+  align-content inherit
+  align-items inherit
+  align-self inherit
+  justify-content inherit
+  justify-items inherit
+  // 頻出プロパティ1
+  justify-self inherit
