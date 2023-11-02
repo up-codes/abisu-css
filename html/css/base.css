@@ -435,29 +435,29 @@ button[href*='tel'] {
   -webkit-writing-mode: vertical-rl;
           writing-mode: vertical-rl;
 }
-.upd-block {
+.up-d-block {
   display: block;
 }
-.upd-iblock {
+.up-d-iblock {
   display: inline-block;
 }
-.upd-static {
+.up-d-static {
   display: static;
 }
-.upd-inherit {
+.up-d-inherit {
   display: inherit;
 }
-.upd-initial {
+.up-d-initial {
   display: initial;
 }
-.upd-flex {
+.up-d-flex {
   display: -webkit-box;
   display: flex;
 }
-.upd-grid {
+.up-d-grid {
   display: grid;
 }
-.upd-none {
+.up-d-none {
   display: none;
 }
 .up-f-clear-both {

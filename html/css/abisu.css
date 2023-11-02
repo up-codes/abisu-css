@@ -1,5 +1,6 @@
 @charset 'utf-8';
-/* version 1.2.0　2023/10/27 */
+/* version 1.2.0　2023/10/12 */
+@charset 'utf-8';
 [data-common-area] {
   padding-top: 2em;
   position: relative;
@@ -337,7 +338,6 @@ a [data-href*='.']:hover::before {
 [data-element-id] .up-col-10 > div[data-product-recommend-content] > * {
   width: 10%;
 }
-/* gapy(px) */
 [data-element-id] .up-gapy-0 > div[data-collection-list-content],
 [data-element-id] .up-gapy-0 > div[data-recommend-collection-list-content],
 [data-element-id] .up-gapy-0 > div[data-collection-filtered-content],
@@ -514,7 +514,6 @@ a [data-href*='.']:hover::before {
 [data-element-id] .up-gapy-100 > div[data-product-recommend-content] > * {
   padding-bottom: 100px;
 }
-/* gapx(px) */
 [data-element-id] .up-gapx-0 {
   margin-left: 0;
   margin-right: 0;
@@ -757,7 +756,6 @@ a [data-href*='.']:hover::before {
   padding-left: 50px;
   padding-right: 50px;
 }
-/* 表示・非表示 */
 [data-element-id] .show {
   display: block;
   border: solid 2px #008000;
@@ -800,7 +798,6 @@ a [data-href*='.']:hover::before {
   text-align: center;
   background: #008000;
 }
-/* 改行 */
 [data-element-id] [class*='break'] {
   width: 1.5em;
   height: 1.5em;

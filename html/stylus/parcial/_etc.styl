@@ -28,7 +28,7 @@
       &-vertical
         writing-mode vertical-rl
 
-    &d
+    &-d
       &-block
         display block
 
@@ -128,7 +128,7 @@ for z in range(0, 5, 1)
 // opacity
 for opacity in range(0, 1, .25)
   .up
-    &-op
+    &-opacity
       if opacity == 0
         &-0
           opacity 0
@@ -162,3 +162,38 @@ for opacity in range(0, 1, .25)
       display none
   &-sp
     display none
+
++tb()
+  .up-show{tb}
+    display block
+
+  .up-hide\\\@tb
+    display none
+
+  .break
+    &-pc
+      display none
+
+      &-sp
+        display none
+
+    &-tb
+      display block
+
+      &-sp
+        display block
+
++sp()
+  .up-show\\\@sp
+    display block
+
+  .up-hide\\\@sp
+    display none
+
+  .break
+    &-pc
+      &-sp
+        display block
+
+    &-sp
+      display block
