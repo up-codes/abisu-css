@@ -1,5 +1,5 @@
 @charset 'utf-8';
-/* version 1.2.0　2023/10/12 */
+/* version 1.2.0 */
 html {
   font-family: '游ゴシック', YuGothic, Hiragino Sans, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic Pro', Hiragino Kaku Gothic ProN, 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
   font-weight: normal;
@@ -538,19 +538,19 @@ button[href*='tel'] {
 .up-z-5 {
   z-index: 5;
 }
-.up-op-0 {
+.up-opacity-0 {
   opacity: 0;
 }
-.up-op-0\.25 {
+.up-opacity-0\.25 {
   opacity: 0.25;
 }
-.up-op-0\.50 {
+.up-opacity-0\.50 {
   opacity: 0.5;
 }
-.up-op-0\.75 {
+.up-opacity-0\.75 {
   opacity: 0.75;
 }
-.up-op-1 {
+.up-opacity-1 {
   opacity: 1;
 }
 .up-show {
@@ -579,6 +579,40 @@ button[href*='tel'] {
 }
 .break-sp {
   display: none;
+}
+@media (max-width: 1024px) {
+  .up-showtb {
+    display: block;
+  }
+  .up-hide\@tb {
+    display: none;
+  }
+  .break-pc {
+    display: none;
+  }
+  .break-pc-sp {
+    display: none;
+  }
+  .break-tb {
+    display: block;
+  }
+  .break-tb-sp {
+    display: block;
+  }
+}
+@media (max-width: 599px) {
+  .up-show\@sp {
+    display: block;
+  }
+  .up-hide\@sp {
+    display: none;
+  }
+  .break-pc-sp {
+    display: block;
+  }
+  .break-sp {
+    display: block;
+  }
 }
 .up-ls-0\.1em {
   letter-spacing: 0.1em;
