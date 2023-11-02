@@ -158,9 +158,8 @@ if (edit_design_check == -1) {
         var clk = $('.hamburger, .nav-list li a'); // ハンバーガーボタンとナビ内のリンク（半角カンマで区切る）
         var drawer = $('header'); // ハンバーガーボタンをクリックしたら出てくるドロワーナビの要素
 
-        var overlay = '<div class="overlay"></div>'; // ↑ の兄弟要素として追加するオーバーレイ（触らなくて大丈夫）
-
         // ここから下は触らなくて大丈夫です
+        var overlay = '<div class="overlay"></div>';
         $(document).ready(function () {
             $(clk).on('click', function () {
                 target.toggleClass(cls);
