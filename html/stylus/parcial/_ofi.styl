@@ -1,0 +1,77 @@
+// #####　object-fit #####
+
+// up-ofiの基本設定
+[class*='up-ofi']
+  width 100%
+  display block
+  position relative
+
+  img
+    width 100%
+    height 100% !important
+    object-fit cover
+    object-position 50% 50%
+
+[class*='up-ofi-']
+  &::after
+    content ''
+    display block
+
+  img
+    position absolute
+    top 0
+    left 0
+
+upOfiMixin(device)
+  for ofi-percent in range(10, 200, 5)
+    .up
+      &-ofi
+        &-{ofi-percent}{device}
+          &::after
+            padding-top unit(ofi-percent, '%')
+
+upOfiMixin('')
++tb()
+  upOfiMixin('\@tb')
++sp()
+  upOfiMixin('\@sp')
+
+// object-fitのオプション
+upOfiOptionMixin(device)
+  .up
+    &-ob
+      &p
+        &-c{device}
+          img
+            object-position center
+
+        &-t{device}
+          img
+            object-position top
+
+        &-b{device}
+          img
+            object-position bottom
+
+        &-l{device}
+          img
+            object-position left
+
+        &-r{device}
+          img
+            object-position right
+
+      &f
+        &-cover{device}
+          img
+            object-fit cover
+
+        &-contain{device}
+          img
+            object-fit contain
+
+upOfiOptionMixin('')
++tb()
+  upOfiOptionMixin('\@tb')
++sp()
+  upOfiOptionMixin('\@sp')

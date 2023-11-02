@@ -1,0 +1,137 @@
+// #####　flex #####
+
+// flex
+upFlexMixin(device)
+  .up
+    &-fx 
+      &w
+        &-wrap{device}
+          flex-wrap wrap
+        &-wrapr{device}
+          flex-wrap wrap-reverse
+        &-nowrap{device}
+          flex-wrap nowrap
+      &d
+        &-row{device}
+          flex-direction row
+        &-rowr{device}
+          flex-direction row-reverse
+        &-col{device}
+          flex-direction column
+        &-colr{device}
+          flex-direction column-reverse
+        &-even{device}
+          &>*
+            &:nth-child(even)
+              flex-direction row-reverse
+        &-odd{device}
+          &>*
+            &:nth-child(odd)
+              flex-direction row-reverse
+      &g
+        &-0{device}
+          flex-grow 0
+        &-1{device}
+          flex-grow 1
+      &sh
+        &-0{device}
+          flex-shrink 0
+        &-1{device}
+          flex-shrink 1
+    &-jc
+      &-s{device}
+        justify-content start
+      &-fs{device}
+        justify-content flex-start
+      &-e{device}
+        justify-content end
+      &-fe{device}
+        justify-content flex-end
+      &-c{device}
+        justify-content center
+      &-sh{device}
+        justify-content stretch
+      &-sb{device}
+        justify-content space-between
+      &-sa{device}
+        justify-content space-around
+      &-se{device}
+        justify-content space-evenly
+    &-ai
+      &-st{device}
+        align-items start
+      &-fs{device}
+        align-items flex-start
+      &-c{device}
+        align-items center
+      &-e{device}
+        align-items end
+      &-fe{device}
+        align-items flex-end
+      &-b{device}
+        align-items baseline
+      &-sh{device}
+        align-items stretch
+    &-ac
+      &-s{device}
+        align-content start
+      &-fs{device}
+        align-content flex-start
+      &-c{device}
+        align-content center
+      &-e{device}
+        align-content end
+      &-fe{device}
+        align-content flex-end
+      &-sh{device}
+        align-content stretch
+      &-sb{device}
+        align-content space-between
+      &-sa{device}
+        align-content space-around
+      &-se{device}
+        align-content space-evenly
+    &-as
+      &-s{device}
+        align-self start
+      &-fs{device}
+        align-self flex-start
+      &-c{device}
+        align-self center
+      &-sh{device}
+        align-self stretch
+      &-fe{device}
+        align-self flex-end
+      &-e{device}
+        align-self end
+      &-auto{device}
+        align-self auto
+    &-js
+      &-s{device}
+        justify-self start
+      &-e{device}
+        justify-self end
+      &-c{device}
+        justify-self center
+      &-sh{device}
+        justify-self stretch
+
+upFlexMixin('')
++tb()
+  upFlexMixin('\@tb')
++sp()
+  upFlexMixin('\@sp')
+
+// order
+upOrderMixin(device)
+  for order in range(0, 10, 1)
+    .up
+      &-order
+        &-{order}{device}
+          order order
+
+upOrderMixin('')
++tb()
+  upOrderMixin('\@tb')
++sp()
+  upOrderMixin('\@sp')

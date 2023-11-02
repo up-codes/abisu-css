@@ -30,7 +30,7 @@ const header = require('gulp-header'); //コメントアウトをファイルの
 const sass = require('gulp-sass')(require('sass')); //sassコンパイル
 
 
-const pkg = require('./package.json'); //package.jspnの記述内容をコメントアウトに使用する
+const pkg = require('./package.json'); //package.jsonの記述内容をコメントアウトに使用する
 
 // バージョン情報などのコメントアウト自動挿入
 const banner = ['/**',
@@ -81,6 +81,51 @@ function BaseMin() {
       extname: '.min.css'
     }))
     .pipe(dest(srcBase.dstDir))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+}
+
+/// abisu(stylus)コンパイル //////////////////////////////////////////
+const srcAbisu = {
+  srcDir: 'html/stylus/abisu.styl',
+  srcCom: [
+    'html/stylus/abisu.styl'
+  ],
+  dstDir: 'html/css',
+  minDir: 'html/css/abisu.css'
+}
+
+function cacheAbisu() {
+  return src(srcAbisu.srcDir)
+    .pipe(cache('abisu'))
+}
+
+function Abisu() {
+  return src(srcAbisu.srcCom)
+    .pipe(sourcemaps.init())
+    .pipe(progeny())
+    .pipe(plumber({
+      errorHandler: notify.onError('Error: <%= error.message %>')
+    }))
+    .pipe(stylus({
+      compress: false
+    }))
+    .pipe(postcss([autoprefixer()]))
+    .pipe(sourcemaps.write('/'))
+    .pipe(dest(srcAbisu.dstDir))
+}
+
+function AbisuMin() {
+  return src(srcAbisu.minDir)
+    .pipe(cleanCss())
+    .pipe(header(banner, {
+      pkg: pkg
+    }))
+    .pipe(rename({
+      extname: '.min.css'
+    }))
+    .pipe(dest(srcAbisu.dstDir))
     .pipe(browserSync.reload({
       stream: true
     }))
@@ -587,6 +632,7 @@ function imageToWebp() {
 /// 監視ファイル ////////////////////////////////////////////
 function watchFile() {
   watch(srcBase.srcDir, series(cacheBase, Base, BaseMin))
+  watch(srcAbisu.srcDir, series(cacheAbisu, Abisu, AbisuMin))
   // watch(srcBaseK.srcDir, series(cacheBaseK, BaseK, BaseKMin))
   watch(srcStyles.srcDir, series(cacheStyles, Styles))
   watch(srcSassStyles.srcDir, series(cacheSassStyles, SassStyles))

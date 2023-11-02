@@ -1,0 +1,94 @@
+// #####　width #####
+
+// width
+upWidthMixin(device)
+  .up
+    &-w
+      &-auto{device}
+        width: auto
+      &-min{device}
+        width: min-content
+      &-max{device}
+        width: max-content
+      &-fit{device}
+        width fit-content
+      for i in range(0, length(unitlist4) - 1)
+        if unitlist4[i] == 'px'
+          for wid in range(10, 300, 10)
+            &-{wid}{device}
+              width: unit(wid, unitlist4[i])
+          for wid in range(350, 1200, 50)
+            &-{wid}{device}
+              width: unit(wid, unitlist4[i])
+        else if unitlist4[i] == '%'
+          for wid in range(5, 120, 5)
+            &-{wid}\\{unitlist4[i]}{device}
+              width: unit(wid, unitlist4[i])
+          &-48\\\%{device}
+            width: 48%
+        else if unitlist4[i] == 'vw'
+          for wid in range(10, 120, 10)
+            &-{wid}{unitlist4[i]}{device}
+              width: unit(wid, unitlist4[i])
+
+upWidthMixin('')
++tb()
+  upWidthMixin('\@tb')
++sp()
+  upWidthMixin('\@sp')
+
+// min-width
+upMinWidthMixin(device)
+  .up
+    &-minw
+      &-auto{device}
+        min-width auto
+      for i in range(0, length(unitlist4) - 1)
+        if unitlist4[i] == 'px'
+          for wid in range(20, 500, 10)
+            &-{wid}{device}
+              width: unit(wid, unitlist4[i])
+        else if unitlist4[i] == '%'
+          for wid in range(5, 120, 5)
+            &-{wid}\\{unitlist4[i]}{device}
+              width: unit(wid, unitlist4[i])
+          &-48\\\%{device}
+            width: 48%
+        else if unitlist4[i] == 'vw'
+          for wid in range(10, 120, 10)
+            &-{wid}{unitlist4[i]}{device}
+              width: unit(wid, unitlist4[i])
+
+upMinWidthMixin('')
++tb()
+  upMinWidthMixin('\@tb')
++sp()
+  upMinWidthMixin('\@sp')
+
+// max-width
+upMaxWidthMixin(device)
+  .up
+    &-maxw
+      &-none{device}
+        max-width: none
+      for i in range(0, length(unitlist4) - 1)
+        if unitlist4[i] == 'px'
+          for wid in range(50, 1200, 50)
+            &-{wid}{device}
+              width: unit(wid, unitlist4[i])
+        else if unitlist4[i] == '%'
+          for wid in range(5, 120, 5)
+            &-{wid}\\{unitlist4[i]}{device}
+              width: unit(wid, unitlist4[i])
+          &-48\\\%{device}
+            width: 48%
+        else if unitlist4[i] == 'vw'
+          for wid in range(10, 120, 10)
+            &-{wid}{unitlist4[i]}{device}
+              width: unit(wid, unitlist4[i])
+              
+upMaxWidthMixin('')
++tb()
+  upMaxWidthMixin('\@tb')
++sp()
+  upMaxWidthMixin('\@sp')

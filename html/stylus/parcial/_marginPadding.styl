@@ -1,0 +1,45 @@
+// #####　margin padding #####
+
+// margin padding
+upMarginPaddingAutoMixin(device)
+  .up
+    &-m
+      &-auto{device}
+        margin auto
+      &l
+        &-auto{device}
+          margin-left auto
+      &r
+        &-auto{device}
+          margin-right auto
+      &x
+        &-auto{device}
+          margin-left auto
+          margin-right auto
+
+upMarginPaddingAutoMixin('')
++tb()
+  upMarginPaddingAutoMixin('\@tb')
++sp()
+  upMarginPaddingAutoMixin('\@sp')
+
+spaces(0, 50, 5, 'px', '')
+spaces_unit_em(1, 4, 1, 'em', '')
+spaces_unit_em(5, 50, 5, 'em', '')
+spaces_unit_percent(5, 50, 5, '%', '')
+spaces(60, 100, 5, 'px', '')
+spaces_unit_percent(60, 100, 5, '%', '')
++tb()
+  spaces(0, 50, 5, 'px', '\@tb')
+  spaces_unit_em(1, 4, 1, 'em', '\@tb')
+  spaces_unit_em(5, 50, 5, 'em', '\@tb')
+  spaces_unit_percent(5, 50, 5, '%', '\@tb')
+  spaces(60, 100, 5, 'px', '\@tb')
+  spaces_unit_percent(60, 100, 5, '%', '\@tb')
++sp()
+  spaces(0, 50, 5, 'px', '\@sp')
+  spaces_unit_em(1, 4, 1, 'em', '\@sp')
+  spaces_unit_em(5, 50, 5, 'em', '\@sp')
+  spaces_unit_percent(5, 50, 5, '%', '\@sp')
+  spaces(60, 100, 5, 'px', '\@sp')
+  spaces_unit_percent(60, 100, 5, '%', '\@sp')

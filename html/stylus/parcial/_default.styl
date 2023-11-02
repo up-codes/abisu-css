@@ -1,0 +1,68 @@
+// ##### デフォルトで使用するクラス #####
+
+.img
+  img
+    width 100%
+    text-align center
+
+.map
+  overflow hidden
+  padding-top 50%
+  position relative
+
+  iframe
+    width 100%
+    max-width initial
+    height 100%
+    margin auto
+    position absolute
+    top 0
+    left 0
+
+.youtube
+  overflow hidden
+  padding-top floor((9 / 16 * 100)%, 4)
+  position relative
+
+  &-short
+    padding-top floor((16 / 9 * 100)%, 4)
+
+  iframe
+    width 100%
+    max-width initial
+    height 100%
+    margin auto
+    position absolute
+    top 0
+    left 0
+
+.iframe
+  overflow hidden
+  position relative
+
+  iframe
+    width 100%
+    max-width initial
+    margin auto
+    position absolute
+    top 0
+    left 0
+
+a
+button
+  color inherit
+  text-decoration none
+  transition .4s ease
+
+  &:hover
+    color inherit
+    text-decoration none
+    opacity .6
+    cursor pointer
+
+  &[href*='tel']
+    pointer-events none
+
+.wrapper
+  min-width 375px
+  overflow hidden

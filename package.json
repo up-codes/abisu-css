@@ -1,15 +1,16 @@
 {
-  "name": "gulptest",
-  "version": "1.1.6",
+  "name": "gulp-framework",
+  "version": "1.2.0",
   "main": "index.js",
   "scripts": {
     "gulp": "gulp",
-    "supremacy": "stylus-supremacy format ./html/stylus/component/*.styl --replace --options ./stylus.json"
+    "supremacy": "stylus-supremacy format ./html/stylus/*.styl --compare --replace --options ./stylus-supremacy.json",
+    "lint": "stylint ./html/stylus/*.styl"
   },
   "keywords": [],
-  "author": "S.K",
+  "author": "h.tanaka",
   "license": "ISC",
-  "description": "IEサポート終了に伴う大規模改修",
+  "description": "記法見直し、改善会議の内容を反映、以前からの要望の反映",
   "devDependencies": {
     "autoprefixer": "^9.6.1",
     "browser-sync": "^2.26.7",
